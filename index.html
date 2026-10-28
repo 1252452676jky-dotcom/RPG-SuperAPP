@@ -648,7 +648,7 @@ function createQuest() {
     return;
   }
   const priority = Math.min(4, Math.max(1, parseInt(document.getElementById('nqPriority').value) || 2));
-  appState.quests.push({
+  appState.quests.unshift({
     id: uid(), title, note, xp, gems, kind, priority,
     createdDate: todayStr(),
     dueDate: document.getElementById('nqDue').value,
