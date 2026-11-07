@@ -252,6 +252,7 @@ function render() {
   else if (t === 'shop') c.innerHTML = viewShop();
   else if (t.startsWith('cat_')) { const cid = t.slice(4); c.innerHTML = viewCategory(cid); enableCategoryDrag(cid); }
   else if (t.startsWith('chk_')) { const clid = t.slice(4); c.innerHTML = viewChecklist(clid); const cl = findChecklist(clid); enableDrag('chkList_' + clid, cl ? cl.items : []); }
+  else if (window.GameTabs && GameTabs[t]) GameTabs[t](c);  
   else c.innerHTML = '<p>Unknown tab</p>';
   save();
 }

@@ -1,0 +1,17 @@
+{
+  "version": "2026-11-07T16:59:49.379Z",
+  "franchises": {
+    "pokemon": {
+      "file": "monsters.pokemon.json",
+      "count": 1351
+    },
+    "palworld": {
+      "file": "monsters.palworld.json",
+      "count": 288
+    },
+    "digimon": {
+      "file": "monsters.digimon.json",
+      "count": 1400
+    }
+  }
+}
