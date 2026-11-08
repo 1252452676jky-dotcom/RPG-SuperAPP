@@ -23,7 +23,8 @@
   const pick = a => a[Math.floor(Math.random() * a.length)];
 
   /* ---------- game state (local first, cloud optional) ---------- */
-  const defaultGame = () => ({ v: 1, box: {}, team: [], updatedAt: 0, ui: { fr: Object.keys(FR), tiers: [1], last: null } });
+  const defaultGame = () => ({ v: 1, box: {}, team: [], overrides: {}, updatedAt: 0, ui: { fr: Object.keys(FR), tiers: [1], last: null } });
+
   let game = loadGame();
   function loadGame() {
     try {
@@ -53,6 +54,29 @@
   /* ---------- monster data (static JSON → IndexedDB) ---------- */
   let DB = null, loading = null;
   function setDB(pack) { DB = { version: pack.version, list: pack.list, byKey: new Map(pack.list.map(r => [r.key, r])) }; return DB; }
+  /* ---------- the ONE accessor: base data merged with my corrections ---------- */
+  function mon(key) {
+    const r = DB && DB.byKey.get(key); if (!r) return null;
+    const o = game.overrides[key]; if (!o) return r;
+    const m = Object.assign({}, r, { edited: true });
+    if (o.types) m.types = o.types;
+    if (o.moveEdits) m.moveEdits = o.moveEdits;
+    if ('verified' in o) m.verified = o.verified;
+    if (o.base) { m.base = o.base.slice(); m.bst = m.base.reduce((s, v) => s + v, 0); }
+    return m;
+  }
+  function moveOf(fr, key, id, moves) {                       // per-monster move override wins
+    const o = game.overrides[key];
+    return Object.assign({ name: id }, moves[id] || {}, (o && o.moves && o.moves[id]) || {});
+  }
+  function setOverride(key, patch) {
+    const cur = game.overrides[key] || {};
+    const next = Object.assign({}, cur, patch);
+    if (patch.moves) next.moves = Object.assign({}, cur.moves, patch.moves);
+    game.overrides[key] = next; saveGame(true);
+  }
+  function resetOverride(key) { delete game.overrides[key]; saveGame(true); }
+
   function loadData() {
     if (DB) return Promise.resolve(DB);
     if (loading) return loading;
@@ -119,13 +143,13 @@
     const frs = Object.keys(FR).filter(f => DB.list.some(r => r.fr === f));
     const frChecks = frs.map(f => `<label class="inline-flex items-center gap-1 cursor-pointer"><input type="checkbox" ${u.fr.includes(f) ? 'checked' : ''} onchange="Gacha.toggleFr('${f}',this.checked)"> ${FR[f].label}</label>`).join('');
     const tierChecks = Object.entries(TIERS).map(([t, l]) => `<label class="inline-flex items-center gap-1 cursor-pointer"><input type="checkbox" ${u.tiers.includes(+t) ? 'checked' : ''} onchange="Gacha.toggleTier(${t},this.checked)"> ${l}</label>`).join('');
-    const last = u.last && game.box[u.last] && DB.byKey.get(u.last);
+    const last = u.last && game.box[u.last] && mon(u.last);
     const team = Array.from({ length: 6 }, (_, i) => {
-      const r = DB.byKey.get(game.team[i]);
+      const r = mon(game.team[i]);
       return r ? `<div onclick="Gacha.open('${r.key}')" class="w-20 bg-slate-800 border border-amber-500/60 rounded p-1 text-center cursor-pointer">${portrait(r, 'w-full h-14')}<div class="text-[10px] truncate">${escapeHtml(r.name)}</div></div>`
                : `<div class="w-20 h-[78px] border-2 border-dashed border-slate-600 rounded flex items-center justify-center text-slate-600"><i class="fa-solid fa-plus"></i></div>`;
     }).join('');
-    const boxHtml = Object.entries(game.box).sort((a, b) => b[1].t - a[1].t).map(([k]) => DB.byKey.get(k)).filter(Boolean).map(r => `
+    const boxHtml = Object.entries(game.box).sort((a, b) => b[1].t - a[1].t).map(([k]) => mon(k)).filter(Boolean).map(r => `
       <div class="gbox bg-slate-800 border border-slate-600 hover:border-indigo-400 rounded p-2 cursor-pointer text-center" data-name="${escapeAttr((r.name + ' ' + (r.ja || '')).toLowerCase())}" onclick="Gacha.open('${r.key}')">
         ${portrait(r, 'w-full h-20')}
         <div class="text-xs font-bold truncate mt-1">${escapeHtml(r.name)}</div>
@@ -166,19 +190,19 @@
       <button onclick="Gacha.exportGame()" class="bg-emerald-700 hover:bg-emerald-600 px-2 py-1 rounded"><i class="fa-solid fa-download"></i> Export game JSON</button>
       <button onclick="Gacha.resetBox()" class="bg-red-800 hover:bg-red-700 px-2 py-1 rounded"><i class="fa-solid fa-rotate-left"></i> Reset collection</button>
     </div>
-    <p class="text-[10px] text-slate-500 mt-4">Data: PokéAPI · TCGdex · PalSphere (palsphere.app) · DAPI / Wikimon. Unofficial fan project; all monsters © their owners. Data build ${escapeHtml(DB.version)}</p>`;
+    <p class="text-[10px] text-slate-500 mt-4"><span class="mlr-launch"><button type="button" onclick="MonsterRun.open()">▶ Monster Lab Run</button></span>Data: PokéAPI · Pokémon Showdown (MIT) · TCGdex · PalSphere (palsphere.app) · DAPI / Wikimon. Unofficial fan project; all monsters © their owners. Data build ${escapeHtml(DB.version)}</p>`;
   }
 
   /* ---------- detail modal ---------- */
   function open(key) {
-    const r = DB.byKey.get(key); if (!r) return;
+    const r = mon(key); if (!r) return;
     const own = game.box[key], lv = own ? own.lv : 1, rawL = FR[r.fr].raw;
     const rows = STATS.map((s, i) => `<tr class="border-b border-slate-700">
       <td class="pr-2 text-slate-400">${s}</td>
       <td class="pr-2 text-slate-500 whitespace-nowrap">${rawL ? `${r.raw[i]} <span class="text-[9px]">${rawL[i]}</span>` : 'gen'}</td>
       <td class="w-full pr-2"><div class="bg-slate-700 h-2 rounded"><div class="bg-emerald-500 h-2 rounded" style="width:${Math.round(r.base[i] / 255 * 100)}%"></div></div></td>
       <td class="pr-2 text-right">${r.base[i]}</td><td class="pr-2 text-right text-sky-300">${statAt(r.base[i], lv)}</td><td class="text-right text-amber-300">${statAt(r.base[i], 100)}</td></tr>`).join('');
-    const evo = r.evo.map(e => { const t = DB.byKey.get(e.to); return t ? `${escapeHtml(t.name)}${e.lv ? ` (Lv ${e.lv})` : ''}` : null; }).filter(Boolean).join(', ') || (r.final ? 'Final form' : '—');
+    const evo = r.evo.map(e => { const t = mon(e.to); return t ? `${escapeHtml(t.name)}${e.lv ? ` (Lv ${e.lv})` : ''}` : null; }).filter(Boolean).join(', ') || (r.final ? 'Final form' : '—');
     const meta = [['Dex #', r.dex], ['Pool', TIERS[r.tier]], ['Stage', r.stage],
       r.typesOrig && r.typesOrig.length ? ['Original type', r.typesOrig.join(' / ')] : null,
       r.attribute ? ['Attribute', r.attribute] : null, r.level ? ['Digimon level', r.level] : null,
@@ -192,7 +216,7 @@
         <div class="min-w-0 flex-1">
           <h3 class="text-xl font-bold">${escapeHtml(r.name)}</h3>
           ${r.ja ? `<div class="text-sm text-slate-400">${escapeHtml(r.ja)}</div>` : ''}
-          <div class="flex gap-1 flex-wrap mt-1">${frBadge(r.fr)}${r.types.map(typeBadge).join('')}</div>
+          <div class="flex gap-1 flex-wrap mt-1">${frBadge(r.fr)}${r.types.map(typeBadge).join('')}${r.edited ? '<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-fuchsia-700 text-white">Edited</span>' : ''}</div>
           <div class="text-xs text-slate-400 mt-2">Lv ${lv} · Base total ${r.bst}</div>
         </div>
       </div>
@@ -208,7 +232,8 @@
         <button onclick="Gacha.toggleTeam('${key}')" class="bg-amber-600 hover:bg-amber-500 px-3 py-1 rounded text-sm"><i class="fa-solid fa-star"></i> ${inTeam ? 'Remove from Team' : 'Add to Team'}</button>` : ''}
         <button onclick="closeModal()" class="bg-slate-600 px-3 py-1 rounded text-sm">Close</button>
       </div>`);
-    if (r.fr === 'pokemon' && own) loadCostumes(r);loadMoves(r);
+    loadMoves(r);
+    if (r.fr === 'pokemon' && own) loadCostumes(r);
   }
 
   /* ---------- TCG costumes (TCGdex) ---------- */
@@ -264,7 +289,7 @@
     if (!el || el.dataset.key !== r.key) return;            // modal closed or switched
     const list = learnsets[r.key] || [];
     const rows = list.map(([id, lv]) => {
-      const m = moves[id] || { name: id };
+      const m = moveOf(r.fr, r.key, id, moves);
       return `<div class="border-b border-slate-700 py-1">
         <div class="flex items-center gap-2 flex-wrap">
           ${lv != null ? `<span class="text-slate-500 w-10">Lv ${lv}</span>` : ''}
@@ -290,7 +315,7 @@
     saveGame(true); render(); open(key);
   }
   function promote(key) {
-    const r = DB.byKey.get(key), own = game.box[key]; if (!r || !own) return;
+    const r = mon(key), own = game.box[key]; if (!r || !own) return;
     if (appState.party.some(m => m.attributes && m.attributes['Monster ID'] === key) && !confirm(`${r.name} is already in your Party. Add another copy?`)) return;
     const attributes = { Franchise: FR[r.fr].label, Type: r.types.join(' / ') };
     if (r.ja) attributes.Japanese = r.ja;
@@ -299,7 +324,7 @@
     save(); toast(`${r.name} joined your Party`);
   }
   function release(key) {
-    const r = DB.byKey.get(key);
+    const r = mon(key);
     if (!confirm(`Release ${r ? r.name : 'this monster'}? It goes back into the pool.`)) return;
     delete game.box[key]; game.team = game.team.filter(k => k !== key);
     if (game.ui.last === key) game.ui.last = null;
@@ -334,14 +359,24 @@
     toggleTier: (t, on) => { game.ui.tiers = toggleList(game.ui.tiers, t, on); saveGame(false); render(); },
     filterBox: q => { q = q.trim().toLowerCase(); document.querySelectorAll('.gbox').forEach(el => { el.style.display = el.dataset.name.includes(q) ? '' : 'none'; }); },
     // used by game-cloud.js
-    exportState: () => ({ v: game.v, box: game.box, team: game.team, updatedAt: game.updatedAt }),
-        importState: s => {
+    exportState: () => { const j = k => { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } };
+      return { v: game.v, box: game.box, team: game.team, overrides: game.overrides, updatedAt: game.updatedAt, run: j('ml.run'), meta: j('ml.meta') }; },
+    importState: s => {
       if (!s) return;
       game.box = s.box || {}; game.team = s.team || []; game.updatedAt = s.updatedAt || 0;
+      if (s.overrides) game.overrides = s.overrides;     // older cloud docs have no overrides → keep local ones
+      if ('run' in s) s.run ? localStorage.setItem('ml.run', JSON.stringify(s.run)) : localStorage.removeItem('ml.run');
+      if (s.meta) localStorage.setItem('ml.meta', JSON.stringify(s.meta));
       if (game.ui.last && !game.box[game.ui.last]) game.ui.last = null;
       saveGame(migrateLegacyKeys());   // converts old keys arriving from another device
       if (appState.activeTab === 'gacha') render();
     },
+    mon, moveOf, setOverride, resetOverride,
+    img: key => { const r = mon(key), o = game.box[key]; return (o && o.skin) || (r && r.img) || ''; },
+    cards: r => getCards(r),
+    setSkinQuiet: (key, url) => { if (game.box[key]) { game.box[key].skin = url || null; saveGame(true); } },
+    grant: key => { if (!game.box[key] && DB && DB.byKey.has(key)) { game.box[key] = { lv: 1, xp: 0, skin: null, got: todayStr(), t: Date.now() }; saveGame(true); } },
+    sync: () => saveGame(true),
     localUpdatedAt: () => game.updatedAt || 0,
     hasContent: () => Object.keys(game.box).length > 0
   };

@@ -1,10 +1,12 @@
 // tools/build-data.mjs — builds /data/*.json for the Monster Lab tab.
 // Run from the project root:  node tools/build-data.mjs
 // Needs Node 18+. Raw API responses are cached (trimmed) in tools/.cache.
+import vm from 'node:vm';   
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+
 
 const ROOT  = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT   = path.join(ROOT, 'data');
@@ -69,6 +71,74 @@ function normalize(recs, refBst, refMed) {
     delete r.p;
   });
 }
+/* =================== SHOWDOWN DATA (MIT, play.pokemonshowdown.com) =================== */
+const PS = 'https://play.pokemonshowdown.com/data/';
+const psId = s => String(s).toLowerCase().replace(/[^a-z0-9]/g, '');
+async function getPS(file, exportName) {                     // .json parsed directly, .js evaluated in a sandbox
+  if (file.endsWith('.json')) return getJSON(PS + file);
+  const cacheFile = path.join(CACHE, 'ps_' + file.replace(/[^a-z0-9.]+/gi, '_') + '.json');
+  if (existsSync(cacheFile)) return JSON.parse(await readFile(cacheFile, 'utf8'));
+  const res = await fetch(PS + file); if (!res.ok) throw new Error(`PS ${file}: HTTP ${res.status}`);
+  const ctx = { exports: {} }; vm.createContext(ctx); vm.runInContext(await res.text(), ctx);
+  const data = ctx.exports[exportName]; if (!data) throw new Error(`PS ${file}: no ${exportName}`);
+  await writeFile(cacheFile, JSON.stringify(data));
+  return data;
+}
+const MOVE_FIELDS = ['target', 'flags', 'secondary', 'secondaries', 'self', 'boosts', 'status', 'volatileStatus', 'weather',
+  'terrain', 'sideCondition', 'pseudoWeather', 'drain', 'recoil', 'heal', 'multihit', 'critRatio', 'ohko', 'selfSwitch', 'selfdestruct', 'willCrit'];
+function psMove(m, text) {
+  const out = { name: m.name, type: m.type.toLowerCase(), cat: m.category.toLowerCase(), power: m.basePower || null,
+    acc: m.accuracy === true ? null : m.accuracy, pp: m.pp, prio: m.priority || 0,
+    desc: (text && (text.shortDesc || text.desc)) || m.shortDesc || m.desc || null };
+  for (const f of MOVE_FIELDS) if (m[f] !== undefined && m[f] !== null) out[f] = m[f];
+  return out;
+}
+function psLevelUp(learnset) {                               // union of all gens; level from newest gen that has it
+  const out = [];
+  for (const [mv, codes] of Object.entries(learnset || {})) {
+    let best = null;
+    for (const c of codes) { const m = /^(\d)L(\d+)$/.exec(c); if (m && (!best || +m[1] > best.g)) best = { g: +m[1], lv: +m[2] }; }
+    if (best) out.push([mv, Math.max(1, best.lv)]);
+  }
+  return out.sort((a, b) => a[1] - b[1] || a[0].localeCompare(b[0]));
+}
+async function loadShowdown() {
+  console.log('\n== Pokémon Showdown data ==');
+  const [dex, learn, moves, abil, items, text] = await Promise.all([
+    getPS('pokedex.json'), getPS('learnsets.json'), getPS('moves.json'),
+    getPS('abilities.js', 'BattleAbilities'), getPS('items.js', 'BattleItems'), getPS('text/en.js', 'BattleText')]);
+  const en = (text && text.en) || {};
+  const T = { moves: en.Moves || {}, abilities: en.Abilities || {}, items: en.Items || {} };
+  console.log(`  ${Object.keys(moves).length} moves · ${Object.keys(abil).length} abilities · ${Object.keys(items).length} items`);
+  console.log(`  descriptions found: moves ${Object.keys(T.moves).length} · abilities ${Object.keys(T.abilities).length} · items ${Object.keys(T.items).length}`);
+  return { dex, learn, moves, abil, items, T };
+}
+const descOf = t => (t && (t.shortDesc || t.desc)) || '';
+
+function buildAbilities(ps) {
+  const out = {};
+  for (const [id, a] of Object.entries(ps.abil)) {
+    if (id === 'noability' || (a.isNonstandard && a.isNonstandard !== 'Past')) continue;
+    const f = a.flags || {}, t = ps.T.abilities[id];
+    out[id] = { name: a.name, desc: descOf(t), long: t && t.desc && t.desc !== t.shortDesc ? t.desc : null, rating: a.rating ?? null,
+      // random pool for Pals/Digimon: no species-locked abilities, nothing with zero battle effect
+      randomOk: !(f.failroleplay || f.cantsuppress || f.notransform) && (a.rating ?? 0) > 0 };
+  }
+  return out;
+}
+
+const ITEM_JUNK = /fossil|nugget|pearl|stardust|starpiece|cometshard|mushroom|sweet$|mint$|bottlecap|^(cracked|chipped|masterpiece|unremarkable)|relic|wing$|armorite|dynite|galarica|wishingpiece|rarebone|^honey$|^(red|blue|yellow|green)shard$/;
+const ITEM_BAD_TAG = ['CAP', 'Custom', 'LGPE', 'Legends', 'Unobtainable', 'Future'];
+function buildItems(ps) {
+  const out = {};
+  for (const [id, it] of Object.entries(ps.items)) {
+    if (it.isPokeball || it.megaStone || it.zMove || it.isPrimalOrb || it.forcedForme || ITEM_BAD_TAG.includes(it.isNonstandard) || ITEM_JUNK.test(id)) continue;
+    out[id] = { name: it.name, desc: descOf(ps.T.items[id]), berry: !!it.isBerry, gem: !!it.isGem, choice: !!it.isChoice,
+      users: it.itemUser || null, gen: it.gen || null };
+  }
+  return out;
+}
+
 
 /* =================== POKÉMON (PokéAPI) =================== */
 const STAT_ORDER = ['hp', 'attack', 'defense', 'special-attack', 'special-defense', 'speed'];
@@ -95,7 +165,7 @@ function levelUp(p) {                       // level-up moves from the newest ga
   return out.sort((a, b) => a[1] - b[1]);
 }
 
-async function buildPokemon() {
+async function buildPokemon(ps) {
   console.log('\n== Pokémon (PokéAPI) ==');
   const API = 'https://pokeapi.co/api/v2';
   const list = await getJSON(`${API}/pokemon?limit=100000`);
@@ -149,24 +219,28 @@ async function buildPokemon() {
     if (!special) {                                   // regional forms evolve into the same region's form
       const def = defaultOf.get(sp.name) || '';
       const suffix = !p.is_default && p.name.startsWith(def) ? p.name.slice(def.length) : '';
-      evoList = e.next.map(n => { const b = defaultOf.get(n.species) || n.species; return { to: 'pkmn:' + (suffix && pokeByName.has(b + suffix) ? b + suffix : b), lv: n.lv }; });
+      evoList = e.next.map(n => { const b = defaultOf.get(n.species) || n.species; return { to: 'pkmn:' + (suffix && pokeByName.has(b + suffix) ? b + suffix : b), lv: n.lv ?? (stage === 0 ? 12 : stage === 1 ? 30 : 45) }; });
     }
 
-    let ls = levelUp(p);
-    if (!ls.length && !p.is_default) { const d = pokeByName.get(defaultOf.get(sp.name)); if (d) ls = levelUp(d); }
+    const psKey = ps.dex[psId(p.name)] ? psId(p.name) : psId(sp.name);   // "giratina-altered" → "giratina"
+    const psEntry = ps.dex[psKey];
+    const psBase = psEntry && psId(psEntry.changesFrom || psEntry.baseSpecies || '');
+    let ls = psLevelUp((ps.learn[psKey] || {}).learnset);
+    if (!ls.length && psBase) ls = psLevelUp((ps.learn[psBase] || {}).learnset);   // megas, cosmetic forms
+    if (!ls.length) ls = levelUp(p).map(([m, lv]) => [psId(m), lv]);              // PokéAPI fallback
+    ls = ls.filter(([m]) => ps.moves[m] && !ps.moves[m].isZ && !ps.moves[m].isMax && !['CAP', 'Custom', 'LGPE'].includes(ps.moves[m].isNonstandard));
     ls.forEach(([m]) => moveNames.add(m));
     learnsets['pkmn:' + p.name] = ls;
+    const abilities = Object.values((psEntry || ps.dex[psBase] || {}).abilities || {}).map(psId);
 
     records.push({ key: 'pkmn:' + p.name, fr: 'pokemon', name, ja, spName, dex: sp.id, img: p.img,
       types: p.types.map(t => t.type.name), typesOrig: null, raw, stage, tier, final, legendary, special,
-      isDefault: p.is_default, evo: evoList });
+      isDefault: p.is_default, evo: evoList, abilities });
   }
   records.sort((a, b) => a.dex - b.dex || b.isDefault - a.isDefault);
 
-  const mv = [...moveNames];
-  const md = await mapLimit(mv, 6, n => getJSON(`${API}/move/${n}`, trimMove), 'moves');
   const moves = {};
-  mv.forEach((n, i) => { const m = md[i]; if (m) moves[n] = { name: lang(m.names, 'en') || prettify(n), type: m.type?.name, cat: m.damage_class?.name, power: m.power, acc: m.accuracy, pp: m.pp, prio: m.priority }; });
+  for (const id of moveNames) moves[id] = psMove(ps.moves[id], ps.T.moves[id]);
   return { records, learnsets, moves };
 }
 
@@ -290,6 +364,8 @@ async function buildDigimon() {
     used.add(k); keyById.set(d.id, k);
   }
   if (clashes.length) console.log(`  ${clashes.length} name clashes got a number suffix, e.g.: ${clashes.slice(0, 8).join(', ')}`);
+  const levelById = new Map(details.map(d => [d.id, ((d.levels || [])[0] || {}).level || 'Unknown']));
+  const EVO_LV = { 'Baby II': 5, Child: 10, Adult: 20, Armor: 20, Perfect: 40, Hybrid: 40, Ultimate: 65, Unknown: 30 };
 
   const records = [], learnsets = {}, moves = {};
   for (const d of details) {
@@ -305,7 +381,9 @@ async function buildDigimon() {
       typesOrig: (d.types || []).map(t => t.type), fields: (d.fields || []).map(f => f.field), attribute, level,
       raw, p: Math.min(0.99, Math.max(0.01, p0 + (r() - 0.5) * 0.08)),
       stage, tier, final: !(d.nextEvolutions || []).length, legendary: tier === 4, special: null, isDefault: true,
-      evo: (d.nextEvolutions || []).filter(n => keyById.has(n.id)).map(n => ({ to: keyById.get(n.id), lv: null })) });
+      evo: (d.nextEvolutions || []).filter(n => keyById.has(n.id))
+        .filter(n => (DIGI_LEVEL[levelById.get(n.id)] || DIGI_LEVEL.Unknown)[0] >= stage)     // no de-evolution
+        .map(n => ({ to: keyById.get(n.id), lv: EVO_LV[levelById.get(n.id)] ?? 30 })) });     // Armor & Jogress included
 
     learnsets[key] = (d.skills || []).map((s, i) => {
       const name = s.translation || s.skill;
@@ -324,8 +402,10 @@ async function writeJSON(name, data, pretty) { await writeFile(path.join(OUT, na
 
 async function main() {
   await mkdir(OUT, { recursive: true }); await mkdir(CACHE, { recursive: true });
+  const ps = await loadShowdown();
+
   const out = {};
-  out.pokemon = await buildPokemon();                         // required: it is the reference scale
+  out.pokemon = await buildPokemon(ps);                       // required: it is the reference scale
   const ref = out.pokemon.records.filter(r => r.isDefault);
   const refBst = ref.map(r => sum(r.raw)).sort((a, b) => a - b);
   const refMed = [0, 1, 2, 3, 4, 5].map(i => median(ref.map(r => r.raw[i])));
@@ -352,6 +432,13 @@ async function main() {
       console.log(`  ${fr.padEnd(9)} kept previous file (build failed this time)`);
     }
   }
+
+  const abilities = buildAbilities(ps), items = buildItems(ps);
+  await writeJSON('abilities.json', abilities);
+  await writeJSON('items.json', items);
+  console.log(`  abilities ${Object.keys(abilities).length} (random-pool OK: ${Object.values(abilities).filter(a => a.randomOk).length})`);
+  console.log(`  items     ${Object.keys(items).length} battle items`);
+
   await writeJSON('index.json', index, true);
   console.log('\nDone. Upload the /data folder to GitHub.');
 }
