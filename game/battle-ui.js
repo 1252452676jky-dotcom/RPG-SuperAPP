@@ -13,7 +13,7 @@
     fighting:'fa-hand-fist', poison:'fa-skull-crossbones', ground:'fa-mountain', flying:'fa-feather', psychic:'fa-eye', bug:'fa-bug',
     rock:'fa-gem', ghost:'fa-ghost', dragon:'fa-dragon', dark:'fa-moon', steel:'fa-shield-halved', fairy:'fa-wand-magic-sparkles' };
   const STATUS_LABEL = { brn:'BRN', par:'PAR', psn:'PSN', tox:'TOX', slp:'SLP', frz:'FRZ' };
-  const STAT_LABEL = { atk:'Atk', def:'Def', spa:'SpA', spd:'SpD', spe:'Spe', accuracy:'Acc' };
+  const STAT_LABEL = { atk:'Atk', def:'Def', spa:'SpA', spd:'SpD', spe:'Spe', accuracy:'Acc', evasion:'Eva' };
   const SINGLE = ['normal', 'any', 'adjacentFoe'];
   const AUTO_GO_MS = 450;                                   // pause after the last order before the turn starts
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c]));
@@ -41,7 +41,7 @@
     let speed = +(localStorage.getItem('ml.bspeed') || 0) % SPEEDS.length;
     let autoOn = !!opts.auto, busy = false, finished = false, closed = false, result = 'lose';
     let chosen = new Map(), lastChoices = null, targeting = null, pop = null, shown = 0, layoutKey = '', prev = null;
-    let goTimer = null, strong = false, weak = false;
+    let goTimer = null, strong = false, weak = false, hist = [], curH = null, pendingEot = false;
     const ms = () => SPEEDS[speed].ms;
     const floor = +((/Floor (\d+)/.exec(opts.title || '') || [])[1] || 0);
 
@@ -60,7 +60,8 @@
         <div class="mlb-band"><span class="mlb-round"></span><span class="mlb-ticker"></span></div>
         <div class="mlb-side me"><div class="mlb-row mlb-me"></div><div class="mlb-bench" data-side="0"></div></div>
       </div>
-      <div class="mlb-cmd"></div><div class="mlb-log"></div><div class="mlb-fx"></div>`;
+      <div class="mlb-cmd"></div><div class="mlb-hist"><div class="mlb-histh">LAST 6 MOVES</div><div class="mlb-histl"></div></div>
+      <div class="mlb-log"></div><div class="mlb-fx"></div>`;
     document.body.appendChild(root);
     const $ = s => root.querySelector(s);
     const cardEl = m => m && root.querySelector(`.mlb-card[data-i="${idx(m)}"]`);
@@ -181,18 +182,37 @@
       const d = document.createElement('div'); d.className = 'mlb-banner'; d.textContent = text;
       root.appendChild(d); setTimeout(() => d.remove(), 1000);
     }
+    /* ---------- move history (last 6 moves, Showdown-style) ---------- */
+    function histAdd(e) {
+      pendingEot = false;
+      curH = { side: idx(e.user) < player.length ? 0 : 1, who: e.user.name, mv: e.move.name, color: tc(e.move.type), notes: [] };
+      hist.push(curH);
+      while (hist.filter(h => h.side !== 2).length > 6 || hist.length > 9) hist.shift();
+      histDraw();
+    }
+    function histNote(t) {
+      if (!curH && pendingEot) { curH = { side: 2, who: 'End of turn', mv: '', color: '#666', notes: [] }; hist.push(curH); }
+      if (!curH) return;
+      curH.notes.push(t); if (curH.notes.length > 6) curH.notes.shift(); histDraw();
+    }
+    function histDraw() {
+      $('.mlb-histl').innerHTML = hist.slice().reverse().map(h =>
+        `<div class="mlb-he ${h.side === 2 ? 'eot' : h.side ? 'foe' : 'me'}" style="--t:${h.color}"><b>${esc(h.who)}</b>${h.mv ? ' · ' + esc(h.mv) : ''}${h.notes.map(n => `<div>${esc(n)}</div>`).join('')}</div>`).join('');
+    }
+    const pctOf = (m, n) => Math.max(1, Math.round(Math.abs(n) / m.maxhp * 100));
     function logLine(t) {
       const log = $('.mlb-log'), d = document.createElement('div');
       if (/^— Turn/.test(t)) d.className = 'turn';
       d.textContent = t; log.appendChild(d);
       while (log.children.length > 200) log.firstChild.remove();
       log.scrollTop = log.scrollHeight;
-      if (!/^— Turn/.test(t)) tick(t);
+      if (!/^— Turn/.test(t)) { tick(t); if (!/ used .+!$/.test(t)) histNote(t); }
     }
     async function animate(f) {
       const e = f.ev;
       if (e.type === 'move') {
         const el = cardEl(e.user);
+        histAdd(e);
         if (el) { el.style.setProperty('--fx', tc(e.move.type)); restart(el, e.move.cat === 'status' ? 'mlb-buff' : 'mlb-cast'); }
         return sleep(ms() * 0.4);
       }
@@ -205,11 +225,18 @@
         burst(t, color, e.crit || eff > 1 ? 14 : 8);
         if (e.crit || eff > 1) shake(e.crit && eff > 1);
         if (t) { t.style.setProperty('--fx', color); if (e.crit) float(t, 'CRIT!', 'crit'); }
+        const ti = idx(e.target), lost = prev && ti >= 0 ? prev.hp[ti] - f.hp[ti] : 0;
+        if (lost > 0) histNote(`${e.target.name} lost ${pctOf(e.target, lost)}%`);
         strong = !!e.crit || eff > 1; weak = eff < 1;
         draw(f); strong = weak = false;
         return sleep(ms() * 0.5);
       }
-      if (e.type === 'hurt') { draw(f); return sleep(ms() * 0.45); }
+      if (e.type === 'hurt') {
+        const i = idx(e.mon), dv = prev && i >= 0 ? f.hp[i] - prev.hp[i] : 0;
+        if (dv) histNote(`${e.mon.name} ${dv < 0 ? 'lost' : 'gained'} ${pctOf(e.mon, dv)}%`);
+        draw(f); return sleep(ms() * 0.45);
+      }
+      if (e.type === 'eot') { curH = null; pendingEot = true; return; }
       if (e.type === 'miss') { const t = cardEl(e.target); if (t) float(t, 'Miss', 'miss'); return sleep(ms() * 0.4); }
     }
     async function play() {
@@ -219,6 +246,7 @@
         const turn = /^— Turn (\d+)/.exec(f.t);
         logLine(f.t); draw(f);
         if (turn) {
+          curH = null; pendingEot = false;
           $('.mlb-turn').textContent = 'Turn ' + turn[1]; $('.mlb-round').textContent = 'Round ' + turn[1];
           banner('Round ' + turn[1]); await sleep(ms() * 0.6);
         } else await sleep(ms());

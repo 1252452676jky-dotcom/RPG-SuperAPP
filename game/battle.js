@@ -20,6 +20,14 @@
     return Math.min(e, 4);
   }
   const STAGE = s => s >= 0 ? (2 + s) / 2 : 2 / (2 - s);
+  // fixed-damage moves (ignore stats, still respect type immunity)
+  const FIXED = { dragonrage: () => 40, sonicboom: () => 20, seismictoss: m => m.lv, nightshade: m => m.lv,
+    superfang: (m, t) => Math.max(1, Math.floor(t.hp / 2)), naturesmadness: (m, t) => Math.max(1, Math.floor(t.hp / 2)),
+    ruination: (m, t) => Math.max(1, Math.floor(t.hp / 2)), endeavor: (m, t) => Math.max(0, t.hp - m.hp),
+    finalgambit: m => m.hp, psywave: m => Math.max(1, Math.floor(m.lv * (0.5 + Math.random()))) };
+  // weather-dependent healing moves
+  const wHeal = w => w === 'sun' ? 2 / 3 : w ? 1 / 4 : 1 / 2;
+  const HEAL_W = { synthesis: wHeal, moonlight: wHeal, morningsun: wHeal, shoreup: w => w === 'sand' ? 2 / 3 : 1 / 2 };
   const FX = () => window.MonsterFX || { abilities: {}, items: {} };
 
   /* -------- build a battler from a DB record -------- */
@@ -34,7 +42,7 @@
       attr: rec.attribute ? String(rec.attribute).toLowerCase() : null, final: !!rec.final, lv,
       maxhp: stat(s.hp || 50, lv, true) * (opt.hpMult || 1),
       st: { atk: stat(s.atk || 50, lv), def: stat(s.def || 50, lv), spa: stat(s.spa || 50, lv), spd: stat(s.spd || 50, lv), spe: stat(s.spe || 50, lv) },
-      boosts: { atk: 0, def: 0, spa: 0, spd: 0, spe: 0, accuracy: 0 },
+      boosts: { atk: 0, def: 0, spa: 0, spd: 0, spe: 0, accuracy: 0, evasion: 0 },
       moves: (opt.allMoves ? moves : moves.slice(0, 4)).map(normMove).filter(Boolean),
       ability: opt.ability || null, item: opt.item || null, itemUsed: false,
       status: null, slpTurns: 0, toxN: 0, vol: {}, flags: {}, actions: opt.actions || 1, lock: null
@@ -44,13 +52,16 @@
   function normMove(m) {
     if (!m) return null;
     const cat = String(m.category || m.cat || 'physical').toLowerCase();
+    const a = m.accuracy !== undefined ? m.accuracy : m.acc;             // Showdown data uses "acc"; null = never misses
     return { id: m.id || m.name, name: m.name || m.id, type: String(m.type || 'normal').toLowerCase(),
-      power: +m.power || +m.basePower || 0, acc: m.accuracy === true ? true : (+m.accuracy || 100),
+      power: +m.power || +m.basePower || 0, acc: a === true || a == null || a === '' ? true : (+a || 100),
       cat: cat.startsWith('phys') ? 'physical' : cat.startsWith('spec') ? 'special' : 'status',
-      prio: +m.priority || 0, flags: m.flags || {}, status: m.status || null, boosts: m.boosts || null,
-      self: m.self || null, secondary: m.secondary || null, drain: m.drain || null, recoil: m.recoil || null,
-      heal: m.heal || null, target: m.target || 'normal', weather: m.weather || null, terrain: m.terrain || null,
-      desc: m.desc || m.shortDesc || m.description || '' };
+      prio: +(m.priority ?? m.prio) || 0, flags: m.flags || {}, status: m.status || null, boosts: m.boosts || null,
+      self: m.self || null, secondaries: m.secondaries || (m.secondary ? [m.secondary] : null),
+      drain: m.drain || null, recoil: m.recoil || null, heal: m.heal || null, target: m.target || 'normal',
+      weather: m.weather || null, terrain: m.terrain || null, vol: m.volatileStatus || null,
+      crit: +m.critRatio || 1, willCrit: !!m.willCrit, multihit: m.multihit || null, ohko: !!m.ohko,
+      selfdestruct: m.selfdestruct || null, desc: m.desc || m.shortDesc || m.description || '' };
   }
 
   /* -------- battle object -------- */
@@ -72,11 +83,12 @@
       hpFrac: m => m.hp / m.maxhp,
       foes: m => b.sides[1 - sideOf(m)].active.filter(alive),
       allies: m => b.sides[sideOf(m)].active.filter(alive),
-      heal(m, f) { if (!alive(m)) return; const n = Math.min(m.maxhp - m.hp, Math.max(1, Math.floor(m.maxhp * f))); m.hp += n; if (n) L(`${m.name} restored HP.`); },
+      heal(m, f) { if (!alive(m)) return; const n = Math.min(m.maxhp - m.hp, Math.max(1, Math.floor(m.maxhp * f))); m.hp += n; if (n) L(`${m.name} restored ${Math.max(1, Math.round(n / m.maxhp * 100))}% HP.`); },
       damage(m, f, o = {}) { if (!alive(m)) return; if (o.indirect && ab(m).noIndirect) return; m.hp = Math.max(0, m.hp - Math.max(1, Math.floor(m.maxhp * f))); E({ type: 'hurt', mon: m }); if (!m.hp) L(`${m.name} fainted!`); },
       boost(m, ch, src, why) {
         if (!alive(m)) return; let dropped = false;
         for (const [k, v] of Object.entries(ch)) {
+          if (!(k in m.boosts)) continue;
           if (v < 0 && src && src !== m) {
             const nd = ab(m).noDrop || it(m).noDrop;
             if (nd === true || (Array.isArray(nd) && nd.includes(k))) { L(`${m.name}'s ${k} can't be lowered!`); continue; }
@@ -102,6 +114,7 @@
       },
       cure(m) { if (m.status) { L(`${m.name} was cured.`); m.status = null; } },
       cureVolatile(m, v) { delete m.vol[v]; },
+      confuse(m) { if (!alive(m) || m.vol.confusion) return; m.vol.confusion = 2 + Math.floor(b.rng() * 4); L(`${m.name} became confused!`); },
       clearDrops(m) { for (const k in m.boosts) if (m.boosts[k] < 0) m.boosts[k] = 0; },
       setWeather(w, src) { b.weather = w; b.wTurns = (src && it(src).weatherTurns && it(src).weatherTurns[w]) || 5; L(`Weather: ${w}.`); },
       setTerrain(t, src) { b.terrain = t; b.tTurns = (src && it(src).terrainTurns) || 5; L(`Terrain: ${t}.`); }
@@ -139,8 +152,8 @@
       const A = realStat(m, phys ? 'atk' : 'spa'), D = realStat(t, phys ? 'def' : 'spd');
       let P = mv.power * pm;
       for (const s of [ab(m), it(m)]) if (s.pow) P *= s.pow({ ...mv, type }, m, t, b);
-      const critStage = (ab(m).crit || 0) + (it(m).crit || 0);
-      const crit = !ab(t).noCrit && b.chance([1 / 24, 1 / 8, 1 / 2, 1][Math.min(3, critStage)]);
+      const critStage = (ab(m).crit || 0) + (it(m).crit || 0) + (mv.crit || 1) - 1;
+      const crit = !ab(t).noCrit && (mv.willCrit || b.chance([1 / 24, 1 / 8, 1 / 2, 1][Math.min(3, critStage)]));
       let d = (Math.floor(Math.floor(2 * m.lv / 5 + 2) * P * A / D / 50) + 2);
       if (m.types.includes(type)) d *= ab(m).stab || 1.5;
       d *= eff;
@@ -184,17 +197,38 @@
       let total = 0;
       for (const t of targetsFor(m, mv, ch.target)) {
         if (t !== m && mv.acc !== true && !ab(m).noGuard && !ab(t).noGuard) {
-          let acc = mv.acc * STAGE(m.boosts.accuracy);
+          let acc = mv.acc * STAGE(Math.max(-6, Math.min(6, m.boosts.accuracy - (t.boosts.evasion || 0))));
           for (const s of [ab(m), it(m)]) if (s.acc) acc *= s.acc(mv);
           if (!b.chance(acc / 100)) { E({ type: 'miss', user: m, target: t }); L(`${t.name} avoided the attack!`); continue; }
         }
         if (mv.cat === 'status') {
-          if (mv.status && t !== m) b.status(t, mv.status, m);
+          if (t !== m) {
+            if ((mv.flags.powder && t.types.includes('grass')) || (mv.status && mv.type === 'electric' && t.types.includes('ground'))) { L(`It doesn't affect ${t.name}...`); continue; }
+            if (mv.status && !b.status(t, mv.status, m) && !mv.boosts) L('But it failed!');
+            if (mv.vol === 'confusion') b.confuse(t);
+            if (mv.vol === 'leechseed') {
+              if (t.types.includes('grass') || t.vol.leechseed) L(`It doesn't affect ${t.name}...`);
+              else { t.vol.leechseed = m; L(`${t.name} was seeded!`); }
+            }
+          }
           if (mv.boosts) b.boost(mv.target === 'self' ? m : t, mv.boosts, m);
-          if (mv.heal) b.heal(m, mv.heal[0] / mv.heal[1]);
+          const hf = HEAL_W[mv.id] ? HEAL_W[mv.id](b.weather) : mv.heal ? mv.heal[0] / mv.heal[1] : 0;
+          if (hf) { if (m.hp >= m.maxhp) L(`${m.name}'s HP is full!`); else b.heal(m, hf); }
           continue;
         }
-        const d = Math.min(t.hp, calc(m, mv, t)); if (!d) continue;
+        let d = 0, hits = 1;
+        if (FIXED[mv.id]) {
+          if (!typeEff(mv.type, t.types)) { L(`It doesn't affect ${t.name}...`); continue; }
+          d = FIXED[mv.id](m, t); b._crit = false; b._eff = 1;
+        } else if (mv.ohko) {
+          if (t.lv > m.lv || !typeEff(mv.type, t.types)) { L(`It doesn't affect ${t.name}...`); continue; }
+          d = t.hp; b._crit = false; b._eff = 1; L("It's a one-hit KO!");
+        } else {
+          const mh = mv.multihit;
+          hits = Array.isArray(mh) ? (mh[0] === 2 && mh[1] === 5 ? [2, 2, 3, 3, 4, 5][Math.floor(b.rng() * 6)] : mh[0] + Math.floor(b.rng() * (mh[1] - mh[0] + 1))) : (+mh || 1);
+          for (let h = 0; h < hits; h++) { const x = calc(m, mv, t); if (!x) break; d += x; }
+        }
+        d = Math.min(t.hp, d); if (!d) continue;
         const full = t.hp === t.maxhp;
         t.hp -= d; total += d;
         const hung = !t.hp && full && (ab(t).survive || it(t).survive);
@@ -202,17 +236,18 @@
         E({ type: 'hit', user: m, target: t, move: mv, crit: b._crit });
         if (b._crit) L('A critical hit!');
         if (b._eff > 1) L("It's super effective!"); else if (b._eff < 1) L("It's not very effective...");
+        if (hits > 1) L(`Hit ${hits} times!`);
         if (hung) L(`${t.name} hung on!`);
         if (!t.hp) { L(`${t.name} fainted!`); ab(m).onKO && ab(m).onKO(m, b); }
         else {
           ab(t).hitBy && ab(t).hitBy(t, m, mv, 1, b); useItem(t, 'hitBy', m, mv, 1);
           if (mv.flags.contact) { ab(t).contact && ab(t).contact(t, m, b); it(t).contact && it(t).contact(t, m, b); }
-          const sec = mv.secondary;
-          if (sec && !ab(t).noSecondary && !it(t).noSecondary && b.chance(Math.min(1, (sec.chance || 100) / 100 * (ab(m).secMult || 1)))) {
+          for (const sec of mv.secondaries || []) {
+            if (ab(t).noSecondary || it(t).noSecondary || !b.chance(Math.min(1, (sec.chance || 100) / 100 * (ab(m).secMult || 1)))) continue;
             if (sec.status) b.status(t, sec.status, m);
             if (sec.boosts) b.boost(t, sec.boosts, m);
             if (sec.volatileStatus === 'flinch') t.vol.flinch = true;
-            if (sec.volatileStatus === 'confusion') t.vol.confusion = 2 + Math.floor(b.rng() * 3);
+            if (sec.volatileStatus === 'confusion') b.confuse(t);
             if (sec.self && sec.self.boosts) b.boost(m, sec.self.boosts, m);
           }
         }
@@ -223,15 +258,17 @@
         if (mv.self && mv.self.boosts) b.boost(m, mv.self.boosts, m);
         ab(m).afterHit && ab(m).afterHit(m, null, mv, total, b); it(m).afterHit && it(m).afterHit(m, null, mv, total, b);
       }
+      if (mv.selfdestruct && alive(m)) { m.hp = 0; L(`${m.name} fainted!`); }
     }
     function doSwitch(m, inc) {
       const s = b.sides[sideOf(m)], i = s.active.indexOf(m), j = s.bench.indexOf(inc);
       if (i < 0 || j < 0 || !alive(inc)) return;
       ab(m).switchOut && ab(m).switchOut(m, b);
-      m.boosts = { atk: 0, def: 0, spa: 0, spd: 0, spe: 0, accuracy: 0 }; m.vol = {}; m.lock = null;
+      m.boosts = { atk: 0, def: 0, spa: 0, spd: 0, spe: 0, accuracy: 0, evasion: 0 }; m.vol = {}; m.lock = null;
       s.active[i] = inc; s.bench[j] = m; L(`${m.name} came back.`); switchIn(inc);
     }
     function endOfTurn() {
+      E({ type: 'eot' });
       const all = b.sides.flatMap(s => s.active).filter(alive);
       for (const m of all) {
         m.vol.flinch = false;
@@ -240,6 +277,13 @@
         if (m.status === 'brn') b.damage(m, 1 / 16, { indirect: true });
         if (m.status === 'psn' && !ab(m).noPoisonDmg) b.damage(m, 1 / 8, { indirect: true });
         if (m.status === 'tox' && !ab(m).noPoisonDmg) b.damage(m, Math.min(15, ++m.toxN) / 16, { indirect: true });
+        const sd = m.vol.leechseed;
+        if (sd && alive(m)) {
+          const n = Math.min(m.hp, Math.max(1, Math.floor(m.maxhp / 8)));
+          b.damage(m, 1 / 8, { indirect: true });
+          if (alive(sd) && b.sides.some(s => s.active.includes(sd))) sd.hp = Math.min(sd.maxhp, sd.hp + n);
+          L(`${m.name}'s health is sapped by Leech Seed!`);
+        }
         ab(m).residual && ab(m).residual(m, b); it(m).residual && it(m).residual(m, b);
       }
       if (b.weather && --b.wTurns <= 0) { L('The weather cleared.'); b.weather = null; }

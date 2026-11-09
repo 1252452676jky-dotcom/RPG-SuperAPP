@@ -476,7 +476,7 @@
     const skins = Array.isArray(info.cards) ? `<h3>TCG card art</h3><div class="mlr-skins"><button data-skin="">Default art</button>${info.cards.slice(-60).reverse()
       .map(c => `<img data-skin="${esc(c.img + '/high.webp')}" src="${esc(c.img)}/low.webp" loading="lazy" alt="">`).join('') || '<span class="mlr-dim">No cards found.</span>'}</div>`
       : info.cards === 'loading' ? '<div class="mlr-dim">Loading cards…</div>' : '';
-    return `<div class="mlr-modal" style="z-index:2"><div class="mlr-panel">
+    return `<div class="mlr-modal" style="z-index:30"><div class="mlr-panel">
       <div class="mlr-row">${card(info.k)}<div style="flex:1"><b>${esc(r.name)}</b><div class="mlr-dim">${esc(FR_LABEL[r.fr])} · ${esc((r.types || []).join(' / '))}${r.attribute ? ' · ' + esc(r.attribute) : ''} · ${esc(tierOf(r) || '?')} tier</div></div><button data-act="infoClose">✕</button></div>
       <h3>Base stats</h3>${ST.map(([k, l]) => `<div class="mlr-stat"><span>${l}</span><b>${s[k] ?? '?'}</b><i style="width:${Math.min(100, (s[k] || 0) / 2)}%"></i></div>`).join('')}
       <h3>Abilities</h3><div class="mlr-dim">${esc(abil)}</div>

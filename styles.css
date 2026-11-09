@@ -65,7 +65,7 @@ body { overflow-x: hidden; }
 .mlr-tag{position:absolute;top:3px;left:3px;font-size:9px;font-weight:700;background:#4f6bff;color:#fff;border-radius:4px;padding:0 4px}
 .mlr-item{display:flex;flex-direction:column;gap:2px;padding:6px 8px;border-bottom:1px solid #232b44;cursor:pointer}
 .mlr-item:hover{background:#232b44}
-.mlr-modal{position:fixed;inset:0;background:#000a;display:flex;align-items:center;justify-content:center;padding:12px}
+.mlr-modal{position:fixed;inset:0;z-index:20;background:#000a;display:flex;align-items:center;justify-content:center;padding:12px}
 .mlr-panel{background:#161c2e;border-radius:12px;padding:14px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto}
 .mlr-panel .mlr-card{width:92px;flex:none}
 .mlr-mv{display:flex;justify-content:space-between;gap:8px;font-size:12px;padding:4px 0;border-bottom:1px solid #232b44;text-transform:capitalize}
@@ -252,3 +252,11 @@ body { overflow-x: hidden; }
 .mle-types{display:flex;flex-wrap:wrap;gap:4px;margin:6px 0}
 .mle-types button{text-transform:capitalize}
 .mle-types button.on{background:#4f6bff!important;border-color:#4f6bff!important;color:#fff}
+/* battle: move history panel */
+.mlb-hist{position:absolute;right:20px;top:50%;transform:translateY(-50%);width:230px;max-height:60vh;overflow:hidden;z-index:2;background:#0a1626d9;border:1px solid #d9b97a55;border-radius:10px;padding:6px 8px;font-size:11px;pointer-events:none}
+.mlb-hist:has(.mlb-histl:empty){display:none}
+.mlb-histh{font-weight:800;color:#f3dfae;letter-spacing:.5px;margin-bottom:4px}
+.mlb-he{border-left:4px solid var(--t,#888);padding:2px 0 3px 6px;margin-bottom:5px;color:#c9d3e6}
+.mlb-he b{color:#fff}.mlb-he.me b{color:#8fd0ff}.mlb-he.foe b{color:#ff9a9a}.mlb-he.eot{font-style:italic;opacity:.85}
+.mlb-he div{color:#aab6cc;line-height:1.35}
+@media (max-aspect-ratio:1/1),(max-width:760px){.mlb-hist{position:static;transform:none;width:auto;max-height:90px;margin:0 10px 8px;overflow-y:auto;pointer-events:auto}}
