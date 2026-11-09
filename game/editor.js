@@ -14,6 +14,7 @@
     const edits = JSON.parse(JSON.stringify(r.moveEdits || {}));
     const ids = [...new Set(api.learnOf(key).map(e => e.id))];
     const myType = (r.types || []).map(t => String(t).toLowerCase()).find(t => TYPES.includes(t)) || 'normal';
+    let types = (r.types || []).map(t => String(t).toLowerCase()).filter(t => TYPES.includes(t)).slice(0, 2), typesTouched = false, typesReset = false;
     return new Promise(done => {
       const el = document.createElement('div'); el.className = 'mlr mle'; document.body.appendChild(el);
       const row = id => {
@@ -48,12 +49,23 @@
         el.innerHTML = `<div class="mlr-wrap"><h2>Edit moves: ${esc(r.name)}</h2>
           <p class="mlr-dim">Tick a move to use your settings for it. ${r.fr === 'palworld' ? 'Unticked Pal moves keep their original damage.' : 'Digimon moves only work once ticked; until then the monster uses placeholder moves.'} Status on a damaging move = chance to inflict it.</p>
           ${r.fr === 'digimon' ? `<label class="mlr-box" style="display:block"><input type="checkbox" id="mle-ver" ${r.verified ? 'checked' : ''}> <b>Finished</b>: this Digimon can now appear as a wild enemy</label>` : ''}
+          <div class="mlr-box"><b>Battle types</b> <span class="mlr-dim">(pick up to 2 · now: ${esc((r.types || []).join(' / ') || 'none')})</span>
+            <div class="mle-types">${TYPES.map(t => `<button type="button" data-ty="${t}" class="${types.includes(t) ? 'on' : ''}">${t}</button>`).join('')}</div>
+            <button type="button" data-a="tyreset">Reset to original types</button>
+            <span class="mlr-dim">${typesReset ? 'Original types come back when you press Save.' : 'Type changes apply from the next battle.'}</span></div>
           ${ids.map(row).join('') || '<p class="mlr-dim">No moves in the data. Add some below.</p>'}
           <div class="mlr-box mlr-row"><input id="mle-new" type="text" placeholder="New move name"><button data-a="add">Add move</button></div>
           <button class="big" data-a="save">Save</button> <button data-a="cancel">Cancel</button></div>`;
       };
       el.addEventListener('click', e => {
+        const ty = e.target.closest('[data-ty]');
+        if (ty) {
+          collect(); const t = ty.dataset.ty;
+          types = types.includes(t) ? types.filter(x => x !== t) : types.concat(t).slice(-2);
+          typesTouched = true; typesReset = false; return draw();
+        }
         const a = e.target.closest('[data-a]') && e.target.closest('[data-a]').dataset.a; if (!a) return;
+        if (a === 'tyreset') { collect(); typesReset = true; typesTouched = false; return draw(); }
         if (a === 'cancel') { el.remove(); return done(false); }
         collect();
         if (a === 'add') {
@@ -66,6 +78,8 @@
         if (a === 'save') {
           const patch = { ...cur(key), moveEdits: edits }, v = el.querySelector('#mle-ver');
           if (v) patch.verified = v.checked;
+          if (typesReset) patch.types = undefined;                     // mon() falls back to the original types
+          else if (typesTouched && types.length) patch.types = types.slice();
           Gacha.setOverride(key, patch); el.remove(); done(true);
         }
       });

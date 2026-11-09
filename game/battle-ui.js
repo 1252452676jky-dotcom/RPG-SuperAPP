@@ -1,20 +1,26 @@
-/* MONSTER LAB — battle screen (card-game board)      file: game/battle-ui.js
+/* MONSTER LAB — battle screen (TCG table)            file: game/battle-ui.js
    Load AFTER game/battle.js.
    API: BattleUI.open(playerMons, enemyMons, opts) → Promise<{ result, action, battle, player }>
           result 'win'|'lose'   action 'continue'|'rebattle'|'end'   opts { title, auto }
-        BattleUI.test() → demo battle */
+        BattleUI.test() → demo battle
+   The turn starts by itself once every active monster has an order (no Fight button). */
 (function () {
   const SPEEDS = [{ label: '1×', ms: 700 }, { label: '2×', ms: 340 }, { label: '4×', ms: 120 }];
   const TYPE_COLOR = { normal:'#9fa19f', fire:'#e62829', water:'#2980ef', electric:'#fac000', grass:'#3fa129', ice:'#3dcef3',
     fighting:'#ff8000', poison:'#9141cb', ground:'#915121', flying:'#81b9ef', psychic:'#ef4179', bug:'#91a119', rock:'#afa981',
     ghost:'#704170', dragon:'#5060e1', dark:'#624d4e', steel:'#60a1b8', fairy:'#ef70ef' };
+  const TYPE_ICON = { normal:'fa-circle', fire:'fa-fire', water:'fa-droplet', electric:'fa-bolt', grass:'fa-leaf', ice:'fa-snowflake',
+    fighting:'fa-hand-fist', poison:'fa-skull-crossbones', ground:'fa-mountain', flying:'fa-feather', psychic:'fa-eye', bug:'fa-bug',
+    rock:'fa-gem', ghost:'fa-ghost', dragon:'fa-dragon', dark:'fa-moon', steel:'fa-shield-halved', fairy:'fa-wand-magic-sparkles' };
   const STATUS_LABEL = { brn:'BRN', par:'PAR', psn:'PSN', tox:'TOX', slp:'SLP', frz:'FRZ' };
   const STAT_LABEL = { atk:'Atk', def:'Def', spa:'SpA', spd:'SpD', spe:'Spe', accuracy:'Acc' };
   const SINGLE = ['normal', 'any', 'adjacentFoe'];
+  const AUTO_GO_MS = 450;                                   // pause after the last order before the turn starts
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c]));
   const sleep = ms => new Promise(r => setTimeout(r, ms));
   const tc = t => TYPE_COLOR[t] || '#777';
   const imgOf = m => (window.Gacha && (Gacha.img ? Gacha.img(m.key) : (Gacha.mon(m.key) || {}).img)) || '';
+  const calm = () => !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
   let abilityText = null, itemText = null;
   async function loadText() {
     if (abilityText) return;
@@ -35,18 +41,23 @@
     let speed = +(localStorage.getItem('ml.bspeed') || 0) % SPEEDS.length;
     let autoOn = !!opts.auto, busy = false, finished = false, closed = false, result = 'lose';
     let chosen = new Map(), lastChoices = null, targeting = null, pop = null, shown = 0, layoutKey = '', prev = null;
+    let goTimer = null, strong = false, weak = false;
     const ms = () => SPEEDS[speed].ms;
+    const floor = +((/Floor (\d+)/.exec(opts.title || '') || [])[1] || 0);
 
     const root = document.createElement('div');
     root.className = 'mlb';
     root.innerHTML = `
-      <div class="mlb-weather"></div>
-      <div class="mlb-top"><span class="mlb-title">${esc(opts.title || 'Battle')}</span><span class="mlb-turn"></span><span class="mlb-field"></span>
+      <div class="mlb-mat"><div class="mlb-ring"></div><div class="mlb-crest top"></div><div class="mlb-crest bot"></div></div>
+      <div class="mlb-weather"></div><div class="mlb-tint"></div>
+      <div class="mlb-top"><span class="mlb-title">${esc(opts.title || 'Battle')}</span>
+        ${floor ? `<span class="mlb-prog" title="Floor ${floor} of 31"><i style="width:${Math.min(100, floor / 31 * 100)}%"></i></span>` : ''}
+        <span class="mlb-turn"></span><span class="mlb-field"></span>
         <button class="mlb-btn" data-act="speed"></button><button class="mlb-btn" data-act="auto">Auto</button>
         <button class="mlb-btn" data-act="log">Log</button><button class="mlb-btn" data-act="quit">✕</button></div>
       <div class="mlb-board">
         <div class="mlb-side foe"><div class="mlb-bench" data-side="1"></div><div class="mlb-row mlb-foe"></div></div>
-        <div class="mlb-ticker"></div>
+        <div class="mlb-band"><span class="mlb-round"></span><span class="mlb-ticker"></span></div>
         <div class="mlb-side me"><div class="mlb-row mlb-me"></div><div class="mlb-bench" data-side="0"></div></div>
       </div>
       <div class="mlb-cmd"></div><div class="mlb-log"></div><div class="mlb-fx"></div>`;
@@ -55,18 +66,23 @@
     const cardEl = m => m && root.querySelector(`.mlb-card[data-i="${idx(m)}"]`);
     const restart = (el, cls) => { if (!el) return; el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); };
     const typeChips = m => m.types.map(t => `<span class="mlb-type" style="background:${tc(t)}">${esc(t)}</span>`).join('') + (m.attr ? `<span class="mlb-type mlb-attr">${esc(m.attr)}</span>` : '');
+    const emblems = m => m.types.map(t => `<span class="mlb-emb" style="background:${tc(t)}" title="${esc(t)}"><i class="fa-solid ${TYPE_ICON[t] || 'fa-circle'}"></i></span>`).join('');
     const boostText = m => Object.entries(m.boosts).filter(([, v]) => v).map(([k, v]) => ` · ${STAT_LABEL[k]} ${v > 0 ? '+' : ''}${v}`).join('');
     const bigArt = m => `<div class="mlb-bigart" style="--t1:${tc(m.types[0])};--t2:${tc(m.types[1] || m.types[0])}"><img src="${esc(imgOf(m))}" alt=""></div>`;
+    const pad = a => a.concat(Array(Math.max(0, 3 - a.length)).fill(null));
 
     function labels() { $('[data-act="speed"]').textContent = '⏩ ' + SPEEDS[speed].label; $('[data-act="auto"]').classList.toggle('on', autoOn); }
+    function tick(t) { const tk = $('.mlb-ticker'); tk.textContent = t; restart(tk, 'pulse'); }
 
     /* ---------- board ---------- */
     function card(m, side) {
       if (!m) return '<div class="mlb-card mlb-empty"></div>';
       const ab = m.ability && abilityText[m.ability], it = m.item && itemText[m.item];
-      return `<div class="mlb-card mlb-enter" data-i="${idx(m)}" data-side="${side}" style="--t1:${tc(m.types[0])};--t2:${tc(m.types[1] || m.types[0])}">
+      const fr = String(m.key || '').split(':')[0];
+      return `<div class="mlb-card mlb-enter fr-${esc(fr)}" data-i="${idx(m)}" data-side="${side}" style="--t1:${tc(m.types[0])};--t2:${tc(m.types[1] || m.types[0])}">
+        <i class="mlb-rdy"></i>
         <div class="mlb-cardtop"><span class="mlb-name">${esc(m.name)}</span><span class="mlb-lv">Lv${m.lv}</span></div>
-        <div class="mlb-art"><img src="${esc(imgOf(m))}" alt=""></div>
+        <div class="mlb-art"><img src="${esc(imgOf(m))}" alt=""><span class="mlb-embs">${emblems(m)}</span></div>
         <div class="mlb-types">${typeChips(m)}</div>
         <div class="mlb-hp"><div class="mlb-hpfill"></div></div>
         <div class="mlb-sub"><span class="mlb-hptext"></span><span class="mlb-status"></span></div>
@@ -74,15 +90,23 @@
         ${m.ability || m.item ? `<div class="mlb-ab">${esc((ab && ab.name) || m.ability || '')}${m.item ? ' · ' + esc((it && it.name) || m.item) : ''}</div>` : ''}
         ${side === 0 ? '<div class="mlb-choice"></div>' : ''}</div>`;
     }
+    function mini(m, f) {
+      const i = idx(m), pct = Math.max(0, f.hp[i] / m.maxhp * 100);
+      return `<span class="mlb-mini ${f.hp[i] <= 0 ? 'out' : ''}" title="${esc(m.name)}" style="--t1:${tc(m.types[0])}">
+        <img src="${esc(imgOf(m))}" alt=""><b>${esc(m.name)}</b><i style="width:calc(${pct}% - 6px)"></i></span>`;
+    }
     function draw(f) {
       const key = f.act.map(a => a.map(idx).join(',')).join('|');
       if (key !== layoutKey) {
         layoutKey = key;
-        $('.mlb-foe').innerHTML = f.act[1].map(m => card(m, 1)).join('');
-        $('.mlb-me').innerHTML = f.act[0].map(m => card(m, 0)).join('');
+        $('.mlb-foe').innerHTML = pad(f.act[1]).map(m => card(m, 1)).join('');
+        $('.mlb-me').innerHTML = pad(f.act[0]).map(m => card(m, 0)).join('');
       }
-      [0, 1].forEach(si => { root.querySelector(`.mlb-bench[data-side="${si}"]`).innerHTML = b.sides[si].all.filter(m => !f.act[si].includes(m))
-        .map(m => `<span class="mlb-mini ${f.hp[idx(m)] <= 0 ? 'out' : ''}" title="${esc(m.name)}"><img src="${esc(imgOf(m))}" alt=""></span>`).join(''); });
+      [0, 1].forEach(si => {
+        const list = b.sides[si].all.filter(m => !f.act[si].includes(m));
+        root.querySelector(`.mlb-bench[data-side="${si}"]`).innerHTML = list.map(m => mini(m, f)).join('')
+          + '<span class="mlb-mini empty"></span>'.repeat(Math.max(0, 3 - list.length));
+      });
       root.querySelectorAll('.mlb-card[data-i]').forEach(el => {
         const i = +el.dataset.i, m = all[i], hp = f.hp[i], pct = Math.max(0, hp / m.maxhp * 100);
         const fill = el.querySelector('.mlb-hpfill');
@@ -95,7 +119,11 @@
         el.classList.toggle('fainted', hp <= 0);
         if (prev) {
           const d = hp - prev.hp[i];
-          if (d) { float(el, (d > 0 ? '+' : '−') + Math.max(1, Math.round(Math.abs(d) / m.maxhp * 100)) + '%', d > 0 ? 'heal' : 'dmg'); if (d < 0) restart(el, 'mlb-hit'); }
+          if (d) {
+            float(el, (d > 0 ? '+' : '−') + Math.max(1, Math.round(Math.abs(d) / m.maxhp * 100)) + '%',
+              d > 0 ? 'heal' : 'dmg' + (strong ? ' strong' : weak ? ' weak' : ''));
+            if (d < 0) restart(el, 'mlb-hit');
+          }
           if (s && s !== prev.st[i]) float(el, STATUS_LABEL[s], 's-' + s);
           for (const [k, v] of Object.entries(f.bo[i])) { const dv = v - (prev.bo[i][k] || 0); if (dv) float(el, `${STAT_LABEL[k]} ${dv > 0 ? '+' : ''}${dv}`, dv > 0 ? 'up' : 'down'); }
         }
@@ -119,7 +147,7 @@
       o.style.left = (ra.left + ra.width / 2) + 'px'; o.style.top = (ra.top + ra.height / 2) + 'px';
       $('.mlb-fx').appendChild(o);
       o.animate([{ transform: 'translate(-50%,-50%) scale(.6)' },
-        { transform: `translate(calc(-50% + ${rc.left - ra.left}px), calc(-50% + ${rc.top - ra.top}px)) scale(1.4)` }], { duration: dur, easing: 'ease-in' });
+        { transform: `translate(calc(-50% + ${rc.left - ra.left}px), calc(-50% + ${rc.top - ra.top}px)) scale(1.5)` }], { duration: dur, easing: 'ease-in' });
       await sleep(dur); o.remove();
     }
     function lunge(m, t, dur) {
@@ -128,10 +156,30 @@
       const dx = (rc.left - ra.left) * .3, dy = (rc.top - ra.top) * .3 || (a.dataset.side === '0' ? -30 : 30);
       a.animate([{ transform: 'none' }, { transform: `translate(${dx}px,${dy}px) scale(1.07)` }, { transform: 'none' }], { duration: dur, easing: 'ease-in-out' });
     }
+    function burst(el, color, n) {
+      if (!el || calm()) return;
+      const r = el.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2, fx = $('.mlb-fx');
+      for (let k = 0; k < n; k++) {
+        const p = document.createElement('i'); p.className = 'mlb-spark';
+        p.style.left = x + 'px'; p.style.top = y + 'px'; p.style.setProperty('--fx', color);
+        fx.appendChild(p);
+        const ang = Math.random() * Math.PI * 2, dist = 40 + Math.random() * 70;
+        p.animate([{ transform: 'translate(-50%,-50%) scale(1)', opacity: 1 },
+          { transform: `translate(calc(-50% + ${Math.cos(ang) * dist}px), calc(-50% + ${Math.sin(ang) * dist}px)) scale(.2)`, opacity: 0 }],
+          { duration: 420 + Math.random() * 260, easing: 'cubic-bezier(.2,.7,.3,1)' }).onfinish = () => p.remove();
+      }
+    }
+    function slash(el, color) {
+      if (!el) return;
+      const s = document.createElement('i'); s.className = 'mlb-slash'; s.style.setProperty('--fx', color);
+      el.appendChild(s); setTimeout(() => s.remove(), 420);
+    }
+    function shake(big) { if (!calm()) restart($('.mlb-board'), big ? 'mlb-shake-big' : 'mlb-shake'); }
+    function tint(color) { const t = $('.mlb-tint'); t.style.setProperty('--fx', color); restart(t, 'on'); }
     function banner(text) {
       if (speed === 2) return;
       const d = document.createElement('div'); d.className = 'mlb-banner'; d.textContent = text;
-      root.appendChild(d); setTimeout(() => d.remove(), 900);
+      root.appendChild(d); setTimeout(() => d.remove(), 1000);
     }
     function logLine(t) {
       const log = $('.mlb-log'), d = document.createElement('div');
@@ -139,7 +187,7 @@
       d.textContent = t; log.appendChild(d);
       while (log.children.length > 200) log.firstChild.remove();
       log.scrollTop = log.scrollHeight;
-      if (!/^— Turn/.test(t)) { const tk = $('.mlb-ticker'); tk.textContent = t; restart(tk, 'pulse'); }
+      if (!/^— Turn/.test(t)) tick(t);
     }
     async function animate(f) {
       const e = f.ev;
@@ -150,10 +198,16 @@
       }
       if (e.type === 'hit') {
         const color = tc(e.move.type), dur = Math.max(120, ms() * 0.7), t = cardEl(e.target);
+        const eff = e.target ? effOf(e.move, e.user, e.target) : 1;
+        if (e.move.power >= 90) tint(color);
         if (e.move.cat === 'special') await orb(e.user, e.target, color, dur);
-        else { lunge(e.user, e.target, dur); await sleep(dur * 0.5); }
+        else { lunge(e.user, e.target, dur); await sleep(dur * 0.5); slash(t, color); }
+        burst(t, color, e.crit || eff > 1 ? 14 : 8);
+        if (e.crit || eff > 1) shake(e.crit && eff > 1);
         if (t) { t.style.setProperty('--fx', color); if (e.crit) float(t, 'CRIT!', 'crit'); }
-        draw(f); return sleep(ms() * 0.5);
+        strong = !!e.crit || eff > 1; weak = eff < 1;
+        draw(f); strong = weak = false;
+        return sleep(ms() * 0.5);
       }
       if (e.type === 'hurt') { draw(f); return sleep(ms() * 0.45); }
       if (e.type === 'miss') { const t = cardEl(e.target); if (t) float(t, 'Miss', 'miss'); return sleep(ms() * 0.4); }
@@ -164,8 +218,10 @@
         if (f.ev) { await animate(f); continue; }
         const turn = /^— Turn (\d+)/.exec(f.t);
         logLine(f.t); draw(f);
-        if (turn) { $('.mlb-turn').textContent = 'Turn ' + turn[1]; banner('Turn ' + turn[1]); await sleep(ms() * 0.6); }
-        else await sleep(ms());
+        if (turn) {
+          $('.mlb-turn').textContent = 'Turn ' + turn[1]; $('.mlb-round').textContent = 'Round ' + turn[1];
+          banner('Round ' + turn[1]); await sleep(ms() * 0.6);
+        } else await sleep(ms());
       }
     }
 
@@ -197,23 +253,29 @@
     function badges() {
       root.querySelectorAll('.mlb-me .mlb-card[data-i]').forEach(el => {
         const m = all[+el.dataset.i], c = chosen.get(m), slot = el.querySelector('.mlb-choice'); if (!slot) return;
-        el.classList.toggle('ready', !!c);
+        el.classList.toggle('ready', !!c && !busy);
         el.classList.toggle('pickme', !c && !busy && !finished && !pop && !targeting && alive(m));
-        slot.innerHTML = !c ? '' : c.switchTo ? '⇄ ' + esc(c.switchTo.name)
-          : esc(c.move.name) + (c.target && SINGLE.includes(c.move.target) && b.foes(m).length > 1 ? ' → ' + esc(c.target.name) : '');
+        slot.innerHTML = !c ? '' : '<b>READY</b> ' + (c.switchTo ? '⇄ ' + esc(c.switchTo.name)
+          : esc(c.move.name) + (c.target && SINGLE.includes(c.move.target) && b.foes(m).length > 1 ? ' → ' + esc(c.target.name) : ''));
         slot.style.setProperty('--t', c && c.move ? tc(c.move.type) : '#4f6bff');
       });
     }
+    // starts the turn by itself once every living active monster has an order
+    function armGo() {
+      clearTimeout(goTimer);
+      const ready = () => !busy && !finished && !closed && !pop && !targeting && !autoOn &&
+        myActive().length > 0 && myActive().every(m => chosen.has(m));
+      if (ready()) goTimer = setTimeout(() => { if (ready()) go(myActive().map(m => chosen.get(m))); }, AUTO_GO_MS);
+    }
     function bar() {
       if (finished) return;
-      const act = myActive(), n = act.filter(m => chosen.has(m)).length;
-      $('.mlb-cmd').innerHTML = busy ? '<div class="mlb-wait">…</div>'
+      const act = myActive(), n = act.filter(m => chosen.has(m)).length, done = n && n === act.length;
+      $('.mlb-cmd').innerHTML = busy ? '<div class="mlb-wait">Resolving…</div>'
         : targeting ? `<div class="mlb-hint"><b>${esc(targeting.mv.name)}</b>: tap an enemy card. Tap anywhere else to cancel.</div>`
-        : `<div class="mlb-hint">Tap your monsters to choose moves, in any order (${n}/${act.length} ready)</div>
+        : `<div class="mlb-hint">${done ? 'All set! Starting… (tap a card to change its move)' : `Tap your monsters to choose moves, in any order (${n}/${act.length} ready)`}</div>
            <div class="mlb-actions">${lastChoices ? '<button class="mlb-btn" data-act="repeat">Repeat last</button>' : ''}
-           <button class="mlb-btn" data-act="autoturn">Auto turn</button>${n ? '<button class="mlb-btn" data-act="clear">Clear</button>' : ''}
-           <button class="mlb-btn go" data-act="fight" ${n === act.length && n ? '' : 'disabled'}>Fight!</button></div>`;
-      badges();
+           <button class="mlb-btn" data-act="autoturn">Auto turn</button>${n ? '<button class="mlb-btn" data-act="clear">Clear</button>' : ''}</div>`;
+      badges(); armGo();
     }
     function openPop(html, o = {}) {
       closePop();
@@ -221,7 +283,7 @@
       pop.innerHTML = `<div class="mlb-popin">${html}</div>`;
       root.appendChild(pop); root.classList.toggle('menu', !!o.menu); badges();
     }
-    function closePop() { if (pop) { pop.remove(); pop = null; } root.classList.remove('menu'); clearEff(); badges(); }
+    function closePop() { if (pop) { pop.remove(); pop = null; } root.classList.remove('menu'); clearEff(); badges(); armGo(); }
     function moveMenu(m) {
       const ab = m.ability && abilityText[m.ability], it = m.item && itemText[m.item], c = chosen.get(m);
       const taken = [...chosen.entries()].filter(([x, ch]) => x !== m && ch.switchTo).map(([, ch]) => ch.switchTo);
@@ -248,6 +310,7 @@
     function askReplace(i) {
       const gone = b.sides[0].active[i], bench = b.sides[0].bench.filter(alive);
       $('.mlb-cmd').innerHTML = '<div class="mlb-hint">Choose who comes in.</div>';
+      tick(`${gone.name} fainted. Choose who comes in.`);
       openPop(`<div class="mlb-popname">${esc(gone.name)} fainted. Who comes in?</div><div class="mlb-swrow" style="margin-top:8px">${bench.map(x =>
         `<button class="mlb-sw big" data-rep="${i}:${idx(x)}"><img src="${esc(imgOf(x))}" alt=""><span><b>${esc(x.name)}</b> Lv${x.lv}<br>${Math.ceil(x.hp / x.maxhp * 100)}% HP</span></button>`).join('')}</div>`, { forced: true });
     }
@@ -260,9 +323,10 @@
       const need = b.needReplace();
       if (need.length) return askReplace(need[0]);          // asks you even in Auto mode
       if (autoOn) return go(b.autoChoices());
-      chosen = new Map(); clearTargets(); bar();
+      chosen = new Map(); clearTargets(); tick('Your turn: choose moves'); bar();
     }
     async function go(choices) {
+      clearTimeout(goTimer);
       busy = true; clearTargets(); closePop();
       choices = choices.filter(c => c && alive(c.mon));
       choices.forEach(c => { if (c.move) (c.mon.lastUsed = c.mon.lastUsed || {})[c.move.id] = Date.now(); });
@@ -271,15 +335,15 @@
       if (!closed && !finished) beginChoose();
     }
     function finish() {
-      if (finished) return; finished = true;
+      if (finished) return; finished = true; clearTimeout(goTimer);
       const win = b.winner === 0 && !b.sides[1].all.some(alive); result = win ? 'win' : 'lose';
-      $('.mlb-cmd').innerHTML = '';
+      $('.mlb-cmd').innerHTML = ''; tick(win ? 'Victory!' : 'Defeat');
       openPop(`<div class="mlb-result ${result}">${win ? 'VICTORY' : 'DEFEAT'}</div>
         <div class="mlb-dim" style="text-align:center">${win ? `Cleared in ${b.turn} turns` : 'Nothing is lost.'}</div>
         <div class="mlb-actions center">${win ? '<button class="mlb-btn go big" data-act="continue">Continue</button>'
           : '<button class="mlb-btn go big" data-act="rebattle">Rebattle</button><button class="mlb-btn big" data-act="end">End run</button>'}</div>`, { forced: true });
     }
-    function close(action) { closed = true; root.remove(); resolve({ result, action, battle: b, player }); }
+    function close(action) { closed = true; clearTimeout(goTimer); root.remove(); resolve({ result, action, battle: b, player }); }
 
     /* ---------- input ---------- */
     root.addEventListener('click', e => {
@@ -287,9 +351,8 @@
       const el = e.target.closest('[data-act],[data-mv],[data-sw],[data-rep],.mlb-card[data-i]');
       if (el && el.disabled) return;
       const a = el && el.dataset.act;
-      if (a === 'speed') { speed = (speed + 1) % SPEEDS.length
-        ; localStorage.setItem('ml.bspeed', speed); return labels(); }
-      if (a === 'auto') { autoOn = !autoOn; labels(); if (autoOn && !busy && !finished && !pop) go(b.autoChoices()); return; }
+      if (a === 'speed') { speed = (speed + 1) % SPEEDS.length; localStorage.setItem('ml.bspeed', speed); return labels(); }
+      if (a === 'auto') { autoOn = !autoOn; labels(); if (autoOn && !busy && !finished && !pop) go(b.autoChoices()); else bar(); return; }
       if (a === 'log') return void root.classList.toggle('showlog');
       if (a === 'quit') { if (!finished && confirm('Leave this battle? It counts as a loss (you lose nothing).')) { b.over = true; b.winner = 1; closePop(); finish(); } return; }
       if (a === 'continue' || a === 'rebattle' || a === 'end') return close(a);
@@ -301,7 +364,6 @@
         clearTargets(); return bar();
       }
       if (!el) return;
-      if (a === 'fight') { const act = myActive(); if (act.length && act.every(m => chosen.has(m))) go(act.map(m => chosen.get(m))); return; }
       if (a === 'clear') { chosen = new Map(); return bar(); }
       if (a === 'autoturn') return go(b.autoChoices());
       if (a === 'repeat') return go(myActive().map(x => { const p = lastChoices.find(c => c.mon === x && c.move);
@@ -317,6 +379,7 @@
       if (el.dataset.sw && pop) { const m = all[+pop.dataset.mon]; closePop(); chosen.set(m, { mon: m, switchTo: all[+el.dataset.sw] }); return bar(); }
       if (el.classList.contains('mlb-card')) {
         const m = all[+el.dataset.i]; if (!alive(m)) return;
+        clearTimeout(goTimer);                               // tapping a READY card lets you change its move
         return el.dataset.side === '0' ? moveMenu(m) : foeInfo(m);
       }
     });

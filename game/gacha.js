@@ -52,12 +52,12 @@
   async function cacheSet(k, v) { try { await idbSet(k, { t: Date.now(), v }); } catch (e) { } }
 
   /* ---------- monster data (static JSON → IndexedDB) ---------- */
-  let DB = null, loading = null;
+  let DB = null, loading = null, BASE_OV = {};      // BASE_OV = data/overrides.json (optional, committed edits)
   function setDB(pack) { DB = { version: pack.version, list: pack.list, byKey: new Map(pack.list.map(r => [r.key, r])) }; return DB; }
   /* ---------- the ONE accessor: base data merged with my corrections ---------- */
   function mon(key) {
     const r = DB && DB.byKey.get(key); if (!r) return null;
-    const o = game.overrides[key]; if (!o) return r;
+    const o = (BASE_OV[key] || game.overrides[key]) ? Object.assign({}, BASE_OV[key], game.overrides[key]) : null; if (!o) return r;
     const m = Object.assign({}, r, { edited: true });
     if (o.types) m.types = o.types;
     if (o.moveEdits) m.moveEdits = o.moveEdits;
@@ -82,6 +82,7 @@
     if (loading) return loading;
     loading = (async () => {
       let index = null;
+      try { const ov = await fetch(DATA_DIR + 'overrides.json', { cache: 'no-cache' }); if (ov.ok) BASE_OV = await ov.json(); } catch (e) { /* no file yet */ }
       try { const res = await fetch(DATA_DIR + 'index.json', { cache: 'no-cache' }); if (res.ok) index = await res.json(); } catch (e) { /* offline */ }
       const cached = await idbGet('monsters').catch(() => null);
       if (cached && (!index || cached.version === index.version)) return setDB(cached);
@@ -188,6 +189,7 @@
     <div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-8 gap-2 mb-6">${boxHtml || '<p class="col-span-full text-slate-500 text-sm">Empty — roll something!</p>'}</div>
     <div class="flex gap-2 flex-wrap text-xs">
       <button onclick="Gacha.exportGame()" class="bg-emerald-700 hover:bg-emerald-600 px-2 py-1 rounded"><i class="fa-solid fa-download"></i> Export game JSON</button>
+      <button onclick="Gacha.exportEdits()" class="bg-fuchsia-800 hover:bg-fuchsia-700 px-2 py-1 rounded"><i class="fa-solid fa-file-export"></i> Export edits (overrides.json)</button>
       <button onclick="Gacha.resetBox()" class="bg-red-800 hover:bg-red-700 px-2 py-1 rounded"><i class="fa-solid fa-rotate-left"></i> Reset collection</button>
     </div>
     <p class="text-[10px] text-slate-500 mt-4"><span class="mlr-launch"><button type="button" onclick="MonsterRun.open()">▶ Monster Lab Run</button></span>Data: PokéAPI · Pokémon Showdown (MIT) · TCGdex · PalSphere (palsphere.app) · DAPI / Wikimon. Unofficial fan project; all monsters © their owners. Data build ${escapeHtml(DB.version)}</p>`;
@@ -230,6 +232,7 @@
         <button onclick="Gacha.release('${key}')" class="bg-red-600 hover:bg-red-500 px-3 py-1 rounded text-sm">Release</button>
         <button onclick="Gacha.promote('${key}')" class="bg-sky-700 hover:bg-sky-600 px-3 py-1 rounded text-sm"><i class="fa-solid fa-users"></i> Promote to Party</button>
         <button onclick="Gacha.toggleTeam('${key}')" class="bg-amber-600 hover:bg-amber-500 px-3 py-1 rounded text-sm"><i class="fa-solid fa-star"></i> ${inTeam ? 'Remove from Team' : 'Add to Team'}</button>` : ''}
+        ${r.fr !== 'pokemon' && window.MonsterEditor ? `<button onclick="Gacha.edit('${key}')" class="bg-fuchsia-700 hover:bg-fuchsia-600 px-3 py-1 rounded text-sm"><i class="fa-solid fa-pen"></i> Edit types & moves</button>` : ''}
         <button onclick="closeModal()" class="bg-slate-600 px-3 py-1 rounded text-sm">Close</button>
       </div>`);
     loadMoves(r);
@@ -335,6 +338,13 @@
     game.box = {}; game.team = []; game.ui.last = null;
     saveGame(true); render(); toast('Collection reset', 'err');
   }
+  function exportEdits() {
+    const out = JSON.parse(JSON.stringify(Object.assign({}, BASE_OV, game.overrides)));
+    const blob = new Blob([JSON.stringify(out, null, 2)], { type: 'application/json' });
+    const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: 'overrides.json' });
+    a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    toast('Saved overrides.json. Put it in /data and commit it to make these edits the default.');
+  }
   function exportGame() {
     const blob = new Blob([JSON.stringify(game, null, 2)], { type: 'application/json' });
     const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: `monster-lab-${todayStr()}.json` });
@@ -354,7 +364,8 @@
 
   /* ---------- public API ---------- */
   window.Gacha = {
-    roll, open, setSkin, toggleTeam, promote, release, resetBox, exportGame,
+    roll, open, setSkin, toggleTeam, promote, release, resetBox, exportGame, exportEdits,
+    edit: key => { closeModal(); MonsterEditor.open(key).then(() => { render(); open(key); }); },
     toggleFr: (f, on) => { game.ui.fr = toggleList(game.ui.fr, f, on); saveGame(false); render(); },
     toggleTier: (t, on) => { game.ui.tiers = toggleList(game.ui.tiers, t, on); saveGame(false); render(); },
     filterBox: q => { q = q.trim().toLowerCase(); document.querySelectorAll('.gbox').forEach(el => { el.style.display = el.dataset.name.includes(q) ? '' : 'none'; }); },

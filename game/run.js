@@ -479,7 +479,7 @@
       <h3>Abilities</h3><div class="mlr-dim">${esc(abil)}</div>
       <h3>Evolves into</h3><div class="mlr-dim">${esc(evos.join(', ') || 'Does not evolve')}</div>
       <h3>Moves (${moves.length})</h3>${moves.map(x => `<div class="mlr-mv" title="${esc(x.mv.desc || '')}"><span>Lv ${x.lv} · ${esc(x.mv.name)}</span><span class="mlr-dim">${esc(x.mv.type)} · ${x.mv.category}${x.mv.power ? ' · ' + x.mv.power : ''}</span></div>`).join('') || '<div class="mlr-dim">No usable moves yet. Uses placeholder moves until edited.</div>'}
-      ${skins}<div style="margin-top:10px">${go ? `<button class="big" data-act="infoGo">${go}</button>` : ''} ${owned ? '<button data-act="skin">Choose TCG card art</button>' : ''} ${r.fr !== 'pokemon' && window.MonsterEditor ? '<button data-act="edit">Edit moves</button>' : ''} <button data-act="infoClose">Close</button></div>
+      ${skins}<div style="margin-top:10px">${go ? `<button class="big" data-act="infoGo">${go}</button>` : ''} ${owned ? '<button data-act="skin">Choose TCG card art</button>' : ''} ${r.fr !== 'pokemon' && window.MonsterEditor ? '<button data-act="edit">Edit types & moves</button>' : ''} <button data-act="infoClose">Close</button></div>
     </div></div>`;
   }
   function syncOrder() {
