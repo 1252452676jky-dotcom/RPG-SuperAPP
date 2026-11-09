@@ -60,6 +60,9 @@
   const statsOf = r => { const a = r && (Array.isArray(r.base) ? r.base : Array.isArray(r.raw) ? r.raw : null);
     return a ? { hp: a[0], atk: a[1], def: a[2], spa: a[3], spd: a[4], spe: a[5] } : (r && r.stats) || {}; };
 
+  // move ordering: newest first, where "newest" = just learned OR most recently used
+  const stamp = (() => { let last = 0; return () => (last = Math.max(Date.now(), last + 1)); })();
+  const recent = (m, id) => Math.max((m.lastUsed || {})[id] || 0, (m.learnedAt || {})[id] || 0);
   /* ---------------- data ---------------- */
   let KEYS = [], LEARN = {}, MOVES = {}, ITEMTXT = {}, ABTXT = {}, loaded = false;
   const learnCache = {};
@@ -207,7 +210,7 @@
     const r = R(m.key), names = [];
     for (const e of learnOf(m.key)) {
       if (e.lv > m.lv || m.learned.includes(e.id)) continue;
-      const mv = moveObj(r, e.id); if (mv) { m.learned.push(e.id); names.push(mv.name); }
+      const mv = moveObj(r, e.id); if (mv) { m.learned.push(e.id); (m.learnedAt = m.learnedAt || {})[e.id] = stamp(); names.push(mv.name); }
     }
     return names;
   }
@@ -242,7 +245,7 @@
     if (!moves.some(x => x.category !== 'status')) moves = fallbackMoves(r).concat(moves);
     const b = Battle.makeMon(r, m.lv, moves, { ability: m.mega ? megaAbility(m) : m.ability, item: m.item,
       allMoves: !o.enemy, hpMult: o.hpMult || 1, actions: o.actions || 1 });
-    b.uid = m.uid; b.lastUsed = Object.assign({}, m.lastUsed); return b;
+    b.uid = m.uid; b.lastUsed = Object.assign({}, m.learnedAt, m.lastUsed); return b;
   }
 
   /* ---------------- pools ---------------- */
@@ -424,7 +427,7 @@
     if (!m) return '';
     const k = m.mega || m.key, r = R(k), inTeam = run.team.includes(m), forms = formsOf(m);
     const moves = m.learned.map(id => moveObj(r, id) || moveObj(R(m.key), id)).filter(Boolean)
-      .sort((a, b) => (m.lastUsed[b.id] || 0) - (m.lastUsed[a.id] || 0));
+      .sort((a, b) => recent(m, b.id) - recent(m, a.id));
     return `<div class="mlr-modal"><div class="mlr-panel">
       <div class="mlr-row">${card(k, ' · Lv ' + m.lv)}<div style="flex:1"><b>${esc(r.name)}</b>
         <div class="mlr-dim">${esc((r.types || []).join(' / '))}${r.attribute ? ' · ' + esc(r.attribute) : ''}</div></div><button data-info="${esc(k)}">Full info</button><button data-act="closeDetail">✕</button></div>
@@ -437,7 +440,7 @@
       <h3>Position</h3><div class="mlr-row">${inTeam
         ? `<button data-act="lead">Make lead</button><button data-act="toBox" ${run.team.length <= 1 ? 'disabled' : ''}>Move to run box</button>`
         : `<button data-act="toTeam" ${run.team.length >= TEAM_MAX ? 'disabled' : ''}>Move to team</button>${run.team.length >= TEAM_MAX ? ' <span class="mlr-dim">Team is full — move someone to the box first.</span>' : ''}`}</div>
-      <h3>Moves (${moves.length}) — all usable in battle, recently used first</h3>
+      <h3>Moves (${moves.length}) — all usable in battle, newest first (just learned or recently used)</h3>
       ${moves.map(v => `<div class="mlr-mv"><span>${esc(v.name)}</span><span class="mlr-dim">${esc(v.type)} · ${v.category}${v.power ? ' · ' + v.power : ''}</span></div>`).join('')
         || '<div class="mlr-dim">No usable moves yet — uses placeholder Strike/Tackle until the editor (Drop 6).</div>'}
     </div></div>`;
