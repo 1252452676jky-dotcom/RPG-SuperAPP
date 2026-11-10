@@ -273,3 +273,8 @@ body { overflow-x: hidden; }
 .mle-sub{font-size:12px;font-weight:700;margin-bottom:2px}
 .mle-bst{display:flex;flex-wrap:wrap;gap:4px;align-items:flex-end}
 .mle-bst label{width:62px}.mle-bst input{width:62px}
+/* hold & swap + item sprites */
+.mlr-card.held { outline: 3px solid #f5c542; outline-offset: 2px; transform: translateY(-4px); box-shadow: 0 6px 16px rgba(245,197,66,.45); }
+.mlr-grab { position: sticky; top: 0; z-index: 5; background: #f5c542; color: #222; padding: 8px 12px; border-radius: 8px; margin: 6px 0; font-weight: bold; }
+.mlr-itemico { width: 24px; height: 24px; image-rendering: pixelated; vertical-align: middle; margin-right: 4px; }
+.mlb-itemico { width: 16px; height: 16px; image-rendering: pixelated; vertical-align: -3px; margin-right: 2px; }

@@ -20,6 +20,26 @@
     return Math.min(e, 4);
   }
   const STAGE = s => s >= 0 ? (2 + s) / 2 : 2 / (2 - s);
+  const ACC_STAGE = s => s >= 0 ? (3 + s) / 3 : 3 / (3 - s);              // accuracy / evasion use thirds
+  // moves whose power depends on the situation (Showdown lists many of them as 0)
+  const posBoosts = m => Object.values(m.boosts).reduce((a, v) => a + Math.max(0, v), 0);
+  const VAR = {
+    gyroball: (m, t, rs) => Math.min(150, Math.floor(25 * rs(t, 'spe') / Math.max(1, rs(m, 'spe'))) + 1),
+    electroball: (m, t, rs) => { const r = rs(m, 'spe') / Math.max(1, rs(t, 'spe')); return r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : r >= 1 ? 60 : 40; },
+    reversal: m => { const p = Math.floor(48 * m.hp / m.maxhp); return p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20; },
+    eruption: m => Math.max(1, Math.floor(150 * m.hp / m.maxhp)),
+    storedpower: m => 20 + 20 * posBoosts(m),
+    facade: (m, t, rs, mv) => m.status ? mv.power * 2 : mv.power,
+    hex: (m, t, rs, mv) => t.status ? mv.power * 2 : mv.power,
+    venoshock: (m, t, rs, mv) => t.status === 'psn' || t.status === 'tox' ? mv.power * 2 : mv.power,
+    acrobatics: (m, t, rs, mv) => !m.item || m.itemUsed ? mv.power * 2 : mv.power,
+    knockoff: (m, t, rs, mv) => t.item && !t.itemUsed ? mv.power * 1.5 : mv.power,
+    weatherball: (m, t, rs, mv, w) => w ? 100 : mv.power,
+    lowkick: () => 80, grassknot: () => 80, heavyslam: () => 80, heatcrash: () => 80,   // no weight data: middle value
+    'return': () => 102, frustration: () => 102
+  };
+  VAR.flail = VAR.reversal; VAR.waterspout = VAR.eruption; VAR.dragonenergy = VAR.eruption; VAR.powertrip = VAR.storedpower;
+  const WBALL = { sun: 'fire', rain: 'water', sand: 'rock', snow: 'ice' };
   // fixed-damage moves (ignore stats, still respect type immunity)
   const FIXED = { dragonrage: () => 40, sonicboom: () => 20, seismictoss: m => m.lv, nightshade: m => m.lv,
     superfang: (m, t) => Math.max(1, Math.floor(t.hp / 2)), naturesmadness: (m, t) => Math.max(1, Math.floor(t.hp / 2)),
@@ -62,22 +82,24 @@
       drain: m.drain || null, recoil: m.recoil || null, heal: m.heal || null, target: m.target || 'normal',
       weather: m.weather || null, terrain: m.terrain || null, vol: m.volatileStatus || null,
       crit: +m.critRatio || 1, willCrit: !!m.willCrit, multihit: m.multihit || null, ohko: !!m.ohko,
-      selfdestruct: m.selfdestruct || null, base: m.base || null, desc: m.desc || m.shortDesc || m.description || '' };
+      selfdestruct: m.selfdestruct || null, base: m.base || null, desc: m.desc || m.shortDesc || m.description || '',
+      selfSwitch: !!m.selfSwitch, side: m.sideCondition || null, pseudo: m.pseudoWeather || null, charge: !!(m.flags && m.flags.charge) };
   }
 
   /* -------- battle object -------- */
   function create(playerMons, enemyMons) {
     const b = {
       sides: [mkSide(playerMons), mkSide(enemyMons)], turn: 0, log: [], weather: null, wTurns: 0,
-      terrain: null, tTurns: 0, over: false, winner: null, picks: [], rng: Math.random
+      terrain: null, tTurns: 0, trick: 0, over: false, winner: null, picks: [], rng: Math.random
     };
-    function mkSide(list) { return { all: list, active: list.slice(0, 3), bench: list.slice(3) }; }
+    function mkSide(list) { return { all: list, active: list.slice(0, 3), bench: list.slice(3), conds: {} }; }
     const L = t => b.log.push(t);
     const E = ev => b.onEvent && b.onEvent(ev);          // animation hooks used by battle-ui.js    
     const ab = m => m && FX().abilities[m.ability] || {};
     const it = m => m && !m.itemUsed && FX().items[m.item] || {};
     const sideOf = m => b.sides[0].all.includes(m) ? 0 : 1;
     const alive = m => m && m.hp > 0;
+    const grounded = m => !m.types.includes('flying') && !ab(m).airborne && !it(m).airborne;
 
     Object.assign(b, {
       chance: p => b.rng() < p,
@@ -107,15 +129,19 @@
         if (s === 'brn' && m.types.includes('fire')) return false;
         if (s === 'par' && m.types.includes('electric')) return false;
         if (s === 'frz' && m.types.includes('ice')) return false;
-        if (b.terrain === 'misty' && !ab(m).airborne) return false;
-        if (s === 'slp' && b.terrain === 'electric' && !ab(m).airborne) return false;
+        if (b.terrain === 'misty' && grounded(m)) return false;
+        if (s === 'slp' && b.terrain === 'electric' && grounded(m)) return false;
         m.status = s; m.toxN = 0; if (s === 'slp') m.slpTurns = 1 + Math.floor(b.rng() * 3);
         L(`${m.name} was ${{ brn: 'burned', par: 'paralyzed', psn: 'poisoned', tox: 'badly poisoned', slp: 'put to sleep', frz: 'frozen' }[s]}!`);
         useItem(m, 'statusGot'); return true;
       },
       cure(m) { if (m.status) { L(`${m.name} was cured.`); m.status = null; } },
       cureVolatile(m, v) { delete m.vol[v]; },
-      confuse(m) { if (!alive(m) || m.vol.confusion) return; m.vol.confusion = 2 + Math.floor(b.rng() * 4); L(`${m.name} became confused!`); },
+      confuse(m) {
+        if (!alive(m) || m.vol.confusion) return;
+        if ((ab(m).noVolatile || []).includes('confusion') || (b.terrain === 'misty' && grounded(m))) return;
+        m.vol.confusion = 2 + Math.floor(b.rng() * 4); L(`${m.name} became confused!`); useItem(m, 'volatileGot', 'confusion');
+      },
       clearDrops(m) { for (const k in m.boosts) if (m.boosts[k] < 0) m.boosts[k] = 0; },
       setWeather(w, src) { b.weather = w; b.wTurns = (src && it(src).weatherTurns && it(src).weatherTurns[w]) || 5; L(`Weather: ${w}.`); },
       setTerrain(t, src) { b.terrain = t; b.tTurns = (src && it(src).terrainTurns) || 5; L(`Terrain: ${t}.`); }
@@ -125,18 +151,32 @@
       const i = it(m); if (!i[hook]) return;
       const r = i[hook](m, ...args, b); if (r === true && i.consume) { m.itemUsed = true; L(`${m.name} used its ${m.item}.`); }
     }
-    function realStat(m, k) {
-      let v = m.st[k] * STAGE(m.boosts[k]);
+    function realStat(m, k, crit) {
+      const s = m.boosts[k];                         // crits ignore the attacker's drops and the defender's boosts
+      let v = m.st[k] * STAGE(crit === 'atk' ? Math.max(0, s) : crit === 'def' ? Math.min(0, s) : s);
+      if (k === 'spd' && b.weather === 'sand' && m.types.includes('rock')) v *= 1.5;
+      if (k === 'def' && b.weather === 'snow' && m.types.includes('ice')) v *= 1.5;
       for (const src of [ab(m), it(m)]) if (src.stat) v *= (src.stat(m, b)[k] || 1);
       if (k === 'spe' && m.status === 'par' && !ab(m).ignoreParSpeed) v *= 0.5;
+      if (k === 'spe' && (b.sides[sideOf(m)].conds || {}).tailwind) v *= 2;
       return v;
     }
-    function switchIn(m) { ab(m).start && ab(m).start(m, b); }      // no "entered!" line, so no wait
-    function fill(s, i, n) { s.bench.splice(s.bench.indexOf(n), 1, s.active[i]); s.active[i] = n; switchIn(n); }
+    function switchIn(m) {                              // hazards hurt you as you come in
+      const c = b.sides[sideOf(m)].conds;
+      if (c && c.spikes && grounded(m) && alive(m)) { L(`${m.name} is hurt by spikes!`); b.damage(m, 0.125 * c.spikes, { indirect: true }); }
+      if (c && c.stealthrock && alive(m)) { L(`${m.name} is hurt by the pointed stones!`); b.damage(m, 0.125 * Math.max(0.125, typeEff('rock', m.types)), { indirect: true }); }
+      ab(m).start && ab(m).start(m, b);
+    }
+    function fill(s, i, n) {                         // the log line makes the screen redraw and show the newcomer
+      s.bench.splice(s.bench.indexOf(n), 1, s.active[i]); s.active[i] = n;
+      L(s === b.sides[0] ? `Go, ${n.name}!` : `${n.name} was sent out!`); switchIn(n);
+    }
 
     /* --- damage --- */
     function calc(m, mv, t) {
       let type = mv.type, pm = 1;
+      const sid = mv.base || mv.id;
+      if (sid === 'weatherball' && WBALL[b.weather]) type = WBALL[b.weather];
       const mt = ab(m).moveType && ab(m).moveType(mv, m); if (mt) { type = mt.type; pm = mt.mult; }
       const at = ab(t);
       if (at.immune && at.immune.type === type) {
@@ -150,23 +190,29 @@
       if (eff === 0) { L(`It doesn't affect ${t.name}...`); return 0; }
       if (m.attr && t.attr) eff *= DIGI[m.attr] === t.attr ? 1.5 : DIGI[t.attr] === m.attr ? 0.75 : 1;
       const phys = mv.cat === 'physical';
-      const A = realStat(m, phys ? 'atk' : 'spa'), D = realStat(t, phys ? 'def' : 'spd');
-      let P = mv.power * pm;
-      for (const s of [ab(m), it(m)]) if (s.pow) P *= s.pow({ ...mv, type }, m, t, b);
       const critStage = (ab(m).crit || 0) + (it(m).crit || 0) + (mv.crit || 1) - 1;
       const crit = !ab(t).noCrit && (mv.willCrit || b.chance([1 / 24, 1 / 8, 1 / 2, 1][Math.min(3, critStage)]));
+      const A = realStat(m, phys ? 'atk' : 'spa', crit && 'atk'), D = realStat(t, phys ? 'def' : 'spd', crit && 'def');
+      let P = (VAR[sid] ? VAR[sid](m, t, realStat, mv, b.weather) : mv.power) * pm;
+      for (const s of [ab(m), it(m)]) if (s.pow) P *= s.pow({ ...mv, type, power: P }, m, t, b);
       let d = (Math.floor(Math.floor(2 * m.lv / 5 + 2) * P * A / D / 50) + 2);
       if (m.types.includes(type)) d *= ab(m).stab || 1.5;
       d *= eff;
       if (b.weather === 'sun') d *= type === 'fire' ? 1.5 : type === 'water' ? 0.5 : 1;
       if (b.weather === 'rain') d *= type === 'water' ? 1.5 : type === 'fire' ? 0.5 : 1;
-      if (b.terrain === 'electric' && type === 'electric') d *= 1.3;
-      if (b.terrain === 'grassy' && type === 'grass') d *= 1.3;
-      if (b.terrain === 'psychic' && type === 'psychic') d *= 1.3;
-      if (b.terrain === 'misty' && type === 'dragon') d *= 0.5;
+      if (grounded(m)) {                             // terrain boosts only work for grounded attackers
+        if (b.terrain === 'electric' && type === 'electric') d *= 1.3;
+        if (b.terrain === 'grassy' && type === 'grass') d *= 1.3;
+        if (b.terrain === 'psychic' && type === 'psychic') d *= 1.3;
+      }
+      if (b.terrain === 'misty' && type === 'dragon' && grounded(t)) d *= 0.5;
+      if (b.terrain === 'grassy' && ['earthquake', 'bulldoze', 'magnitude'].includes(sid) && grounded(t)) d *= 0.5;
+      const dc = b.sides[sideOf(t)].conds || {};       // Reflect / Light Screen halve damage (crits ignore them)
+      if (!crit && dc.reflect && phys) d *= 0.5;
+      if (!crit && dc.lightscreen && !phys) d *= 0.5;
       if (crit) d *= ab(m).critMult || 1.5;
       b._crit = crit; b._eff = eff;                       // act() logs these after the hit animation
-      if (phys && m.status === 'brn' && !ab(m).ignoreBurn) d *= 0.5;
+      if (phys && m.status === 'brn' && !ab(m).ignoreBurn && sid !== 'facade') d *= 0.5;
       for (const s of [ab(m), it(m)]) if (s.dmgOut) d *= s.dmgOut(mv, m, t, eff, b);
       for (const s of [ab(t), it(t)]) if (s.dmgIn) { const x = s.dmgIn({ ...mv, type }, t, m, eff, b); if (x !== 1 && it(t) === s && s.consume) { t.itemUsed = true; } d *= x; }
       if (mv.spread) d *= 0.75;
@@ -182,24 +228,104 @@
       return [alive(pick) && foes.includes(pick) ? pick : foes[Math.floor(b.rng() * foes.length)]].filter(Boolean);
     }
 
+    /* --- mechanics that need their own code --- */
+    function selfSwitch(m) {                            // U-turn / Volt Switch: leave after the hit
+      const s = b.sides[sideOf(m)];
+      const inc = s.bench.filter(alive).sort((a, c) => c.hp / c.maxhp - a.hp / a.maxhp)[0];
+      if (inc) doSwitch(m, inc);
+    }
+    function special(m, sid, mv, tg) {
+      const t = tg.find(x => x !== m && alive(x)) || b.foes(m)[0];
+      if (sid === 'haze') {
+        for (const x of b.sides.flatMap(s => s.active)) x.boosts = { atk: 0, def: 0, spa: 0, spd: 0, spe: 0, accuracy: 0, evasion: 0 };
+        L('All stat changes were eliminated!'); return;
+      }
+      if (sid === 'bellydrum') {
+        if (m.hp <= Math.floor(m.maxhp / 2) || m.boosts.atk >= 6) { L('But it failed!'); return; }
+        m.hp -= Math.floor(m.maxhp / 2); m.boosts.atk = 6;
+        L(`${m.name} cut its own HP and maximised its Attack!`); E({ type: 'hurt', mon: m }); return;
+      }
+      if (sid === 'substitute') {
+        const cost = Math.floor(m.maxhp / 4);
+        if (m.vol.sub) { L(`${m.name} already has a substitute!`); return; }
+        if (m.hp <= cost) { L('But it failed!'); return; }
+        m.hp -= cost; m.vol.sub = { hp: cost }; L(`${m.name} put in a substitute!`); E({ type: 'hurt', mon: m }); return;
+      }
+      if (!t) { L('But it failed!'); return; }
+      if (sid === 'taunt') { t.vol.taunt = 3; L(`${t.name} fell for the Taunt!`); return; }
+      if (sid === 'encore') {
+        if (!t.lastMove || t.vol.encore) { L('But it failed!'); return; }
+        t.vol.encore = { mv: { ...t.lastMove }, left: 3 }; L(`${t.name} received an Encore!`); return;
+      }
+      if (sid === 'painsplit') {
+        const avg = Math.floor((m.hp + t.hp) / 2);
+        m.hp = Math.min(m.maxhp, avg); t.hp = Math.min(t.maxhp, avg);
+        L('The battlers shared their pain!'); E({ type: 'hurt', mon: t }); E({ type: 'hurt', mon: m }); return;
+      }
+      if (sid === 'curse') {
+        if (m.types.includes('ghost')) {
+          if (t.vol.curse) { L('But it failed!'); return; }
+          m.hp = Math.max(1, m.hp - Math.floor(m.maxhp / 2)); t.vol.curse = m;
+          L(`${m.name} laid a curse on ${t.name}!`); E({ type: 'hurt', mon: m }); return;
+        }
+        b.boost(m, { atk: 1, def: 1, spe: -1 }, m); return;
+      }
+      if (sid === 'roar') {
+        const s = b.sides[1 - sideOf(m)], bench = s.bench.filter(alive), i = s.active.indexOf(t);
+        if (!bench.length || i < 0) { L('But it failed!'); return; }
+        const n = bench[Math.floor(b.rng() * bench.length)];
+        s.active[i] = n; s.bench[s.bench.indexOf(n)] = t;
+        t.boosts = { atk: 0, def: 0, spa: 0, spd: 0, spe: 0, accuracy: 0, evasion: 0 }; t.vol = {}; t.lock = null; t.toxN = 0;
+        L(`${t.name} was dragged out!`); L(`${n.name} was sent out!`); switchIn(n); return;
+      }
+    }
     function act(m, ch) {
       if (!alive(m)) return;
       if (ch.switchTo) { doSwitch(m, ch.switchTo); return; }
+      if (m.vol.recharge && m.vol.recharge < b.turn) { delete m.vol.recharge; L(`${m.name} must recharge!`); return; }
+      const pick = m.lock || ch.move || {};
       if (m.status === 'slp') { if (m.slpTurns-- > 0) { L(`${m.name} is fast asleep.`); return; } m.status = null; L(`${m.name} woke up!`); }
-      if (m.status === 'frz') { if (!b.chance(0.2)) { L(`${m.name} is frozen solid!`); return; } m.status = null; L(`${m.name} thawed out!`); }
+      if (m.status === 'frz') {                      // 20% thaw, or a thawing move (Flame Wheel, Scald…)
+        if (!b.chance(0.2) && !(pick.flags && pick.flags.defrost)) { L(`${m.name} is frozen solid!`); return; }
+        m.status = null; L(`${m.name} thawed out!`);
+      }
+      if (m.vol.flinch) { L(`${m.name} flinched!`); return; }           // games order: flinch → confusion → paralysis
+      if (m.vol.confusion) { if (--m.vol.confusion <= 0) { delete m.vol.confusion; L(`${m.name} snapped out of confusion!`); } else if (b.chance(1 / 3)) { L(`${m.name} hurt itself in confusion!`); selfHit(m); return; } }
       if (m.status === 'par' && b.chance(0.25)) { L(`${m.name} is paralyzed! It can't move!`); return; }
-      if (m.vol.flinch) { L(`${m.name} flinched!`); return; }
-      if (m.vol.confusion) { if (--m.vol.confusion <= 0) { delete m.vol.confusion; L(`${m.name} snapped out of confusion!`); } else if (b.chance(1 / 3)) { L(`${m.name} hurt itself in confusion!`); b.damage(m, 1 / 8); return; } }
-      const mv = { ...(m.lock || ch.move) }; if (!mv.id) return;
+      let mv = { ...pick }; if (!mv.id) return;
+      if (m.vol.charging && m.vol.charging !== mv.id) { const cm = m.moves.find(x => x.id === m.vol.charging); if (cm) mv = { ...cm }; }
+      const chain = m.vol.locked || m.vol.encore;                     // Outrage-style lock-in / Encore
+      if (chain && chain.mv) mv = { ...chain.mv };
+      if (mv.cat === 'status' && it(m).noStatusMoves) { L(`${m.name} can't use status moves with its item!`); return; }
+      if (mv.cat === 'status' && m.vol.taunt > 0) { L(`${m.name} can't use status moves after the Taunt!`); return; }
       const sid = mv.base || mv.id, isProt = PROTECT.includes(sid) || mv.vol === 'protect';   // edited moves behave like their base move
       if (!isProt) m.protN = 0;
       if (it(m).lock) m.lock = m.lock || ch.move;
       const tg = targetsFor(m, mv, ch.target);
       L(`${m.name} used ${mv.name}!`); E({ type: 'move', user: m, move: mv, targets: tg });
+      if (mv.cat !== 'status' || true) m.lastMove = mv;               // remembered for Encore
       if (isProt) {
         if (b.chance(1 / Math.pow(3, m.protN || 0))) { m.vol.protect = true; m.protN = (m.protN || 0) + 1; L(`${m.name} protected itself!`); }
         else { m.protN = 0; L('But it failed!'); }
         return;
+      }
+      if (mv.charge && m.vol.charging !== mv.id && !(sid === 'solarbeam' && b.weather === 'sun')) {
+        m.vol.charging = mv.id; L(`${m.name} is charging ${mv.name}!`); return;   // two-turn move: fires next turn
+      }
+      if (m.vol.charging) delete m.vol.charging;
+      if (mv.side) {                                    // Reflect, Light Screen, Tailwind, Spikes, Stealth Rock
+        const si = mv.target === 'foeSide' ? 1 - sideOf(m) : sideOf(m), sd = b.sides[si].conds;
+        if (mv.side === 'spikes') sd.spikes = Math.min(3, (sd.spikes || 0) + 1);
+        else sd[mv.side] = mv.side === 'tailwind' ? 4 : 5;
+        L(mv.side === 'spikes' ? 'Spikes were scattered on the ground!' : mv.side === 'stealthrock' ? 'Pointed stones float in the air!'
+          : mv.side === 'reflect' ? 'Reflect raised a barrier!' : mv.side === 'lightscreen' ? 'Light Screen raised a barrier!' : 'A tailwind started blowing!');
+        return;
+      }
+      if (mv.pseudo === 'trickroom') { b.trick = 5; L('The dimensions were twisted!'); return; }
+      if (['haze', 'roar', 'taunt', 'encore', 'bellydrum', 'painsplit', 'curse', 'substitute'].includes(sid)) { special(m, sid, mv, tg); return; }
+      if (sid === 'rest') {                          // full heal, then sleep exactly 2 turns
+        if (m.hp >= m.maxhp || (ab(m).noStatus || []).includes('slp') || (b.terrain === 'electric' && grounded(m))) { L('But it failed!'); return; }
+        m.hp = m.maxhp; m.status = 'slp'; m.slpTurns = 2; m.toxN = 0; L(`${m.name} slept and became healthy!`); E({ type: 'hurt', mon: m }); return;
       }
       if (mv.weather) { b.setWeather(({ RainDance: 'rain', raindance: 'rain', sunnyday: 'sun', SunnyDay: 'sun', sandstorm: 'sand', Sandstorm: 'sand', snowscape: 'snow', Snowscape: 'snow', hail: 'snow' })[mv.weather] || String(mv.weather).toLowerCase(), m); }
       if (mv.terrain) b.setTerrain(String(mv.terrain).replace('terrain', ''), m);
@@ -207,11 +333,16 @@
       for (const t of tg) {
         if (t !== m && t.vol.protect && (mv.flags.protect || !Object.keys(mv.flags).length)) { L(`${t.name} protected itself!`); continue; }
         if (t !== m && mv.acc !== true && !ab(m).noGuard && !ab(t).noGuard) {
-          let acc = mv.acc * STAGE(Math.max(-6, Math.min(6, m.boosts.accuracy - (t.boosts.evasion || 0))));
+          let acc = mv.acc * ACC_STAGE(Math.max(-6, Math.min(6, m.boosts.accuracy - (t.boosts.evasion || 0))));
           for (const s of [ab(m), it(m)]) if (s.acc) acc *= s.acc(mv);
+          if (['thunder', 'hurricane'].includes(sid)) acc = b.weather === 'rain' ? 101 : b.weather === 'sun' ? 50 : acc;
+          if (sid === 'blizzard' && b.weather === 'snow') acc = 101;
+          if (sid === 'toxic' && m.types.includes('poison')) acc = 101;
+          if (mv.ohko) acc = 30 + m.lv - t.lv;         // OHKO: level-based, ignores accuracy stages
           if (!b.chance(acc / 100)) { E({ type: 'miss', user: m, target: t }); L(`${t.name} avoided the attack!`); continue; }
         }
         if (mv.cat === 'status') {
+          if (t !== m && t.vol.sub) { L(`${t.name}'s substitute blocked it!`); continue; }
           if (t !== m) {
             if ((mv.flags.powder && t.types.includes('grass')) || (mv.status && mv.type === 'electric' && t.types.includes('ground'))) { L(`It doesn't affect ${t.name}...`); continue; }
             if (mv.status && !b.status(t, mv.status, m) && !mv.boosts) L('But it failed!');
@@ -235,19 +366,31 @@
           d = t.hp; b._crit = false; b._eff = 1; L("It's a one-hit KO!");
         } else {
           const mh = mv.multihit;
-          hits = Array.isArray(mh) ? (mh[0] === 2 && mh[1] === 5 ? [2, 2, 3, 3, 4, 5][Math.floor(b.rng() * 6)] : mh[0] + Math.floor(b.rng() * (mh[1] - mh[0] + 1))) : (+mh || 1);
+          hits = Array.isArray(mh) ? (ab(m).maxHits ? mh[1] : mh[0] === 2 && mh[1] === 5 ? [2, 2, 3, 3, 4, 5][Math.floor(b.rng() * 6)] : mh[0] + Math.floor(b.rng() * (mh[1] - mh[0] + 1))) : (+mh || 1);
           for (let h = 0; h < hits; h++) { const x = calc(m, mv, t); if (!x) break; d += x; }
         }
         d = Math.min(t.hp, d); if (!d) continue;
+        if (t.vol.sub && t !== m) {                     // a substitute takes the damage instead
+          const x = Math.min(t.vol.sub.hp, d); t.vol.sub.hp -= x; total += x;
+          E({ type: 'hit', user: m, target: t, move: mv, crit: false });
+          L(`${t.name}'s substitute took the hit!`);
+          if (!t.vol.sub.hp) { delete t.vol.sub; L(`${t.name}'s substitute faded!`); }
+          continue;
+        }
         const full = t.hp === t.maxhp;
         t.hp -= d; total += d;
         const hung = !t.hp && full && (ab(t).survive || it(t).survive);
         if (hung) { t.hp = 1; if (it(t).survive && it(t).consume) t.itemUsed = true; }
         E({ type: 'hit', user: m, target: t, move: mv, crit: b._crit });
+        if (t.hp && t.status === 'frz' && mv.type === 'fire') { t.status = null; L(`${t.name} thawed out!`); }
+        if (t.hp && it(m).flinch && !(ab(t).noVolatile || []).includes('flinch') && b.chance(it(m).flinch)) t.vol.flinch = true;
         if (b._crit) L('A critical hit!');
         if (b._eff > 1) L("It's super effective!"); else if (b._eff < 1) L("It's not very effective...");
         if (hits > 1) L(`Hit ${hits} times!`);
         if (hung) L(`${t.name} hung on!`);
+        if (mv.vol === 'partiallytrapped' && t.hp && !t.vol.trapped && !t.types.includes('ghost')) {
+          t.vol.trapped = { left: 4 + Math.floor(b.rng() * 2), mv: mv }; L(`${t.name} was trapped!`);
+        }
         if (!t.hp) { L(`${t.name} fainted!`); ab(m).onKO && ab(m).onKO(m, b); }
         else {
           ab(t).hitBy && ab(t).hitBy(t, m, mv, 1, b); useItem(t, 'hitBy', m, mv, 1);
@@ -256,7 +399,7 @@
             if (ab(t).noSecondary || it(t).noSecondary || !b.chance(Math.min(1, (sec.chance || 100) / 100 * (ab(m).secMult || 1)))) continue;
             if (sec.status) b.status(t, sec.status, m);
             if (sec.boosts) b.boost(t, sec.boosts, m);
-            if (sec.volatileStatus === 'flinch') t.vol.flinch = true;
+            if (sec.volatileStatus === 'flinch' && !(ab(t).noVolatile || []).includes('flinch')) t.vol.flinch = true;
             if (sec.volatileStatus === 'confusion') b.confuse(t);
             if (sec.self && sec.self.boosts) b.boost(m, sec.self.boosts, m);
           }
@@ -266,16 +409,24 @@
       if (total) {
         if (mv.drain) b.heal(m, total * mv.drain[0] / mv.drain[1] / m.maxhp);
         if (mv.recoil) b.damage(m, total * mv.recoil[0] / mv.recoil[1] / m.maxhp);
+        if (mv.self && mv.self.volatileStatus === 'mustrecharge') m.vol.recharge = b.turn;   // Hyper Beam, Giga Impact…
         if (mv.self && mv.self.boosts) b.boost(m, mv.self.boosts, m);
         ab(m).afterHit && ab(m).afterHit(m, null, mv, total, b); it(m).afterHit && it(m).afterHit(m, null, mv, total, b);
       }
       if (mv.selfdestruct && alive(m)) { m.hp = 0; L(`${m.name} fainted!`); }
+      if (mv.selfSwitch && alive(m)) selfSwitch(m);        // U-turn / Volt Switch
+    }
+    function selfHit(m) {                            // confusion: typeless 40-power physical hit on itself
+      const d = Math.floor(Math.floor(2 * m.lv / 5 + 2) * 40 * realStat(m, 'atk') / realStat(m, 'def') / 50) + 2;
+      m.hp = Math.max(0, m.hp - Math.max(1, Math.floor(d * (0.85 + b.rng() * 0.15))));
+      E({ type: 'hurt', mon: m }); if (!m.hp) L(`${m.name} fainted!`);
     }
     function doSwitch(m, inc) {
       const s = b.sides[sideOf(m)], i = s.active.indexOf(m), j = s.bench.indexOf(inc);
       if (i < 0 || j < 0 || !alive(inc)) return;
+      if (m.vol.trapped && !m.types.includes('ghost')) { L(`${m.name} is trapped and can't switch!`); return; }
       ab(m).switchOut && ab(m).switchOut(m, b);
-      m.boosts = { atk: 0, def: 0, spa: 0, spd: 0, spe: 0, accuracy: 0, evasion: 0 }; m.vol = {}; m.lock = null;
+      m.boosts = { atk: 0, def: 0, spa: 0, spd: 0, spe: 0, accuracy: 0, evasion: 0 }; m.vol = {}; m.lock = null; m.toxN = 0;
       s.active[i] = inc; s.bench[j] = m; L(`${m.name} came back.`); switchIn(inc);
     }
     function endOfTurn() {
@@ -284,7 +435,7 @@
       for (const m of all) {
         m.vol.flinch = false; delete m.vol.protect;
         if (b.weather === 'sand' && !['rock', 'ground', 'steel'].some(t => m.types.includes(t)) && !ab(m).weatherImmune) b.damage(m, 1 / 16, { indirect: true });
-        if (b.terrain === 'grassy') b.heal(m, 1 / 16);
+        if (b.terrain === 'grassy' && grounded(m)) b.heal(m, 1 / 16);
         if (m.status === 'brn') b.damage(m, 1 / 16, { indirect: true });
         if (m.status === 'psn' && !ab(m).noPoisonDmg) b.damage(m, 1 / 8, { indirect: true });
         if (m.status === 'tox' && !ab(m).noPoisonDmg) b.damage(m, Math.min(15, ++m.toxN) / 16, { indirect: true });
@@ -295,8 +446,19 @@
           if (alive(sd) && b.sides.some(s => s.active.includes(sd))) sd.hp = Math.min(sd.maxhp, sd.hp + n);
           L(`${m.name}'s health is sapped by Leech Seed!`);
         }
+        if (m.vol.trapped && alive(m)) {
+          b.damage(m, 1 / 8, { indirect: true }); L(`${m.name} is hurt by ${m.vol.trapped.mv.name}!`);
+          if (--m.vol.trapped.left <= 0) { delete m.vol.trapped; L(`${m.name} was freed!`); }
+        }
+        if (m.vol.curse && alive(m)) { b.damage(m, 1 / 4, { indirect: true }); L(`${m.name} is hurt by the curse!`); }
+        if (m.vol.taunt > 0) m.vol.taunt--;
+        if (m.vol.encore && --m.vol.encore.left <= 0) delete m.vol.encore;
+        if (m.vol.locked && --m.vol.locked.left <= 0) { delete m.vol.locked; b.confuse(m); }
         ab(m).residual && ab(m).residual(m, b); it(m).residual && it(m).residual(m, b);
       }
+      for (const s of b.sides) for (const k of ['reflect', 'lightscreen', 'tailwind'])
+        if (s.conds[k] && --s.conds[k] <= 0) { delete s.conds[k]; L(`${k === 'tailwind' ? 'The tailwind' : k === 'reflect' ? 'Reflect' : 'Light Screen'} wore off.`); }
+      if (b.trick > 0 && --b.trick <= 0) { L('The twisted dimensions returned to normal.'); b.trick = 0; }
       if (b.weather && --b.wTurns <= 0) { L('The weather cleared.'); b.weather = null; }
       if (b.terrain && --b.tTurns <= 0) { L('The terrain faded.'); b.terrain = null; }
       // enemy refills automatically; the player chooses (b.manual) through b.replace()
@@ -311,7 +473,7 @@
     b.needReplace = () => b.over || !b.sides[0].bench.some(alive) ? []
       : b.sides[0].active.map((m, i) => alive(m) ? -1 : i).filter(i => i >= 0);
     b.replace = (i, inc) => { const s = b.sides[0];
-      if (!alive(s.active[i]) && s.bench.includes(inc) && alive(inc)) { fill(s, i, inc); L(`Go, ${inc.name}!`); } };    
+      if (!alive(s.active[i]) && s.bench.includes(inc) && alive(inc)) { fill(s, i, inc); } };    
     b.enemyChoices = () => b.sides[1].active.filter(alive).map(m => {
       const mv = m.moves[Math.floor(b.rng() * m.moves.length)]; return { mon: m, move: mv, target: null };
     });
@@ -319,11 +481,21 @@
     b.runTurn = playerChoices => {
       if (b.over) return b; b.turn++; L(`— Turn ${b.turn} —`);
       const q = [];
-      for (const c of playerChoices.concat(b.enemyChoices())) for (let k = 0; k < (c.mon.actions || 1); k++) q.push(c);
-      const prio = c => c.switchTo ? 7 : (c.move.prio || 0) + (ab(c.mon).prio ? ab(c.mon).prio(c.move, c.mon) : 0);
+      for (const c of playerChoices.concat(b.enemyChoices())) for (let k = 0; k < (c.mon.actions || 1); k++)
+        q.push(k && c.move && b.sides[1].all.includes(c.mon)          // Legend's 2nd action picks its own move
+          ? { mon: c.mon, move: c.mon.moves[Math.floor(b.rng() * c.mon.moves.length)], target: null } : c);
+      const prio = c => c.switchTo ? 7 : (c.move.prio || 0) + (ab(c.mon).prio
+        ? (ab(c.mon).prankster && c.move.cat === 'status' && c.target && c.target.types.includes('dark') ? 0 : ab(c.mon).prio(c.move, c.mon))
+        : 0);                                          // Prankster doesn't work on Dark-types
       q.forEach(c => { c.qc = it(c.mon).quick && b.chance(it(c.mon).quick); c.r = b.rng(); });
-      q.sort((x, y) => prio(y) - prio(x) || (y.qc - x.qc) || realStat(y.mon, 'spe') - realStat(x.mon, 'spe') || x.r - y.r);
-      for (const c of q) { if (b.over) break; act(c.mon, c); for (const [i, s] of b.sides.entries()) if (!s.all.some(alive)) { b.over = true; b.winner = 1 - i; } }
+      const spd = m => realStat(m, 'spe') * (b.trick > 0 ? -1 : 1);   // Trick Room reverses the order
+      q.sort((x, y) => prio(y) - prio(x) || (y.qc - x.qc) || spd(y.mon) - spd(x.mon) || x.r - y.r);
+      for (const c of q) {
+        if (b.over) break;
+        if (!b.sides[sideOf(c.mon)].active.includes(c.mon)) continue;   // it left the field before its turn
+        act(c.mon, c);
+        for (const [i, s] of b.sides.entries()) if (!s.all.some(alive)) { b.over = true; b.winner = 1 - i; }
+      }
       if (!b.over) endOfTurn();
       return b;
     };

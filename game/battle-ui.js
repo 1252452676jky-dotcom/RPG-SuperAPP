@@ -23,6 +23,7 @@
   const sleep = ms => new Promise(r => setTimeout(r, ms));
   const tc = t => TYPE_COLOR[t] || '#777';
   const imgOf = m => (window.Gacha && (Gacha.img ? Gacha.img(m.key) : (Gacha.mon(m.key) || {}).img)) || '';
+  const itemIco = name => `<img class="mlb-itemico" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${String(name).toLowerCase().replace(/['’.]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}.png" alt="" onerror="this.remove()">`;
   const calm = () => !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
   let abilityText = null, itemText = null;
   async function loadText() {
@@ -91,7 +92,7 @@
         <div class="mlb-hp"><div class="mlb-hpfill"></div></div>
         <div class="mlb-sub"><span class="mlb-hptext"></span><span class="mlb-status"></span></div>
         <div class="mlb-boosts"></div>
-        ${m.ability || m.item ? `<div class="mlb-ab">${esc((ab && ab.name) || m.ability || '')}${m.item ? ' · ' + esc((it && it.name) || m.item) : ''}</div>` : ''}
+        ${m.ability || m.item ? `<div class="mlb-ab">${esc((ab && ab.name) || m.ability || '')}${m.item ? ' · ' + itemIco((it && it.name) || m.item) + esc((it && it.name) || m.item) : ''}</div>` : ''}
         ${side === 0 ? '<div class="mlb-choice"></div>' : ''}</div>`;
     }
     function mini(m, f) {
@@ -290,11 +291,15 @@
     const autoFor = m => b.autoChoices().find(c => c.mon === m);
     function sortedMoves(m) {
       const lu = m.lastUsed || {};
+      const forced = m.vol && ((m.vol.locked && m.vol.locked.mv) || (m.vol.encore && m.vol.encore.mv));
+      if (forced) return m.moves.filter(mv => mv.id === forced.id).map((mv, i) => ({ mv, i }));   // locked in / Encored
       return m.moves.filter(mv => !m.lock || mv.id === m.lock.id).map((mv, i) => ({ mv, i }))
         .sort((a, c) => (lu[c.mv.id] || 0) - (lu[a.mv.id] || 0) || a.i - c.i).map(x => x.mv);
     }
     function effOf(mv, m, f) {
       const beats = { vaccine: 'virus', virus: 'data', data: 'vaccine' };
+      const fa = window.MonsterFX && MonsterFX.abilities[f.ability], fi = window.MonsterFX && MonsterFX.items[f.item];
+      if ((fa && fa.immune && fa.immune.type === mv.type) || (mv.type === 'ground' && fi && fi.airborne && !f.itemUsed)) return 0;
       let e = Battle.typeEff(mv.type, f.types);
       if (e && m.attr && f.attr) e *= beats[m.attr] === f.attr ? 1.5 : beats[f.attr] === m.attr ? 0.75 : 1;
       return e;
@@ -383,6 +388,7 @@
       const need = b.needReplace();
       if (need.length) return askReplace(need[0]);          // asks you even in Auto mode
       if (autoOn) return go(b.autoChoices());
+      draw({ t: '', ...snap() });                    // board always matches the battle before you choose
       chosen = new Map(); clearTargets(); tick('Your turn: choose moves'); bar();
     }
     async function go(choices) {

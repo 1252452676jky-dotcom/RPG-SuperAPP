@@ -132,6 +132,7 @@
   const abDesc = id => (id && ABTXT[id] && (ABTXT[id].desc || ABTXT[id].shortDesc)) || '';
   const itemName = id => (ITEMTXT[id] && ITEMTXT[id].name) || id;
   const itemDesc = id => (ITEMTXT[id] && (ITEMTXT[id].desc || ITEMTXT[id].shortDesc)) || '';
+  const itemImg = id => `<img class="mlr-itemico" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${String(itemName(id)).toLowerCase().replace(/['’.]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}.png" alt="" onerror="this.remove()">`;
 
   /* ---------------- permanent meta + Box ---------------- */
   function metaGet() {
@@ -378,13 +379,33 @@
     screen = 'ended'; render();
   }
 
+  /* ---------------- hold & swap (Pokémon-style) ---------------- */
+  let grab = null;
+  const grabMon = () => grab && allMons().find(m => m.uid === grab);
+  document.addEventListener('click', e => {
+    if (!root || !run || screen !== 'hub' || !root.contains(e.target)) return;
+    if (e.target.closest('[data-act="grab"]')) { e.stopImmediatePropagation(); grab = detail; detail = null; return render(); }
+    if (!grab) return;
+    e.stopImmediatePropagation(); e.preventDefault();
+    const A = grabMon(), c = e.target.closest('[data-mon]'), B = c && allMons().find(m => m.uid === c.dataset.mon);
+    const zone = e.target.closest('#mlr-team, #mlr-boxgrid');
+    if (A && B && A !== B) {                         // swap the two spots (team↔team, team↔box, box↔box)
+      const la = run.team.includes(A) ? run.team : run.box, lb = run.team.includes(B) ? run.team : run.box;
+      const ia = la.indexOf(A), ib = lb.indexOf(B); la[ia] = B; lb[ib] = A; save();
+    } else if (A && !B && zone) {                    // empty space: move it to the end of that list
+      const toTeam = zone.id === 'mlr-team', from = run.team.includes(A) ? run.team : run.box, to = toTeam ? run.team : run.box;
+      if (from !== to && (toTeam ? run.team.length < TEAM_MAX : run.team.length > 1)) { from.splice(from.indexOf(A), 1); to.push(A); save(); }
+    }
+    grab = null; render();
+  }, true);
+
   /* ---------------- views ---------------- */
   function card(k, extra = '', attrs = '', cls = '', tag = '') {
     const r = R(k) || { name: k, types: [] };
     return `<div class="mlr-card ${cls}" ${attrs}>${tag ? `<span class="mlr-tag">${tag}</span>` : ''}<img src="${esc((Gacha.img && Gacha.img(k)) || r.img || '')}" alt="">
       <div class="mlr-nm">${esc(r.name)}</div><div class="mlr-sub">${esc(FR_LABEL[r.fr] || '')}${esc(extra)}</div></div>`;
   }
-  const monCard = (m, tag) => card(m.mega || m.key, ` · Lv ${m.lv}${m.item ? ' · ' + itemName(m.item) : ''}`, `data-mon="${m.uid}"`, '', tag);
+  const monCard = (m, tag) => card(m.mega || m.key, ` · Lv ${m.lv}${m.item ? ' · ' + itemName(m.item) : ''}`, `data-mon="${m.uid}"`, m.uid === grab ? 'held' : '', tag);
   function abilitySelect(m) {
     if (!m.abOpts.length) return '<span class="mlr-dim">No ability</span>';
     const opts = m.abOpts.slice().sort((a, b) => FX().hasAbility(b) - FX().hasAbility(a));
@@ -427,13 +448,13 @@
     const f = run.floor;
     if (!run.enemies) { run.enemies = makeEnemies(f); save(); }
     const label = f === FINAL ? 'LEGEND FLOOR — 3× HP, acts twice' : BOSS.includes(f) ? 'BOSS FLOOR — 6 enemies' : '3 enemies';
-    return `<h2>Floor ${f} / 31</h2>
+    return `<h2>Floor ${f} / 31</h2>${grabMon() ? `<div class="mlr-grab">✋ Holding ${esc(R(grabMon().mega || grabMon().key).name)}: tap another monster to swap places, tap empty space in Team or Run box to move it there, or tap anywhere else to cancel.</div>` : ''}
       <p class="mlr-dim">${tierFor(f).toUpperCase()} pool · enemies Lv ${enemyLv(f)} · ${label}</p>
       <div class="mlr-box"><h3>Next battle</h3><div class="mlr-grid">${run.enemies.map(e => card(e.key, ' · Lv ' + e.lv, `data-info="${esc(e.key)}"`)).join('') || '<span class="mlr-dim">No enemies found.</span>'}</div></div>
       <div class="mlr-box"><h3>Team (${run.team.length}/${TEAM_MAX}) — first 3 start active · tap to manage</h3>
         <div class="mlr-grid mlr-drop" id="mlr-team">${run.team.map((m, i) => monCard(m, i < 3 ? 'ACTIVE' : '')).join('')}</div></div>
       <div class="mlr-box"><h3>Run box (${run.box.length}) — drag monsters between team and box</h3><div class="mlr-grid mlr-drop" id="mlr-boxgrid">${run.box.map(m => monCard(m)).join('')}</div></div>
-      <div class="mlr-box"><h3>Bag</h3><div class="mlr-dim">${run.bag.length ? run.bag.map(itemName).map(esc).join(', ') + ' — tap a monster to give an item.' : 'Empty. You get to pick an item after floors 5, 10, 15, 20, 25 and 30.'}</div></div>
+      <div class="mlr-box"><h3>Bag</h3><div class="mlr-dim">${run.bag.length ? run.bag.map(id => itemImg(id) + esc(itemName(id))).join(', ') + ' — tap a monster to give an item.' : 'Empty. You get to pick an item after floors 5, 10, 15, 20, 25 and 30.'}</div></div>
       <button class="big" data-act="fight">Fight floor ${f}</button> <button data-act="saveclose">Save & close</button> <button data-act="endrun">End run</button>
       ${detail ? vDetail(allMons().find(m => m.uid === detail)) : ''}`;
   }
@@ -446,12 +467,12 @@
       <div class="mlr-row">${card(k, ' · Lv ' + m.lv)}<div style="flex:1"><b>${esc(r.name)}</b>
         <div class="mlr-dim">${esc((r.types || []).join(' / '))}${r.attribute ? ' · ' + esc(r.attribute) : ''}</div></div><button data-info="${esc(k)}">Full info</button><button data-act="closeDetail">✕</button></div>
       <h3>Ability</h3>${m.mega ? `<div class="mlr-dim">This form uses ${esc(abName(megaAbility(m)))}: ${esc(abDesc(megaAbility(m)))}</div>` : abilitySelect(m)}
-      <h3>Held item</h3><div class="mlr-row">${m.item ? `<b>${esc(itemName(m.item))}</b> <button data-act="unequip">Remove</button>` : '<span class="mlr-dim">None</span>'}
+      <h3>Held item</h3><div class="mlr-row">${m.item ? `${itemImg(m.item)}<b>${esc(itemName(m.item))}</b> <button data-act="unequip">Remove</button>` : '<span class="mlr-dim">None</span>'}
         ${[...new Set(run.bag)].map(id => `<button data-equip="${esc(id)}">Give ${esc(itemName(id))}</button>`).join('')}</div>
       ${m.item ? `<div class="mlr-dim">${esc(itemDesc(m.item))}</div>` : ''}
       ${forms.length || m.mega ? `<h3>Form</h3><div class="mlr-row">${forms.filter(x => x !== m.mega).map(x => `<button data-form="${esc(x)}">→ ${esc(R(x).name)}</button>`).join('')}
         ${m.mega ? '<button data-act="revert">Revert to normal form</button>' : ''}</div>` : ''}
-      <h3>Position</h3><div class="mlr-row">${inTeam
+      <h3>Position</h3><div class="mlr-row"><button data-act="grab">✋ Hold &amp; swap</button>${inTeam
         ? `<button data-act="lead">Make lead</button><button data-act="toBox" ${run.team.length <= 1 ? 'disabled' : ''}>Move to run box</button>`
         : `<button data-act="toTeam" ${run.team.length >= TEAM_MAX ? 'disabled' : ''}>Move to team</button>${run.team.length >= TEAM_MAX ? ' <span class="mlr-dim">Team is full — move someone to the box first.</span>' : ''}`}</div>
       <h3>Moves (${moves.length}) — all usable in battle, newest first (just learned or recently used)</h3>
@@ -473,7 +494,7 @@
       const ids = Object.keys(FX().items).sort((a, b) => itemName(a).localeCompare(itemName(b)));
       return head + `<h3>Choose an item — it goes to your bag; give it to a monster from the floor screen</h3>
         <input type="text" data-filter placeholder="Search items…" style="width:100%;margin-bottom:6px">
-        <div class="mlr-scroll" style="max-height:55vh">${ids.map(id => `<div class="mlr-item" data-item="${esc(id)}"><b>${esc(itemName(id))}</b><span class="mlr-dim">${esc(itemDesc(id))}</span></div>`).join('')}</div>
+        <div class="mlr-scroll" style="max-height:55vh">${ids.map(id => `<div class="mlr-item" data-item="${esc(id)}">${itemImg(id)}<b>${esc(itemName(id))}</b><span class="mlr-dim">${esc(itemDesc(id))}</span></div>`).join('')}</div>
         <button data-act="skip">Skip</button>`;
     }
     return '';
