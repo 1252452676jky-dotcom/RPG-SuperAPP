@@ -65,7 +65,7 @@
       st: { atk: stat(s.atk || 50, lv), def: stat(s.def || 50, lv), spa: stat(s.spa || 50, lv), spd: stat(s.spd || 50, lv), spe: stat(s.spe || 50, lv) },
       boosts: { atk: 0, def: 0, spa: 0, spd: 0, spe: 0, accuracy: 0, evasion: 0 },
       moves: (opt.allMoves ? moves : moves.slice(0, 4)).map(normMove).filter(Boolean),
-      ability: opt.ability || null, item: opt.item || null, itemUsed: false,
+      ability: opt.ability || null, item: opt.item || null, items: opt.items || null, itemUsed: false,
       status: null, slpTurns: 0, toxN: 0, vol: {}, flags: {}, actions: opt.actions || 1, lock: null
     };
     mon.hp = mon.maxhp; return mon;
@@ -96,7 +96,23 @@
     const L = t => b.log.push(t);
     const E = ev => b.onEvent && b.onEvent(ev);          // animation hooks used by battle-ui.js    
     const ab = m => m && FX().abilities[m.ability] || {};
-    const it = m => m && !m.itemUsed && FX().items[m.item] || {};
+    const itemCache = new WeakMap();                    // Mode B: several held items work together
+    const it = m => {
+      if (!m || m.itemUsed) return {};
+      const ids = [m.item, ...(m.items || [])].filter(Boolean);
+      if (ids.length <= 1) return FX().items[ids[0]] || {};
+      const key = ids.join(','), c = itemCache.get(m); if (c && c.k === key) return c.v;
+      const v = {}, MUL = ['pow', 'dmgOut', 'dmgIn', 'acc'];
+      for (const o of ids.map(id => FX().items[id]).filter(Boolean)) for (const [k, x] of Object.entries(o)) {
+        const p = v[k];
+        if (typeof x !== 'function') { v[k] = typeof x === 'number' && typeof p === 'number' ? Math.max(p, x) : p ?? x; continue; }
+        if (!p) { v[k] = x; continue; }
+        if (k === 'stat') v[k] = (...a) => { const r = { ...p(...a) }, q = x(...a); for (const s in q) r[s] = (r[s] || 1) * q[s]; return r; };
+        else if (MUL.includes(k)) v[k] = (...a) => p(...a) * x(...a);
+        else v[k] = (...a) => { const r1 = p(...a), r2 = x(...a); return r1 === true || r2 === true ? true : r2 ?? r1; };
+      }
+      itemCache.set(m, { k: key, v }); return v;
+    };
     const sideOf = m => b.sides[0].all.includes(m) ? 0 : 1;
     const alive = m => m && m.hp > 0;
     const grounded = m => !m.types.includes('flying') && !ab(m).airborne && !it(m).airborne;
@@ -562,6 +578,37 @@
       doSwitch(m, inc, pass); resume();
     };
     b.autoChoices = () => _auto().map(c => ({ ...c, auto: true }));   // Auto mode never pauses
+
+    /* ---- Mode B hooks (cardbattle.js): one action at a time, per-monster residuals ---- */
+    b.realStat = realStat;
+    b.actOne = c => { act(c.mon, c); for (const [i, s] of b.sides.entries()) if (!s.all.some(alive)) { b.over = true; b.winner = 1 - i; } return b; };
+    b.switchNow = (m, inc) => { const p = b.pendingPass; b.pendingSwitch = null; b.pendingPass = null; doSwitch(m, inc, p); };
+    b.refill = si => { const s = b.sides[si]; s.active.forEach((x, i) => { if (!alive(x)) { const n = s.bench.find(alive); if (n) fill(s, i, n); } }); };
+    b.residualOne = t => {                              // runs at the END of that monster's own turn
+      if (!alive(t)) return;
+      delete t.vol.protect;
+      if (b.weather === 'sand' && !['rock', 'ground', 'steel'].some(x => t.types.includes(x)) && !ab(t).weatherImmune) b.damage(t, 1 / 16, { indirect: true });
+      if (b.terrain === 'grassy' && grounded(t)) b.heal(t, 1 / 16);
+      if (t.status === 'brn') b.damage(t, 1 / 16, { indirect: true });
+      if (t.status === 'psn' && !ab(t).noPoisonDmg) b.damage(t, 1 / 8, { indirect: true });
+      if (t.status === 'tox' && !ab(t).noPoisonDmg) b.damage(t, Math.min(15, ++t.toxN) / 16, { indirect: true });
+      const s = t.vol.leechseed;
+      if (s && alive(t)) { const n = Math.min(t.hp, Math.max(1, Math.floor(t.maxhp / 8))); b.damage(t, 1 / 8, { indirect: true });
+        if (alive(s) && b.sides.some(x => x.active.includes(s))) s.hp = Math.min(s.maxhp, s.hp + n); L(`${t.name}'s health is sapped by Leech Seed!`); }
+      if (t.vol.trapped && alive(t)) { b.damage(t, 1 / 8, { indirect: true }); L(`${t.name} is hurt by ${t.vol.trapped.mv.name}!`); if (--t.vol.trapped.left <= 0) { delete t.vol.trapped; L(`${t.name} was freed!`); } }
+      if (t.vol.curse && alive(t)) { b.damage(t, 1 / 4, { indirect: true }); L(`${t.name} is hurt by the curse!`); }
+      if (t.vol.taunt > 0) t.vol.taunt--;
+      if (t.vol.encore && --t.vol.encore.left <= 0) delete t.vol.encore;
+      if (t.vol.locked && --t.vol.locked.left <= 0) { delete t.vol.locked; b.confuse(t); }
+      ab(t).residual && ab(t).residual(t, b); it(t).residual && it(t).residual(t, b);
+    };
+    b.fieldTick = () => {                               // one "round" = every active monster has had a turn
+      for (const s of b.sides) for (const k of ['reflect', 'lightscreen', 'tailwind'])
+        if (s.conds[k] && --s.conds[k] <= 0) { delete s.conds[k]; L((k === 'tailwind' ? 'The tailwind' : k === 'reflect' ? 'Reflect' : 'Light Screen') + ' wore off.'); }
+      if (b.trick > 0 && --b.trick <= 0) { L('The twisted dimensions returned to normal.'); b.trick = 0; }
+      if (b.weather && --b.wTurns <= 0) { L('The weather cleared.'); b.weather = null; }
+      if (b.terrain && --b.tTurns <= 0) { L('The terrain faded.'); b.terrain = null; }
+    };
     return b;
   }
 

@@ -37,7 +37,7 @@
       prio: +(src.priority ?? src.prio) || 0, crit: src.willCrit ? 'always' : (+src.critRatio || 1) > 1 ? 'high' : 'normal',
       target: tgtOf(src.target), st: '', stCh: 100, conf: 0, flinch: 0, foe: {}, foeCh: 100, me: {}, meCh: 100,
       drain: pct(src.drain), recoil: pct(src.recoil), heal: pct(src.heal),
-      weather: WMAP[w] || (WS.includes(w) ? w : ''), terrain: TS.includes(tr) ? tr : '' };
+      weather: WMAP[w] || (WS.includes(w) ? w : ''), terrain: TS.includes(tr) ? tr : '', cost: src.cost ?? '' };
     if (cat === 'status') {
       f.st = src.status || '';
       if (src.volatileStatus === 'confusion') f.conf = 100;
@@ -64,6 +64,7 @@
       target: f.target, status: null, volatileStatus: null, boosts: null, self: null, secondaries: [],
       drain: null, recoil: null, heal: null, weather: f.weather || null, terrain: f.terrain || null };
     if (f.base) e.base = f.base;
+    if (f.cost !== '' && f.cost != null) e.cost = Math.max(0, Math.min(3, +f.cost));   // blank = auto (level formula)
     const foe = cleanB(f.foe), me = cleanB(f.me);
     if (f.cat === 'status') {
       if (f.st) e.status = f.st;
@@ -130,6 +131,7 @@
       ${n('prio', f.prio, -7, 5, 'Priority (+1 = goes first)')}
       ${st ? '' : sel('crit', [['normal', 'Normal'], ['high', 'High'], ['always', 'Always']], f.crit, 'Critical hits')}
       ${sel('target', tg, f.target, 'Target')}
+      ${sel('cost', [['', 'Auto (by level)'], '0', '1', '2', '3'], f.cost, 'Energy cost (card run)')}
       ${sel('st', STS.map(s => [s, s ? STN[s] : 'none']), f.st, 'Status condition')}
       ${st ? '' : n('stCh', f.stCh, 1, 100, 'Status chance %')}
       ${n('conf', f.conf, 0, 100, st ? 'Confuse (any number = yes)' : 'Confuse chance %')}

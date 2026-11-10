@@ -225,7 +225,7 @@
     const r = R(m.key), names = [];
     for (const e of learnOf(m.key)) {
       if (e.lv > m.lv || m.learned.includes(e.id)) continue;
-      const mv = moveObj(r, e.id); if (mv) { m.learned.push(e.id); (m.learnedAt = m.learnedAt || {})[e.id] = stamp(); names.push(mv.name); }
+      const mv = moveObj(r, e.id); if (mv) { m.learned.push(e.id); (m.learnedAt = m.learnedAt || {})[e.id] = stamp(); (m.learnLv = m.learnLv || {})[e.id] = e.lv; names.push(mv.name); }
     }
     return names;
   }
@@ -235,6 +235,7 @@
     for (let i = 0; i < 6; i++) {
       out.learned.push(...learn(m));
       const to = pickEvo(m); if (!to) break;
+      { const r0 = R(m.key), x = evoTargets(r0).find(y => y.to === to); (m.evoAt = m.evoAt || []).push(Math.min(m.lv, x ? evoLv(r0, x.e, R(to)) : m.lv)); }
       out.evo.push(R(to).name); (m.line = m.line || []).push(m.key); m.key = to; m.mega = null; setAbilities(m, true);   // evolving: random ability, changeable after
     }
     return out;
@@ -253,13 +254,46 @@
     if (!recent.some(x => x.category !== 'status')) { const d = list.filter(x => x.category !== 'status').pop(); if (d) recent[0] = d; }
     return recent;
   }
+  /* ---------------- Mode B energy cost (your level formula) ---------------- */
+  function futureEvoLvs(key, from) {
+    const out = []; let k = key, lv = from;
+    for (let i = 0; i < 5; i++) {
+      const r = R(k); if (!r) break;
+      const opts = evoTargets(r).map(x => ({ to: x.to, lv: evoLv(r, x.e, R(x.to)) })).filter(x => x.lv < 99).sort((a, b) => a.lv - b.lv);
+      if (!opts.length) break;
+      lv = Math.max(lv + 1, opts[0].lv); out.push(lv); k = opts[0].to;
+    }
+    return out;
+  }
+  function costBounds(m) {                          // [1, evolution levels…, final cut (50, or next ten after a late final evo)]
+    let ev = [...(m.evoAt || []), ...futureEvoLvs(m.key, m.lv)].sort((a, b) => a - b);
+    if (!ev.length) ev = [15, 35];                   // no evolution (Pals etc.): 15 / 35 / 50
+    const last = ev[ev.length - 1], fin = last > 50 ? Math.floor(last / 10) * 10 + 10 : 50;
+    return [...new Set([1, ...ev.filter(x => x > 1 && x < fin), fin])];
+  }
+  function costOf(m, id) {
+    const mv = mvOf(m, id);
+    if (mv && mv.cost !== undefined && mv.cost !== null && mv.cost !== '') return Math.max(0, Math.min(3, +mv.cost));   // editor override
+    const L = (m.learnLv || {})[id] || 1, B = costBounds(m), n = B.length - 1;
+    let base = 3;
+    if (L < B[n]) {
+      const i = B.findIndex((x, j) => j < n && L >= x && L < B[j + 1]), f = (L - B[i]) / (B[i + 1] - B[i]);
+      base = i === 0 ? (n >= 3 ? (f < 1 / 3 ? 1 : f < 2 / 3 ? 2 : 3) : (f < 0.5 ? 1 : 2))   // first stage: thirds (halves if it evolves once)
+        : (i === n - 1 && n >= 3) ? 3                                                     // last stage before the cut: always 3
+        : (f < 0.5 ? 2 : 3);                                                              // middle stages: halves
+    }
+    const cuts = B.slice(1).filter(x => x > L && x <= m.lv).length;                       // each evolution / Lv 50 cut: −1
+    return Math.max(0, Math.min(3, base - cuts));
+  }
+
   function battler(m, o = {}) {
     const k = m.mega || m.key, r = R(k);
     let moves = m.learned.map(id => mvOf(m, id)).filter(Boolean);
     if (o.enemy) moves = enemyMoves(moves);
     if (!moves.some(x => x.category !== 'status')) moves = fallbackMoves(r).concat(moves);
-    const b = Battle.makeMon(r, m.lv, moves, { ability: m.mega ? megaAbility(m) : m.ability, item: m.item,
+    const b = Battle.makeMon(r, m.lv, moves, { ability: m.mega ? megaAbility(m) : m.ability, item: m.item, items: m.items || null,
       allMoves: !o.enemy, hpMult: o.hpMult || 1, actions: o.actions || 1 });
+    b.moves.forEach(x => { x.cost = costOf(m, x.id); });
     b.uid = m.uid; b.lastUsed = Object.assign({}, m.learnedAt, m.lastUsed); return b;
   }
 
@@ -309,17 +343,18 @@
     filter: { pokemon: true, palworld: true, digimon: true } }; }
   function beginRun() {
     const M = metaGet(); M.runs++; saveMeta(M);
-    run = { v: 1, floor: 1, team: draft.mons.slice(0, TEAM_MAX), box: draft.mons.slice(TEAM_MAX), bag: [],
+    run = { v: 1, mode: nextMode, floor: 1, team: draft.mons.slice(0, TEAM_MAX), box: draft.mons.slice(TEAM_MAX), bag: [],
       enemies: null, stage: 'hub', rewards: [], started: Date.now() };
     grant(draft.granted); draft = null; save(); screen = 'hub'; render();
   }
   async function startBattle() {
     const f = run.floor, fin = f === FINAL;
     if (!run.enemies || !run.enemies.length) return alert('No enemies could be generated for this floor. Run MonsterRun.check() in the console and send me the output.');
-    const me = run.team.map(m => battler(m));
-    const foe = run.enemies.map(e => battler(e, { enemy: true, hpMult: fin ? 3 : 1, actions: fin ? 2 : 1 }));
+    const B = run.mode === 'B', hm = B ? 3 : 1;                 // Mode B: every monster has 3× HP
+    const me = run.team.map(m => battler(m, { hpMult: hm }));
+    const foe = run.enemies.map(e => battler(e, { enemy: true, hpMult: (fin ? 3 : 1) * hm, actions: fin ? 2 : 1 }));
     root.style.display = 'none';
-    const res = await BattleUI.open(me, foe, { title: `Floor ${f}/31${fin ? ' — LEGEND' : BOSS.includes(f) ? ' — BOSS' : ''}` });
+    const res = await (B ? CardBattle : BattleUI).open(me, foe, { title: `Floor ${f}/31${fin ? ' — LEGEND' : BOSS.includes(f) ? ' — BOSS' : ''}` });
     root.style.display = '';
     res.player.forEach(b => { const m = allMons().find(x => x.uid === b.uid); if (m && b.lastUsed) m.lastUsed = b.lastUsed; });
     save();
@@ -343,11 +378,11 @@
     const owned = new Set(allMons().flatMap(m => [m.key, m.origin]));
     const p3 = sample([...new Set(run.enemies.map(e => e.key))].filter(k => !owned.has(k)), 3);
     if (p3.length) run.rewards.push({ type: 'pick3', keys: p3, lv });
-    if (ITEM_FLOORS.includes(f)) {                         // every 5 floors cleared: free roll + item
+    if (ITEM_FLOORS.includes(f)) {                         // every 5 floors cleared: free roll
       const roll = rand(wildPool(tier, true, true).filter(k => !p3.includes(k)));
       if (roll) run.rewards.push({ type: 'roll', key: roll, lv });
-      run.rewards.push({ type: 'item' });
     }
+    if (ITEM_FLOORS.includes(f) || run.mode === 'B') run.rewards.push({ type: 'item' });   // Mode B: item every floor
     run.floor = f + 1; run.enemies = null; run.stage = 'reward';
     save(BOSS.includes(f)); screen = 'reward'; render();
   }
@@ -378,6 +413,28 @@
     endLines = [`Run ended on floor ${f}.`, 'Everything you recruited stays in your Box. Next run starts fresh at Lv 5.'];
     screen = 'ended'; render();
   }
+
+  /* ---------------- Mode B: start button + multiple items ---------------- */
+  let nextMode = 'A';
+  document.addEventListener('click', e => {
+    if (!root || !root.contains(e.target)) return;
+    if (e.target.closest('[data-act="newB"]')) {
+      e.stopImmediatePropagation(); const btn = root.querySelector('[data-act="new"]');
+      nextMode = 'B'; if (btn) btn.click(); return;
+    }
+    if (e.target.closest('[data-act="new"]') && e.isTrusted) nextMode = 'A';
+    if (!run || run.mode !== 'B' || !detail) return;
+    const m = allMons().find(x => x.uid === detail); if (!m) return;
+    const eq = e.target.closest('[data-equip]'), un = e.target.closest('[data-unequipb]');
+    if (eq && m.item) {                                  // first slot taken → add as an extra item
+      e.stopImmediatePropagation();
+      m.items = m.items || [];
+      if (m.items.length >= 3) return alert('This monster already holds 4 items.');
+      const i = run.bag.indexOf(eq.dataset.equip); if (i < 0) return;
+      run.bag.splice(i, 1); m.items.push(eq.dataset.equip); save(); return render();
+    }
+    if (un) { e.stopImmediatePropagation(); run.bag.push(m.items.splice(+un.dataset.unequipb, 1)[0]); save(); return render(); }
+  }, true);
 
   /* ---------------- hold & swap (Pokémon-style) ---------------- */
   let grab = null;
@@ -417,7 +474,7 @@
     return `<h2>Monster Lab Run</h2><p class="mlr-dim">31 floors · Early → Mid → Late → Legend · Runs cleared: ${M.wins} / ${M.runs}</p>
       ${s ? `<div class="mlr-box"><b>Saved run — Floor ${s.floor}/31</b><div class="mlr-grid" style="margin:6px 0">${s.team.map(m => card(m.mega || m.key, ' · Lv ' + m.lv)).join('')}</div>
         <button class="big" data-act="resume">Resume</button> <button data-act="abandon">Abandon</button></div>` : ''}
-      <button class="${s ? '' : 'big'}" data-act="new">${s ? 'Start new run (deletes save)' : 'Start new run'}</button> <button data-act="close">Close</button>`;
+      <button class="${s ? '' : 'big'}" data-act="new">${s ? 'Start new run (deletes save)' : 'Start new run'}</button> <button data-act="newB">Start card run (Mode B)</button> <button data-act="close">Close</button>`;
   }
   function vStart() {
     const full = draft.picks.length >= START_MAX;
@@ -470,6 +527,8 @@
       <h3>Held item</h3><div class="mlr-row">${m.item ? `${itemImg(m.item)}<b>${esc(itemName(m.item))}</b> <button data-act="unequip">Remove</button>` : '<span class="mlr-dim">None</span>'}
         ${[...new Set(run.bag)].map(id => `<button data-equip="${esc(id)}">Give ${esc(itemName(id))}</button>`).join('')}</div>
       ${m.item ? `<div class="mlr-dim">${esc(itemDesc(m.item))}</div>` : ''}
+      ${run.mode === 'B' && (m.items || []).length ? `<div class="mlr-row">Extra items: ${m.items.map((id, i) => `${itemImg(id)}<b>${esc(itemName(id))}</b> <button data-unequipb="${i}">Remove</button>`).join(' ')}</div>` : ''}
+      ${run.mode === 'B' ? '<div class="mlr-dim">Card run: a monster can hold up to 4 items. "Give" adds another item once the first slot is filled.</div>' : ''}
       ${forms.length || m.mega ? `<h3>Form</h3><div class="mlr-row">${forms.filter(x => x !== m.mega).map(x => `<button data-form="${esc(x)}">→ ${esc(R(x).name)}</button>`).join('')}
         ${m.mega ? '<button data-act="revert">Revert to normal form</button>' : ''}</div>` : ''}
       <h3>Position</h3><div class="mlr-row"><button data-act="grab">✋ Hold &amp; swap</button>${inTeam
