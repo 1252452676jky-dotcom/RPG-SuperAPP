@@ -260,3 +260,16 @@ body { overflow-x: hidden; }
 .mlb-he b{color:#fff}.mlb-he.me b{color:#8fd0ff}.mlb-he.foe b{color:#ff9a9a}.mlb-he.eot{font-style:italic;opacity:.85}
 .mlb-he div{color:#aab6cc;line-height:1.35}
 @media (max-aspect-ratio:1/1),(max-width:760px){.mlb-hist{position:static;transform:none;width:auto;max-height:90px;margin:0 10px 8px;overflow-y:auto;pointer-events:auto}}
+/* area attack sweep */
+.mlb-row.mlb-wave{animation:mlb-wave .5s}
+@keyframes mlb-wave{30%{filter:drop-shadow(0 0 18px var(--fx,#fff)) brightness(1.35)}}
+/* move editor (base-move version) */
+.mle-row.open{border-color:#4f6bff!important}
+.mle-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.mle-head .mlr-dim{flex:1;min-width:200px}
+.mle-form{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:6px 10px;margin-top:8px;padding-top:8px;border-top:1px solid #ffffff1a}
+.mle-form label{display:flex;flex-direction:column;font-size:12px;gap:2px}
+.mle-form .wide{grid-column:1/-1}
+.mle-sub{font-size:12px;font-weight:700;margin-bottom:2px}
+.mle-bst{display:flex;flex-wrap:wrap;gap:4px;align-items:flex-end}
+.mle-bst label{width:62px}.mle-bst input{width:62px}

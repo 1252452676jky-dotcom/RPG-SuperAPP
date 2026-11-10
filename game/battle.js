@@ -28,6 +28,7 @@
   // weather-dependent healing moves
   const wHeal = w => w === 'sun' ? 2 / 3 : w ? 1 / 4 : 1 / 2;
   const HEAL_W = { synthesis: wHeal, moonlight: wHeal, morningsun: wHeal, shoreup: w => w === 'sand' ? 2 / 3 : 1 / 2 };
+  const PROTECT = ['protect', 'detect', 'kingsshield', 'spikyshield', 'banefulbunker', 'silktrap', 'burningbulwark', 'obstruct'];
   const FX = () => window.MonsterFX || { abilities: {}, items: {} };
 
   /* -------- build a battler from a DB record -------- */
@@ -61,7 +62,7 @@
       drain: m.drain || null, recoil: m.recoil || null, heal: m.heal || null, target: m.target || 'normal',
       weather: m.weather || null, terrain: m.terrain || null, vol: m.volatileStatus || null,
       crit: +m.critRatio || 1, willCrit: !!m.willCrit, multihit: m.multihit || null, ohko: !!m.ohko,
-      selfdestruct: m.selfdestruct || null, desc: m.desc || m.shortDesc || m.description || '' };
+      selfdestruct: m.selfdestruct || null, base: m.base || null, desc: m.desc || m.shortDesc || m.description || '' };
   }
 
   /* -------- battle object -------- */
@@ -184,18 +185,27 @@
     function act(m, ch) {
       if (!alive(m)) return;
       if (ch.switchTo) { doSwitch(m, ch.switchTo); return; }
-      if (m.status === 'slp') { if (--m.slpTurns > 0) { L(`${m.name} is fast asleep.`); return; } m.status = null; L(`${m.name} woke up!`); }
+      if (m.status === 'slp') { if (m.slpTurns-- > 0) { L(`${m.name} is fast asleep.`); return; } m.status = null; L(`${m.name} woke up!`); }
       if (m.status === 'frz') { if (!b.chance(0.2)) { L(`${m.name} is frozen solid!`); return; } m.status = null; L(`${m.name} thawed out!`); }
       if (m.status === 'par' && b.chance(0.25)) { L(`${m.name} is paralyzed! It can't move!`); return; }
       if (m.vol.flinch) { L(`${m.name} flinched!`); return; }
       if (m.vol.confusion) { if (--m.vol.confusion <= 0) { delete m.vol.confusion; L(`${m.name} snapped out of confusion!`); } else if (b.chance(1 / 3)) { L(`${m.name} hurt itself in confusion!`); b.damage(m, 1 / 8); return; } }
       const mv = { ...(m.lock || ch.move) }; if (!mv.id) return;
+      const sid = mv.base || mv.id, isProt = PROTECT.includes(sid) || mv.vol === 'protect';   // edited moves behave like their base move
+      if (!isProt) m.protN = 0;
       if (it(m).lock) m.lock = m.lock || ch.move;
-      L(`${m.name} used ${mv.name}!`); E({ type: 'move', user: m, move: mv });
+      const tg = targetsFor(m, mv, ch.target);
+      L(`${m.name} used ${mv.name}!`); E({ type: 'move', user: m, move: mv, targets: tg });
+      if (isProt) {
+        if (b.chance(1 / Math.pow(3, m.protN || 0))) { m.vol.protect = true; m.protN = (m.protN || 0) + 1; L(`${m.name} protected itself!`); }
+        else { m.protN = 0; L('But it failed!'); }
+        return;
+      }
       if (mv.weather) { b.setWeather(({ RainDance: 'rain', raindance: 'rain', sunnyday: 'sun', SunnyDay: 'sun', sandstorm: 'sand', Sandstorm: 'sand', snowscape: 'snow', Snowscape: 'snow', hail: 'snow' })[mv.weather] || String(mv.weather).toLowerCase(), m); }
       if (mv.terrain) b.setTerrain(String(mv.terrain).replace('terrain', ''), m);
       let total = 0;
-      for (const t of targetsFor(m, mv, ch.target)) {
+      for (const t of tg) {
+        if (t !== m && t.vol.protect && (mv.flags.protect || !Object.keys(mv.flags).length)) { L(`${t.name} protected itself!`); continue; }
         if (t !== m && mv.acc !== true && !ab(m).noGuard && !ab(t).noGuard) {
           let acc = mv.acc * STAGE(Math.max(-6, Math.min(6, m.boosts.accuracy - (t.boosts.evasion || 0))));
           for (const s of [ab(m), it(m)]) if (s.acc) acc *= s.acc(mv);
@@ -212,14 +222,14 @@
             }
           }
           if (mv.boosts) b.boost(mv.target === 'self' ? m : t, mv.boosts, m);
-          const hf = HEAL_W[mv.id] ? HEAL_W[mv.id](b.weather) : mv.heal ? mv.heal[0] / mv.heal[1] : 0;
+          const hf = HEAL_W[sid] ? HEAL_W[sid](b.weather) : mv.heal ? mv.heal[0] / mv.heal[1] : 0;
           if (hf) { if (m.hp >= m.maxhp) L(`${m.name}'s HP is full!`); else b.heal(m, hf); }
           continue;
         }
         let d = 0, hits = 1;
-        if (FIXED[mv.id]) {
+        if (FIXED[sid]) {
           if (!typeEff(mv.type, t.types)) { L(`It doesn't affect ${t.name}...`); continue; }
-          d = FIXED[mv.id](m, t); b._crit = false; b._eff = 1;
+          d = FIXED[sid](m, t); b._crit = false; b._eff = 1;
         } else if (mv.ohko) {
           if (t.lv > m.lv || !typeEff(mv.type, t.types)) { L(`It doesn't affect ${t.name}...`); continue; }
           d = t.hp; b._crit = false; b._eff = 1; L("It's a one-hit KO!");
@@ -252,6 +262,7 @@
           }
         }
       }
+      if (mv.cat === 'status' && mv.self && mv.self.boosts) b.boost(m, mv.self.boosts, m);
       if (total) {
         if (mv.drain) b.heal(m, total * mv.drain[0] / mv.drain[1] / m.maxhp);
         if (mv.recoil) b.damage(m, total * mv.recoil[0] / mv.recoil[1] / m.maxhp);
@@ -271,7 +282,7 @@
       E({ type: 'eot' });
       const all = b.sides.flatMap(s => s.active).filter(alive);
       for (const m of all) {
-        m.vol.flinch = false;
+        m.vol.flinch = false; delete m.vol.protect;
         if (b.weather === 'sand' && !['rock', 'ground', 'steel'].some(t => m.types.includes(t)) && !ab(m).weatherImmune) b.damage(m, 1 / 16, { indirect: true });
         if (b.terrain === 'grassy') b.heal(m, 1 / 16);
         if (m.status === 'brn') b.damage(m, 1 / 16, { indirect: true });

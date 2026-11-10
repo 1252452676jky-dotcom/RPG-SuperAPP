@@ -55,7 +55,7 @@
     const pre = r && r.key ? r.key.split(':')[0] + ':' : '';   // "ivysaur" → "pkmn:ivysaur"
     return R(pre + k) ? pre + k : null;
   }
-  const hasEvo = r => evoList(r).some(e => { const k = evoTo(e, r); return k && !isForm(k); });
+  const hasEvo = r => evoTargets(r).length > 0;
   const FX = () => window.MonsterFX || { abilities: {}, items: {}, randomAbilities: [], hasAbility: () => false };
   const statsOf = r => { const a = r && (Array.isArray(r.base) ? r.base : Array.isArray(r.raw) ? r.raw : null);
     return a ? { hp: a[0], atk: a[1], def: a[2], spa: a[3], spd: a[4], spe: a[5] } : (r && r.stats) || {}; };
@@ -63,6 +63,9 @@
   // move ordering: newest first, where "newest" = just learned OR most recently used
   const stamp = (() => { let last = 0; return () => (last = Math.max(Date.now(), last + 1)); })();
   const recent = (m, id) => Math.max((m.lastUsed || {})[id] || 0, (m.learnedAt || {})[id] || 0);
+  // a monster keeps the move edits of everything it evolved from
+  const lineOf = m => [...new Set([m.mega, m.key, ...(m.line || []).slice().reverse(), m.origin].filter(Boolean))];
+  const mvOf = (m, id) => { for (const k of lineOf(m)) { const x = moveObj(R(k), id); if (x) return x; } return null; };
   /* ---------------- data ---------------- */
   let KEYS = [], LEARN = {}, MOVES = {}, ITEMTXT = {}, ABTXT = {}, loaded = false;
   const learnCache = {};
@@ -106,13 +109,15 @@
   function moveObj(r, id) {
     const base = r && MOVES[r.fr] && MOVES[r.fr][id], ed = r && r.moveEdits && r.moveEdits[id];
     if (!base && !ed) return null;
-    const m = { ...(base || {}), ...(ed || {}) };
+    const tpl = ed && ed.base && MOVES.pokemon && MOVES.pokemon[ed.base];      // editor "base move" (a Pokémon move)
+    const m = tpl ? { ...tpl, name: (base && base.name) || tpl.name, ...ed } : { ...(base || {}), ...(ed || {}) };
     const c0 = String(m.category ?? m.cat ?? '').toLowerCase();
     let power = +(m.power ?? m.basePower ?? 0) || 0;
     if (r.fr === 'palworld') power = Math.min(PAL_POWER_CAP, power);
     const s = statsOf(r), best = (s.atk || 0) >= (s.spa || 0) ? 'physical' : 'special';
     const cat = /phys|melee/.test(c0) ? 'physical' : /spec|shot/.test(c0) ? 'special' : /status/.test(c0) ? 'status' : power ? best : 'status';
-    if (cat === 'status' && r.fr !== 'pokemon' && !m.status && !m.boosts && !m.weather && !m.terrain) return null;  // text-only Pal/Digimon move
+    if (cat === 'status' && r.fr !== 'pokemon' && !m.base && !m.status && !m.boosts && !m.weather && !m.terrain
+      && !m.volatileStatus && !m.heal && !(m.self && m.self.boosts)) return null;  // text-only Pal/Digimon move
     let type = psId(m.type ?? m.element ?? 'normal'); type = PAL_TYPE[type] || type;
     return { ...m, id, name: m.name || id, type, power: cat === 'status' ? 0 : power, category: cat };
   }
@@ -189,7 +194,7 @@
     return null;
   }
   function evoLv(r, e, t) {
-    if (r.fr === 'digimon') return digiLv(t.stage ?? t.level) ?? 30;
+    if (r.fr === 'digimon') return digiLv(t.level ?? t.stage) ?? 99;
     const n = +(e.lv ?? e.level ?? e.minLevel ?? e.min_level);
     if (n > 0) return n;
     const how = String(e.method ?? e.trigger ?? e.how ?? e.via ?? '').toLowerCase();
@@ -199,12 +204,21 @@
   function pickEvo(m) {
     if (m.mega) return null;
     const r = R(m.key); if (!r) return null;
-    const ok = evoList(r).filter(e => {
-      const to = evoTo(e, r), t = to && !isForm(to) && R(to); if (!t) return false;
-      if (r.fr === 'digimon') { const a = digiLv(r.stage ?? r.level), b = digiLv(t.stage ?? t.level); if (a != null && b != null && b <= a) return false; }
-      return evoLv(r, e, t) <= m.lv;
+    const ok = evoTargets(r, m.enemy).filter(x => evoLv(r, x.e, R(x.to)) <= m.lv);
+    return ok.length ? rand(ok).to : null;                        // branching = random among valid next-stage targets
+  }
+  // Digimon: Baby I→II (5) → Child (10) → Adult/Armor (20) → Perfect/Hybrid (40) → Ultimate (65), one stage at a time
+  const DIGI_NEXT = { 1: 5, 5: 10, 10: 20, 20: 40, 40: 65 };
+  function evoTargets(r, enemy) {
+    return evoList(r).map(e => ({ e, to: evoTo(e, r) })).filter(x => {
+      const t = x.to && !isForm(x.to) && R(x.to); if (!t) return false;
+      if (r.fr === 'digimon') {
+        const a = digiLv(r.level ?? r.stage), b = digiLv(t.level ?? t.stage);
+        if (a == null || b == null || DIGI_NEXT[a] !== b) return false;     // no skipping, no same-stage swaps
+        if (enemy && !t.verified) return false;                          // enemies only become Finished Digimon
+      }
+      return true;
     });
-    return ok.length ? evoTo(rand(ok), r) : null;                // branching = random (E21)
   }
   function learn(m) {
     const r = R(m.key), names = [];
@@ -220,7 +234,7 @@
     for (let i = 0; i < 6; i++) {
       out.learned.push(...learn(m));
       const to = pickEvo(m); if (!to) break;
-      out.evo.push(R(to).name); m.key = to; m.mega = null; setAbilities(m, true);   // evolving: random ability, changeable after
+      out.evo.push(R(to).name); (m.line = m.line || []).push(m.key); m.key = to; m.mega = null; setAbilities(m, true);   // evolving: random ability, changeable after
     }
     return out;
   }
@@ -240,7 +254,7 @@
   }
   function battler(m, o = {}) {
     const k = m.mega || m.key, r = R(k);
-    let moves = m.learned.map(id => moveObj(r, id) || moveObj(R(m.key), id)).filter(Boolean);
+    let moves = m.learned.map(id => mvOf(m, id)).filter(Boolean);
     if (o.enemy) moves = enemyMoves(moves);
     if (!moves.some(x => x.category !== 'status')) moves = fallbackMoves(r).concat(moves);
     const b = Battle.makeMon(r, m.lv, moves, { ability: m.mega ? megaAbility(m) : m.ability, item: m.item,
@@ -426,7 +440,7 @@
   function vDetail(m) {
     if (!m) return '';
     const k = m.mega || m.key, r = R(k), inTeam = run.team.includes(m), forms = formsOf(m);
-    const moves = m.learned.map(id => moveObj(r, id) || moveObj(R(m.key), id)).filter(Boolean)
+    const moves = m.learned.map(id => mvOf(m, id)).filter(Boolean)
       .sort((a, b) => recent(m, b.id) - recent(m, a.id));
     return `<div class="mlr-modal"><div class="mlr-panel">
       <div class="mlr-row">${card(k, ' · Lv ' + m.lv)}<div style="flex:1"><b>${esc(r.name)}</b>
@@ -469,7 +483,7 @@
     const r = info && R(info.k); if (!r) return '';
     const s = statsOf(r), ST = [['hp', 'HP'], ['atk', 'Atk'], ['def', 'Def'], ['spa', 'SpA'], ['spd', 'SpD'], ['spe', 'Spe']];
     const abil = r.fr === 'pokemon' ? abilityOptions(r).map(id => abName(id) + (FX().hasAbility(id) ? '' : ' (no effect yet)')).join(', ') : 'Gets 3 random abilities to choose from when it joins';
-    const evos = evoList(r).map(e => evoTo(e, r)).filter(k => k && !isForm(k)).map(k => R(k).name);
+    const evos = evoTargets(r).map(x => `${R(x.to).name} (Lv ${evoLv(r, x.e, R(x.to))})`);
     const moves = learnOf(info.k).map(e => ({ lv: e.lv, mv: moveObj(r, e.id) })).filter(x => x.mv);
     const go = { pick: 'Add to party', offer: 'Take this one', party: 'Remove from party', take: 'Recruit' }[info.ctx];
     const owned = r.fr === 'pokemon' && (Gacha.exportState().box || {})[info.k];

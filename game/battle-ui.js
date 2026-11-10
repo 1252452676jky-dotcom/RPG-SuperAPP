@@ -15,6 +15,9 @@
   const STATUS_LABEL = { brn:'BRN', par:'PAR', psn:'PSN', tox:'TOX', slp:'SLP', frz:'FRZ' };
   const STAT_LABEL = { atk:'Atk', def:'Def', spa:'SpA', spd:'SpD', spe:'Spe', accuracy:'Acc', evasion:'Eva' };
   const SINGLE = ['normal', 'any', 'adjacentFoe'];
+  const AIM = { normal: 'one foe', any: 'one foe', adjacentFoe: 'one foe', allAdjacentFoes: 'all foes', allAdjacent: 'everyone around it',
+    self: 'self', randomNormal: 'random foe', allySide: 'your side', foeSide: 'foe side', all: 'whole field', allyTeam: 'your team',
+    adjacentAlly: 'an ally', adjacentAllyOrSelf: 'ally or self' };
   const AUTO_GO_MS = 450;                                   // pause after the last order before the turn starts
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c]));
   const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -41,7 +44,7 @@
     let speed = +(localStorage.getItem('ml.bspeed') || 0) % SPEEDS.length;
     let autoOn = !!opts.auto, busy = false, finished = false, closed = false, result = 'lose';
     let chosen = new Map(), lastChoices = null, targeting = null, pop = null, shown = 0, layoutKey = '', prev = null;
-    let goTimer = null, strong = false, weak = false, hist = [], curH = null, pendingEot = false;
+    let goTimer = null, strong = false, weak = false, hist = [], curH = null, pendingEot = false, areaMv = null;
     const ms = () => SPEEDS[speed].ms;
     const floor = +((/Floor (\d+)/.exec(opts.title || '') || [])[1] || 0);
 
@@ -157,6 +160,25 @@
       const dx = (rc.left - ra.left) * .3, dy = (rc.top - ra.top) * .3 || (a.dataset.side === '0' ? -30 : 30);
       a.animate([{ transform: 'none' }, { transform: `translate(${dx}px,${dy}px) scale(1.07)` }, { transform: 'none' }], { duration: dur, easing: 'ease-in-out' });
     }
+    // one sweep that hits every target at the same time
+    async function areaFx(user, targets, mv, dur) {
+      const color = tc(mv.type), els = targets.map(cardEl).filter(Boolean); if (!els.length) return;
+      if (mv.cat === 'special') await Promise.all(targets.map(t => orb(user, t, color, dur)));
+      else {
+        const a = cardEl(user);
+        if (a) {
+          const ra = a.getBoundingClientRect(), rs = els.map(x => x.getBoundingClientRect());
+          const cx = rs.reduce((s, r) => s + r.left + r.width / 2, 0) / rs.length, cy = rs.reduce((s, r) => s + r.top + r.height / 2, 0) / rs.length;
+          const dx = (cx - ra.left - ra.width / 2) * .3, dy = (cy - ra.top - ra.height / 2) * .3;
+          a.animate([{ transform: 'none' }, { transform: `translate(${dx}px,${dy}px) scale(1.1)` }, { transform: 'none' }], { duration: dur, easing: 'ease-in-out' });
+        }
+        await sleep(dur * 0.5);
+        els.forEach(x => slash(x, color));
+      }
+      new Set(els.map(x => x.parentElement)).forEach(row => { if (row) { row.style.setProperty('--fx', color); restart(row, 'mlb-wave'); } });
+      els.forEach(x => burst(x, color, 8));
+      shake(false);
+    }
     function burst(el, color, n) {
       if (!el || calm()) return;
       const r = el.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2, fx = $('.mlb-fx');
@@ -212,31 +234,41 @@
       const e = f.ev;
       if (e.type === 'move') {
         const el = cardEl(e.user);
-        histAdd(e);
+        histAdd(e); areaMv = null;
         if (el) { el.style.setProperty('--fx', tc(e.move.type)); restart(el, e.move.cat === 'status' ? 'mlb-buff' : 'mlb-cast'); }
+        const many = (e.targets || []).filter(t => t !== e.user);
+        if (e.move.cat !== 'status' && many.length > 1) {
+          await sleep(ms() * 0.3);
+          if (e.move.power >= 90) tint(tc(e.move.type));
+          await areaFx(e.user, many, e.move, Math.max(120, ms() * 0.7));
+          areaMv = e.move; return;
+        }
         return sleep(ms() * 0.4);
       }
       if (e.type === 'hit') {
         const color = tc(e.move.type), dur = Math.max(120, ms() * 0.7), t = cardEl(e.target);
         const eff = e.target ? effOf(e.move, e.user, e.target) : 1;
-        if (e.move.power >= 90) tint(color);
-        if (e.move.cat === 'special') await orb(e.user, e.target, color, dur);
-        else { lunge(e.user, e.target, dur); await sleep(dur * 0.5); slash(t, color); }
-        burst(t, color, e.crit || eff > 1 ? 14 : 8);
+        const area = areaMv === e.move;                     // area move: the sweep already played
+        if (!area) {
+          if (e.move.power >= 90) tint(color);
+          if (e.move.cat === 'special') await orb(e.user, e.target, color, dur);
+          else { lunge(e.user, e.target, dur); await sleep(dur * 0.5); slash(t, color); }
+          burst(t, color, e.crit || eff > 1 ? 14 : 8);
+        }
         if (e.crit || eff > 1) shake(e.crit && eff > 1);
         if (t) { t.style.setProperty('--fx', color); if (e.crit) float(t, 'CRIT!', 'crit'); }
         const ti = idx(e.target), lost = prev && ti >= 0 ? prev.hp[ti] - f.hp[ti] : 0;
         if (lost > 0) histNote(`${e.target.name} lost ${pctOf(e.target, lost)}%`);
         strong = !!e.crit || eff > 1; weak = eff < 1;
         draw(f); strong = weak = false;
-        return sleep(ms() * 0.5);
+        return sleep(ms() * (area ? 0.12 : 0.5));
       }
       if (e.type === 'hurt') {
         const i = idx(e.mon), dv = prev && i >= 0 ? f.hp[i] - prev.hp[i] : 0;
         if (dv) histNote(`${e.mon.name} ${dv < 0 ? 'lost' : 'gained'} ${pctOf(e.mon, dv)}%`);
         draw(f); return sleep(ms() * 0.45);
       }
-      if (e.type === 'eot') { curH = null; pendingEot = true; return; }
+      if (e.type === 'eot') { curH = null; pendingEot = true; areaMv = null; return; }
       if (e.type === 'miss') { const t = cardEl(e.target); if (t) float(t, 'Miss', 'miss'); return sleep(ms() * 0.4); }
     }
     async function play() {
@@ -246,10 +278,10 @@
         const turn = /^— Turn (\d+)/.exec(f.t);
         logLine(f.t); draw(f);
         if (turn) {
-          curH = null; pendingEot = false;
+          curH = null; pendingEot = false; areaMv = null;
           $('.mlb-turn').textContent = 'Turn ' + turn[1]; $('.mlb-round').textContent = 'Round ' + turn[1];
           banner('Round ' + turn[1]); await sleep(ms() * 0.6);
-        } else await sleep(ms());
+        } else await sleep(areaMv ? ms() * 0.3 : ms());
       }
     }
 
@@ -275,7 +307,7 @@
         return `<span class="mlb-vs ${k}">${esc(f.name)} ${k === 'no' ? 'immune' : '×' + +e.toFixed(2)}</span>`; }).join('');
       return `<button class="mlb-move ${c && c.move === mv ? 'sel' : ''}" data-mv="${esc(mv.id)}" style="--t:${tc(mv.type)}">
         <span class="mlb-mvname">${esc(mv.name)}</span>
-        <span class="mlb-mvinfo">${esc(mv.type)} · ${mv.cat}${mv.power ? ' · ' + mv.power : ''}${mv.acc === true ? '' : ' · ' + mv.acc + '%'}</span>
+        <span class="mlb-mvinfo">${esc(mv.type)} · ${mv.cat}${mv.power ? ' · ' + mv.power : ''}${mv.acc === true ? '' : ' · ' + mv.acc + '%'}${mv.prio ? ' · priority ' + (mv.prio > 0 ? '+' : '') + mv.prio : ''} · <b>${AIM[mv.target] || 'one foe'}</b></span>
         ${vs ? `<span class="mlb-vsrow">${vs}</span>` : ''}<span class="mlb-desc">${esc(mv.desc || 'No description.')}</span></button>`;
     }
     function badges() {
@@ -402,7 +434,9 @@
         if (SINGLE.includes(mv.target) && foes.length > 1) {
           targeting = { m, mv }; foes.forEach(f => { const c = cardEl(f); if (c) c.classList.add('targetable'); }); return bar();
         }
-        chosen.set(m, { mon: m, move: mv, target: foes[0] || null }); return bar();
+        chosen.set(m, { mon: m, move: mv, target: foes[0] || null });
+        tick(`${m.name} → ${mv.name}: ${SINGLE.includes(mv.target) ? 'targets ' + (foes[0] ? foes[0].name : 'nobody') + ' (only one foe left)' : 'hits ' + (AIM[mv.target] || 'one foe') + ', no target to pick'}`);
+        return bar();
       }
       if (el.dataset.sw && pop) { const m = all[+pop.dataset.mon]; closePop(); chosen.set(m, { mon: m, switchTo: all[+el.dataset.sw] }); return bar(); }
       if (el.classList.contains('mlb-card')) {
