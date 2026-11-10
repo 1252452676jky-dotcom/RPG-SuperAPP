@@ -278,3 +278,34 @@ body { overflow-x: hidden; }
 .mlr-grab { position: sticky; top: 0; z-index: 5; background: #f5c542; color: #222; padding: 8px 12px; border-radius: 8px; margin: 6px 0; font-weight: bold; }
 .mlr-itemico { width: 24px; height: 24px; image-rendering: pixelated; vertical-align: middle; margin-right: 4px; }
 .mlb-itemico { width: 16px; height: 16px; image-rendering: pixelated; vertical-align: -3px; margin-right: 2px; }
+
+/* ===== Move editor: dark inputs + base-move picker ===== */
+.mle input[type=text], .mle input[type=number], .mle input[type=search], .mle select, .mle textarea {
+  background: #0f1626; color: #e8ecf4; border: 1px solid #3a4560; border-radius: 8px; padding: 6px 8px; font: inherit; }
+.mle input::placeholder, .mle textarea::placeholder { color: #6f7b95; }
+.mle input:focus, .mle select:focus, .mle textarea:focus { outline: none; border-color: #f5c542; box-shadow: 0 0 0 2px #f5c54233; }
+.mle select option { background: #0f1626; color: #e8ecf4; }
+.mle textarea { width: 100%; resize: vertical; line-height: 1.4; }
+.mle-basebox { display: flex; flex-direction: column; gap: 6px; }
+.mle-pbar { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.mle-pbar input { flex: 1 1 260px; }
+.mle-pcat { display: flex; gap: 2px; background: #0f1626; border: 1px solid #3a4560; border-radius: 8px; padding: 2px; }
+.mle-pcat button { background: transparent; color: #9aa6bf; border: 0; border-radius: 6px; padding: 4px 10px; cursor: pointer; font-size: 12px; }
+.mle-pcat button.on { background: #f5c542; color: #1a1a1a; font-weight: bold; }
+.mle-res { margin-top: 6px; max-height: 340px; overflow: auto; background: #121a2b; border: 1px solid #3a4560; border-radius: 10px; padding: 4px; box-shadow: 0 10px 24px #0008; }
+.mle-opt { display: grid; grid-template-columns: auto auto 1fr auto; gap: 4px 8px; align-items: center; padding: 7px 9px; border-radius: 8px; cursor: pointer; color: #e8ecf4; }
+.mle-opt:hover, .mle-opt.hi { background: #1f2a44; }
+.mle-opt.cur { cursor: default; background: #18233a; border: 1px solid #f5c54266; flex: 1; }
+.mle-ty { font-size: 11px; text-transform: uppercase; color: #fff; padding: 2px 6px; border-radius: 4px; min-width: 62px; text-align: center; font-weight: bold; text-shadow: 0 1px 1px #0008; }
+.mle-cat { font-size: 11px; padding: 2px 6px; border-radius: 4px; color: #fff; background: #4a5068; }
+.mle-cat.mle-physical { background: #c0392b; } .mle-cat.mle-special { background: #2e5fa8; } .mle-cat.mle-status { background: #6b6f7a; }
+.mle-st { font-size: 12px; color: #9aa6bf; white-space: nowrap; }
+.mle-od { grid-column: 1 / -1; font-size: 12px; color: #9aa6bf; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.mle-opt.cur .mle-od { -webkit-line-clamp: unset; }
+.mle-cur { display: flex; gap: 8px; align-items: center; }
+.mle-none { padding: 10px; color: #9aa6bf; }
+.mle-fxline { font-size: 12px; color: #f5c542; margin-top: 4px; }
+.mle-sum .mle-fx { display: block; color: #f5c542; font-size: 12px; margin-top: 2px; }
+
+/* ===== Mode B: shared move-VFX layer ===== */
+.mlc-fx { position: fixed; inset: 0; pointer-events: none; z-index: 65; }

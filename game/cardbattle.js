@@ -55,6 +55,18 @@
       let actor = null, sel = null, busy = false, shown = 0, turnsSinceField = 0, endTurnNow = null;
       const el = document.createElement('div'); el.className = 'mlc'; document.body.appendChild(el);
 
+      /* ---- move effects: the same module battle-ui.js uses ---- */
+      const fxLayer = document.createElement('div'); fxLayer.className = 'mlc-fx'; document.body.appendChild(fxLayer);
+      const tintEl = document.createElement('div'); tintEl.className = 'mlb-tint'; fxLayer.appendChild(tintEl);
+      const FX = BattleFX.create({ root: el, layer: () => fxLayer, board: () => el.querySelector('.mlc-field'), tintEl: () => tintEl,
+        cardOf: m => { if (!m) return null; const si = sideOf(m), i = b.sides[si].active.indexOf(m);
+          return i < 0 ? null : el.querySelector(`.mlc-unit[data-u="${si}:${i}"]`); },
+        ms: () => STEP_MS, speed: () => 1, calm: () => !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches),
+        tc: t => TC[t] || '#777' });
+      let fxq = [], areaMv = null;
+      const snapHp = () => new Map([...me, ...foe].map(m => [m, m.hp]));
+      b.onEvent = ev => { fxq.push({ ev, hp: snapHp() }); };
+
       function forecast(n) {
         const ct = new Map(acts().map(m => [m, m.ct ?? 0])), out = [];
         for (let k = 0; k < n && ct.size; k++) {
@@ -108,6 +120,57 @@
         const lg = el.querySelector('#mlc-log'); if (lg) lg.scrollTop = 1e6;
       }
       async function flush() { const n = b.log.length - shown; shown = b.log.length; draw(); if (n > 0) await wait(Math.min(5, n) * STEP_MS); }
+      /* replay the events recorded during the action, against the DOM as it is now */
+      async function drainFx() {
+        const q = fxq; fxq = []; if (!q.length || !window.BattleFX) return;
+        for (const { ev, hp } of q) {
+          try { await fxEv(ev, hp); } catch (e) { /* an effect must never break a battle */ }
+        }
+      }
+      async function fxEv(e, hp) {
+        if (!e) return;
+        const who = el.querySelector('.mlc-field');
+        if (e.type === 'move') {
+          const u = FX; u.cast(el.querySelector(`.mlc-unit[data-u="0:${b.sides[0].active.indexOf(e.user)}"]`) ||
+            el.querySelector(`.mlc-unit[data-u="1:${b.sides[1].active.indexOf(e.user)}"]`), TC[e.move.type] || '#777', e.move.cat);
+          areaMv = e.move.cat !== 'status' && (e.targets || []).filter(t => t !== e.user).length > 1 ? e.move : null;
+          await wait(STEP_MS * 0.35);
+          return;
+        }
+        if (e.type === 'hit') {
+          const color = TC[e.move.type] || '#777', dur = Math.max(120, STEP_MS * 0.7);
+          const elOf = m => { if (!m) return null; const si = sideOf(m), i = b.sides[si].active.indexOf(m);
+            return i < 0 ? null : el.querySelector(`.mlc-unit[data-u="${si}:${i}"]`); };
+          const t = elOf(e.target), u = elOf(e.user), area = areaMv === e.move;
+          const eff = e.move.cat === 'status' ? 1 : Battle.typeEff(e.move.type, e.target.types);
+          if (!area) {
+            if (e.move.power >= 90) FX.tint(color);
+            if (e.move.cat === 'special') await FX.orb(e.user, e.target, color, dur);
+            else { FX.lunge(e.user, e.target, dur); await wait(dur * 0.5); FX.slash(t, color); }
+            FX.burst(t, color, e.crit || eff > 1 ? 14 : 8);
+          }
+          if (e.crit || eff > 1) FX.shake(e.crit && eff > 1);
+          const before = hp && hp.get(e.target), lost = before !== undefined ? before - e.target.hp : 0;
+          if (lost > 0) FX.pop(t, '−' + Math.max(1, Math.round(lost / e.target.maxhp * 100)) + '%', 'dmg' + (e.crit || eff > 1 ? ' strong' : eff < 1 ? ' weak' : ''));
+          if (e.crit) FX.pop(t, 'CRIT!', 'crit');
+          await wait(STEP_MS * (area ? 0.12 : 0.45));
+          return;
+        }
+        if (e.type === 'hurt') {
+          const i0 = hp && hp.get(e.mon), dv = i0 !== undefined ? e.mon.hp - i0 : 0;
+          if (!dv) return;
+          const si = sideOf(e.mon), i = b.sides[si].active.indexOf(e.mon);
+          const node = i < 0 ? null : el.querySelector(`.mlc-unit[data-u="${si}:${i}"]`);
+          FX.pop(node, (dv > 0 ? '+' : '−') + Math.max(1, Math.round(Math.abs(dv) / e.mon.maxhp * 100)) + '%', dv > 0 ? 'heal' : 'dmg');
+          return;
+        }
+        if (e.type === 'miss') {
+          const si = sideOf(e.target), i = b.sides[si].active.indexOf(e.target);
+          FX.pop(i < 0 ? null : el.querySelector(`.mlc-unit[data-u="${si}:${i}"]`), 'Miss', 'miss');
+          return;
+        }
+        if (e.type === 'eot') areaMv = null;
+      }
       const over = () => { for (const [i, s] of b.sides.entries()) if (!s.all.some(alive)) { b.over = true; b.winner = 1 - i; } return b.over; };
 
       function pickBench(title, list) {
@@ -132,6 +195,7 @@
         if (sideOf(m) === 0 && mv.id !== 'ml-wait') (m.lastUsed = m.lastUsed || {})[mv.id] = Date.now();
         b.actOne({ mon: m, move: mv, target });
         await flush();
+        await drainFx();
         if (b.pendingSwitch) {                                           // U-turn & co.: you choose who comes in
           const out = b.pendingSwitch, inc = await pickBench(`${out.name} is leaving the field. Who comes in?`, b.sides[0].bench.filter(alive));
           b.switchNow(out, inc); inc.ct = out.ct; inc.energy = 0; endTurnNow = out; await flush();
@@ -189,7 +253,7 @@
         m.ct = (m.ct ?? 0) - CT + Math.max(-PRIO_CAP, Math.min(PRIO_CAP, (m.prioMax || 0) * PRIO_STEP));
         if (endTurnNow && endTurnNow !== m) endTurnNow.ct -= CT;
         if (++turnsSinceField >= Math.max(1, acts().length)) { turnsSinceField = 0; b.fieldTick(); }
-        actor = null; await flush(); over(); if (!b.over) await replaceFainted();
+        actor = null; await flush(); await drainFx(); over(); if (!b.over) await replaceFainted();
       }
       function L(t) { b.log.push(t); }
 
@@ -201,7 +265,8 @@
         md.innerHTML = `<div><h2>${win ? 'Victory!' : 'Defeat'}</h2>${win ? '<button data-r="continue">Continue</button>'
           : '<p class="mlc-dim">You lose nothing.</p><button data-r="rebattle">Rebattle</button> <button data-r="end">End run</button>'}</div>`;
         md.addEventListener('click', e => { const x = e.target.closest('[data-r]'); if (!x) return;
-          md.remove(); el.remove(); done({ result: win ? 'win' : 'lose', action: x.dataset.r, battle: b, player: me }); });
+          md.remove(); el.remove(); fxLayer.remove(); done({ result: win ? 'win' : 'lose', action: x.dataset.r, battle: b, player: me }); });
+
         document.body.appendChild(md);
       })();
     });

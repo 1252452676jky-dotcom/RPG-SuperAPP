@@ -70,6 +70,11 @@
     const $ = s => root.querySelector(s);
     const cardEl = m => m && root.querySelector(`.mlb-card[data-i="${idx(m)}"]`);
     const restart = (el, cls) => { if (!el) return; el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); };
+    /* move effects come from the shared module, so the card battle plays exactly the same ones */
+    const FX = BattleFX.create({ root, layer: () => $('.mlb-fx'), board: () => $('.mlb-board'), tintEl: () => $('.mlb-tint'),
+      cardOf: cardEl, ms, speed: () => speed, calm, tc, restart });
+    const { float, orb, lunge, burst, slash, shake, tint, banner } = FX;
+    const areaFx = FX.areaFx;
     const typeChips = m => m.types.map(t => `<span class="mlb-type" style="background:${tc(t)}">${esc(t)}</span>`).join('') + (m.attr ? `<span class="mlb-type mlb-attr">${esc(m.attr)}</span>` : '');
     const emblems = m => m.types.map(t => `<span class="mlb-emb" style="background:${tc(t)}" title="${esc(t)}"><i class="fa-solid ${TYPE_ICON[t] || 'fa-circle'}"></i></span>`).join('');
     const boostText = m => Object.entries(m.boosts).filter(([, v]) => v).map(([k, v]) => ` · ${STAT_LABEL[k]} ${v > 0 ? '+' : ''}${v}`).join('');
@@ -139,72 +144,7 @@
       prev = f; badges();
     }
 
-    /* ---------- effects ---------- */
-    function float(el, text, cls) {
-      const d = document.createElement('div');
-      d.className = 'mlb-float ' + cls; d.textContent = text; d.style.top = (30 + el.querySelectorAll('.mlb-float').length * 16) + '%';
-      el.appendChild(d); setTimeout(() => d.remove(), 1300);
-    }
-    async function orb(from, to, color, dur) {
-      const a = cardEl(from), c = cardEl(to); if (!a || !c) return;
-      const ra = a.getBoundingClientRect(), rc = c.getBoundingClientRect(), o = document.createElement('div');
-      o.className = 'mlb-orb'; o.style.setProperty('--fx', color);
-      o.style.left = (ra.left + ra.width / 2) + 'px'; o.style.top = (ra.top + ra.height / 2) + 'px';
-      $('.mlb-fx').appendChild(o);
-      o.animate([{ transform: 'translate(-50%,-50%) scale(.6)' },
-        { transform: `translate(calc(-50% + ${rc.left - ra.left}px), calc(-50% + ${rc.top - ra.top}px)) scale(1.5)` }], { duration: dur, easing: 'ease-in' });
-      await sleep(dur); o.remove();
-    }
-    function lunge(m, t, dur) {
-      const a = cardEl(m), c = cardEl(t); if (!a) return;
-      const ra = a.getBoundingClientRect(), rc = c ? c.getBoundingClientRect() : ra;
-      const dx = (rc.left - ra.left) * .3, dy = (rc.top - ra.top) * .3 || (a.dataset.side === '0' ? -30 : 30);
-      a.animate([{ transform: 'none' }, { transform: `translate(${dx}px,${dy}px) scale(1.07)` }, { transform: 'none' }], { duration: dur, easing: 'ease-in-out' });
-    }
-    // one sweep that hits every target at the same time
-    async function areaFx(user, targets, mv, dur) {
-      const color = tc(mv.type), els = targets.map(cardEl).filter(Boolean); if (!els.length) return;
-      if (mv.cat === 'special') await Promise.all(targets.map(t => orb(user, t, color, dur)));
-      else {
-        const a = cardEl(user);
-        if (a) {
-          const ra = a.getBoundingClientRect(), rs = els.map(x => x.getBoundingClientRect());
-          const cx = rs.reduce((s, r) => s + r.left + r.width / 2, 0) / rs.length, cy = rs.reduce((s, r) => s + r.top + r.height / 2, 0) / rs.length;
-          const dx = (cx - ra.left - ra.width / 2) * .3, dy = (cy - ra.top - ra.height / 2) * .3;
-          a.animate([{ transform: 'none' }, { transform: `translate(${dx}px,${dy}px) scale(1.1)` }, { transform: 'none' }], { duration: dur, easing: 'ease-in-out' });
-        }
-        await sleep(dur * 0.5);
-        els.forEach(x => slash(x, color));
-      }
-      new Set(els.map(x => x.parentElement)).forEach(row => { if (row) { row.style.setProperty('--fx', color); restart(row, 'mlb-wave'); } });
-      els.forEach(x => burst(x, color, 8));
-      shake(false);
-    }
-    function burst(el, color, n) {
-      if (!el || calm()) return;
-      const r = el.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2, fx = $('.mlb-fx');
-      for (let k = 0; k < n; k++) {
-        const p = document.createElement('i'); p.className = 'mlb-spark';
-        p.style.left = x + 'px'; p.style.top = y + 'px'; p.style.setProperty('--fx', color);
-        fx.appendChild(p);
-        const ang = Math.random() * Math.PI * 2, dist = 40 + Math.random() * 70;
-        p.animate([{ transform: 'translate(-50%,-50%) scale(1)', opacity: 1 },
-          { transform: `translate(calc(-50% + ${Math.cos(ang) * dist}px), calc(-50% + ${Math.sin(ang) * dist}px)) scale(.2)`, opacity: 0 }],
-          { duration: 420 + Math.random() * 260, easing: 'cubic-bezier(.2,.7,.3,1)' }).onfinish = () => p.remove();
-      }
-    }
-    function slash(el, color) {
-      if (!el) return;
-      const s = document.createElement('i'); s.className = 'mlb-slash'; s.style.setProperty('--fx', color);
-      el.appendChild(s); setTimeout(() => s.remove(), 420);
-    }
-    function shake(big) { if (!calm()) restart($('.mlb-board'), big ? 'mlb-shake-big' : 'mlb-shake'); }
-    function tint(color) { const t = $('.mlb-tint'); t.style.setProperty('--fx', color); restart(t, 'on'); }
-    function banner(text) {
-      if (speed === 2) return;
-      const d = document.createElement('div'); d.className = 'mlb-banner'; d.textContent = text;
-      root.appendChild(d); setTimeout(() => d.remove(), 1000);
-    }
+    /* ---------- effects: all in game/vfx.js (shared with the card battle) ---------- */
     /* ---------- move history (last 6 moves, Showdown-style) ---------- */
     function histAdd(e) {
       pendingEot = false;

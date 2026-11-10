@@ -25,6 +25,38 @@
   const cleanB = o => { const x = {}; for (const [k, v] of Object.entries(o || {})) if (+v) x[k] = Math.max(-6, Math.min(6, +v)); return Object.keys(x).length ? x : null; };
   const cap = s => s[0].toUpperCase() + s.slice(1);
 
+  /* ---- base-move picker ---- */
+  const TC = { normal:'#9fa19f', fire:'#e62829', water:'#2980ef', electric:'#fac000', grass:'#3fa129', ice:'#3dcef3', fighting:'#ff8000',
+    poison:'#9141cb', ground:'#915121', flying:'#81b9ef', psychic:'#ef4179', bug:'#91a119', rock:'#afa981', ghost:'#704170',
+    dragon:'#5060e1', dark:'#624d4e', steel:'#60a1b8', fairy:'#ef70ef' };
+  const CAT = { physical: 'Phys', special: 'Spec', status: 'Status' };
+  const pk = { q: '', ty: '', cat: '', hi: 0, list: [] };          // picker state
+  const catOf = m => String(m.cat || m.category || '').toLowerCase();
+  const tyOf = m => String(m.type || 'normal').toLowerCase();
+  const accTxt = m => { const a = m.acc ?? m.accuracy; return a === true || a == null ? 'sure hit' : a + '%'; };
+  function searchPK(q, ty, cat) {
+    q = q.trim().toLowerCase(); const qn = q.replace(/[^a-z0-9]/g, ''), out = [];
+    for (const [id, m] of Object.entries(PK || {})) {
+      if (ty && tyOf(m) !== ty) continue;
+      if (cat && catOf(m) !== cat) continue;
+      const n = String(m.name || id).toLowerCase();
+      const s = !q ? 3 : n.startsWith(q) ? 0 : n.split(/[\s-]/).some(w => w.startsWith(q)) ? 1
+        : (n.includes(q) || (qn && id.includes(qn))) ? 2 : (q.length > 2 && String(m.desc || '').toLowerCase().includes(q)) ? 4 : -1;
+      if (s >= 0) out.push([s, n, id]);
+    }
+    return out.sort((a, b) => a[0] - b[0] || a[1].localeCompare(b[1])).slice(0, 60).map(x => x[2]);
+  }
+  const pkOpt = (id, hi, cls = '') => {
+    const m = PK[id]; if (!m) return '';
+    const t = tyOf(m), c = catOf(m);
+    return `<div class="mle-opt ${hi ? 'hi' : ''} ${cls}" ${cls ? '' : `data-pickid="${esc(id)}"`}>
+      <span class="mle-ty" style="background:${TC[t] || '#777'}">${esc(t)}</span>
+      <span class="mle-cat mle-${c}">${CAT[c] || esc(c)}</span>
+      <b>${esc(m.name || id)}</b>
+      <span class="mle-st">${m.power ? m.power + ' pw' : '—'} · ${accTxt(m)}${m.prio ? ' · prio ' + (m.prio > 0 ? '+' : '') + m.prio : ''}</span>
+      <div class="mle-od">${esc(m.desc || '')}</div></div>`;
+  };
+
   /* any move object (Pokémon base, Pal/Digimon original, or a saved edit) → editor fields */
   function toForm(src, fbType) {
     src = src || {};
@@ -82,7 +114,10 @@
       if (+f.drain) e.drain = [+f.drain, 100];
       if (+f.recoil) e.recoil = [+f.recoil, 100];
     }
-    e.desc = describe(e, tpl);
+    const fx = describe(e, tpl);                     // auto effect summary
+    e.fx = fx;
+    if (f.about) { e.origDesc = f.about; e.desc = fx === 'No additional effect.' ? f.about : `${f.about} — ${fx}`; }
+    else e.desc = fx;
     return e;
   }
   function describe(e, tpl) {
@@ -119,10 +154,22 @@
     const bst = (side, ch, lbl) => `<div class="wide"><div class="mle-sub">${lbl}</div><div class="mle-bst">${BST.map(([k, l]) => n(side + '.' + k, f[side][k] || 0, -6, 6, l)).join('')}${st ? '' : n(ch, f[ch], 1, 100, 'Chance %')}</div></div>`;
     const tg = st ? [['normal', 'One foe'], ['allAdjacentFoes', 'All foes'], ['self', 'Self']] : [['normal', 'One foe'], ['allAdjacentFoes', 'All foes']];
     return `<div class="mle-form">
-      <div class="wide"><label>Base move (copy a Pokémon move)<input list="mle-pk" data-base value="${esc(tpl ? tpl.name : '')}" placeholder="Type to search: Shadow Sneak, Protect, Leech Seed…"></label>
-        ${f.base ? '<button type="button" data-a="nobase">Clear base</button>' : ''}
-        <div class="mlr-dim">${tpl ? esc(`${tpl.name}: ${tpl.type} · ${tpl.cat}${tpl.power ? ' · ' + tpl.power : ''}${tpl.prio ? ' · priority ' + tpl.prio : ''}. ${tpl.desc || ''}`)
-          : "Optional. Picking one fills in everything below and keeps that move's special behaviour (priority, multi-hit, Protect, fixed damage…). Then change anything."}</div></div>
+      <div class="wide mle-basebox">
+        <div class="mle-sub">Base move <span class="mlr-dim">copies a Pokémon move's behaviour (priority, multi-hit, Protect, fixed damage…), then change anything</span></div>
+        ${tpl ? `<div class="mle-cur">${pkOpt(f.base, false, 'cur')}<button type="button" data-a="nobase">Clear base</button></div>` : ''}
+        <div class="mle-pick">
+          <div class="mle-pbar">
+            <input type="search" data-pick autocomplete="off" value="${esc(pk.q)}"
+              placeholder="${tpl ? 'Change base move…' : 'Search by name or effect: Shadow Sneak, flinch, Leech Seed…'}">
+            <select data-pickty><option value="">All types</option>${TYPES.map(t => `<option value="${t}" ${pk.ty === t ? 'selected' : ''}>${cap(t)}</option>`).join('')}</select>
+            <div class="mle-pcat">${['', 'physical', 'special', 'status'].map(c => `<button type="button" data-pickcat="${c}" class="${pk.cat === c ? 'on' : ''}">${c ? CAT[c] : 'All'}</button>`).join('')}</div>
+          </div>
+          <div class="mle-res" hidden></div>
+        </div>
+      </div>
+      <div class="wide"><label>Description (original text, shown in battle)
+        <textarea data-f="about" rows="2" placeholder="The move's own description">${esc(f.about || '')}</textarea></label>
+        <div class="mle-fxline">Effect: <span class="mle-fxlive">${esc(fromForm(f).fx)}</span></div></div>
       <label>Name<input type="text" data-f="name" value="${esc(f.name)}"></label>
       ${sel('type', TYPES, f.type, 'Type')}
       ${sel('cat', ['physical', 'special', 'status'], f.cat, 'Category')}
@@ -156,6 +203,8 @@
       const b = api.baseMove(r, id) || {};
       on[id] = !!old[id]; forms[id] = toForm(old[id] || b, myType);
       forms[id].name = (old[id] && old[id].name) || b.name || id;
+      const od = b.desc || b.description || '';      // the move's own text (ignore old auto-generated text)
+      forms[id].about = (old[id] && old[id].origDesc) || (old[id] && od === old[id].desc ? '' : od);
     });
     const byName = {};
     Object.entries(PK).forEach(([id, m]) => { byName[String(m.name || id).toLowerCase()] = id; byName[id] = id; });
@@ -165,11 +214,13 @@
       const el = document.createElement('div'); el.className = 'mlr mle'; document.body.appendChild(el);
       const row = id => {
         const f = forms[id], b = api.baseMove(r, id) || {};
-        const summary = on[id] ? fromForm(f).desc
-          : (b.desc || b.description || (r.fr === 'digimon' ? 'Not set up yet: unusable in battle until ticked.' : 'Original damage only.'));
+        const orig = f.about || b.desc || b.description || '';
+        const summary = on[id]
+          ? `${orig ? `<span>${esc(orig)}</span>` : ''}<span class="mle-fx">${esc(fromForm(f).fx)}</span>`
+          : esc(orig || (r.fr === 'digimon' ? 'Not set up yet: unusable in battle until ticked.' : 'Original damage only.'));
         return `<div class="mle-row mlr-box ${openId === id ? 'open' : ''}" data-id="${esc(id)}"><div class="mle-head">
           <label><input type="checkbox" data-on="${esc(id)}" ${on[id] ? 'checked' : ''}> <b>${esc(f.name)}</b></label>
-          <span class="mlr-dim">${esc(summary)}</span>
+          <span class="mlr-dim mle-sum">${summary}</span>
           <button type="button" data-open="${esc(id)}">${openId === id ? 'Done' : 'Edit'}</button></div>
           ${openId === id ? formHtml(f) : ''}</div>`;
       };
@@ -183,7 +234,7 @@
             <div class="mle-types">${TYPES.map(t => `<button type="button" data-ty="${t}" class="${types.includes(t) ? 'on' : ''}">${t}</button>`).join('')}</div>
             <button type="button" data-a="tyreset">Reset to original types</button>
             <span class="mlr-dim">${typesReset ? 'Original types come back when you press Save.' : 'Type changes apply from the next battle.'}</span></div>
-          <datalist id="mle-pk">${Object.values(PK).map(m => `<option value="${esc(m.name)}">`).join('')}</datalist>
+
           ${ids.map(row).join('') || '<p class="mlr-dim">No moves in the data. Add some below.</p>'}
           <div class="mlr-box mlr-row"><input id="mle-new" type="text" placeholder="New move name"><button type="button" data-a="add">Add move</button></div>
           <button class="big" type="button" data-a="save">Save</button> <button type="button" data-a="cancel">Cancel</button></div>`;
@@ -198,17 +249,47 @@
         else f[k] = NUM.includes(k) ? (+v || 0) : v;
         tick(openId);
         if (k === 'cat' || k === 'target') draw();
+        else { const lv = el.querySelector('.mle-fxlive'); if (lv) lv.textContent = fromForm(f).fx; }
       });
-      el.addEventListener('change', e => {
-        const x = e.target.closest('[data-base]'); if (!x || !openId) return;
-        const bid = findBase(x.value); if (!bid) return;
-        const name = forms[openId].name;
-        forms[openId] = toForm({ ...PK[bid], base: bid }, myType); forms[openId].name = name;
-        on[openId] = true; draw();
+      /* ---- base-move picker ---- */
+      const results = () => {
+        const box = el.querySelector('.mle-res'); if (!box) return;
+        pk.list = searchPK(pk.q, pk.ty, pk.cat);
+        pk.hi = Math.max(0, Math.min(pk.hi, pk.list.length - 1));
+        box.hidden = false;
+        box.innerHTML = pk.list.length ? pk.list.map((id, i) => pkOpt(id, i === pk.hi)).join('')
+          : '<div class="mle-none">No Pokémon move matches.</div>';
+        const h = box.querySelector('.hi'); if (h) h.scrollIntoView({ block: 'nearest' });
+      };
+      const applyBase = bid => {
+        if (!openId || !PK[bid]) return;
+        const keep = forms[openId];
+        forms[openId] = toForm({ ...PK[bid], base: bid }, myType);
+        Object.assign(forms[openId], { name: keep.name, about: keep.about, cost: keep.cost });   // keep your name, text and cost
+        on[openId] = true; pk.q = ''; pk.hi = 0; draw();
+      };
+      el.addEventListener('input', e => {
+        if (e.target.matches('[data-pick]')) { pk.q = e.target.value; pk.hi = 0; results(); }
+        else if (e.target.matches('[data-pickty]')) { pk.ty = e.target.value; pk.hi = 0; results(); }
+      });
+      el.addEventListener('focusin', e => { if (e.target.matches('[data-pick]')) results(); });
+      el.addEventListener('keydown', e => {
+        if (!e.target.matches('[data-pick]')) return;
+        const box = el.querySelector('.mle-res');
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+          e.preventDefault(); if (box.hidden) return results();
+          pk.hi = Math.max(0, Math.min(pk.list.length - 1, pk.hi + (e.key === 'ArrowDown' ? 1 : -1))); results();
+        } else if (e.key === 'Enter') { e.preventDefault(); if (pk.list[pk.hi]) applyBase(pk.list[pk.hi]); }
+        else if (e.key === 'Escape') box.hidden = true;
       });
       el.addEventListener('click', e => {
+        if (!e.target.closest('.mle-pick')) { const rb = el.querySelector('.mle-res'); if (rb) rb.hidden = true; }
+        const pc = e.target.closest('[data-pickcat]');
+        if (pc) { pk.cat = pc.dataset.pickcat; pk.hi = 0; el.querySelectorAll('[data-pickcat]').forEach(x => x.classList.toggle('on', x === pc)); return results(); }
+        const pi = e.target.closest('[data-pickid]'); if (pi) return applyBase(pi.dataset.pickid);
         const cb = e.target.closest('[data-on]'); if (cb) { on[cb.dataset.on] = cb.checked; return; }
-        const op = e.target.closest('[data-open]'); if (op) { openId = openId === op.dataset.open ? null : op.dataset.open; return draw(); }
+        const op = e.target.closest('[data-open]'); if (op) { openId = openId === op.dataset.open ? null : op.dataset.open; pk.q = ''; pk.hi = 0; return draw(); }
+
         const ty = e.target.closest('[data-ty]');
         if (ty) { const t = ty.dataset.ty; types = types.includes(t) ? types.filter(x => x !== t) : types.concat(t).slice(-2); typesTouched = true; typesReset = false; return draw(); }
         const a = e.target.closest('[data-a]') && e.target.closest('[data-a]').dataset.a; if (!a) return;
