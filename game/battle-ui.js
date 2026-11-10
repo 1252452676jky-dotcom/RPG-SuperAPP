@@ -375,8 +375,8 @@
     function askReplace(i) {
       const gone = b.sides[0].active[i], bench = b.sides[0].bench.filter(alive);
       $('.mlb-cmd').innerHTML = '<div class="mlb-hint">Choose who comes in.</div>';
-      tick(`${gone.name} fainted. Choose who comes in.`);
-      openPop(`<div class="mlb-popname">${esc(gone.name)} fainted. Who comes in?</div><div class="mlb-swrow" style="margin-top:8px">${bench.map(x =>
+      tick(`${gone.name} is leaving the field. Choose who comes in.`);
+      openPop(`<div class="mlb-popname">${esc(gone.name)} is leaving the field. Who comes in?</div><div class="mlb-swrow" style="margin-top:8px">${bench.map(x =>
         `<button class="mlb-sw big" data-rep="${i}:${idx(x)}"><img src="${esc(imgOf(x))}" alt=""><span><b>${esc(x.name)}</b> Lv${x.lv}<br>${Math.ceil(x.hp / x.maxhp * 100)}% HP</span></button>`).join('')}</div>`, { forced: true });
     }
     async function doReplace(v) {

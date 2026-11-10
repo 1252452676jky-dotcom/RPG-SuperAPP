@@ -229,10 +229,26 @@
     }
 
     /* --- mechanics that need their own code --- */
-    function selfSwitch(m) {                            // U-turn / Volt Switch: leave after the hit
-      const s = b.sides[sideOf(m)];
-      const inc = s.bench.filter(alive).sort((a, c) => c.hp / c.maxhp - a.hp / a.maxhp)[0];
-      if (inc) doSwitch(m, inc);
+    function selfSwitch(m, ch, mv) {                    // U-turn / Volt Switch / Baton Pass / Shed Tail
+      const si = sideOf(m), bench = b.sides[si].bench.filter(alive), sid = mv && (mv.base || mv.id);
+      const pass = {};                                  // Baton Pass / Shed Tail hand their effects to the newcomer
+      if (sid === 'batonpass' || sid === 'shedtail') {
+        if (!bench.length || !b.sides[1 - si].all.some(alive)) { L('But it failed!'); return; }
+        if (sid === 'batonpass') {
+          pass.boosts = { ...m.boosts };                // stat stages travel with the baton, like the games
+          if (m.vol.sub) pass.sub = m.vol.sub;
+        } else {                                        // Shed Tail
+          if (m.hp <= Math.floor(m.maxhp / 2) || m.vol.sub) { L('But it failed!'); return; }
+          m.hp -= Math.min(Math.ceil(m.maxhp / 2), m.hp - 1); E({ type: 'hurt', mon: m });
+          pass.sub = { hp: Math.max(1, Math.floor(m.maxhp / 4)) };
+        }
+      }
+      if (!bench.length || !b.sides[1 - si].all.some(alive)) return;
+      delete m.vol.trapped;                             // U-turn escapes trapping, like the games
+      if (si === 0 && b.manual && !(ch && ch.auto) && bench.length > 1) {
+        b.pendingSwitch = m; b.pendingPass = pass; L(`${m.name} is coming back!`); return;     // the player picks; the turn pauses here
+      }
+      doSwitch(m, bench.sort((a, c) => c.hp / c.maxhp - a.hp / a.maxhp)[0], pass);   // Auto mode / enemies
     }
     function special(m, sid, mv, tg) {
       const t = tg.find(x => x !== m && alive(x)) || b.foes(m)[0];
@@ -329,9 +345,9 @@
       }
       if (mv.weather) { b.setWeather(({ RainDance: 'rain', raindance: 'rain', sunnyday: 'sun', SunnyDay: 'sun', sandstorm: 'sand', Sandstorm: 'sand', snowscape: 'snow', Snowscape: 'snow', hail: 'snow' })[mv.weather] || String(mv.weather).toLowerCase(), m); }
       if (mv.terrain) b.setTerrain(String(mv.terrain).replace('terrain', ''), m);
-      let total = 0;
+      let total = 0, protectBlocked = false;   // a Protect-blocked self-switcher must not switch (games)
       for (const t of tg) {
-        if (t !== m && t.vol.protect && (mv.flags.protect || !Object.keys(mv.flags).length)) { L(`${t.name} protected itself!`); continue; }
+        if (t !== m && t.vol.protect && (mv.flags.protect || !Object.keys(mv.flags).length)) { L(`${t.name} protected itself!`); if (mv.selfSwitch) protectBlocked = true; continue; }
         if (t !== m && mv.acc !== true && !ab(m).noGuard && !ab(t).noGuard) {
           let acc = mv.acc * ACC_STAGE(Math.max(-6, Math.min(6, m.boosts.accuracy - (t.boosts.evasion || 0))));
           for (const s of [ab(m), it(m)]) if (s.acc) acc *= s.acc(mv);
@@ -414,20 +430,25 @@
         ab(m).afterHit && ab(m).afterHit(m, null, mv, total, b); it(m).afterHit && it(m).afterHit(m, null, mv, total, b);
       }
       if (mv.selfdestruct && alive(m)) { m.hp = 0; L(`${m.name} fainted!`); }
-      if (mv.selfSwitch && alive(m)) selfSwitch(m);        // U-turn / Volt Switch
+      if (mv.selfSwitch && alive(m) && (total || (mv.cat === 'status' && !protectBlocked))) selfSwitch(m, ch, mv);   // only if it hit; status switchers always, except when Protect blocked them (games)
     }
     function selfHit(m) {                            // confusion: typeless 40-power physical hit on itself
       const d = Math.floor(Math.floor(2 * m.lv / 5 + 2) * 40 * realStat(m, 'atk') / realStat(m, 'def') / 50) + 2;
       m.hp = Math.max(0, m.hp - Math.max(1, Math.floor(d * (0.85 + b.rng() * 0.15))));
       E({ type: 'hurt', mon: m }); if (!m.hp) L(`${m.name} fainted!`);
     }
-    function doSwitch(m, inc) {
+    function doSwitch(m, inc, pass) {
       const s = b.sides[sideOf(m)], i = s.active.indexOf(m), j = s.bench.indexOf(inc);
       if (i < 0 || j < 0 || !alive(inc)) return;
       if (m.vol.trapped && !m.types.includes('ghost')) { L(`${m.name} is trapped and can't switch!`); return; }
       ab(m).switchOut && ab(m).switchOut(m, b);
       m.boosts = { atk: 0, def: 0, spa: 0, spd: 0, spe: 0, accuracy: 0, evasion: 0 }; m.vol = {}; m.lock = null; m.toxN = 0;
-      s.active[i] = inc; s.bench[j] = m; L(`${m.name} came back.`); switchIn(inc);
+      s.active[i] = inc; s.bench[j] = m;
+      if (pass) {                                       // Baton Pass / Shed Tail: hand the effects over
+        if (pass.boosts) for (const k in pass.boosts) if (pass.boosts[k]) inc.boosts[k] = pass.boosts[k];
+        if (pass.sub && !inc.vol.sub) inc.vol.sub = pass.sub;
+      }
+      L(`${m.name} came back.`); switchIn(inc);
     }
     function endOfTurn() {
       E({ type: 'eot' });
@@ -478,7 +499,7 @@
       const mv = m.moves[Math.floor(b.rng() * m.moves.length)]; return { mon: m, move: mv, target: null };
     });
     // choices: [{mon, move, target}] or [{mon, switchTo}]
-    b.runTurn = playerChoices => {
+    b._oldRunTurn = playerChoices => {
       if (b.over) return b; b.turn++; L(`— Turn ${b.turn} —`);
       const q = [];
       for (const c of playerChoices.concat(b.enemyChoices())) for (let k = 0; k < (c.mon.actions || 1); k++)
@@ -504,6 +525,43 @@
       for (const mv of m.moves) for (const f of foes) { const s = (mv.power || 0) * typeEff(mv.type, f.types) * (m.types.includes(mv.type) ? 1.5 : 1); if (s > bs) { bs = s; best = { mon: m, move: mv, target: f }; } }
       return best || { mon: m, move: m.moves[0], target: foes[0] };
     });
+
+    /* ---- turn runner that can pause mid-turn (player picks who comes in after U-turn) ---- */
+    const prioOf = c => c.switchTo ? 7 : (c.move.prio || 0) + (ab(c.mon).prio
+      ? (ab(c.mon).prankster && c.move.cat === 'status' && c.target && c.target.types.includes('dark') ? 0 : ab(c.mon).prio(c.move, c.mon)) : 0);
+    b.runTurn = playerChoices => {
+      if (b.over) return b;
+      b.turn++; L(`— Turn ${b.turn} —`);
+      const q = [];
+      for (const c of playerChoices.concat(b.enemyChoices())) for (let k = 0; k < (c.mon.actions || 1); k++)
+        q.push(k && c.move && b.sides[1].all.includes(c.mon)          // Legend's 2nd action picks its own move
+          ? { mon: c.mon, move: c.mon.moves[Math.floor(b.rng() * c.mon.moves.length)], target: null } : c);
+      q.forEach(c => { c.qc = it(c.mon).quick && b.chance(it(c.mon).quick); c.r = b.rng(); });
+      const spd = m => realStat(m, 'spe') * (b.trick > 0 ? -1 : 1);
+      q.sort((x, y) => prioOf(y) - prioOf(x) || y.qc - x.qc || spd(y.mon) - spd(x.mon) || x.r - y.r);
+      b.queue = q; return resume();
+    };
+    function resume() {
+      while (b.queue && b.queue.length && !b.over && !b.pendingSwitch) {
+        const c = b.queue.shift();
+        if (!b.sides[sideOf(c.mon)].active.includes(c.mon)) continue;
+        act(c.mon, c);
+        for (const [i, s] of b.sides.entries()) if (!s.all.some(alive)) { b.over = true; b.winner = 1 - i; }
+      }
+      if (b.over) { b.pendingSwitch = null; b.pendingPass = null; }
+      if (!b.over && !b.pendingSwitch) { b.queue = null; endOfTurn(); }
+      return b;
+    }
+    const _need = b.needReplace, _rep = b.replace, _auto = b.autoChoices;
+    b.needReplace = () => b.pendingSwitch ? [b.sides[0].active.indexOf(b.pendingSwitch)] : _need();
+    b.replace = (i, inc) => {
+      const m = b.pendingSwitch;
+      if (!m) return _rep(i, inc);
+      if (b.sides[0].active[i] !== m || !b.sides[0].bench.includes(inc) || !alive(inc)) return;
+      const pass = b.pendingPass; b.pendingPass = null; b.pendingSwitch = null;
+      doSwitch(m, inc, pass); resume();
+    };
+    b.autoChoices = () => _auto().map(c => ({ ...c, auto: true }));   // Auto mode never pauses
     return b;
   }
 
