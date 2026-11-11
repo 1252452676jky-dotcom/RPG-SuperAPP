@@ -5,6 +5,12 @@
   const LABEL = { party: 'party members', quests: 'quests', training: 'trainings', chronicle: 'events & quests', shop: 'shop items' };
   const S = { q: {}, all: false };
   const prio = q => priorityInfo(q.priority).label;
+  const hl = (s, q) => {                                                  // highlight matched words
+    const ws = q.toLowerCase().split(/\s+/).filter(Boolean).map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+    if (!ws.length) return escapeHtml(s);
+    return String(s).split(new RegExp('(' + ws.join('|') + ')', 'ig'))
+      .map((p, i) => i % 2 ? '<mark>' + escapeHtml(p) + '</mark>' : escapeHtml(p)).join('');
+  };
 
   const SRC = {
     quests: () => appState.quests.map(q => ({
@@ -48,7 +54,7 @@
     const firstDone = list.findIndex(x => x.done);
     return list.slice(0, 50).map((it, i) => (i === firstDone ? '<div class="bs-sep">Completed</div>' : '') + `
       <button type="button" class="bs-hit ${it.done ? 'done' : ''}" data-k="${it.k}" data-sid="${escapeAttr(it.id)}" data-date="${escapeAttr(it.date || '')}">
-        <span class="bs-type">${it.type}</span><span class="bs-title">${escapeHtml(it.title || '')}</span>
+        <span class="bs-type">${it.type}</span><span class="bs-title">${hl(it.title || '', q)}</span>
         <span class="bs-sub">${escapeHtml(it.sub || '')}</span>
         ${it.done ? `<span class="bs-done"><i class="fa-solid fa-check"></i> ${escapeHtml(it.doneTxt)}</span>` : ''}
       </button>`).join('') + (list.length > 50 ? `<div class="bs-none">${list.length - 50} more — keep typing to narrow it down.</div>` : '');

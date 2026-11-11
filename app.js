@@ -263,13 +263,19 @@ function render() {
 
 /* ===== DRAG & DROP (SortableJS: solid card follows the pointer, others slide aside) ===== */
 const SORT_OPTS = {
-  animation: 180, easing: 'cubic-bezier(.2,.8,.2,1)',
+  animation: 220, easing: 'cubic-bezier(.2,.8,.2,1)',
   forceFallback: true, fallbackOnBody: false, fallbackTolerance: 4,
   delayOnTouchOnly: true, delay: 180, touchStartThreshold: 6,          // touch: press-and-hold to pick up
+  scroll: true, scrollSensitivity: 90, scrollSpeed: 14, bubbleScroll: true,   // auto-scroll near screen edges
   draggable: '[data-id]', dataIdAttr: 'data-id',
   ghostClass: 'drag-slot', chosenClass: 'drag-chosen', dragClass: 'drag-lift',
-  filter: 'button, select, input, textarea', preventOnFilter: false
+  filter: 'button, select, input, textarea, a', preventOnFilter: false,
+  onChoose: () => { document.body.classList.add('is-dragging'); clearSel(); },
+  onStart: () => clearSel(),
+  onUnchoose: () => document.body.classList.remove('is-dragging')
 };
+function clearSel() { const s = window.getSelection && window.getSelection(); if (s && s.removeAllRanges) s.removeAllRanges(); }
+document.addEventListener('selectstart', e => { if (document.body.classList.contains('is-dragging')) e.preventDefault(); });
 const rowIds = el => el ? Array.from(el.children)
   .filter(c => c.dataset && c.dataset.id && !c.classList.contains('sortable-fallback')).map(c => c.dataset.id) : [];
 /* put the items listed in `ids` into that order, using only the slots they already occupy */

@@ -27,7 +27,10 @@ const DEV = localStorage.getItem('rpg_device');
 window.cloudDeviceId = DEV;                    // app.js reward ledger stamps grants with this id
 const now = () => Date.now() + (+localStorage.getItem(SKEW) || 0);           // server-corrected clock
 const hash = s => { let x = 5381; for (let i = 0; i < s.length; i++) x = ((x * 33) ^ s.charCodeAt(i)) >>> 0; return x.toString(36); };
-const bare = o => { const c = Object.assign({}, o); delete c._t; return JSON.stringify(c); };
+/* key-order-independent JSON: same content → same text on every device */
+const stable = v => JSON.stringify(v, (k, x) => x && typeof x === 'object' && !Array.isArray(x)
+  ? Object.keys(x).sort().reduce((o, key) => (o[key] = x[key], o), {}) : x);
+const bare = o => { const c = Object.assign({}, o); delete c._t; return stable(c); };
 const clone = o => JSON.parse(JSON.stringify(o));
 const idsOf = list => (list || []).filter(x => x && x.id).map(x => x.id);
 let H = null;          // THIS tab's memory of each item / list order (kept per tab on purpose)
@@ -99,15 +102,22 @@ function merge(L, R) {
     out._ot[k] = Math.max(lo[k] || 0, ro[k] || 0);
   });
   if ((R._sT || 0) >= (L._sT || 0)) { out.gems = R.gems; out.settings = R.settings; out.streakBonus = R.streakBonus; out._sT = R._sT; }
-  out.grants = Object.assign({}, L.grants || {});                              // reward ledger: union, never lose a grant record
-  for (const gk in (R.grants || {})) { const a = out.grants[gk], b = R.grants[gk]; if (!a || (b && (b.t || 0) > (a.t || 0))) out.grants[gk] = b; }
+  const lg = L.grants || {}, rg = R.grants || {};                              // reward ledger: union, never lose a grant record
+  out.grants = {};
+  Object.keys(Object.assign({}, lg, rg)).sort().forEach(gk => {               // fixed order → identical on every device
+    const a = lg[gk], b = rg[gk];
+    out.grants[gk] = !a ? b : !b ? a : ((b.t || 0) >= (a.t || 0) ? b : a);   // ties → cloud, like everything else
+  });
   out.activeTab = L.activeTab;
   return out;
 }
-const sig = s => { const c = Object.assign({}, s); delete c.activeTab; delete c.updatedAt; return JSON.stringify(c); };
+const sig = s => { const c = Object.assign({}, s); delete c.activeTab; delete c.updatedAt; return stable(c); };
 function adopt(s) { applyCloudState(s); stamp(true); }
 
 let docRef = null, pushTimer = null, pushing = false, again = false, lastPushAt = 0;
+let echo = [], lastToast = 0;
+const STATS = window.cloudStats = { writes: 0, snapshots: 0, pushBacks: 0, blocked: 0 };   // type cloudStats in the console
+const diffKeys = (a, b) => Object.keys(Object.assign({}, a, b)).filter(k => k !== 'activeTab' && k !== 'updatedAt' && stable(a[k]) !== stable(b[k]));
 
 const statusEl = document.getElementById('syncStatus');
 const msgEl    = document.getElementById('authMsg');
@@ -136,7 +146,7 @@ async function push() {
       const state = Object.assign({}, merged); delete state.activeTab;
       tx.set(docRef, { state, updatedAt: serverTimestamp(), by: DEV });
     });
-    if (!wrote) lastPushAt = 0;
+    if (!wrote) lastPushAt = 0; else STATS.writes++;
     if (merged && sig(merged) !== sig(appState)) adopt(merged);
     if (wrote) {
       const kb = Math.round(JSON.stringify(merged).length / 1024);
@@ -209,14 +219,19 @@ onAuthStateChanged(auth, async user => {
       localStorage.setItem(SKEW, String(d.updatedAt.toMillis() - lastPushAt)); lastPushAt = 0;
     }
     if (!d.state) return;
+    STATS.snapshots++;
     stamp(false);
     const remote = migrate(clone(d.state));
     const m = merge(snapshotState(), remote);
     if (sig(m) !== sig(appState)) {
       adopt(m);
-      if (d.by !== DEV) toast('Updated from another device', 'info');
+      if (d.by !== DEV && Date.now() - lastToast > 8000) { lastToast = Date.now(); toast('Updated from another device', 'info'); }
     }
-    if (sig(m) !== sig(remote)) window.cloudQueuePush(true);                 // we have newer things the cloud lacks
+    if (sig(m) !== sig(remote)) {                                            // we have newer things the cloud lacks
+      const t = Date.now(); echo = echo.filter(x => t - x < 60000); echo.push(t);
+      if (echo.length <= 8) { STATS.pushBacks++; window.cloudQueuePush(true); }
+      else { STATS.blocked++; console.warn('[sync] loop guard: cloud and this device keep disagreeing on', diffKeys(m, remote)); }
+    }
   }, err => {
     console.error('listener failed', err);
     setStatus('triangle-exclamation', 'text-rose-400', 'Sync offline');
