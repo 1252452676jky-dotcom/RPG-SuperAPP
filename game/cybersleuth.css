@@ -72,3 +72,12 @@ body.cs .mlc-tl div.p{border-color:#2f8cff;box-shadow:0 0 0 2px #0a2fa8}body.cs 
 .dex-ty{display:flex;gap:3px;justify-content:center;margin:3px 0}
 .dex-ty i{font-style:normal;font-size:9px;font-weight:700;text-transform:uppercase;color:#fff;padding:1px 5px;border-radius:3px}
 .dex-more{display:block;margin:14px auto}
+
+/* ---- readability: light text by default, dark only on the white title menu ---- */
+body.cs{color:#e8f1ff}
+body.cs .cs-menu,body.cs .cs-gate{color:#111}
+body.cs .mlc-modal h2{color:#fff;font-family:'Russo One',sans-serif;letter-spacing:1px}
+body.cs .mlc-modal p,body.cs .mlc-dim{color:#b9cdf0}
+body.cs .mlc-modal button{background:linear-gradient(#2a66ff,#0a2fa8);color:#fff;border:1px solid #9cc0ff;padding:7px 18px;margin:8px 4px 0;
+  font:700 14px 'Chakra Petch',sans-serif;cursor:pointer;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+body.cs .mlc-modal button:hover{filter:brightness(1.25)}

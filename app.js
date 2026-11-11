@@ -33,6 +33,7 @@ const defaultState = () => ({
   quests: [],
   trainings: [],
   shop: [],
+  events: [],
   gems: 0,
   updatedAt: 0,
   streakBonus: {},
@@ -188,40 +189,34 @@ const fixedTabs = [
   { id: 'party', label: 'Party', icon: 'fa-users' },
   { id: 'quests', label: 'Quest Board', icon: 'fa-scroll' },
   { id: 'training', label: 'Training', icon: 'fa-dumbbell' },
+  { id: 'chronicle', label: 'Chronicle', icon: 'fa-calendar-days' },
   { id: 'shop', label: 'Shop', icon: 'fa-store' },
 ];
 function renderNav() {
   const nav = document.getElementById('mainNav');
   nav.innerHTML = '';
   fixedTabs.forEach(t => nav.appendChild(tabBtn(t.id, `<i class="fa-solid ${t.icon}"></i> ${t.label}`)));
-  appState.categories.forEach(c => {
-    const wrap = document.createElement('span');
-    wrap.className = 'inline-flex items-center rounded ' + (appState.activeTab === 'cat_' + c.id ? 'bg-indigo-600' : 'bg-slate-700');
-    const tab = document.createElement('button');
-    tab.className = 'px-3 py-1 text-sm ' + (appState.activeTab === 'cat_' + c.id ? 'text-white' : 'hover:bg-slate-600 rounded');
-    tab.innerHTML = `<i class="fa-solid fa-dice"></i> ${escapeHtml(c.name)}`;
-    tab.onclick = () => { appState.activeTab = 'cat_' + c.id; save(); render(); };
-    const pen = document.createElement('button');
-    pen.className = 'px-2 py-1 text-xs text-slate-300 hover:text-white';
-    pen.title = 'Rename category';
-    pen.innerHTML = '<i class="fa-solid fa-pen"></i>';
-    pen.onclick = (e) => { e.stopPropagation(); const n = prompt('Rename category:', c.name); if (n !== null) renameCategory(c.id, n); };
-    wrap.appendChild(tab); wrap.appendChild(pen); nav.appendChild(wrap);
-  });
-  appState.checklists.forEach(cl => {
-    const wrap = document.createElement('span');
-    wrap.className = 'inline-flex items-center rounded ' + (appState.activeTab === 'chk_' + cl.id ? 'bg-emerald-600' : 'bg-slate-700');
-    const tab = document.createElement('button');
-    tab.className = 'px-3 py-1 text-sm ' + (appState.activeTab === 'chk_' + cl.id ? 'text-white' : 'hover:bg-slate-600 rounded');
-    tab.innerHTML = `<i class="fa-solid fa-list-check"></i> ${escapeHtml(cl.name)}`;
-    tab.onclick = () => { appState.activeTab = 'chk_' + cl.id; save(); render(); };
-    const pen = document.createElement('button');
-    pen.className = 'px-2 py-1 text-xs text-slate-300 hover:text-white';
-    pen.title = 'Rename checklist';
-    pen.innerHTML = '<i class="fa-solid fa-pen"></i>';
-    pen.onclick = (e) => { e.stopPropagation(); const n = prompt('Rename checklist:', cl.name); if (n !== null) renameChecklist(cl.id, n); };
-    wrap.appendChild(tab); wrap.appendChild(pen); nav.appendChild(wrap);
-  });
+  const dd = (label, icon, list, prefix, activeCls, renameFn) => {
+    const act = list.find(x => appState.activeTab === prefix + x.id);
+    const d = document.createElement('details');
+    d.className = 'nav-dd';
+    d.innerHTML = `<summary class="px-3 py-1 rounded text-sm ${act ? activeCls : 'bg-slate-700'}">
+        <i class="fa-solid ${icon}"></i> ${act ? escapeHtml(act.name) : label} <i class="fa-solid fa-caret-down text-xs"></i></summary>
+      <div class="nav-dd-menu">${list.map(x => `<div class="nav-dd-row ${act === x ? 'on' : ''}">
+          <button data-open="${prefix + x.id}">${escapeHtml(x.name)}</button>
+          <button data-ren="${x.id}" title="Rename"><i class="fa-solid fa-pen"></i></button></div>`).join('')
+        || '<div class="nav-dd-empty">None yet — use + Add</div>'}</div>`;
+    d.onclick = e => {
+      const o = e.target.closest('[data-open]'), r = e.target.closest('[data-ren]');
+      if (o) { appState.activeTab = o.dataset.open; save(); render(); }
+      if (r) { e.preventDefault(); const it = list.find(x => x.id === r.dataset.ren);
+        const n = prompt('Rename:', it.name); if (n !== null) renameFn(it.id, n); }
+    };
+    nav.appendChild(d);
+  };
+  dd('Generators', 'fa-dice', appState.categories, 'cat_', 'bg-indigo-600', renameCategory);
+  dd('Checklists', 'fa-list-check', appState.checklists, 'chk_', 'bg-emerald-600', renameChecklist);
+
   const add = document.createElement('button');
   add.className = 'px-3 py-1 rounded text-sm bg-slate-700 hover:bg-slate-600 border border-dashed border-slate-500';
   add.innerHTML = '<i class="fa-solid fa-plus"></i> Add';
@@ -244,11 +239,12 @@ function render() {
   const t = appState.activeTab;
   if (t === 'party') c.innerHTML = viewParty();
   else if (t === 'quests') {
-    c.innerHTML = viewQuests(); mountCalendar('quests');
+    c.innerHTML = viewQuests();
     enableDrag('mainQuestList', appState.quests, questDropPriority);
     enableDrag('sideQuestList', appState.quests, questDropPriority);
   }
   else if (t === 'training') { c.innerHTML = viewTraining(); mountCalendar('training'); enableDrag('trainingList', appState.trainings); }
+  else if (t === 'chronicle') { c.innerHTML = viewChronicle(); mountChronicle(); }
   else if (t === 'shop') c.innerHTML = viewShop();
   else if (t.startsWith('cat_')) { const cid = t.slice(4); c.innerHTML = viewCategory(cid); enableCategoryDrag(cid); }
   else if (t.startsWith('chk_')) { const clid = t.slice(4); c.innerHTML = viewChecklist(clid); const cl = findChecklist(clid); enableDrag('chkList_' + clid, cl ? cl.items : []); }
@@ -459,8 +455,7 @@ function viewQuests() {
     <div id="recurQuestList" class="space-y-2 mb-6">${recurRows}</div>
     <details class="mb-6"><summary class="cursor-pointer text-slate-400">Completed (${done.length})</summary>
       <div class="space-y-1 mt-2">${done.map(q=>`<div class="text-sm text-slate-500 flex items-center gap-2"><span class="line-through cursor-pointer" onclick="openQuest('${q.id}')">${escapeHtml(q.title)} — ${q.completedDate}</span></div>`).join('')}</div>
-    </details>
-    <div id="calWrap"></div>`;
+    </details>`;
 }
 function xpTargetSelector(key) {
   const opts = [`<option value="even" ${appState.settings[key]==='even'?'selected':''}>Distribute evenly to all</option>`]
@@ -1393,6 +1388,7 @@ function drawSharedCal(wrap, context) {
     const trainingsDone = appState.trainings.filter(h => h.log[ds]);
     const sb = (appState.streakBonus || {})[ds];
     let badges = '';
+    badges += chronEventBadges(ds);
     st.hs.forEach(h => { const c = HOLIDAY_COUNTRIES[h.cc];
       badges += `<div class="hol-badge text-[10px] truncate rounded px-1 mb-0.5 ${c.badge}" title="${escapeAttr(c.label + ': ' + h.name + (h.local && h.local !== h.name ? ' / ' + h.local : ''))}"><b>${h.cc}</b> ${h.off ? '' : '<i class="fa-solid fa-briefcase"></i> '}${escapeHtml(h.name)}</div>`; });
     createdOnly.forEach(q => badges += `<div class="text-[10px] truncate bg-sky-600/80 rounded px-1 mb-0.5" title="Created: ${escapeAttr(q.title)}"><i class="fa-solid fa-plus"></i> ${escapeHtml(q.title)}</div>`);
