@@ -100,6 +100,14 @@ function addXpToMember(m, amount) {
   while (m.xp >= xpForLevel(m.level)) { m.xp -= xpForLevel(m.level); m.level++; }
 }
 function grantGems(amount) { if (!amount) return; appState.gems = (appState.gems || 0) + amount; }
+/* One reward per completed quest, shared across devices: appState.grants is synced by
+   cloud.js (union-merged), so a device that never saw a completion — stale tab or offline —
+   does not pay XP/gems a second time for the same quest. */
+function alreadyRewarded(key) { return !!(appState.grants && appState.grants[key]); }
+function markRewarded(key) {
+  appState.grants = appState.grants || {};
+  appState.grants[key] = { by: window.cloudDeviceId || 'local', date: todayStr(), t: Date.now() };
+}
 /* ===== DEFAULT REWARDS BY CATEGORY ===== */
 const QUEST_DEFAULT_REWARD = {
   side:      { xp: 50,  gems: 50  },
@@ -240,8 +248,8 @@ function render() {
   if (t === 'party') c.innerHTML = viewParty();
   else if (t === 'quests') {
     c.innerHTML = viewQuests();
-    enableDrag('mainQuestList', appState.quests, questDropPriority);
-    enableDrag('sideQuestList', appState.quests, questDropPriority);
+    enableQuestDrag('main');
+    enableQuestDrag('side');
   }
   else if (t === 'training') { c.innerHTML = viewTraining(); mountCalendar('training'); enableDrag('trainingList', appState.trainings); }
   else if (t === 'chronicle') { c.innerHTML = viewChronicle(); mountChronicle(); }
@@ -253,48 +261,55 @@ function render() {
   save();
 }
 
-/* ===== DRAG & DROP ===== */
-let dragSrcId = null;
-function enableDrag(containerId, sourceArray, onDrop) {
-  const container = document.getElementById(containerId);
-  if (!container) return;
-  const rows = Array.from(container.querySelectorAll('[data-id]'));
-  rows.forEach(row => {
-    row.setAttribute('draggable', 'true');
-    row.addEventListener('dragstart', e => { dragSrcId = row.getAttribute('data-id'); row.classList.add('dragging'); e.dataTransfer.effectAllowed = 'move'; });
-    row.addEventListener('dragend', () => { row.classList.remove('dragging'); rows.forEach(r => r.classList.remove('drag-over-top','drag-over-bottom')); });
-    row.addEventListener('dragover', e => { e.preventDefault(); const rect = row.getBoundingClientRect(); const after = e.clientY > rect.top + rect.height / 2; row.classList.toggle('drag-over-bottom', after); row.classList.toggle('drag-over-top', !after); });
-    row.addEventListener('dragleave', () => row.classList.remove('drag-over-top','drag-over-bottom'));
-    row.addEventListener('drop', e => {
-      e.preventDefault();
-      const targetId = row.getAttribute('data-id');
-      const rect = row.getBoundingClientRect();
-      const after = e.clientY > rect.top + rect.height / 2;
-      if (typeof onDrop === 'function') onDrop(dragSrcId, targetId);
-      reorderArray(sourceArray, dragSrcId, targetId, after);
-      dragSrcId = null; save(); render();
-    });
-  });
+/* ===== DRAG & DROP (SortableJS: solid card follows the pointer, others slide aside) ===== */
+const SORT_OPTS = {
+  animation: 180, easing: 'cubic-bezier(.2,.8,.2,1)',
+  forceFallback: true, fallbackOnBody: false, fallbackTolerance: 4,
+  delayOnTouchOnly: true, delay: 180, touchStartThreshold: 6,          // touch: press-and-hold to pick up
+  draggable: '[data-id]', dataIdAttr: 'data-id',
+  ghostClass: 'drag-slot', chosenClass: 'drag-chosen', dragClass: 'drag-lift',
+  filter: 'button, select, input, textarea', preventOnFilter: false
+};
+const rowIds = el => el ? Array.from(el.children)
+  .filter(c => c.dataset && c.dataset.id && !c.classList.contains('sortable-fallback')).map(c => c.dataset.id) : [];
+/* put the items listed in `ids` into that order, using only the slots they already occupy */
+function reorderSubset(arr, ids) {
+  const want = new Set(ids), slots = [], byId = new Map();
+  arr.forEach((x, i) => { if (x && want.has(x.id)) { slots.push(i); byId.set(x.id, x); } });
+  const ordered = ids.map(id => byId.get(id)).filter(Boolean);
+  if (ordered.length !== slots.length) return;
+  slots.forEach((s, j) => { arr[s] = ordered[j]; });
 }
-/* Dropping a quest onto a quest of another priority adopts that priority. */
-function questDropPriority(srcId, targetId) {
-  if (!srcId || srcId === targetId) return;
-  const s = appState.quests.find(q => q.id === srcId);
-  const t = appState.quests.find(q => q.id === targetId);
-  if (!s || !t) return;
-  const sp = parseInt(s.priority) || 2, tp = parseInt(t.priority) || 2;
-  if (sp !== tp) { s.priority = tp; toast(`"${s.title}" priority: ${priorityInfo(tp).label}`); }
+function enableDrag(containerId, sourceArray) {
+  const el = document.getElementById(containerId);
+  if (!el || !window.Sortable) return;
+  Sortable.create(el, Object.assign({}, SORT_OPTS, {
+    onEnd: ev => { if (ev.oldIndex === ev.newIndex) return; reorderSubset(sourceArray, rowIds(el)); save(); render(); }
+  }));
 }
-function reorderArray(arr, srcId, targetId, after) {
-  if (!srcId || srcId === targetId) return;
-  const fromIdx = arr.findIndex(x => x.id === srcId);
-  if (fromIdx === -1) return;
-  const [moved] = arr.splice(fromIdx, 1);
-  let toIdx = arr.findIndex(x => x.id === targetId);
-  if (toIdx === -1) { arr.push(moved); return; }
-  arr.splice(after ? toIdx + 1 : toIdx, 0, moved);
+/* Quests: normal list + Low fold share one drag group per kind.
+   Dropping next to quests of another priority adopts it; dropping into Low makes it Low. */
+function enableQuestDrag(kind) {
+  const main = document.getElementById(kind + 'QuestList'), low = document.getElementById(kind + 'QuestListLow');
+  if (!main || !window.Sortable) return;
+  const P = q => parseInt(q && q.priority) || 2;
+  const byEl = n => n && n.dataset && n.dataset.id ? appState.quests.find(q => q.id === n.dataset.id) : null;
+  const onEnd = ev => {
+    if (ev.from === ev.to && ev.oldIndex === ev.newIndex) return;
+    const q = byEl(ev.item);
+    reorderSubset(appState.quests, rowIds(main).concat(rowIds(low)));
+    if (q) {
+      const prev = byEl(ev.item.previousElementSibling), next = byEl(ev.item.nextElementSibling);
+      let p = P(q);
+      if (ev.to === low) p = 1;
+      else if (prev || next) { if (!(prev && P(prev) === p) && !(next && P(next) === p)) p = P(prev || next); }
+      else if (p === 1) p = 2;
+      if (p !== P(q)) { q.priority = p; toast(`"${q.title}" priority: ${priorityInfo(p).label}`); }
+    }
+    save(); render();
+  };
+  [main, low].forEach(el => el && Sortable.create(el, Object.assign({}, SORT_OPTS, { group: 'q-' + kind, onEnd })));
 }
-
 /* ===== PARTY ===== */
 function viewParty() {
   let cards = appState.party.map(m => {
@@ -382,6 +397,7 @@ function deleteMember(id) {
 }
 
 /* ===== QUEST BOARD ===== */
+var QUEST_LOW_OPEN = { main: false, side: false };   // Low Priority folds start closed each visit
 function viewQuests() {
   const active = appState.quests.filter(q => !q.done && q.kind !== 'recurring');
   const done = appState.quests.filter(q => q.done && q.kind !== 'recurring');
@@ -435,8 +451,18 @@ function viewQuests() {
       </div>
     </div>`;
 
-  const mainRows = sortByPriority(active.filter(q => (q.kind || 'main') === 'main')).map(questRow).join('') || '<p class="text-slate-500 text-sm">No main quests.</p>';
-  const sideRows = sortByPriority(active.filter(q => q.kind === 'side')).map(questRow).join('') || '<p class="text-slate-500 text-sm">No side quests.</p>';
+  const isLow = q => (parseInt(q.priority) || 2) === 1;
+  const listOf = kind => sortByPriority(active.filter(q => (q.kind || 'main') === kind));
+  const mainAll = listOf('main'), sideAll = listOf('side');
+  const mainRows = mainAll.filter(q => !isLow(q)).map(questRow).join('') || (mainAll.length ? '' : '<p class="text-slate-500 text-sm">No main quests.</p>');
+  const sideRows = sideAll.filter(q => !isLow(q)).map(questRow).join('') || (sideAll.length ? '' : '<p class="text-slate-500 text-sm">No side quests.</p>');
+  const lowBlock = (kind, all) => {
+    const lows = all.filter(isLow);
+    if (!lows.length) return '';
+    return `<details class="q-low" ${QUEST_LOW_OPEN[kind] ? 'open' : ''} ontoggle="QUEST_LOW_OPEN.${kind} = this.open">
+      <summary><span class="lp-c">Low Priority (${lows.length}) ➜</span><span class="lp-o">Low Priority (${lows.length}) ↓</span></summary>
+      <div id="${kind}QuestListLow" class="space-y-2 mt-2 q-list">${lows.map(questRow).join('')}</div></details>`;
+  };
   const recurRows = recurring.map(recurRow).join('') || '<p class="text-slate-500 text-sm">No recurring quests. Create one to track things like filters, blades or annual checkups.</p>';
 
   return `
@@ -447,9 +473,11 @@ function viewQuests() {
     ${xpTargetSelector('questTarget')}
     <p class="text-xs text-slate-500 mb-2">Quests are sorted by priority (high to low). Change a priority with the coloured dropdown, or drag a quest onto another to adopt its priority and position.</p>
     <h3 class="font-bold text-indigo-300 mb-2"><i class="fa-solid fa-star"></i> Main Quests</h3>
-    <div id="mainQuestList" class="space-y-2 mb-5">${mainRows}</div>
+    <div id="mainQuestList" class="space-y-2 q-list">${mainRows}</div>
+    <div class="mb-5">${lowBlock('main', mainAll)}</div>
     <h3 class="font-bold text-sky-300 mb-2"><i class="fa-solid fa-map-signs"></i> Side Quests</h3>
-    <div id="sideQuestList" class="space-y-2 mb-5">${sideRows}</div>
+    <div id="sideQuestList" class="space-y-2 q-list">${sideRows}</div>
+    <div class="mb-5">${lowBlock('side', sideAll)}</div>
     <h3 class="font-bold text-purple-300 mb-2"><i class="fa-solid fa-rotate"></i> Recurring Quests</h3>
     <p class="text-xs text-slate-500 mb-2">Only the next occurrence of each is shown. Check it off and the following date appears automatically.</p>
     <div id="recurQuestList" class="space-y-2 mb-6">${recurRows}</div>
@@ -562,9 +590,10 @@ function completeQuest(id) {
   const q = appState.quests.find(x => x.id === id);
   if (!q || q.done) return;
   q.done = true; q.completedDate = todayStr();
-  grantXP(q.xp, q.target || appState.settings.questTarget);
-  grantGems(q.gems); save(); render();
-  toast(`"${q.title}" completed — +${q.xp} XP${q.gems ? `, +${q.gems} gems` : ''}`);
+  const rk = 'quest:' + q.id, dup = alreadyRewarded(rk);
+  if (dup) toast(`"${q.title}" completed — its reward was already granted, no duplicate`);
+  else { markRewarded(rk); grantXP(q.xp, q.target || appState.settings.questTarget); grantGems(q.gems); toast(`"${q.title}" completed — +${q.xp} XP${q.gems ? `, +${q.gems} gems` : ''}`); }
+  save(); render();
 }
 function deleteQuest(id) {
   const q = appState.quests.find(x => x.id === id);
@@ -588,11 +617,11 @@ function completeRecurring(id, dateStr) {
   const doneOn = dateStr || todayStr();
   q.history = q.history || [];
   q.history.push(doneOn);
-  grantXP(q.xp, q.target || appState.settings.questTarget);
-  grantGems(q.gems);
+  const rk = 'recur:' + q.id + ':' + doneOn, dup = alreadyRewarded(rk);
+  if (!dup) { markRewarded(rk); grantXP(q.xp, q.target || appState.settings.questTarget); grantGems(q.gems); }
   q.nextDate = nextOccurrence(q, doneOn);
   save(); render();
-  toast(`"${q.title}" done — next due ${q.nextDate}${q.xp ? ` (+${q.xp} XP)` : ''}`);
+  toast(`"${q.title}" done — next due ${q.nextDate}${q.xp && !dup ? ` (+${q.xp} XP)` : ''}`);
 }
 function skipRecurring(id) {
   const q = appState.quests.find(x => x.id === id);
@@ -829,7 +858,11 @@ function toggleQuestCompleteDate(id, ds) {
     q.done = false; q.completedDate = null;
     toast(`"${q.title}" marked active again`, 'info');
   } else {
-    if (!q.done) { grantXP(q.xp, q.target || 'even'); grantGems(q.gems); toast(`"${q.title}" completed on ${ds} — +${q.xp} XP`); }
+    if (!q.done) {
+      const rk = 'quest:' + q.id, dup = alreadyRewarded(rk);
+      if (dup) toast(`"${q.title}" completed on ${ds} — reward already granted`);
+      else { markRewarded(rk); grantXP(q.xp, q.target || 'even'); grantGems(q.gems); toast(`"${q.title}" completed on ${ds} — +${q.xp} XP`); }
+    }
     else toast(`"${q.title}" completion date moved to ${ds}`);
     q.done = true; q.completedDate = ds;
   }
@@ -1542,7 +1575,12 @@ function addBackButton() {
 function setQuestDone(id, checked, ds) {
   const q = appState.quests.find(x => x.id === id);
   if (!q) return;
-  if (checked && !q.done) { q.done = true; q.completedDate = ds; grantXP(q.xp, q.target || 'even'); grantGems(q.gems); toast(`"${q.title}" completed on ${ds} — +${q.xp} XP`); }
+  if (checked && !q.done) {
+    const rk = 'quest:' + q.id, dup = alreadyRewarded(rk);
+    q.done = true; q.completedDate = ds;
+    if (dup) toast(`"${q.title}" completed on ${ds} — reward already granted`);
+    else { markRewarded(rk); grantXP(q.xp, q.target || 'even'); grantGems(q.gems); toast(`"${q.title}" completed on ${ds} — +${q.xp} XP`); }
+  }
   else if (!checked && q.done) { q.done = false; q.completedDate = null; toast(`"${q.title}" marked active again`, 'info'); }
   save();
 }

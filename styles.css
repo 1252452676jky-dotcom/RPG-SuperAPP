@@ -355,3 +355,36 @@ body { overflow-x: hidden; }
 .che-custom{margin:4px 0 8px 28px;font-size:13px;line-height:2}
 .che-custom input[type=number]{width:60px}.che-custom label{margin-right:4px}
 .che-item{padding:4px 6px;border-left:4px solid #0f766e;margin:3px 0;cursor:pointer}
+/* ===== Smooth drag (SortableJS) ===== */
+.drag-slot { background: rgba(99,102,241,.14) !important; border: 2px dashed #818cf8 !important; box-shadow: none !important; }
+.drag-slot > * { visibility: hidden; }
+.drag-lift { opacity: 1 !important; box-shadow: 0 16px 36px rgba(0,0,0,.55), 0 0 0 2px #818cf8 !important; cursor: grabbing !important; z-index: 9999 !important; }
+.drag-chosen { cursor: grabbing; }
+.q-list { min-height: 8px; }
+.drag-handle { cursor: grab; }
+
+/* ===== Low priority fold ===== */
+.q-low { margin-top: 8px; }
+.q-low > summary { cursor: pointer; list-style: none; font-size: 13px; font-weight: 700; color: #94a3b8; padding: 4px 0; user-select: none; }
+.q-low > summary::-webkit-details-marker { display: none; }
+.q-low > summary:hover { color: #e2e8f0; }
+.q-low .lp-o, .q-low[open] .lp-c { display: none; }
+.q-low[open] .lp-o { display: inline; }
+
+/* ===== Search (fixed tabs) ===== */
+.bsearch { margin-bottom: 14px; }
+.bsearch-bar { display: flex; align-items: center; gap: 8px; background: #1e293b; border: 1px solid #475569; border-radius: 8px; padding: 6px 10px; }
+.bsearch-bar:focus-within { border-color: #818cf8; }
+.bsearch-bar input[type=search] { flex: 1; min-width: 0; background: transparent; outline: none; color: inherit; font-size: 14px; }
+.bsearch-bar label { font-size: 12px; color: #94a3b8; white-space: nowrap; display: flex; gap: 4px; align-items: center; cursor: pointer; }
+#bsResults { margin-top: 6px; display: flex; flex-direction: column; gap: 4px; max-height: 50vh; overflow-y: auto; }
+.bs-hit { text-align: left; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 6px 10px; }
+.bs-hit:hover { border-color: #818cf8; }
+.bs-type { font-size: 10px; font-weight: 700; text-transform: uppercase; padding: 1px 6px; border-radius: 4px; background: #334155; color: #cbd5e1; }
+.bs-title { font-weight: 600; }
+.bs-sub { font-size: 12px; color: #94a3b8; }
+.bs-hit.done { opacity: .6; }
+.bs-hit.done .bs-title { text-decoration: line-through; }
+.bs-done { margin-left: auto; font-size: 11px; font-weight: 700; color: #34d399; }
+.bs-sep { font-size: 11px; color: #64748b; margin: 6px 0 2px; text-transform: uppercase; letter-spacing: .05em; }
+.bs-none { font-size: 12px; color: #64748b; padding: 4px 2px; }
