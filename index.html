@@ -12,8 +12,10 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;800&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="medieval.css">
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen pb-24">
+<body class="rpg bg-slate-900 text-slate-100 min-h-screen pb-24">
   <div id="authGate" class="fixed inset-0 z-[80] bg-slate-900 flex items-center justify-center p-6">
     <div class="text-center max-w-sm">
       <h1 class="text-2xl font-bold text-indigo-300 mb-2"><i class="fa-solid fa-dragon"></i> RPG Superapp</h1>
@@ -48,6 +50,8 @@
 
 <div id="toastWrap"></div>
 
+<footer class="rpg-footer"><a href="game.html">⚔ Enter Monster Lab — the game ↗</a></footer>
+
 <div id="modal" class="hidden fixed inset-0 z-50 modal-bg flex items-center justify-center p-4"
      onmousedown="modalDown(event)" onmouseup="modalUp(event)">
   <div class="bg-slate-800 border-2 border-indigo-500 rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto p-5" id="modalInner"></div>
@@ -55,17 +59,6 @@
 
 
 <script src="app.js"></script>
-<script src="game/effects.js"></script>
-<script src="game/battle.js"></script>
-<script src="game/vfx.js"></script>
-<script src="game/battle-ui.js"></script>
-<script src="game/cardbattle.js"></script>
-
-<script src="game/run.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
-<script src="game/editor.js"></script>
-<script src="game/gacha.js"></script>
 <script type="module" src="cloud.js"></script>
-<script type="module" src="game/game-cloud.js"></script>
 </body>
 </html>

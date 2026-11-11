@@ -7,7 +7,7 @@
    ===================================================================== */
 (function () {
   'use strict';
-  const SAVE = 'ml.run', META = 'ml.meta', FRS = ['pokemon', 'palworld', 'digimon'];
+  let SAVE = 'ml.run'; const META = 'ml.meta', FRS = ['pokemon', 'palworld', 'digimon'];
   const FR_LABEL = { pokemon: 'Pokémon', palworld: 'Palworld', digimon: 'Digimon' };
   const STARTERS = ('bulbasaur charmander squirtle chikorita cyndaquil totodile treecko torchic mudkip turtwig chimchar piplup ' +
     'snivy tepig oshawott chespin fennekin froakie rowlet litten popplio grookey scorbunny sobble sprigatito fuecoco quaxly')
@@ -418,11 +418,7 @@
   let nextMode = 'A';
   document.addEventListener('click', e => {
     if (!root || !root.contains(e.target)) return;
-    if (e.target.closest('[data-act="newB"]')) {
-      e.stopImmediatePropagation(); const btn = root.querySelector('[data-act="new"]');
-      nextMode = 'B'; if (btn) btn.click(); return;
-    }
-    if (e.target.closest('[data-act="new"]') && e.isTrusted) nextMode = 'A';
+    if (e.target.closest('[data-act="new"]')) nextMode = SAVE === 'ml.runB' ? 'B' : 'A';   // the mode follows the save slot
     if (!run || run.mode !== 'B' || !detail) return;
     const m = allMons().find(x => x.uid === detail); if (!m) return;
     const eq = e.target.closest('[data-equip]'), un = e.target.closest('[data-unequipb]');
@@ -471,10 +467,10 @@
   }
   function vHome() {
     const s = loadRun(), M = metaGet();
-    return `<h2>Monster Lab Run</h2><p class="mlr-dim">31 floors · Early → Mid → Late → Legend · Runs cleared: ${M.wins} / ${M.runs}</p>
+    return `<h2>${SAVE === 'ml.runB' ? 'Mode B — Card Run' : 'Mode A — Classic Run'}</h2><p class="mlr-dim">31 floors · Early → Mid → Late → Legend · Runs cleared: ${M.wins} / ${M.runs}</p>
       ${s ? `<div class="mlr-box"><b>Saved run — Floor ${s.floor}/31</b><div class="mlr-grid" style="margin:6px 0">${s.team.map(m => card(m.mega || m.key, ' · Lv ' + m.lv)).join('')}</div>
         <button class="big" data-act="resume">Resume</button> <button data-act="abandon">Abandon</button></div>` : ''}
-      <button class="${s ? '' : 'big'}" data-act="new">${s ? 'Start new run (deletes save)' : 'Start new run'}</button> <button data-act="newB">Start card run (Mode B)</button> <button data-act="close">Close</button>`;
+      <button class="${s ? '' : 'big'}" data-act="new">${s ? 'Start new run (deletes save)' : 'Start new run'}</button> <button data-act="close">Close</button>`;
   }
   function vStart() {
     const full = draft.picks.length >= START_MAX;
@@ -727,4 +723,8 @@
 
   window.MonsterRun = { open, close, check, jump,
     api: { load, learnOf, baseMove: (r, id) => (r && MOVES[r.fr] && MOVES[r.fr][id]) || null } };   // used by game/editor.js
+
+  window.MonsterRun = Object.assign(window.MonsterRun || {}, {
+    openMode(m) { SAVE = m === 'B' ? 'ml.runB' : 'ml.run'; nextMode = m === 'B' ? 'B' : 'A'; run = null; detail = null; screen = 'home'; MonsterRun.open(); }
+  });
 })();

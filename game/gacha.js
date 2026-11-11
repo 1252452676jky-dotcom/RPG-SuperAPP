@@ -371,18 +371,19 @@
     filterBox: q => { q = q.trim().toLowerCase(); document.querySelectorAll('.gbox').forEach(el => { el.style.display = el.dataset.name.includes(q) ? '' : 'none'; }); },
     // used by game-cloud.js
     exportState: () => { const j = k => { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } };
-      return { v: game.v, box: game.box, team: game.team, overrides: game.overrides, updatedAt: game.updatedAt, run: j('ml.run'), meta: j('ml.meta') }; },
+      return { v: game.v, box: game.box, team: game.team, overrides: game.overrides, updatedAt: game.updatedAt, run: j('ml.run'), runB: j('ml.runB'), meta: j('ml.meta') }; },
     importState: s => {
       if (!s) return;
       game.box = s.box || {}; game.team = s.team || []; game.updatedAt = s.updatedAt || 0;
       if (s.overrides) game.overrides = s.overrides;     // older cloud docs have no overrides → keep local ones
       if ('run' in s) s.run ? localStorage.setItem('ml.run', JSON.stringify(s.run)) : localStorage.removeItem('ml.run');
+      if ('runB' in s) s.runB ? localStorage.setItem('ml.runB', JSON.stringify(s.runB)) : localStorage.removeItem('ml.runB');
       if (s.meta) localStorage.setItem('ml.meta', JSON.stringify(s.meta));
       if (game.ui.last && !game.box[game.ui.last]) game.ui.last = null;
       saveGame(migrateLegacyKeys());   // converts old keys arriving from another device
       if (appState.activeTab === 'gacha') render();
     },
-    mon, moveOf, setOverride, resetOverride,
+    mon, moveOf, setOverride, resetOverride, load: loadData, list: () => DB ? DB.list.map(r => mon(r.key)) : [], owned: k => !!game.box[k],
     img: key => { const r = mon(key), o = game.box[key]; return (o && o.skin) || (r && r.img) || ''; },
     cards: r => getCards(r),
     setSkinQuiet: (key, url) => { if (game.box[key]) { game.box[key].skin = url || null; saveGame(true); } },

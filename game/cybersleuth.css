@@ -1,0 +1,74 @@
+/* ===== Cyber Sleuth skin (game.html only) ===== */
+body.cs{margin:0;min-height:100vh;background:#f4f7fc;color:#111;font-family:'Chakra Petch',system-ui,sans-serif;overflow-x:hidden}
+.cs-bg{position:fixed;inset:0;pointer-events:none;background:
+  linear-gradient(170deg,transparent 30%,#dfe8f7 31%,transparent 33%),linear-gradient(-170deg,transparent 60%,#e3ebf8 61%,transparent 63%)}
+.cs-bg i{position:absolute;width:18px;height:18px;border:2px solid #6c8fe0;opacity:.45;animation:csFloat 9s linear infinite}
+.cs-bg i:nth-child(odd){background:#4d78e6;border:0;width:12px;height:12px}
+.cs-bg i:nth-child(1){left:4%;top:20%}.cs-bg i:nth-child(2){left:8%;top:34%;animation-delay:-2s}.cs-bg i:nth-child(3){left:3%;top:46%;animation-delay:-4s}
+.cs-bg i:nth-child(4){right:6%;top:16%}.cs-bg i:nth-child(5){right:3%;top:30%;animation-delay:-3s}.cs-bg i:nth-child(6){right:9%;top:42%;animation-delay:-6s}
+.cs-bg i:nth-child(7){left:12%;bottom:18%;animation-delay:-5s}.cs-bg i:nth-child(8){right:14%;bottom:22%;animation-delay:-1s}
+@keyframes csFloat{50%{transform:translateY(-14px);opacity:.15}}
+.cs-menu{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:20px}
+.cs-logo{font-family:'Russo One',sans-serif;font-size:clamp(40px,9vw,110px);letter-spacing:4px;line-height:1;margin:0;color:#0b0b0b;text-transform:uppercase}
+.cs-logo span{color:#ffd400;-webkit-text-stroke:2px #e0b800}
+.cs-strip{width:min(900px,92vw);background:#ffe600;text-align:center;font:700 clamp(16px,2.6vw,30px) 'Chakra Petch';letter-spacing:6px;padding:6px 0;box-shadow:0 -6px 0 -2px #ffd000}
+.cs-items{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:10px}
+.cs-items>*{position:relative;display:block;width:min(420px,80vw);padding:9px 0;text-align:center;font:700 22px 'Chakra Petch';color:#fff;text-decoration:none;cursor:pointer;border:0;
+  background:linear-gradient(90deg,transparent,#9aa1ad 12%,#c3c8d0 50%,#9aa1ad 88%,transparent);text-shadow:0 1px 2px #0006;transition:transform .15s}
+.cs-items>*:hover,.cs-items>*:focus-visible{outline:0;transform:scale(1.06);
+  background:linear-gradient(90deg,transparent,#0a2fa8 8%,#1f5cff 50%,#0a2fa8 92%,transparent);box-shadow:0 0 0 2px #fff,0 0 0 4px #0a2fa833}
+.cs-items>*:hover::before,.cs-items>*:hover::after{content:"";position:absolute;top:50%;width:70px;height:26px;transform:translateY(-50%);
+  background:radial-gradient(#7fb2ff 2px,transparent 2.5px) 0 0/8px 8px,radial-gradient(#cfe0ff 2px,transparent 2.5px) 4px 4px/8px 8px;opacity:.9}
+.cs-items>*:hover::before{left:-60px}.cs-items>*:hover::after{right:-60px}
+.cs-copy{font-size:12px;color:#333;margin-top:24px;text-align:center}
+.cs-gate{position:fixed;inset:0;z-index:20000;background:#f4f7fc;display:flex;align-items:center;justify-content:center;text-align:center}
+.cs-btn{background:linear-gradient(#2a66ff,#0a2fa8);color:#fff;border:0;padding:9px 22px;font:700 15px 'Chakra Petch';clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);cursor:pointer;margin:12px 0}
+.cs-link{background:none;border:0;color:#355;text-decoration:underline;cursor:pointer}
+.cs-sync{position:fixed;top:8px;right:10px;z-index:5}
+.cs-lab{position:relative;max-width:1100px;margin:0 auto;padding:16px;color:#e8f1ff}
+body.cs:has(.cs-lab:not([hidden])){background:#06122b}
+.cs-back{position:sticky;top:6px;z-index:3}
+
+/* ---- dark digital panels: run screens, dex, info panels, modal ---- */
+body.cs .mlr,body.cs .dex{background:#06122b radial-gradient(ellipse at 50% -20%,#1d4fc455,transparent 60%);font-family:'Chakra Petch',system-ui,sans-serif}
+body.cs .mlr::before,body.cs .dex::before{content:"";position:fixed;inset:0;pointer-events:none;background:
+  linear-gradient(#2fa8ff0d 1px,transparent 1px) 0 0/22px 22px,linear-gradient(90deg,#2fa8ff0d 1px,transparent 1px) 0 0/22px 22px}
+body.cs .mlr h2,body.cs .dex h2{font-family:'Russo One';letter-spacing:2px;color:#fff;border-left:6px solid #ffe600;padding-left:10px;text-transform:uppercase}
+body.cs .mlr-box,body.cs .mlr-panel,body.cs .cs-modal{background:linear-gradient(160deg,#0e2556f2,#081633f2);border:1px solid #2f6dff88;border-radius:0;
+  clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,16px 100%,0 calc(100% - 16px));box-shadow:inset 0 0 30px #1f5cff33}
+body.cs .cs-modal{color:#e8f1ff}
+body.cs .mlr button,body.cs .dex button{background:#0f2a66;border:1px solid #3d7bff;border-radius:0;color:#dbe8ff;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%);font-family:'Chakra Petch'}
+body.cs .mlr button:hover,body.cs .dex button:hover{background:#1f5cff;color:#fff}
+body.cs .mlr button.big{background:linear-gradient(90deg,#0a2fa8,#2a66ff);border-color:#9cc0ff}
+body.cs .mlr-card{background:#0b1c44;border:1px solid #2f6dff66;border-radius:0}
+body.cs .mlr-card:hover{border-color:#ffe600;box-shadow:0 0 12px #2fa8ff88}
+body.cs .mlr-tag{background:#ffe600;color:#111;border-radius:0}
+body.cs .mlr-stat i{background:linear-gradient(90deg,#2fa8ff,#9cf4ff);border-radius:0}
+body.cs .mlr select,body.cs .mlr input,body.cs .dex input,body.cs .dex select{background:#050d22;color:#e8f1ff;border:1px solid #2f6dff;border-radius:0}
+/* move rows in info panels: same look as the editor's move picker */
+body.cs .mlr-mv{display:grid;grid-template-columns:1fr auto;align-items:center;margin:4px 0;padding:7px 10px;background:#121a2b;border:1px solid #3a4560;border-left:5px solid #2fa8ff;border-radius:8px;text-transform:none}
+body.cs .mlr-mv:hover{background:#1f2a44;border-left-color:#f5c542}
+body.cs .mlr-mv>span:first-child{font-weight:700;color:#fff}
+body.cs .mlr-mv .mlr-dim{font-size:11px;padding:2px 8px;border-radius:4px;background:#2b3450;color:#cfd8ef;text-transform:capitalize}
+/* card battle timeline: Cyber Sleuth blue / red */
+body.cs .mlc-top{background:#06122bdd;border-bottom:2px solid #2f6dff}
+body.cs .mlc-tl div.p{border-color:#2f8cff;box-shadow:0 0 0 2px #0a2fa8}body.cs .mlc-tl div.e{border-color:#ff3b4d;box-shadow:0 0 0 2px #7a0010}
+
+/* ---- Dex layout ---- */
+.dex{position:fixed;inset:0;z-index:9997;overflow-y:auto;color:#e8f1ff;background:#06122b}
+.dex-wrap{position:relative;max-width:1200px;margin:0 auto;padding:14px}
+.dex-head{display:flex;align-items:center;gap:12px}.dex-head h2{flex:1;margin:0}
+.dex-bar{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0;padding:10px;background:#0b1c44;border:1px solid #2f6dff66}
+.dex-bar input,.dex-bar select{padding:6px;font:inherit}.dex-bar input[type=number]{width:80px}
+.dex-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
+.dex-card{position:relative;background:#0b1c44;border:1px solid #2f6dff55;padding:8px;text-align:center;cursor:pointer;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%)}
+.dex-card:hover{border-color:#ffe600;background:#10275e}
+.dex-card:not(.own) img{filter:brightness(.55) saturate(.6)}
+.dex-card.own::after{content:"◎";position:absolute;top:4px;right:16px;color:#ffe600;font-weight:700}
+.dex-card img{width:84px;height:84px;object-fit:contain;display:block;margin:4px auto}
+.dex-card b{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dex-card small{font-size:10px;color:#9fb4dc}
+.dex-no{position:absolute;top:4px;left:6px;font-size:10px;color:#7fb2ff}
+.dex-ty{display:flex;gap:3px;justify-content:center;margin:3px 0}
+.dex-ty i{font-style:normal;font-size:9px;font-weight:700;text-transform:uppercase;color:#fff;padding:1px 5px;border-radius:3px}
+.dex-more{display:block;margin:14px auto}

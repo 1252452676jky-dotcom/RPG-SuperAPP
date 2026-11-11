@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-08T09:48:10.405Z",
+  "version": "2026-11-11T12:33:01.256Z",
   "franchises": {
     "pokemon": {
       "file": "monsters.pokemon.json",
@@ -11,7 +11,7 @@
     },
     "digimon": {
       "file": "monsters.digimon.json",
-      "count": 1400
+      "count": 1488
     }
   }
 }

@@ -259,7 +259,8 @@ async function buildPalworld() {
   const records = [], learnsets = {}, moves = {};
   for (const s of list) {
     const st = s.stats || {};
-    const raw = [st.hp, st.meleeAttack, st.defense, st.shotAttack, st.defense, st.runSpeed].map(v => Number(v) || 0);
+    const raw = [st.hp, st.meleeAttack, st.defense, st.shotAttack, st.defense, st.runSpeed].map(v => Math.max(1, Number(v) || 0));
+    if (!(s.elements || []).length) console.warn(`  !! ${s.displayName} has no element (placeholder data) — typed as normal`);
     const typesOrig = s.elements || [];
     const types = [...new Set(typesOrig.map(t => PAL_TYPE[String(t).toLowerCase()] || 'normal'))];
     const key = 'pal:' + s.codename, tier = palTier(s.rarity);
@@ -350,9 +351,17 @@ async function buildDigimon() {
   const API = 'https://digi-api.com/api/v1';
   const first = await getJSON(`${API}/digimon?pageSize=100&page=0`);
   if (!first?.content || !first?.pageable) throw new Error('Unexpected DAPI list format: ' + Object.keys(first || {}).join(','));
-  const total = first.pageable.totalPages || 1;
-  const rest = await mapLimit(Array.from({ length: total - 1 }, (_, i) => i + 1), 3, i => getJSON(`${API}/digimon?pageSize=100&page=${i}`), 'list pages');
-  const brief = [first, ...rest.filter(Boolean)].flatMap(p => p.content || []);
+  // DAPI's totalPages can't be trusted (looks like a last-index, not a count) → keep paging until a page is empty
+  const pages = [first];
+  for (let i = 1; i < 100; i++) {
+    const p = await getJSON(`${API}/digimon?pageSize=100&page=${i}`);
+    if (!p || !(p.content || []).length) break;
+    pages.push(p);
+  }
+  const brief = [...new Map(pages.flatMap(p => p.content || []).map(b => [b.id, b])).values()];
+  const expected = first.pageable.totalElements;
+  console.log(`  list: ${brief.length} Digimon (DAPI says ${expected ?? '?'})`);
+  if (expected && brief.length < expected) console.warn(`  !! still missing ${expected - brief.length} — check DAPI paging`);
   const details = (await mapLimit(brief, 4, b => getJSON(`${API}/digimon/${b.id}`), 'digimon'))
     .filter(Boolean).sort((a, b) => a.id - b.id);              // stable order → stable keys
 

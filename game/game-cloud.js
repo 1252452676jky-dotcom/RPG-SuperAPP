@@ -12,7 +12,7 @@ if (app && window.Gacha) {
 
   async function push() {
     if (!ref) return;
-    const s = Gacha.exportState(), key = JSON.stringify([s.box, s.team, s.overrides, s.run, s.meta]);
+    const s = Gacha.exportState(), key = JSON.stringify([s.box, s.team, s.overrides, s.run, s.runB, s.meta]);
     if (key === lastPushed) return;                    // nothing really changed
     try { await setDoc(ref, { state: s, updatedAt: s.updatedAt }); lastPushed = key; }
     catch (err) { console.warn('game push failed', err); }

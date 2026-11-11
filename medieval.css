@@ -1,0 +1,52 @@
+/* ===== Habit app: medieval tavern-board skin (index.html, body.rpg) ===== */
+body.rpg{--ink:#2b1a0e;--parch:#efe0bd;--parch2:#e3cc98;--oak:#3b2414;--gold:#c9973b;--blood:#8e1b1b;
+  font-family:'IM Fell English',Georgia,serif!important;color:var(--ink)!important;
+  background:#2a1a10 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='60'%3E%3Cpath d='M0 30h240M0 0h240' stroke='%23000' stroke-opacity='.35'/%3E%3Cpath d='M0 15c60 6 120-6 240 0M0 45c80-5 160 5 240 0' stroke='%23fff' stroke-opacity='.04' fill='none'/%3E%3C/svg%3E")!important}
+body.rpg h1,body.rpg h2,body.rpg h3,body.rpg h4{font-family:'Cinzel',serif!important;letter-spacing:.5px}
+body.rpg h2{font-family:'Cinzel Decorative',serif!important;color:#f3dfa8!important;text-shadow:0 2px 0 #000,0 0 14px #c9973b55}
+body.rpg #content>h3,body.rpg #content h3{color:#f0d9a0!important}
+/* header = carved oak beam with iron studs */
+body.rpg header{background:linear-gradient(#5a3a20,#3b2414 60%,#2a170b)!important;border-bottom:6px double var(--gold)!important;box-shadow:0 6px 18px #000a}
+body.rpg header h1{font-family:'Cinzel Decorative',serif!important;color:#f3dfa8!important;font-size:1.35rem!important;text-shadow:0 2px 0 #000}
+body.rpg header::before,body.rpg header::after{content:"";position:absolute;top:50%;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#ddd,#555);transform:translateY(-50%)}
+body.rpg header::before{left:6px}body.rpg header::after{right:6px}
+/* nav = hanging cloth banners */
+body.rpg #mainNav{background:linear-gradient(#24150b,#1a0f07)!important;gap:8px!important;padding:6px 12px 14px!important}
+body.rpg #mainNav button,body.rpg #mainNav>span{background:linear-gradient(#7a1f1f,#561313)!important;color:#f6e7c1!important;border-radius:0!important;font-family:'Cinzel',serif!important;
+  clip-path:polygon(0 0,100% 0,100% 82%,50% 100%,0 82%);padding-bottom:10px!important;border-top:3px solid var(--gold)}
+body.rpg #mainNav .bg-indigo-600,body.rpg #mainNav .bg-emerald-600{background:linear-gradient(#c9973b,#8a6220)!important;color:#1d1007!important;transform:translateY(4px)}
+body.rpg #mainNav>span>button{clip-path:none;border:0;background:transparent!important}
+/* cards / panels = pinned parchment */
+body.rpg .bg-slate-800,body.rpg .bg-slate-800\/60,body.rpg .bg-slate-900\/40{background:linear-gradient(135deg,var(--parch),var(--parch2))!important;color:var(--ink)!important;
+  border:1px solid #9c7a43!important;border-radius:2px!important;box-shadow:0 3px 0 #0005,inset 0 0 30px #a0703055;position:relative}
+body.rpg #content .bg-slate-800::before{content:"";position:absolute;top:-6px;left:50%;width:12px;height:12px;border-radius:50%;transform:translateX(-50%);
+  background:radial-gradient(circle at 35% 35%,#e66,#7a0d0d);box-shadow:0 2px 2px #0008;z-index:1}
+body.rpg .text-slate-400,body.rpg .text-slate-500,body.rpg .text-slate-300{color:#6b4d2a!important}
+body.rpg .text-slate-100,body.rpg .text-slate-200{color:var(--ink)!important}
+body.rpg .text-amber-400,body.rpg .text-amber-300{color:#9a5b00!important}
+body.rpg .text-cyan-300,body.rpg #gemDisplay{color:#0e7a8a!important;text-shadow:0 0 6px #4fe3ff66}
+body.rpg header .text-amber-300{color:#ffd77a!important}
+/* inputs = ink on vellum */
+body.rpg input,body.rpg textarea,body.rpg select:not(.prio-sel){background:#f8eed5!important;color:var(--ink)!important;border:1px solid #8a6a3a!important;border-radius:2px!important;font-family:'IM Fell English',serif!important}
+/* buttons = wax seals / iron plates */
+body.rpg .bg-indigo-600,body.rpg .bg-emerald-600{background:radial-gradient(circle at 40% 35%,#c53030,var(--blood) 70%)!important;color:#fde9c4!important;border-radius:999px!important;
+  box-shadow:0 2px 0 #3a0808,inset 0 -2px 4px #0006;font-family:'Cinzel',serif!important}
+body.rpg .bg-amber-600{background:linear-gradient(#d9a441,#9a6a1d)!important;color:#1d1007!important;border-radius:2px!important}
+body.rpg .bg-slate-600,body.rpg .bg-slate-700{background:linear-gradient(#6d6d6d,#3f3f3f)!important;color:#eee!important;border-radius:2px!important}
+body.rpg .bg-red-600{background:#5a0f0f!important}
+/* XP bars = brass tubes */
+body.rpg .bg-emerald-500{background:linear-gradient(#ffd977,#c9973b)!important;box-shadow:0 0 6px #ffcc5588}
+body.rpg .bg-slate-700.rounded.h-2,body.rpg .w-full.bg-slate-700{background:#3b2414!important}
+/* modal = unrolled scroll */
+body.rpg .modal-bg{background:#0b0603cc!important}
+body.rpg #modalInner{background:linear-gradient(var(--parch),var(--parch2))!important;color:var(--ink)!important;border:0!important;border-radius:2px!important;
+  box-shadow:0 -14px 0 -4px #6b4423,0 14px 0 -4px #6b4423,0 20px 40px #000}
+/* calendar cells, toasts */
+body.rpg .cal-cell{background:#f2e4c2!important;color:var(--ink)!important}
+body.rpg .toast{background:linear-gradient(var(--parch),var(--parch2));color:var(--ink);border:1px solid var(--gold);font-family:'IM Fell English',serif}
+body.rpg #authGate{background:radial-gradient(circle,#3b2414,#120a04)!important}
+body.rpg #authGate h1{font-family:'Cinzel Decorative'!important;color:#f3dfa8!important}
+/* footer gate to the game */
+.rpg-footer{position:fixed;bottom:0;left:0;right:0;z-index:30;text-align:center;padding:8px;background:linear-gradient(#2a170b,#120a04);border-top:3px double #c9973b}
+.rpg-footer a{font-family:'Cinzel',serif;color:#f3dfa8;text-decoration:none;letter-spacing:1px}
+.rpg-footer a:hover{color:#fff;text-shadow:0 0 10px #c9973b}
