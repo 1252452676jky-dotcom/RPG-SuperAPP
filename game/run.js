@@ -66,6 +66,15 @@
   // a monster keeps the move edits of everything it evolved from
   const lineOf = m => [...new Set([m.mega, m.key, ...(m.line || []).slice().reverse(), m.origin].filter(Boolean))];
   const mvOf = (m, id) => { for (const k of lineOf(m)) { const x = moveObj(R(k), id); if (x) return x; } return null; };
+  /* learnset inheritance: an evolved monster keeps learning what its earlier
+     stages would have learned (stone evolutions etc. learn few moves of their own).
+     The current stage's own entry for a move wins when several stages list it. */
+  const lineKeys = m => [...new Set([m.key, ...(m.line || []).slice().reverse(), m.origin].filter(Boolean))];
+  function learnOfMon(m) {
+    const out = [], seen = new Set();
+    for (const k of lineKeys(m)) for (const e of learnOf(k)) if (!seen.has(e.id)) { seen.add(e.id); out.push(e); }
+    return out.sort((a, b) => a.lv - b.lv);
+  }
   /* ---------------- data ---------------- */
   let KEYS = [], LEARN = {}, MOVES = {}, ITEMTXT = {}, ABTXT = {}, loaded = false;
   const learnCache = {};
@@ -222,10 +231,10 @@
     });
   }
   function learn(m) {
-    const r = R(m.key), names = [];
-    for (const e of learnOf(m.key)) {
+    const names = [];
+    for (const e of learnOfMon(m)) {
       if (e.lv > m.lv || m.learned.includes(e.id)) continue;
-      const mv = moveObj(r, e.id); if (mv) { m.learned.push(e.id); (m.learnedAt = m.learnedAt || {})[e.id] = stamp(); (m.learnLv = m.learnLv || {})[e.id] = e.lv; names.push(mv.name); }
+      const mv = mvOf(m, e.id); if (mv) { m.learned.push(e.id); (m.learnedAt = m.learnedAt || {})[e.id] = stamp(); (m.learnLv = m.learnLv || {})[e.id] = e.lv; names.push(mv.name); }
     }
     return names;
   }
@@ -722,7 +731,7 @@
   }
 
   window.MonsterRun = { open, close, check, jump,
-    api: { load, learnOf, baseMove: (r, id) => (r && MOVES[r.fr] && MOVES[r.fr][id]) || null } };   // used by game/editor.js
+    api: { load, learnOf, baseMove: (r, id) => (r && MOVES[r.fr] && MOVES[r.fr][id]) || null,      _growTest: (key, lv) => { const m = newMon(key, 1); const g = grow(m, lv); return { key: m.key, name: R(m.key).name, lv: m.lv, learned: m.learned, evo: g.evo }; } } };   // used by game/editor.js
 
   window.MonsterRun = Object.assign(window.MonsterRun || {}, {
     openMode(m) { SAVE = m === 'B' ? 'ml.runB' : 'ml.run'; nextMode = m === 'B' ? 'B' : 'A'; run = null; detail = null; screen = 'home'; MonsterRun.open(); }
