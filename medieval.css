@@ -79,3 +79,55 @@ body.rpg .nav-dd-row:hover,body.rpg .nav-dd-row.on{background:#d9bf86}
 /* gems: bright sapphire with a dark outline + glint, readable on oak AND parchment */
 body.rpg .fa-gem{color:#00caff!important;-webkit-text-stroke:1px #10202b;paint-order:stroke fill;
   filter:drop-shadow(0 0 2px rgba(255,255,255,.75)) drop-shadow(0 1px 1px rgba(0,0,0,.55))}
+/* ===== Generators & Checklists: readable parchment ledger ===== */
+/* EDIT THESE to restyle — everything below uses them */
+body.rpg{
+  --gen-card-bg: linear-gradient(135deg,#efe0bd,#e3cc98);   /* subcategory card + checklist reward panel */
+  --gen-card-border: #9c7a43;
+  --gen-attr-bg: #f7ecd2;                                     /* attribute block inside a card */
+  --gen-attr-border: #b8955a;
+  --gen-label: #5a3d1e;                                       /* small labels ("count", "Reward XP") */
+  --gen-text: #2b1a0e;                                        /* normal text */
+  --gen-title: #7a1f1f;                                       /* card / attribute names */
+  --gen-roll-bg: linear-gradient(#fbf3de,#ecd9ae);            /* roll result scroll */
+  --gen-roll-border: #c9973b;
+  --gen-roll-value: #7a1f1f;                                  /* rolled values ("Chicken thigh") */
+  --ss-num-bg: #3b2414;  --ss-num-text: #f3dfa8;              /* spreadsheet row numbers */
+  --ss-cell-bg: #fbf4e2; --ss-line: #cdb07a;                  /* spreadsheet cells + grid lines */
+  --on-wood: #e6d3a8;                                         /* text sitting on the dark wood */
+}
+
+/* 1. outer panels */
+body.rpg #content .bg-slate-800\/50{background:var(--gen-card-bg)!important;color:var(--gen-text)!important;
+  border:1px solid var(--gen-card-border)!important;border-radius:4px!important;box-shadow:0 3px 0 #0006,inset 0 0 40px #a0703040}
+/* 2. attribute blocks */
+body.rpg #content .bg-slate-800\/40{background:var(--gen-attr-bg)!important;color:var(--gen-text)!important;
+  border:1px dashed var(--gen-attr-border)!important;border-radius:3px!important}
+/* labels inside both */
+body.rpg #content :is(.bg-slate-800\/50,.bg-slate-800\/40) :is(.text-slate-300,.text-slate-400,.text-slate-500){color:var(--gen-label)!important}
+
+/* 3. inline-rename inputs (card name, attribute name, checklist items) look like text, not boxes */
+body.rpg #content input.bg-transparent{background:transparent!important;border:0!important;border-bottom:1px dashed transparent!important;box-shadow:none!important}
+body.rpg #content input.bg-transparent:hover{border-bottom-color:var(--gen-card-border)!important}
+body.rpg #content input.bg-transparent:focus{background:#fffaf0!important;border-bottom:1px solid var(--gold)!important}
+body.rpg #content .bg-slate-800\/50 input.text-lg{font-family:'Cinzel',serif!important;color:var(--gen-title)!important}
+body.rpg #content .bg-slate-800\/40 input.text-indigo-300{font-family:'Cinzel',serif!important;color:var(--gen-title)!important}
+
+/* 4. roll result + saved results */
+body.rpg #content .bg-slate-800\/50 .bg-slate-900{background:var(--gen-roll-bg)!important;color:var(--gen-text)!important;
+  border:1px solid var(--gen-roll-border)!important;border-radius:3px!important;box-shadow:inset 0 0 18px #a0703033}
+body.rpg #content .bg-slate-800\/50 .bg-slate-900 .text-slate-400{color:var(--gen-label)!important}
+body.rpg #content .bg-slate-800\/50 .bg-slate-900 .w-24{width:9rem!important;flex-shrink:0}
+body.rpg #content .bg-slate-800\/50 .bg-slate-900 .font-semibold,
+body.rpg #content .bg-slate-800\/50 .bg-slate-900 b{color:var(--gen-roll-value)!important}
+
+/* 5. spreadsheet entry rows */
+body.rpg .ss-wrap{border:1px solid var(--ss-line);border-radius:3px;overflow:hidden}
+body.rpg .ss-num{background:var(--ss-num-bg)!important;color:var(--ss-num-text)!important;font-family:'Cinzel',serif}
+body.rpg .ss-cell{background:var(--ss-cell-bg)!important;color:var(--gen-text)!important;border:0!important;
+  border-bottom:1px solid var(--ss-line)!important;border-radius:0!important}
+body.rpg .ss-cell:focus{background:#fff!important;outline:none;box-shadow:inset 3px 0 0 var(--gold)}
+
+/* 6. text sitting directly on the wood ("0 / 3 checked", "No subcategories yet") */
+body.rpg #content > div.flex > span.text-slate-400,
+body.rpg #content > .space-y-6 > p{color:var(--on-wood)!important}
