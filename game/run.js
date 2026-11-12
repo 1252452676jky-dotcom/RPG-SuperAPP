@@ -17,6 +17,8 @@
   const TYPES = ['normal','fire','water','electric','grass','ice','fighting','poison','ground','flying','psychic','bug','rock','ghost','dragon','dark','steel','fairy'];
   const PAL_TYPE = { neutral: 'normal', leaf: 'grass', earth: 'ground' };
   const PAL_POWER_CAP = 150;
+  // raw Palworld power: ≤90 unchanged, above that compressed (150→111, 200→129, 400→150) so ordering survives
+  const tame = p => p <= 90 ? p : Math.min(PAL_POWER_CAP, Math.round(90 + (p - 90) * 0.35));
 
   const Lf = f => Math.min(100, Math.max(5, Math.round(100 * f / 30)));
   const tierFor = f => f >= FINAL ? 'legend' : f > 20 ? 'late' : f > 10 ? 'mid' : 'early';
@@ -122,7 +124,7 @@
     const m = tpl ? { ...tpl, name: (base && base.name) || tpl.name, ...ed } : { ...(base || {}), ...(ed || {}) };
     const c0 = String(m.category ?? m.cat ?? '').toLowerCase();
     let power = +(m.power ?? m.basePower ?? 0) || 0;
-    if (r.fr === 'palworld') power = Math.min(PAL_POWER_CAP, power);
+    if (r.fr === 'palworld' && !(ed && ed.power != null && ed.power !== '')) power = tame(power);   // your editor value wins
     const s = statsOf(r), best = (s.atk || 0) >= (s.spa || 0) ? 'physical' : 'special';
     const cat = /phys|melee/.test(c0) ? 'physical' : /spec|shot/.test(c0) ? 'special' : /status/.test(c0) ? 'status' : power ? best : 'status';
     if (cat === 'status' && r.fr !== 'pokemon' && !m.base && !m.status && !m.boosts && !m.weather && !m.terrain
@@ -194,6 +196,10 @@
   }
   const megaAbility = m => abilityOptions(R(m.mega))[0] || m.ability;
   function digiLv(stage) {
+    if (Array.isArray(stage)) {                                    // some records list several levels: use the lowest
+      const v = stage.map(x => digiLv(x && typeof x === 'object' ? (x.level ?? x.name) : x)).filter(x => x != null);
+      return v.length ? Math.min(...v) : null;
+    }
     const s = String(stage ?? '').toLowerCase(); if (!s) return null;
     if (/baby\s*(ii|2)|in-?training/.test(s)) return 5;
     if (/baby/.test(s)) return 1;
@@ -219,16 +225,22 @@
   }
   // Digimon: Baby I→II (5) → Child (10) → Adult/Armor (20) → Perfect/Hybrid (40) → Ultimate (65), one stage at a time
   const DIGI_NEXT = { 1: 5, 5: 10, 10: 20, 20: 40, 40: 65 };
+  /* Digimon go up exactly one stage when the data allows it. If no target sits at the next stage
+     (missing entry, or the franchise lists a skip), use the CLOSEST higher stage instead of getting stuck.
+     Goburimon still goes to an Adult, never straight to an Ultimate. */
   function evoTargets(r, enemy) {
-    return evoList(r).map(e => ({ e, to: evoTo(e, r) })).filter(x => {
-      const t = x.to && !isForm(x.to) && R(x.to); if (!t) return false;
-      if (r.fr === 'digimon') {
-        const a = digiLv(r.level ?? r.stage), b = digiLv(t.level ?? t.stage);
-        if (a == null || b == null || DIGI_NEXT[a] !== b) return false;     // no skipping, no same-stage swaps
-        if (enemy && !t.verified) return false;                          // enemies only become Finished Digimon
-      }
-      return true;
+    const list = evoList(r).map(e => ({ e, to: evoTo(e, r) })).filter(x => x.to && !isForm(x.to) && R(x.to));
+    if (r.fr !== 'digimon') return list;
+    const a = digiLv(r.level ?? r.stage); if (a == null) return [];
+    const ok = list.filter(x => {
+      const t = R(x.to); x.st = digiLv(t.level ?? t.stage);
+      return x.st != null && x.st > a && !(enemy && !t.verified);   // enemies only become Finished Digimon
     });
+    if (!ok.length) return [];
+    const exact = ok.filter(x => x.st === DIGI_NEXT[a]);
+    if (exact.length) return exact;
+    const near = Math.min(...ok.map(x => x.st));
+    return ok.filter(x => x.st === near);
   }
   function learn(m) {
     const names = [];
@@ -461,6 +473,59 @@
     grab = null; render();
   }, true);
 
+  /* ---------------- item bag: pick an item, then any monster in the team OR the run box ---------------- */
+  let bagOpen = false, bagSel = null;
+  const heldOf = m => [m.item, ...(m.items || [])].filter(Boolean);
+  function giveItem(m, id) {
+    const i = run.bag.indexOf(id); if (i < 0) return;
+    run.bag.splice(i, 1);
+    if (!m.item) m.item = id;
+    else if (run.mode === 'B' && (m.items = m.items || []).length < 3) m.items.push(id);   // Deck Spire: up to 4
+    else { run.bag.push(m.item); m.item = id; }                     // slot full: swap, old item back to the bag
+  }
+  function takeItem(m, slot) {
+    if (slot === 0) { if (!m.item) return; run.bag.push(m.item); m.item = (m.items && m.items.length) ? m.items.shift() : null; }
+    else { const x = (m.items || []).splice(slot - 1, 1)[0]; if (x) run.bag.push(x); }
+  }
+  function bagHtml() {
+    const cnt = run.bag.reduce((o, id) => (o[id] = (o[id] || 0) + 1, o), {});
+    const ids = Object.keys(cnt).sort((a, b) => itemName(a).localeCompare(itemName(b)));
+    if (bagSel && !cnt[bagSel]) bagSel = null;
+    const mon = (m, where) => `<button type="button" class="mlr-bagmon ${bagSel ? 'can' : ''}" data-baggive="${m.uid}">
+        <img src="${esc((Gacha.img && Gacha.img(m.mega || m.key)) || '')}" alt=""><b>${esc(R(m.mega || m.key).name)}</b>
+        <span class="mlr-dim">Lv ${m.lv} · ${where}</span>
+        <span class="mlr-held">${heldOf(m).map((id, s) => `<span class="mlr-heldit" title="${esc(itemDesc(id))}">${itemImg(id)}${esc(itemName(id))}<i data-bagtake="${m.uid}:${s}" title="Put back in bag">✕</i></span>`).join('') || '<span class="mlr-dim">No item</span>'}</span></button>`;
+    return `<div class="mlr-modal"><div class="mlr-panel mlr-bag">
+      <div class="mlr-row"><h2 style="flex:1;margin:0">🎒 Bag</h2><button data-bagclose>✕</button></div>
+      <p class="mlr-dim">${bagSel ? `Giving <b>${esc(itemName(bagSel))}</b>: tap a monster.` : 'Tap an item, then the monster that should hold it.'}
+        ${run.mode === 'B' ? 'Up to 4 items each.' : 'One item each. Giving another swaps the old one back into the bag.'}</p>
+      <div class="mlr-bagcols">
+        <div class="mlr-bagitems">${ids.map(id => `<button type="button" class="mlr-bagit ${id === bagSel ? 'sel' : ''}" data-bagpick="${esc(id)}">${itemImg(id)}<span><b>${esc(itemName(id))}</b>${cnt[id] > 1 ? ` ×${cnt[id]}` : ''}<small>${esc(itemDesc(id))}</small></span></button>`).join('')
+          || `<div class="mlr-dim">Empty. Items come ${run.mode === 'B' ? 'after every floor' : 'after floors 5, 10, 15, 20, 25 and 30'}.</div>`}</div>
+        <div class="mlr-bagmons"><h3>Team</h3>${run.team.map(m => mon(m, 'Team')).join('')}
+          ${run.box.length ? `<h3>Run box</h3>${run.box.map(m => mon(m, 'Run box')).join('')}` : ''}</div>
+      </div></div></div>`;
+  }
+  document.addEventListener('click', e => {
+    if (!root || !run || screen !== 'hub' || !root.contains(e.target)) return;
+    const t = e.target;
+    if (t.closest('[data-bagopen]')) { e.stopImmediatePropagation(); bagOpen = true; bagSel = null; return render(); }
+    if (!bagOpen) return;
+    e.stopImmediatePropagation();
+    const take = t.closest('[data-bagtake]'), pick = t.closest('[data-bagpick]'), give = t.closest('[data-baggive]');
+    if (take) { const [u, s] = take.dataset.bagtake.split(':'); const m = allMons().find(x => x.uid === u); if (m) { takeItem(m, +s); save(); } return render(); }
+    if (pick) { bagSel = pick.dataset.bagpick === bagSel ? null : pick.dataset.bagpick; return render(); }
+    if (give) { const m = allMons().find(x => x.uid === give.dataset.baggive); if (m && bagSel) { giveItem(m, bagSel); bagSel = null; save(); } return render(); }
+    if (t.closest('[data-bagclose]') || !t.closest('.mlr-bag')) { bagOpen = false; bagSel = null; return render(); }
+  }, true);
+  const _renderBase = render;                                       // add the "Open bag" button + the bag window to the floor screen
+  render = function () {
+    _renderBase();
+    if (!root || !run || screen !== 'hub') { bagOpen = false; return; }
+    const h = [...root.querySelectorAll('.mlr-box h3')].find(x => x.textContent.trim() === 'Bag');
+    if (h && !h.querySelector('[data-bagopen]')) h.insertAdjacentHTML('beforeend', ` <button type="button" class="mlr-bagbtn" data-bagopen>🎒 Open bag (${run.bag.length})</button>`);
+    if (bagOpen) root.insertAdjacentHTML('beforeend', bagHtml());
+  };
   /* ---------------- views ---------------- */
   function card(k, extra = '', attrs = '', cls = '', tag = '') {
     const r = R(k) || { name: k, types: [] };
@@ -476,7 +541,7 @@
   }
   function vHome() {
     const s = loadRun(), M = metaGet();
-    return `<h2>${SAVE === 'ml.runB' ? 'Mode B — Card Run' : 'Mode A — Classic Run'}</h2><p class="mlr-dim">31 floors · Early → Mid → Late → Legend · Runs cleared: ${M.wins} / ${M.runs}</p>
+    return `<h2>${SAVE === 'ml.runB' ? 'Deck Spire' : 'Gauntlet'}</h2><p class="mlr-dim">31 floors · Early → Mid → Late → Legend · Runs cleared: ${M.wins} / ${M.runs}</p>
       ${s ? `<div class="mlr-box"><b>Saved run — Floor ${s.floor}/31</b><div class="mlr-grid" style="margin:6px 0">${s.team.map(m => card(m.mega || m.key, ' · Lv ' + m.lv)).join('')}</div>
         <button class="big" data-act="resume">Resume</button> <button data-act="abandon">Abandon</button></div>` : ''}
       <button class="${s ? '' : 'big'}" data-act="new">${s ? 'Start new run (deletes save)' : 'Start new run'}</button> <button data-act="close">Close</button>`;

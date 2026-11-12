@@ -89,7 +89,7 @@
 
       function unit(m, si) {
         if (!m) return '<div class="mlc-unit ko"><div class="mlc-dim">empty</div></div>';
-        const tgt = sel && si === 1 && alive(m), bo = Object.entries(m.boosts || {}).filter(([, v]) => v).map(([k, v]) => `${k} ${v > 0 ? '+' : ''}${v}`).join(' ');
+        const tgt = sel && actor && alive(m) && (b.pickable(actor, sel) || []).includes(m), bo = Object.entries(m.boosts || {}).filter(([, v]) => v).map(([k, v]) => `${k} ${v > 0 ? '+' : ''}${v}`).join(' ');
         return `<div class="mlc-unit ${m === actor ? 'now' : ''} ${tgt ? 'tgt' : ''} ${alive(m) ? '' : 'ko'}" data-u="${si}:${b.sides[si].active.indexOf(m)}">
           <img src="${esc(pic(m))}" alt=""><div style="flex:1"><b>${esc(m.name)}</b> <span class="mlc-dim">Lv ${m.lv}</span>
           <div class="mlc-hp"><i style="width:${Math.max(0, m.hp / m.maxhp * 100)}%;background:${m.hp / m.maxhp < .25 ? '#d33' : m.hp / m.maxhp < .5 ? '#db3' : '#4c4'}"></i></div>
@@ -107,10 +107,10 @@
           <div class="mlc-field">
             <div class="mlc-side">${[0, 1, 2].map(i => unit(si0.active[i], 0)).join('')}${bench(si0)}</div>
             <div class="mlc-log" id="mlc-log">${b.log.slice(-60).map(l => `<div>${esc(l)}</div>`).join('')}</div>
-            <div class="mlc-side">${[0, 1, 2].map(i => unit(si1.active[i], 1)).join('')}${bench(si1)}</div></div>
+            <div class="mlc-side">${si1.all.length === 1 ? `<div class="mlc-boss">${unit(si1.active[0], 1)}</div>` : [0, 1, 2].map(i => unit(si1.active[i], 1)).join('') + bench(si1)}</div></div>
           <div class="mlc-hand">${mine ? `<div style="min-width:140px"><b>${esc(actor.name)}</b><div class="mlc-en">${Array.from({ length: Math.max(ENERGY, actor.energy) }, (_, i) => `<i class="${i < actor.energy ? 'on' : ''}"></i>`).join('')}</div>
               <div class="mlc-dim">${actor.energy} energy · deck ${actor.deck.length}</div><button data-a="end" style="margin-top:6px">End turn</button>
-              ${sel ? '<div class="mlc-dim">Pick a target on the right (click here to cancel)</div>' : ''}</div>
+              ${sel ? '<div class="mlc-dim">Pick a glowing target (click here to cancel)</div>' : ''}</div>
               ${actor.hand.map((mv, i) => `<div class="mlc-card ${cost(mv) > actor.energy ? 'off' : ''} ${sel === mv ? 'sel' : ''}" data-c="${i}" style="border-color:${TC[mv.type] || '#777'}" title="${esc(mv.desc || '')}">
                 <span class="mlc-cost">${cost(mv)}</span><b>${esc(mv.name)}</b>
                 <div class="mlc-dim">${esc(mv.type)} · ${mv.cat}${mv.power ? ' · ' + SHOW(mv.power) : ''}${mv.acc === true ? '' : ' · ' + mv.acc + '%'}${mv.prio ? ' · prio ' + mv.prio : ''}</div>
@@ -220,12 +220,13 @@
             if (a && a.dataset.a === 'quit') { if (confirm('Leave this battle? It counts as a loss (you lose nothing).')) { b.over = true; b.winner = 1; finish(); } return; }
             if (c) {
               const mv = m.hand[+c.dataset.c]; if (!mv || cost(mv) > m.energy) return;
-              if (SINGLE.includes(mv.target) && b.sides[1].active.filter(alive).length > 1) { sel = sel === mv ? null : mv; return draw(); }
-              busy = true; sel = null; await play(m, mv, b.sides[1].active.find(alive)); busy = false; return check();
+              const opts = b.pickable(m, mv);
+              if (opts && opts.length > 1) { sel = sel === mv ? null : mv; return draw(); }
+              busy = true; sel = null; await play(m, mv, opts ? opts[0] || null : b.sides[1].active.find(alive)); busy = false; return check();
             }
             if (u && sel) {
               const [si, i] = u.dataset.u.split(':').map(Number), t = b.sides[si].active[i];
-              if (si !== 1 || !alive(t)) return;
+              if (!alive(t) || !(b.pickable(m, sel) || []).includes(t)) return;
               const mv = sel; sel = null; busy = true; await play(m, mv, t); busy = false; return check();
             }
             if (sel && e.target.closest('.mlc-hand')) { sel = null; draw(); }

@@ -92,7 +92,8 @@
       return `<div class="mlb-card mlb-enter fr-${esc(fr)}" data-i="${idx(m)}" data-side="${side}" style="--t1:${tc(m.types[0])};--t2:${tc(m.types[1] || m.types[0])}">
         <i class="mlb-rdy"></i>
         <div class="mlb-cardtop"><span class="mlb-name">${esc(m.name)}</span><span class="mlb-lv">Lv${m.lv}</span></div>
-        <div class="mlb-art"><img src="${esc(imgOf(m))}" alt=""><span class="mlb-embs">${emblems(m)}</span></div>
+        <div class="mlb-art"><img src="${esc(imgOf(m))}" alt=""><span class="mlb-embs">${emblems(m)}</span>
+          <button type="button" class="mlb-ib" data-info="${idx(m)}" title="Info">i</button></div>
         <div class="mlb-types">${typeChips(m)}</div>
         <div class="mlb-hp"><div class="mlb-hpfill"></div></div>
         <div class="mlb-sub"><span class="mlb-hptext"></span><span class="mlb-status"></span></div>
@@ -109,7 +110,9 @@
       const key = f.act.map(a => a.map(idx).join(',')).join('|');
       if (key !== layoutKey) {
         layoutKey = key;
-        $('.mlb-foe').innerHTML = pad(f.act[1]).map(m => card(m, 1)).join('');
+        const solo = b.sides[1].all.length === 1;                 // Legend floor: one boss, centered and enlarged
+        $('.mlb-foe').classList.toggle('solo', solo);
+        $('.mlb-foe').innerHTML = solo ? card(f.act[1][0], 1) : pad(f.act[1]).map(m => card(m, 1)).join('');
         $('.mlb-me').innerHTML = pad(f.act[0]).map(m => card(m, 0)).join('');
       }
       [0, 1].forEach(si => {
@@ -261,7 +264,7 @@
         el.classList.toggle('ready', !!c && !busy);
         el.classList.toggle('pickme', !c && !busy && !finished && !pop && !targeting && alive(m));
         slot.innerHTML = !c ? '' : '<b>READY</b> ' + (c.switchTo ? '⇄ ' + esc(c.switchTo.name)
-          : esc(c.move.name) + (c.target && SINGLE.includes(c.move.target) && b.foes(m).length > 1 ? ' → ' + esc(c.target.name) : ''));
+          : esc(c.move.name) + (c.target && (b.pickable(m, c.move) || []).length > 1 ? ' → ' + esc(c.target.name) : ''));
         slot.style.setProperty('--t', c && c.move ? tc(c.move.type) : '#4f6bff');
       });
     }
@@ -276,7 +279,7 @@
       if (finished) return;
       const act = myActive(), n = act.filter(m => chosen.has(m)).length, done = n && n === act.length;
       $('.mlb-cmd').innerHTML = busy ? '<div class="mlb-wait">Resolving…</div>'
-        : targeting ? `<div class="mlb-hint"><b>${esc(targeting.mv.name)}</b>: tap an enemy card. Tap anywhere else to cancel.</div>`
+        : targeting ? `<div class="mlb-hint"><b>${esc(targeting.mv.name)}</b>: tap a glowing card. Tap anywhere else to cancel.</div>`
         : `<div class="mlb-hint">${done ? 'All set! Starting… (tap a card to change its move)' : `Tap your monsters to choose moves, in any order (${n}/${act.length} ready)`}</div>
            <div class="mlb-actions">${lastChoices ? '<button class="mlb-btn" data-act="repeat">Repeat last</button>' : ''}
            <button class="mlb-btn" data-act="autoturn">Auto turn</button>${n ? '<button class="mlb-btn" data-act="clear">Clear</button>' : ''}</div>`;
@@ -304,12 +307,13 @@
           `<button class="mlb-sw" data-sw="${idx(x)}"><img src="${esc(imgOf(x))}" alt=""><span>${esc(x.name)}<br>${Math.ceil(x.hp / x.maxhp * 100)}%</span></button>`).join('')}</div>` : ''}`, { menu: true });
       pop.dataset.mon = idx(m);
     }
-    function foeInfo(m) {
-      const ab = m.ability && abilityText[m.ability];
+    function foeInfo(m) {                                     // info for ANY card (opened only by its "i" button)
+      const mine = idx(m) < player.length, ab = m.ability && abilityText[m.ability], it = m.item && itemText[m.item];
       openPop(`<div class="mlb-pophead">${bigArt(m)}<div>
         <div class="mlb-popname">${esc(m.name)} <span>Lv${m.lv}</span></div><div class="mlb-types">${typeChips(m)}</div>
-        <div class="mlb-dim">HP ${Math.ceil(m.hp / m.maxhp * 100)}%${m.status ? ' · ' + STATUS_LABEL[m.status] : ''}${boostText(m)}</div>
+        <div class="mlb-dim">HP ${mine ? `${m.hp}/${m.maxhp}` : Math.ceil(m.hp / m.maxhp * 100) + '%'}${m.status ? ' · ' + STATUS_LABEL[m.status] : ''}${boostText(m)}</div>
         <div class="mlb-dim">${ab ? `<b>${esc(ab.name)}</b>: ${esc(ab.desc || '')}` : 'No ability'}</div>
+        ${it ? `<div class="mlb-dim"><b>${esc(it.name)}</b>: ${esc(it.desc || '')}</div>` : ''}
         <div class="mlb-dim">Tap outside to go back.</div></div></div>`);
     }
     function askReplace(i) {
@@ -324,6 +328,8 @@
       closePop(); b.replace(i, all[j]); busy = true; bar(); await play(); busy = false; beginChoose();
     }
     function beginChoose() {
+      // a side wiped out by poison / burn / Leech Seed / sandstorm at end of turn: end the battle now
+      [1, 0].forEach(si => { if (!b.over && !b.sides[si].all.some(alive)) { b.over = true; b.winner = 1 - si; } });
       if (b.over) return finish();
       const need = b.needReplace();
       if (need.length) return askReplace(need[0]);          // asks you even in Auto mode
@@ -354,7 +360,7 @@
     /* ---------- input ---------- */
     root.addEventListener('click', e => {
       if (pop && !e.target.closest('.mlb-popin')) { if (!pop.classList.contains('forced')) closePop(); return; }   // tap outside = back
-      const el = e.target.closest('[data-act],[data-mv],[data-sw],[data-rep],.mlb-card[data-i]');
+      const el = e.target.closest('[data-act],[data-mv],[data-sw],[data-rep],[data-info],.mlb-card[data-i]');
       if (el && el.disabled) return;
       const a = el && el.dataset.act;
       if (a === 'speed') { speed = (speed + 1) % SPEEDS.length; localStorage.setItem('ml.bspeed', speed); return labels(); }
@@ -362,6 +368,7 @@
       if (a === 'log') return void root.classList.toggle('showlog');
       if (a === 'quit') { if (!finished && confirm('Leave this battle? It counts as a loss (you lose nothing).')) { b.over = true; b.winner = 1; closePop(); finish(); } return; }
       if (a === 'continue' || a === 'rebattle' || a === 'end') return close(a);
+      if (el && el.dataset.info) { if (!finished) foeInfo(all[+el.dataset.info]); return; }   // the "i" button is the only way to open info
       if (busy || finished) return;
       if (el && el.dataset.rep) return doReplace(el.dataset.rep);
       if (targeting) {                                       // picking a target for a single-target move
@@ -376,19 +383,21 @@
         return p ? { mon: x, move: p.move, target: alive(p.target) ? p.target : null } : autoFor(x); }));
       if (el.dataset.mv && pop) {
         const m = all[+pop.dataset.mon], mv = m.moves.find(v => String(v.id) === el.dataset.mv); if (!mv) return;
-        const foes = b.foes(m); closePop();
-        if (SINGLE.includes(mv.target) && foes.length > 1) {
-          targeting = { m, mv }; foes.forEach(f => { const c = cardEl(f); if (c) c.classList.add('targetable'); }); return bar();
+        const opts = b.pickable(m, mv); closePop();            // foes, partners, or both (Heal Pulse, Pollen Puff…)
+        if (opts && opts.length > 1) {
+          targeting = { m, mv }; opts.forEach(f => { const c = cardEl(f); if (c) c.classList.add('targetable'); }); return bar();
         }
-        chosen.set(m, { mon: m, move: mv, target: foes[0] || null });
-        tick(`${m.name} → ${mv.name}: ${SINGLE.includes(mv.target) ? 'targets ' + (foes[0] ? foes[0].name : 'nobody') + ' (only one foe left)' : 'hits ' + (AIM[mv.target] || 'one foe') + ', no target to pick'}`);
+        const tgt = opts ? opts[0] || null : null;
+        chosen.set(m, { mon: m, move: mv, target: tgt || b.foes(m)[0] || null });
+        tick(`${m.name} → ${mv.name}: ${opts ? 'targets ' + (tgt ? tgt.name : 'nobody') + ' (only one choice)' : 'hits ' + (AIM[mv.target] || 'one foe') + ', no target to pick'}`);
         return bar();
       }
       if (el.dataset.sw && pop) { const m = all[+pop.dataset.mon]; closePop(); chosen.set(m, { mon: m, switchTo: all[+el.dataset.sw] }); return bar(); }
       if (el.classList.contains('mlb-card')) {
         const m = all[+el.dataset.i]; if (!alive(m)) return;
         clearTimeout(goTimer);                               // tapping a READY card lets you change its move
-        return el.dataset.side === '0' ? moveMenu(m) : foeInfo(m);
+        if (el.dataset.side !== '0') return tick(`Tap the i on ${m.name}'s card to see its info.`);
+        return moveMenu(m);
       }
     });
     root.addEventListener('mouseover', e => {                // hover a move → enemy cards show SUPER / RESIST / IMMUNE

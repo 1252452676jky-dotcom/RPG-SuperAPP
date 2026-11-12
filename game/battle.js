@@ -49,6 +49,8 @@
   const wHeal = w => w === 'sun' ? 2 / 3 : w ? 1 / 4 : 1 / 2;
   const HEAL_W = { synthesis: wHeal, moonlight: wHeal, morningsun: wHeal, shoreup: w => w === 'sand' ? 2 / 3 : 1 / 2 };
   const PROTECT = ['protect', 'detect', 'kingsshield', 'spikyshield', 'banefulbunker', 'silktrap', 'burningbulwark', 'obstruct'];
+  const ALLY_HEAL = { healpulse: 0.5, floralhealing: 0.5 };   // single-target heals meant for a partner
+  const SINGLE_T = ['normal', 'any', 'adjacentFoe'];          // player picks one foe
   const FX = () => window.MonsterFX || { abilities: {}, items: {} };
 
   /* -------- build a battler from a DB record -------- */
@@ -236,13 +238,31 @@
       return Math.max(1, Math.floor(d));
     }
 
+    /* who the player may pick for a move; null = no choice (spread / self / field moves) */
+    function pickable(m, mv) {
+      const sid = mv.base || mv.id, foes = b.foes(m), mates = b.allies(m).filter(x => x !== m);
+      if (mv.target === 'adjacentAlly') return mates;                 // Helping Hand, Aromatic Mist…
+      if (mv.target === 'adjacentAllyOrSelf') return [m, ...mates];   // Acupressure
+      if (ALLY_HEAL[sid]) return mates;                               // Heal Pulse, Floral Healing: partners only
+      if (sid === 'pollenpuff') return foes.concat(mates);            // damages foes, heals partners
+      if (SINGLE_T.includes(mv.target)) return foes;
+      return null;
+    }
     function targetsFor(m, mv, pick) {
       const foes = b.foes(m);
       if (['allAdjacentFoes', 'allAdjacent'].includes(mv.target)) { mv.spread = foes.length > 1; return mv.target === 'allAdjacent' ? foes.concat(b.allies(m).filter(x => x !== m)) : foes; }
-      if (['self', 'allySide', 'allyTeam', 'all', 'foeSide'].includes(mv.target)) return [m];
       mv.spread = false;
-      return [alive(pick) && foes.includes(pick) ? pick : foes[Math.floor(b.rng() * foes.length)]].filter(Boolean);
+      if (mv.target === 'allies') return b.allies(m);                 // Life Dew, Jungle Healing: user + partners
+      if (['randomNormal', 'scripted'].includes(mv.target))           // Outrage, Counter…: random foe, no pick
+        return foes.length ? [foes[Math.floor(b.rng() * foes.length)]] : [];
+      const opts = pickable(m, mv);
+      if (!opts) return [m];                                          // self / own side / whole field
+      if (alive(pick) && opts.includes(pick)) return [pick];
+      const theirs = opts.filter(x => sideOf(x) !== sideOf(m));
+      if (theirs.length) return [theirs[Math.floor(b.rng() * theirs.length)]];
+      return opts.slice().sort((x, y) => x.hp / x.maxhp - y.hp / y.maxhp).slice(0, 1);   // ally move, no pick: most hurt partner
     }
+    b.pickable = pickable;
 
     /* --- mechanics that need their own code --- */
     function selfSwitch(m, ch, mv) {                    // U-turn / Volt Switch / Baton Pass / Shed Tail
@@ -336,6 +356,7 @@
       const tg = targetsFor(m, mv, ch.target);
       L(`${m.name} used ${mv.name}!`); E({ type: 'move', user: m, move: mv, targets: tg });
       if (mv.cat !== 'status' || true) m.lastMove = mv;               // remembered for Encore
+      if (!tg.length) { L('But it failed!'); return; }                // e.g. Heal Pulse with no partner left
       if (isProt) {
         if (b.chance(1 / Math.pow(3, m.protN || 0))) { m.vol.protect = true; m.protN = (m.protN || 0) + 1; L(`${m.name} protected itself!`); }
         else { m.protN = 0; L('But it failed!'); }
@@ -385,10 +406,12 @@
             }
           }
           if (mv.boosts) b.boost(mv.target === 'self' ? m : t, mv.boosts, m);
-          const hf = HEAL_W[sid] ? HEAL_W[sid](b.weather) : mv.heal ? mv.heal[0] / mv.heal[1] : 0;
-          if (hf) { if (m.hp >= m.maxhp) L(`${m.name}'s HP is full!`); else b.heal(m, hf); }
+          const hf = ALLY_HEAL[sid] || (HEAL_W[sid] ? HEAL_W[sid](b.weather) : mv.heal ? mv.heal[0] / mv.heal[1] : 0);
+          const who = sideOf(t) === sideOf(m) ? t : m;                // heal the partner it was aimed at, not the user
+          if (hf) { if (who.hp >= who.maxhp) L(`${who.name}'s HP is full!`); else b.heal(who, hf); }
           continue;
         }
+        if (sid === 'pollenpuff' && t !== m && sideOf(t) === sideOf(m)) { b.heal(t, 0.5); continue; }   // Pollen Puff on a partner heals
         let d = 0, hits = 1;
         if (FIXED[sid]) {
           if (!typeEff(mv.type, t.types)) { L(`It doesn't affect ${t.name}...`); continue; }
