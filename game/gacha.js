@@ -58,7 +58,8 @@
   function mon(key) {
     const r = DB && DB.byKey.get(key); if (!r) return null;
     const o = (BASE_OV[key] || game.overrides[key]) ? Object.assign({}, BASE_OV[key], game.overrides[key]) : null; if (!o) return r;
-    const m = Object.assign({}, r, { edited: true });
+    const m = Object.assign({}, r, { edited: !!(o.types || o.moveEdits || o.base) });
+    if (o.img) { m.imgOrig = r.img; m.img = o.img; }          // custom portrait (pasted link, or TCG art on an unowned monster)
     if (o.types) m.types = o.types;
     if (o.moveEdits) m.moveEdits = o.moveEdits;
     if ('verified' in o) m.verified = o.verified;
@@ -227,6 +228,10 @@
       <div class="text-xs mb-4">${meta}</div>
       <div id="moveWrap" data-key="${key}" class="mb-4"></div>
       <div id="tcgWrap" class="mb-4"></div>
+      <div class="mb-4"><h4 class="font-bold text-indigo-300 text-sm mb-1"><i class="fa-solid fa-image"></i> Portrait</h4>
+        <div class="flex gap-2"><input id="artUrl" value="${escapeAttr((game.overrides[key] || {}).img || '')}" placeholder="Paste an image link (https://…)" class="flex-1 min-w-0 bg-slate-700 rounded px-2 py-1 text-sm">
+        <button onclick="Gacha.setArt('${key}', document.getElementById('artUrl').value)" class="bg-indigo-600 hover:bg-indigo-500 px-3 py-1 rounded text-sm">Use link</button>
+        <button onclick="Gacha.setArt('${key}','')" class="bg-slate-600 px-3 py-1 rounded text-sm">Default</button></div></div>
       <div class="flex gap-2 justify-end flex-wrap">
         ${own ? `
         <button onclick="Gacha.release('${key}')" class="bg-red-600 hover:bg-red-500 px-3 py-1 rounded text-sm">Release</button>
@@ -236,7 +241,7 @@
         <button onclick="closeModal()" class="bg-slate-600 px-3 py-1 rounded text-sm">Close</button>
       </div>`);
     loadMoves(r);
-    if (r.fr === 'pokemon' && own) loadCostumes(r);
+    if (r.fr === 'pokemon') loadCostumes(r);
   }
 
   /* ---------- TCG costumes (TCGdex) ---------- */
@@ -268,7 +273,7 @@
     const [cards, psets] = await Promise.all([getCards(r), getPocketSets()]);
     const el = document.getElementById('tcgWrap'); if (!el) return;            // modal was closed
     const setOf = id => id.slice(0, id.lastIndexOf('-'));
-    const skin = (game.box[r.key] || {}).skin;
+    const skin = (game.box[r.key] || {}).skin || (game.overrides[r.key] || {}).img;
     const tile = c => { const hi = c.img + '/high.webp';
       return `<button onclick="Gacha.setSkin('${r.key}','${hi}')" title="${escapeAttr(c.n + ' · ' + c.id)}" class="shrink-0 rounded border-2 ${skin === hi ? 'border-amber-400' : 'border-transparent hover:border-indigo-400'}"><img src="${c.img}/low.webp" loading="lazy" class="h-28 rounded"></button>`; };
     const strip = (title, list) => list.length ? `<h5 class="text-xs font-bold text-slate-300 mt-2 mb-1">${title} (${list.length}${list.length > 40 ? ', newest 40 shown' : ''})</h5>
@@ -309,7 +314,21 @@
   }
 
   /* ---------- actions ---------- */
-  function setSkin(key, url) { const own = game.box[key]; if (!own) return; own.skin = url || null; saveGame(true); render(); open(key); toast(url ? 'Costume equipped' : 'Default art restored'); }
+  /* Portraits: TCG art on an owned monster stays in box[key].skin (as before).
+     A pasted link, or TCG art on a monster you don't own, goes to overrides[key].img,
+     so it works any time and syncs with your other edits. Empty url = default art. */
+  function applyArt(key, url, fromLink) {
+    url = String(url || '').trim();
+    if (url && !/^(https?:\/\/|data:image\/)/i.test(url)) { toast('Paste a full image link starting with https://', 'err'); return false; }
+    const own = game.box[key], o = Object.assign({}, game.overrides[key]);
+    if (!url) { if (own) own.skin = null; delete o.img; }
+    else if (own && !fromLink) own.skin = url;
+    else { o.img = url; if (own) own.skin = null; }                // the link wins over an older TCG pick
+    if (Object.keys(o).length) game.overrides[key] = o; else delete game.overrides[key];
+    saveGame(true); return true;
+  }
+  function setSkin(key, url) { if (!applyArt(key, url, false)) return; render(); open(key); toast(url ? 'Costume equipped' : 'Default art restored'); }
+  function setArt(key, url) { if (!applyArt(key, url, true)) return; render(); open(key); toast(url ? 'Portrait updated' : 'Default art restored'); }
   function toggleTeam(key) {
     const i = game.team.indexOf(key);
     if (i >= 0) game.team.splice(i, 1);
@@ -364,7 +383,7 @@
 
   /* ---------- public API ---------- */
   window.Gacha = {
-    roll, open, setSkin, toggleTeam, promote, release, resetBox, exportGame, exportEdits,
+    roll, open, setSkin, setArt, toggleTeam, promote, release, resetBox, exportGame, exportEdits,
     edit: key => { closeModal(); MonsterEditor.open(key).then(() => { render(); open(key); }); },
     toggleFr: (f, on) => { game.ui.fr = toggleList(game.ui.fr, f, on); saveGame(false); render(); },
     toggleTier: (t, on) => { game.ui.tiers = toggleList(game.ui.tiers, t, on); saveGame(false); render(); },
@@ -386,7 +405,8 @@
     mon, moveOf, setOverride, resetOverride, load: loadData, list: () => DB ? DB.list.map(r => mon(r.key)) : [], owned: k => !!game.box[k],
     img: key => { const r = mon(key), o = game.box[key]; return (o && o.skin) || (r && r.img) || ''; },
     cards: r => getCards(r),
-    setSkinQuiet: (key, url) => { if (game.box[key]) { game.box[key].skin = url || null; saveGame(true); } },
+    setSkinQuiet: (key, url) => applyArt(key, url, false),
+    setArtQuiet: (key, url) => applyArt(key, url, true),
     grant: key => { if (!game.box[key] && DB && DB.byKey.has(key)) { game.box[key] = { lv: 1, xp: 0, skin: null, got: todayStr(), t: Date.now() }; saveGame(true); } },
     sync: () => saveGame(true),
     localUpdatedAt: () => game.updatedAt || 0,

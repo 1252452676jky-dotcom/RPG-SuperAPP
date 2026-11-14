@@ -89,7 +89,8 @@ const MOVE_FIELDS = ['target', 'flags', 'secondary', 'secondaries', 'self', 'boo
 function psMove(m, text) {
   const out = { name: m.name, type: m.type.toLowerCase(), cat: m.category.toLowerCase(), power: m.basePower || null,
     acc: m.accuracy === true ? null : m.accuracy, pp: m.pp, prio: m.priority || 0,
-    desc: (text && (text.shortDesc || text.desc)) || m.shortDesc || m.desc || null };
+    desc: (text && (text.shortDesc || text.desc)) || m.shortDesc || m.desc || null,
+    long: (text && text.desc && text.desc !== text.shortDesc && text.desc) || null };
   for (const f of MOVE_FIELDS) if (m[f] !== undefined && m[f] !== null) out[f] = m[f];
   return out;
 }

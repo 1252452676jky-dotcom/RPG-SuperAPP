@@ -84,7 +84,7 @@
       drain: m.drain || null, recoil: m.recoil || null, heal: m.heal || null, target: m.target || 'normal',
       weather: m.weather || null, terrain: m.terrain || null, vol: m.volatileStatus || null,
       crit: +m.critRatio || 1, willCrit: !!m.willCrit, multihit: m.multihit || null, ohko: !!m.ohko,
-      selfdestruct: m.selfdestruct || null, base: m.base || null, desc: m.desc || m.shortDesc || m.description || '',
+      selfdestruct: m.selfdestruct || null, base: m.base || null, desc: m.desc || m.shortDesc || m.description || '', long: m.long || '',
       selfSwitch: !!m.selfSwitch, side: m.sideCondition || null, pseudo: m.pseudoWeather || null, charge: !!(m.flags && m.flags.charge) };
   }
 

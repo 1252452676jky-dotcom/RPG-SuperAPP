@@ -131,3 +131,6 @@ body.rpg .ss-cell:focus{background:#fff!important;outline:none;box-shadow:inset 
 /* 6. text sitting directly on the wood ("0 / 3 checked", "No subcategories yet") */
 body.rpg #content > div.flex > span.text-slate-400,
 body.rpg #content > .space-y-6 > p{color:var(--on-wood)!important}
+
+/* note boxes start taller; autogrow.js stretches them as you type */
+body.rpg textarea{min-height:7.5rem;resize:vertical;line-height:1.45}

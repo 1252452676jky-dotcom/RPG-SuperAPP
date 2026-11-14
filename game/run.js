@@ -58,6 +58,28 @@
     return R(pre + k) ? pre + k : null;
   }
   const hasEvo = r => evoTargets(r).length > 0;
+  /* Digimon offered before a run must START a line: Baby I / Baby II, or a later stage
+     that nothing in the data evolves into. (Kokabuterimon evolves from Frimon → not offered.) */
+  let PRE = null;
+  const hasPrior = k => {
+    if (!PRE) { PRE = new Set(); KEYS.forEach(x => { const r = R(x); if (r && r.fr === 'digimon') evoList(r).forEach(e => { const t = evoTo(e, r); if (t) PRE.add(t); }); }); }
+    return PRE.has(k);
+  };
+  const digiStarterOk = (k, r) => (digiLv(r.level ?? r.stage) ?? 99) <= 5 || !hasPrior(k);
+  // first stage of a line: Mega Charizard / Charizard → Charmander, Solgaleo → Cosmog
+  function firstStage(k) {
+    const r = R(k); if (!r) return null;
+    let cur = k;
+    if (r.fr === 'pokemon' && (isForm(k) || !r.isDefault)) {
+      const base = KEYS.find(x => { const y = R(x); return y && y.fr === 'pokemon' && y.dex === r.dex && y.isDefault; });
+      if (base) cur = base;
+    }
+    for (let i = 0; i < 4; i++) {
+      const fr = R(cur).fr, prev = KEYS.find(x => { const y = R(x); return y && y.fr === fr && evoList(y).some(e => evoTo(e, y) === cur); });
+      if (!prev) break; cur = prev;
+    }
+    return cur;
+  }
   const FX = () => window.MonsterFX || { abilities: {}, items: {}, randomAbilities: [], hasAbility: () => false };
   const statsOf = r => { const a = r && (Array.isArray(r.base) ? r.base : Array.isArray(r.raw) ? r.raw : null);
     return a ? { hp: a[0], atk: a[1], def: a[2], spa: a[3], spd: a[4], spe: a[5] } : (r && r.stats) || {}; };
@@ -335,6 +357,7 @@
       if (taken.has(k) || isForm(k)) return false;
       const r = R(k); if (!r || !draft.filter[r.fr]) return false;
       if (r.fr === 'palworld') return kind === 'roll' || tierOf(r) === 'early';      // free rolls: any Pal
+      if (r.fr === 'digimon' && !digiStarterOk(k, r)) return false;
       return tierOf(r) === 'early' && hasEvo(r);
     });
   }
@@ -343,7 +366,10 @@
     const M = metaGet();
     return [...new Set([...Object.keys(box), ...Object.keys(M.recruited)])].filter(k => {
       const r = R(k); if (!r || isForm(k) || STARTERS.includes(k)) return false;
-      return hasEvo(r) ? tierOf(r) === 'early' : !!M.recruited[k];
+      if (M.recruited[k] && !hasEvo(r)) return true;                 // beaten & recruited, doesn't evolve
+      if (M.recruited[k] && tierOf(r) === 'legend') return true;     // recruited legendary that still evolves (Cosmog…)
+      if (r.fr === 'digimon' && !digiStarterOk(k, r)) return false;
+      return hasEvo(r) && tierOf(r) === 'early';
     });
   }
   function makeEnemies(f) {
@@ -403,7 +429,7 @@
       const roll = rand(wildPool(tier, true, true).filter(k => !p3.includes(k)));
       if (roll) run.rewards.push({ type: 'roll', key: roll, lv });
     }
-    if (ITEM_FLOORS.includes(f) || run.mode === 'B') run.rewards.push({ type: 'item' });   // Mode B: item every floor
+    if (ITEM_FLOORS.includes(f) || run.mode === 'B') run.rewards.push({ type: 'item', ids: sample(Object.keys(FX().items), 5) });   // Mode B: item every floor
     run.floor = f + 1; run.enemies = null; run.stage = 'reward';
     save(BOSS.includes(f)); screen = 'reward'; render();
   }
@@ -426,6 +452,8 @@
       grant(k); const M = metaGet(); M.wins++; saveMeta(M);
       endLines = [`You beat ${r.name}!`, `${r.name} joined your Box. You can start future runs with it.`];
     }
+    const first = firstStage(k);
+    if (first && first !== k && R(first)) { grant(first); endLines.push(`${R(first).name}, the first stage of its line, also joined your Box.`); }
     Gacha.sync && Gacha.sync();localStorage.removeItem(SAVE); run = null; screen = 'victory'; render();
   }
   function endRun() {
@@ -620,10 +648,9 @@
     if (rw.type === 'roll') return head + `<h3>Free roll!</h3><div class="mlr-grid" style="max-width:120px">${card(rw.key, ' · tap for info', `data-info="${esc(rw.key)}"`)}</div>
       <button class="big" data-take="${esc(rw.key)}">Keep</button> <button data-act="skip">Skip</button>`;
     if (rw.type === 'item') {
-      const ids = Object.keys(FX().items).sort((a, b) => itemName(a).localeCompare(itemName(b)));
-      return head + `<h3>Choose an item — it goes to your bag; give it to a monster from the floor screen</h3>
-        <input type="text" data-filter placeholder="Search items…" style="width:100%;margin-bottom:6px">
-        <div class="mlr-scroll" style="max-height:55vh">${ids.map(id => `<div class="mlr-item" data-item="${esc(id)}">${itemImg(id)}<b>${esc(itemName(id))}</b><span class="mlr-dim">${esc(itemDesc(id))}</span></div>`).join('')}</div>
+      if (!rw.ids) { rw.ids = sample(Object.keys(FX().items), 5); save(); }    // older saves: roll the 5 once
+      return head + `<h3>Pick 1 of 5 items (it goes to your bag; give it to a monster from the floor screen)</h3>
+        <div class="mlr-scroll">${rw.ids.map(id => `<div class="mlr-item" data-item="${esc(id)}">${itemImg(id)}<b>${esc(itemName(id))}</b><span class="mlr-dim">${esc(itemDesc(id))}</span></div>`).join('')}</div>
         <button data-act="skip">Skip</button>`;
     }
     return '';
@@ -636,7 +663,10 @@
     const evos = evoTargets(r).map(x => `${R(x.to).name} (Lv ${evoLv(r, x.e, R(x.to))})`);
     const moves = learnOf(info.k).map(e => ({ lv: e.lv, mv: moveObj(r, e.id) })).filter(x => x.mv);
     const go = { pick: 'Add to party', offer: 'Take this one', party: 'Remove from party', take: 'Recruit' }[info.ctx];
-    const owned = r.fr === 'pokemon' && (Gacha.exportState().box || {})[info.k];
+    const owned = r.fr === 'pokemon';                                // TCG art: any Pokémon, owned or not
+    const curArt = ((Gacha.exportState().overrides || {})[info.k] || {}).img || '';
+    const artField = `<h3>Portrait</h3><div class="mlr-row"><input type="url" data-arturl value="${esc(curArt)}" placeholder="Paste an image link (https://…)" style="flex:1;min-width:0">
+      <button data-act="artUse">Use link</button><button data-skin="">Default art</button></div>`;
     const skins = Array.isArray(info.cards) ? `<h3>TCG card art</h3><div class="mlr-skins"><button data-skin="">Default art</button>${info.cards.slice(-60).reverse()
       .map(c => `<img data-skin="${esc(c.img + '/high.webp')}" src="${esc(c.img)}/low.webp" loading="lazy" alt="">`).join('') || '<span class="mlr-dim">No cards found.</span>'}</div>`
       : info.cards === 'loading' ? '<div class="mlr-dim">Loading cards…</div>' : '';
@@ -646,7 +676,7 @@
       <h3>Abilities</h3><div class="mlr-dim">${esc(abil)}</div>
       <h3>Evolves into</h3><div class="mlr-dim">${esc(evos.join(', ') || 'Does not evolve')}</div>
       <h3>Moves (${moves.length})</h3>${moves.map(x => `<div class="mlr-mv" title="${esc(x.mv.desc || '')}"><span>Lv ${x.lv} · ${esc(x.mv.name)}</span><span class="mlr-dim">${esc(x.mv.type)} · ${x.mv.category}${x.mv.power ? ' · ' + x.mv.power : ''}</span></div>`).join('') || '<div class="mlr-dim">No usable moves yet. Uses placeholder moves until edited.</div>'}
-      ${skins}<div style="margin-top:10px">${go ? `<button class="big" data-act="infoGo">${go}</button>` : ''} ${owned ? '<button data-act="skin">Choose TCG card art</button>' : ''} ${r.fr !== 'pokemon' && window.MonsterEditor ? '<button data-act="edit">Edit types & moves</button>' : ''} <button data-act="infoClose">Close</button></div>
+      ${skins}${artField}<div style="margin-top:10px">${go ? `<button class="big" data-act="infoGo">${go}</button>` : ''} ${owned ? '<button data-act="skin">Choose TCG card art</button>' : ''} ${r.fr !== 'pokemon' && window.MonsterEditor ? '<button data-act="edit">Edit types & moves</button>' : ''} <button data-act="infoClose">Close</button></div>
     </div></div>`;
   }
   function syncOrder() {
@@ -695,6 +725,7 @@
     if (a === 'infoClose') { info = null; return render(); }
     if (a === 'infoGo' && info) return infoGo();
     if (a === 'skin' && info) return skinPicker(info.k);
+    if (a === 'artUse' && info) { const v = (root.querySelector('[data-arturl]') || {}).value || ''; if (Gacha.setArtQuiet(info.k, v)) info.cards = null; return render(); }
     if (d.skin !== undefined && info) { Gacha.setSkinQuiet(info.k, d.skin); info.cards = null; return render(); }
     if (a === 'edit' && info) { const keep = info; info = null; render();
       return MonsterEditor.open(keep.k).then(() => { info = keep; render(); }); }
@@ -781,6 +812,12 @@
     KEYS.forEach(k => { const r = R(k); if (!r) return; const g = `${r.fr} · ${tierOf(r) || '(no tier)'}`; t[g] = (t[g] || 0) + 1; });
     console.table(t);
     console.log('Mega/Gmax/Primal forms found:', KEYS.filter(isForm).length);
+    const dg = KEYS.filter(k => { const r = R(k); return r && r.fr === 'digimon'; });
+    const ok = dg.filter(k => { const r = R(k); return tierOf(r) === 'early' && hasEvo(r) && digiStarterOk(k, r); });
+    const late = ok.filter(k => (digiLv(R(k).level ?? R(k).stage) ?? 99) > 5);
+    console.log('Digimon run-start pool:', ok.length, '| Baby I/II:', ok.length - late.length, '| line starts at Child:', late.length, late.slice(0, 15).map(k => R(k).name));
+    const kb = KEYS.find(k => /kokabuterimon/.test(k));
+    if (kb) console.log('Kokabuterimon:', R(kb).level, '| has an earlier stage in data:', hasPrior(kb), '| offered at run start:', ok.includes(kb));
     const c = newMon('pkmn:charmander', 40);
     console.log('Charmander grown to Lv40 →', R(c.key).name, '| moves:', c.learned.length, '| last 5:', c.learned.slice(-5), '| ability:', c.ability);
     const palKey = KEYS.find(k => R(k) && R(k).fr === 'palworld');
