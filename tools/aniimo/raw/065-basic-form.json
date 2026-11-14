@@ -1,0 +1,454 @@
+{
+ "id": "10008905",
+ "previousId": "10008808",
+ "nextId": "10008906",
+ "previousAnchor": {
+  "entryId": "064",
+  "currentMorphology": "Mountain Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "065",
+  "currentMorphology": "Mountain Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 1754,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "065",
+  "sortOrder": 1002200,
+  "name": "Helmwhelp",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10022.png",
+  "countryId": 300001,
+  "description": "A fledgling dragon that hides its weakness beneath its helmet, yearning to grow stronger so it can soar freely to every corner of the world in search of hidden treasures.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "2",
+  "position": [
+   "position-break"
+  ],
+  "attributes": [
+   "attributes-wind"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_29503",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_29504",
+      "formData": {
+       "name": "Helmwhelp",
+       "sortOrder": 1,
+       "serialNumber": "065",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-wind"
+       ],
+       "position": [
+        "position-break"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "A fledgling dragon that hides its weakness beneath its helmet, yearning to grow stronger so it can soar freely to every corner of the world in search of hidden treasures.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10022.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10022.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10022.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1002200.mp4",
+       "backgroundImage": "",
+       "attributeValue": 489,
+       "hp": 94,
+       "magicAttack": 92,
+       "physicalAttack": 78,
+       "magicDefense": 61,
+       "haste": 76,
+       "physicalDefense": 88,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 2,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_29505",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_29506",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29507",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Helmwhelp",
+         "label": "Helmwhelp",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10022.png",
+         "stage": 2,
+         "stageStrength": 2,
+         "position": 1,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_29509",
+           "name": "Helgon",
+           "label": "Helgon",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10023.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          },
+          {
+           "id": "91630354_29510",
+           "name": "Infergon",
+           "label": "Infergon",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10025.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 2,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_29508"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_29511",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_29512",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29513",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_29514",
+        "customKey": "",
+        "title": "Russet Highlands",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_29515",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_29516",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29517",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_29518",
+        "customKey": "home-1100",
+        "title": "2",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_29519",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_29520",
+        "customKey": "home-1006",
+        "title": "2",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_29523",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_29524",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29525",
+       "type": "circle",
+       "props": {
+        "id": "91630354_29526",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1002401_Skill_9400051_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Bilateral",
+        "descContent": "Enters Bilateral mode to see a different perspective.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_29527",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_29528",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29529",
+       "type": "circle",
+       "props": {
+        "id": "91630354_29530",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1002401_Feature_10281_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Counter Strike",
+        "descContent": "After being attacked, increases BREAK efficiency by 25% for 10s.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_29531",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_29532",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_29533",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_29534",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29535",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1002400_Skill_10900200_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Wind Tackle",
+           "descContent": "Tackles and pushes small-sized targets. Increases own damage reduction by 15% for 10s.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "15",
+            "power": "45"
+           }
+          }
+         },
+         {
+          "id": "91630354_29536",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29537",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1002400_Skill_10700180_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Overcharged Claw Strike",
+           "descContent": "Claws a target, dealing damage.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "68"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_29538",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_29539",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29540",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1026200_Skill_14400000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "(BREAK) Wields the power of wind to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_29541",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_29542",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29543",
+       "type": "richText",
+       "props": {
+        "id": "91630354_29544",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008905",
+   "entryId": "065",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008906",
+   "entryId": "065",
+   "countryId": 300001,
+   "currentMorphology": "Mountain Form",
+   "visible": true
+  }
+ ]
+}

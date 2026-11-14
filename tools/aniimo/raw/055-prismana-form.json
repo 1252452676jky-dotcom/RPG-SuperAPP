@@ -1,0 +1,436 @@
+{
+ "id": "10009013",
+ "previousId": "10008989",
+ "nextId": "10009030",
+ "previousAnchor": {
+  "entryId": "055",
+  "currentMorphology": "Thunderstorm Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "056",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 2564,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "055",
+  "sortOrder": 1019402,
+  "name": "Sherro",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1019402.png",
+  "countryId": 300001,
+  "description": "Guided by Prismana, its determination to uphold justice casts a golden glow across Sherros’ shell armor.",
+  "currentMorphology": "Prismana Form",
+  "currentStage": "3",
+  "position": [
+   "position-dps"
+  ],
+  "attributes": [
+   "attributes-holy",
+   "attributes-water"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_34524",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_34525",
+      "formData": {
+       "name": "Sherro",
+       "sortOrder": 1,
+       "serialNumber": "055",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-holy",
+        "attributes-water"
+       ],
+       "position": [
+        "position-dps"
+       ],
+       "gender": [],
+       "desc": "Guided by Prismana, its determination to uphold justice casts a golden glow across Sherros’ shell armor.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1019402.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1019402.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1019402.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1019402.mp4",
+       "backgroundImage": "",
+       "attributeValue": 509,
+       "hp": 100,
+       "magicAttack": 50,
+       "physicalAttack": 121,
+       "magicDefense": 75,
+       "haste": 88,
+       "physicalDefense": 75,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Prismana Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_34532",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_34533",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34534",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_34535",
+        "customKey": "home-1002",
+        "title": "4",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_34536",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_34537",
+        "customKey": "home-1008",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_34538",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_34539",
+        "customKey": "home-1102",
+        "title": "4",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_34544",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_34545",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34546",
+       "type": "circle",
+       "props": {
+        "id": "91630354_34547",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1019401_Feature_119403_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Tidal Heart",
+        "descContent": "While in water terrain or after absorbing water, increases Water Elemental Boost by 25% for 20s.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_34548",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_34549",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_34550",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_34551",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34552",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1019400_Skill_10301330_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Flowing Water Slash",
+           "descContent": "Gathers water and unleashes 3 consecutive slashes. Hitting the target with all slashes triggers an additional powerful slash. When near a water environment, absorbs water and empowers the slashes into water blade slashes, dealing additional damage equal to 30% Might.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "70"
+           }
+          }
+         },
+         {
+          "id": "91630354_34553",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34554",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1019400_Skill_11300110_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Prismana Slam",
+           "descContent": "Strikes the target with a shell. If near a water environment, absorbs water to expand the damage range, deals additional damage equal to {0}% Might, and gains [Super Armor] for 5s.",
+           "source": {
+            "attributes": [
+             "13"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "15",
+            "power": "47"
+           }
+          }
+         },
+         {
+          "id": "91630354_34555",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34556",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1019400_Skill_10300090_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Torrent Slam",
+           "descContent": "Throws a shell at the target. If there are nearby puddles, puddles within the hit area deal additional damage equal to 30% of the original Might and increase Damage Amp by 15% for 20s.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "47"
+           }
+          }
+         },
+         {
+          "id": "91630354_34557",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34558",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1019400_Skill_10400270_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Thunder Slam",
+           "descContent": "Throws a shell at a target to deal damage. If near water terrain, absorbs water to expand the hit area and deal {0}% extra damage.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "47"
+           }
+          }
+         },
+         {
+          "id": "91630354_34559",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34560",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1017400_Skill_10300083_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Hydro Roll",
+           "descContent": "Continuously consumes stamina to roll forward and ram targets, dealing damage and restoring stamina over time. Creates a puddle when the roll ends. Stamina can be restored this way at most once every 3s.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "83"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_34561",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_34562",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34563",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1054300_Skill_10300000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of water to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         },
+         {
+          "id": "91630354_34564",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34565",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1019400_Skill_10300150_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Torrent Blade",
+           "descContent": "Performs a wide-area slash. If near a water environment, absorbs water to greatly increase the slash range, deal additional damage equal to {0}% Might, and increase basic attack range after the slash for {1}s.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "160"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_34566",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_34567",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34568",
+       "type": "richText",
+       "props": {
+        "id": "91630354_34569",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008995",
+   "entryId": "055",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008989",
+   "entryId": "055",
+   "countryId": 300001,
+   "currentMorphology": "Thunderstorm Form",
+   "visible": true
+  },
+  {
+   "id": "10009013",
+   "entryId": "055",
+   "countryId": 300001,
+   "currentMorphology": "Prismana Form",
+   "visible": true
+  }
+ ]
+}

@@ -1,0 +1,481 @@
+{
+ "id": "10008802",
+ "previousId": "10008960",
+ "nextId": "10008961",
+ "previousAnchor": {
+  "entryId": "034",
+  "currentMorphology": "Towerwood Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "036",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 3326,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "035",
+  "sortOrder": 1032400,
+  "name": "Melloblum",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10324.png",
+  "countryId": 300001,
+  "description": "To quell disputes, they scatter fragrant petals, causing those who touch them to feel happiness and crush their fighting spirit.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "3",
+  "position": [
+   "position-sup"
+  ],
+  "attributes": [
+   "attributes-grass"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_24632",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_24633",
+      "formData": {
+       "name": "Melloblum",
+       "sortOrder": 1,
+       "serialNumber": "035",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-grass"
+       ],
+       "position": [
+        "position-sup"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "To quell disputes, they scatter fragrant petals, causing those who touch them to feel happiness and crush their fighting spirit.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10324.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10324.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10324.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1032400.mp4",
+       "backgroundImage": "",
+       "attributeValue": 517,
+       "hp": 95,
+       "magicAttack": 91,
+       "physicalAttack": 113,
+       "magicDefense": 70,
+       "haste": 78,
+       "physicalDefense": 70,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_24634",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_24635",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24636",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Budsquire",
+         "label": "Budsquire",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10321.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_24638",
+           "name": "Thornblade",
+           "label": "Thornblade",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10323.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 0,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          },
+          {
+           "id": "91630354_24639",
+           "name": "Melloblum",
+           "label": "Melloblum",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10324.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_24637"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_24640",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_24641",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24642",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_24643",
+        "customKey": "",
+        "title": "Rosetower Woods",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_24644",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_24645",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24646",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_24647",
+        "customKey": "home-1001",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_24648",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_24649",
+        "customKey": "home-1101",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_24654",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_24655",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24656",
+       "type": "circle",
+       "props": {
+        "id": "91630354_24657",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1032402_Feature_132402_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Phantom Opening",
+        "descContent": "When a party member deals basic attack damage, gains 1 stack of [Rose Mark], up to 10 stacks. Each stack of [Rose Mark] reduces Melloblum’s EP cost by 3.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_24658",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_24659",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_24660",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_24661",
+          "type": "circle",
+          "props": {
+           "id": "91630354_24662",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1032400_Skill_10600560_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Thorny Blessing",
+           "descContent": "Grants Thorny Blessing to the whole team. When dealing Grass Crit Damage to a target, creates thorns beneath it that deal damage. Triggers up to 1 time every 0.5s for 15s.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "30",
+            "power": "25"
+           }
+          }
+         },
+         {
+          "id": "91630354_24663",
+          "type": "circle",
+          "props": {
+           "id": "91630354_24664",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1032400_Skill_10600580_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Healing Rose",
+           "descContent": "Summons a rose that explodes and applies Rose Mark to the target. Rose Mark blooms after the target takes 3 critical hits, healing all nearby allies for 5% of Melloblum's HP.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "40"
+           }
+          }
+         },
+         {
+          "id": "91630354_24665",
+          "type": "circle",
+          "props": {
+           "id": "91630354_24666",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1032400_Skill_11300180_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Sparkling Rose",
+           "descContent": "Removes negative effects on the whole team and releases a Light element rose to track and attack the target. The skill has an additional 15% Crit Rate.",
+           "source": {
+            "attributes": [
+             "13"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "40"
+           }
+          }
+         },
+         {
+          "id": "91630354_24667",
+          "type": "circle",
+          "props": {
+           "id": "91630354_24668",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1032400_Skill_10600570_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Blasting Roses",
+           "descContent": "Releases petals that track and attack the target. This skill gains 35% extra Crit Rate.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "40"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_24669",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_24670",
+          "type": "circle",
+          "props": {
+           "id": "91630354_24671",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1032400_Skill_14200000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of grass to attack targets from a distance.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         },
+         {
+          "id": "91630354_24672",
+          "type": "circle",
+          "props": {
+           "id": "91630354_24673",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1032400_Skill_10600590_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Rose Garden",
+           "descContent": "Creates a magic circle beneath itself. Allies within range gain 70% increased Grass Crit Damage for 30s.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "0",
+            "power": "0"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_24674",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_24675",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24676",
+       "type": "richText",
+       "props": {
+        "id": "91630354_24677",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008802",
+   "entryId": "035",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  }
+ ]
+}

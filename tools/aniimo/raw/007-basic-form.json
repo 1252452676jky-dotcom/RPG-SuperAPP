@@ -1,0 +1,575 @@
+{
+ "id": "10008852",
+ "previousId": "10008828",
+ "nextId": "10009029",
+ "previousAnchor": {
+  "entryId": "006",
+  "currentMorphology": "Prismana Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "007",
+  "currentMorphology": "Beach Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 1696,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "007",
+  "sortOrder": 1018100,
+  "name": "Chirpi",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10181.png",
+  "countryId": 300001,
+  "description": "They often hover at low altitudes, paying attention to every movement on the beach and causing a ruckus.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "1",
+  "position": [
+   "position-sup"
+  ],
+  "attributes": [
+   "attributes-wind"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_27005",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_27006",
+      "formData": {
+       "name": "Chirpi",
+       "sortOrder": 1,
+       "serialNumber": "007",
+       "heightMin": 0,
+       "heightMax": 0,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-wind"
+       ],
+       "position": [
+        "position-sup"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "They often hover at low altitudes, paying attention to every movement on the beach and causing a ruckus.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10181.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10181.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10181.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1018100.mp4",
+       "backgroundImage": "",
+       "attributeValue": 452,
+       "hp": 97,
+       "magicAttack": 43,
+       "physicalAttack": 83,
+       "magicDefense": 69,
+       "haste": 93,
+       "physicalDefense": 67,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 1,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_27007",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_27008",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_27009",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Chirpi",
+         "label": "Chirpi",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10181.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_27011",
+           "name": "Tromber",
+           "label": "Tromber",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10184.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 0,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          },
+          {
+           "id": "91630354_27012",
+           "name": "Cornet",
+           "label": "Cornet",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10185.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          },
+          {
+           "id": "91630354_27013",
+           "name": "Tubster",
+           "label": "Tubster",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10187.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 2,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_27010"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_27014",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_27015",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_27016",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_27017",
+        "customKey": "",
+        "title": "Nimbus Fields",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_27018",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_27019",
+        "customKey": "",
+        "title": "The Argent Strait",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_27020",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_27021",
+        "customKey": "",
+        "title": "Beast Fang Ridge",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_27022",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_27023",
+        "customKey": "",
+        "title": "Blitzwood",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_27024",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_27025",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_27026",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_27027",
+        "customKey": "home-1006",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_27028",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Pathfinding",
+      "type": "small",
+      "id": "91630354_27029",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_27030",
+       "type": "circle",
+       "props": {
+        "id": "91630354_27031",
+        "customKey": "GLIDE",
+        "icon": "",
+        "iconStyle": "",
+        "iconTitle": "Fly Lv.1",
+        "descTitle": "",
+        "descContent": "",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        },
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_27034",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_27035",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_27036",
+       "type": "circle",
+       "props": {
+        "id": "91630354_27037",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018401_Feature_11873_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Band Member",
+        "descContent": "When switching Aniimo in battle, restores 20 EP to the next Chirpi family member switched in. Triggers once every 20s at most.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_27038",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_27039",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_27040",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_27041",
+          "type": "circle",
+          "props": {
+           "id": "91630354_27042",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018400_Skill_10600600_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Leaf Tornado",
+           "descContent": "Releases a leaf vortex at the target location, dealing damage and pulling enemies toward the center. Continuously absorbs puddles nearby, dealing 100% extra damage upon successful absorption.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "45"
+           }
+          }
+         },
+         {
+          "id": "91630354_27043",
+          "type": "circle",
+          "props": {
+           "id": "91630354_27044",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018500_Skill_10900390_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Tornado Wind Orb",
+           "descContent": "Launches a tornado wind orb that explodes on impact and generates a forward-propelling tornado.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "67"
+           }
+          }
+         },
+         {
+          "id": "91630354_27045",
+          "type": "circle",
+          "props": {
+           "id": "91630354_27046",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018400_Skill_10900230_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "March",
+           "descContent": "Plays music and gains the movement-series buff: [March], restoring 0.8% max HP every second for 20s. With 3 movement-series buffs active, all effects from those buffs are increased by 30%.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "20",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_27047",
+          "type": "circle",
+          "props": {
+           "id": "91630354_27048",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018400_Skill_10300220_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Water Tornado",
+           "descContent": "Releases a water vortex at the target location, dealing damage and pulling enemies toward the center. Each hit deducts 4 Energy from the target.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "45"
+           }
+          }
+         },
+         {
+          "id": "91630354_27049",
+          "type": "circle",
+          "props": {
+           "id": "91630354_27050",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018400_Skill_10900041_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Tornado",
+           "descContent": "Releases an air vortex at the target location, dealing damage and pulling enemies toward the center.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "59"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_27051",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_27052",
+          "type": "circle",
+          "props": {
+           "id": "91630354_27053",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1026200_Skill_14400000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of wind to attack targets from a distance.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_27054",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_27055",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_27056",
+       "type": "richText",
+       "props": {
+        "id": "91630354_27057",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008852",
+   "entryId": "007",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10009029",
+   "entryId": "007",
+   "countryId": 300001,
+   "currentMorphology": "Beach Form",
+   "visible": true
+  },
+  {
+   "id": "10008843",
+   "entryId": "007",
+   "countryId": 300001,
+   "currentMorphology": "Highland Form",
+   "visible": true
+  }
+ ]
+}

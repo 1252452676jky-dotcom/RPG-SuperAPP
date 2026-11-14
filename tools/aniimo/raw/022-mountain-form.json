@@ -1,0 +1,475 @@
+{
+ "id": "10008918",
+ "previousId": "10008972",
+ "nextId": "10009007",
+ "previousAnchor": {
+  "entryId": "022",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "023",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 1500,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "022",
+  "sortOrder": 1020701,
+  "name": "Tuckin",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1020701.png",
+  "countryId": 300001,
+  "description": "Due to changes in soil composition, its skin has taken on an orange-red hue after absorbing minerals from the Earth, also becoming thicker and more robust.",
+  "currentMorphology": "Mountain Form",
+  "currentStage": "3",
+  "position": [
+   "position-break"
+  ],
+  "attributes": [
+   "attributes-rock",
+   "attributes-grass"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_30077",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_30078",
+      "formData": {
+       "name": "Tuckin",
+       "sortOrder": 1,
+       "serialNumber": "022",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-rock",
+        "attributes-grass"
+       ],
+       "position": [
+        "position-break"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "Due to changes in soil composition, its skin has taken on an orange-red hue after absorbing minerals from the Earth, also becoming thicker and more robust.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1020701.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1020701.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1020701.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1020701.mp4",
+       "backgroundImage": "",
+       "attributeValue": 550,
+       "hp": 106,
+       "magicAttack": 100,
+       "physicalAttack": 80,
+       "magicDefense": 110,
+       "haste": 71,
+       "physicalDefense": 83,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Mountain Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_30079",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_30080",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30081",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Hummin",
+         "label": "Hummin",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1020101.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_30083",
+           "name": "Hexxin",
+           "label": "Hexxin",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1020301.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 0,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          },
+          {
+           "id": "91630354_30084",
+           "name": "Tuckin",
+           "label": "Tuckin",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1020701.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_30082"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_30087",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_30088",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30089",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_30090",
+        "customKey": "home-1003",
+        "title": "2",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_30091",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_30092",
+        "customKey": "home-1001",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_30093",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_30094",
+        "customKey": "home-1100",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_30099",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_30100",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30101",
+       "type": "circle",
+       "props": {
+        "id": "91630354_30102",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1020701_Feature_120701_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Prank Master",
+        "descContent": "Increases BREAK damage by 2% for every 1,000 max HP. Upon entering battle, summons 1 Hummin to assist. An additional Hummin is summoned every 10s, up to a maximum of 3.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_30103",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_30104",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_30105",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_30106",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30107",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1020700_Skill_10800111_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Draw Nourishment",
+           "descContent": "Roots itself firmly in the soil, granting self and Hummin 20% BREAK efficiency.Instantly restores 50% HP to all Hummins, and heals self and nearby Hummins for 2% HP every second.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "30",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_30108",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30109",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1020100_Skill_10600530_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Haunting Choir",
+           "descContent": "Causes all Hummins to blink next to the target and unleash sonic attacks, dealing area damage and inflicting [Stun] for 1s.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "47"
+           }
+          }
+         },
+         {
+          "id": "91630354_30110",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30111",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1020700_Skill_10800310_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Noisy Strikes",
+           "descContent": "Teleports all Hummin units next to the target to unleash Gravel Tackle, dealing damage.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "10",
+            "power": "39"
+           }
+          }
+         },
+         {
+          "id": "91630354_30112",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30113",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1020700_Skill_10600092_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Off-Key Shock Wave",
+           "descContent": "Teleports all Hummins next to the target and unleashes a Tackle attack, dealing damage.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "10",
+            "power": "39"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_30114",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_30115",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30116",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1020700_Skill_10600260_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Breaking Roar",
+           "descContent": "Restores Hummin units to their maximum number, then roars with them to release a massive shockwave at the target.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "165"
+           }
+          }
+         },
+         {
+          "id": "91630354_30117",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30118",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1032400_Skill_14200000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "(BREAK) Wields the power of grass to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_30119",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_30120",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30121",
+       "type": "richText",
+       "props": {
+        "id": "91630354_30122",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008972",
+   "entryId": "022",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008918",
+   "entryId": "022",
+   "countryId": 300001,
+   "currentMorphology": "Mountain Form",
+   "visible": true
+  }
+ ]
+}

@@ -1,0 +1,429 @@
+{
+ "id": "10008895",
+ "previousId": "10008809",
+ "nextId": "10008857",
+ "previousAnchor": {
+  "entryId": "10001",
+  "currentMorphology": "Prismana Form",
+  "type": "ANIIMO",
+  "countryId": 1000
+ },
+ "nextAnchor": {
+  "entryId": "10003",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 1000
+ },
+ "viewCount": 3769,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "10002",
+  "sortOrder": 1047400,
+  "name": "Dazmand",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10474.png",
+  "countryId": 1000,
+  "description": "They have flexible limbs and love to show off their flashy kicks to anyone watching. They wear their shed skin over their heads like a cool hood.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "3",
+  "position": [
+   "position-sup"
+  ],
+  "attributes": [
+   "attributes-electric"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_28998",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_28999",
+      "formData": {
+       "name": "Dazmand",
+       "sortOrder": 1,
+       "serialNumber": "10002",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-electric"
+       ],
+       "position": [
+        "position-sup"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "They have flexible limbs and love to show off their flashy kicks to anyone watching. They wear their shed skin over their heads like a cool hood.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10474.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10474.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10474.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1047400.mp4",
+       "backgroundImage": "",
+       "attributeValue": 522,
+       "hp": 100,
+       "magicAttack": 55,
+       "physicalAttack": 108,
+       "magicDefense": 90,
+       "haste": 88,
+       "physicalDefense": 81,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 3,
+       "countryId": 1000,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_29000",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_29001",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29002",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Pomegg",
+         "label": "Pomegg",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10471.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_29004",
+           "name": "Dazmand",
+           "label": "Dazmand",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10474.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 0,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          },
+          {
+           "id": "91630354_29005",
+           "name": "Pomawk",
+           "label": "Pomawk",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10475.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_29003"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_29008",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_29009",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29010",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_29011",
+        "customKey": "home-1004",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_29012",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_29013",
+        "customKey": "home-1101",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_29018",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_29019",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29020",
+       "type": "circle",
+       "props": {
+        "id": "91630354_29021",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1047400_Feature_147402_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Spotlight Moment",
+        "descContent": "The first skill this Aniimo uses within 5s of entering battle does not consume EP. Cooldown: 15s.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_29022",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_29023",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_29024",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_29025",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29026",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1047400_Skill_10400400_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Lightning Break",
+           "descContent": "Attacks the targets while break dancing.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "54"
+           }
+          }
+         },
+         {
+          "id": "91630354_29027",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29028",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1047400_Skill_10400380_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Thunder Sweep",
+           "descContent": "Performs a rapid spinning kick, dealing area damage and pulling in nearby targets in front of the user. Increases the entire team’s CRIT Rate for Lightning damage by 20% for 20s.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "30",
+            "power": "80"
+           }
+          }
+         },
+         {
+          "id": "91630354_29029",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29030",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1047400_Skill_10400390_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Electricity Shock",
+           "descContent": "Curls into a ball and dashes at the target, dealing damage and applying 5 stacks of Lightning Debuff. If the target has more than 5 stacks of Lightning Debuff after being hit, applies [Paralysis] for 5s.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "40"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_29031",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_29032",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29033",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1014300_Skill_14000000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of lightning to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         },
+         {
+          "id": "91630354_29034",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29035",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1047400_Skill_10400410_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Lightning Storm",
+           "descContent": "Spins upside down on its head at high speed, creating a massive lightning storm. During the skill, deals 12 hits of damage to targets in range, and each hit applies 1 stack of [Lightning Debuff]. The user can move while casting.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "150"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_29036",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_29037",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29038",
+       "type": "richText",
+       "props": {
+        "id": "91630354_29039",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008895",
+   "entryId": "10002",
+   "countryId": 1000,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  }
+ ]
+}

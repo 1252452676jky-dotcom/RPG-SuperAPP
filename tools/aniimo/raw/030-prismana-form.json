@@ -1,0 +1,450 @@
+{
+ "id": "10009028",
+ "previousId": "10008925",
+ "nextId": "10008890",
+ "previousAnchor": {
+  "entryId": "029",
+  "currentMorphology": "Timberline Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "031",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 2801,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "030",
+  "sortOrder": 1023300,
+  "name": "Somniwing",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10233.png",
+  "countryId": 300001,
+  "description": "Their magnificent wings spread scales to help flowers grow and spread vitality wherever they fly.",
+  "currentMorphology": "Prismana Form",
+  "currentStage": "4",
+  "position": [
+   "position-energy"
+  ],
+  "attributes": [
+   "attributes-wind",
+   "attributes-grass"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_35190",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_35191",
+      "formData": {
+       "name": "Somniwing",
+       "sortOrder": 1,
+       "serialNumber": "030",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-wind",
+        "attributes-grass"
+       ],
+       "position": [
+        "position-energy"
+       ],
+       "gender": [],
+       "desc": "Their magnificent wings spread scales to help flowers grow and spread vitality wherever they fly.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10233.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10233.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10233.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1023300.mp4",
+       "backgroundImage": "",
+       "attributeValue": 538,
+       "hp": 111,
+       "magicAttack": 50,
+       "physicalAttack": 92,
+       "magicDefense": 85,
+       "haste": 115,
+       "physicalDefense": 85,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Prismana Form",
+       "currentStage": 4,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_35192",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_35193",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_35194",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Somniwing",
+         "label": "Somniwing",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10233.png",
+         "stage": 4,
+         "stageStrength": 4,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": []
+        },
+        "id": "91630354_35195"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_35198",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_35199",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_35200",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_35201",
+        "customKey": "home-1102",
+        "title": "4",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_35202",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_35203",
+        "customKey": "home-1001",
+        "title": "4",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_35204",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_35205",
+        "customKey": "home-1006",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_35206",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Pathfinding",
+      "type": "small",
+      "id": "91630354_35207",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_35208",
+       "type": "circle",
+       "props": {
+        "id": "91630354_35209",
+        "customKey": "GLIDE",
+        "icon": "",
+        "iconStyle": "",
+        "iconTitle": "Fly Lv.2",
+        "descTitle": "",
+        "descContent": "",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        },
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_35212",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_35213",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_35214",
+       "type": "circle",
+       "props": {
+        "id": "91630354_35215",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1023300_Feature_12374_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Energy Full",
+        "descContent": "Increases max EP by 10.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_35216",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_35217",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_35218",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_35219",
+          "type": "circle",
+          "props": {
+           "id": "91630354_35220",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1023300_Skill_10600340_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Hypnotic Spores",
+           "descContent": "On hit, puts the target into [Sleeping], increasing damage taken by the target by 25% and preventing action for 5s. Removed when the target takes damage. Ineffective against Grass-type Aniimo.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "28"
+           }
+          }
+         },
+         {
+          "id": "91630354_35221",
+          "type": "circle",
+          "props": {
+           "id": "91630354_35222",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1023300_Skill_10600490_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Energy Orb",
+           "descContent": "Charges and gathers Energy above the target, then drops it to strike the target. Hold the Skill button to charge. Every 0.6s, consumes 10 Energy to increase the skill damage, up to 4 times. Stages 1 to 5 deal damage equal to 1/2/3/4.5/6x Might, respectively.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "10",
+            "power": "30"
+           }
+          }
+         },
+         {
+          "id": "91630354_35223",
+          "type": "circle",
+          "props": {
+           "id": "91630354_35224",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1058300_Skill_10600900_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Ethereal Light Wave",
+           "descContent": "Sends a light wave forward, absorbing enemy projectiles and increasing EP recovery rate by 24% for teammates along its path for 20s.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "0",
+            "power": "0"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_35225",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_35226",
+          "type": "circle",
+          "props": {
+           "id": "91630354_35227",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1032400_Skill_14200000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of grass to attack targets from a distance.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         },
+         {
+          "id": "91630354_35228",
+          "type": "circle",
+          "props": {
+           "id": "91630354_35229",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1023300_Skill_10600360_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Butterfly Dance",
+           "descContent": "The Somniwing flies up and uses its power of rejuvenation, recovering 36 EP.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "0",
+            "power": "0"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_35230",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_35231",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_35232",
+       "type": "richText",
+       "props": {
+        "id": "91630354_35233",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10009028",
+   "entryId": "030",
+   "countryId": 300001,
+   "currentMorphology": "Prismana Form",
+   "visible": true
+  }
+ ]
+}

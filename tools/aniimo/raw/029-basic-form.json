@@ -1,0 +1,578 @@
+{
+ "id": "10008932",
+ "previousId": "10008876",
+ "nextId": "10008934",
+ "previousAnchor": {
+  "entryId": "028",
+  "currentMorphology": "Timberline Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "029",
+  "currentMorphology": "Flowerfield Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 3382,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "029",
+  "sortOrder": 1023200,
+  "name": "Gracewing",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10232.png",
+  "countryId": 300001,
+  "description": "Lone wanderers. They create illusions by shedding scales from their wings when threats approach.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "3",
+  "position": [
+   "position-heal"
+  ],
+  "attributes": [
+   "attributes-wind"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_30757",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_30758",
+      "formData": {
+       "name": "Gracewing",
+       "sortOrder": 1,
+       "serialNumber": "029",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-wind"
+       ],
+       "position": [
+        "position-heal"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "Lone wanderers. They create illusions by shedding scales from their wings when threats approach.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10232.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10232.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10232.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1023200.mp4",
+       "backgroundImage": "",
+       "attributeValue": 532,
+       "hp": 110,
+       "magicAttack": 50,
+       "physicalAttack": 98,
+       "magicDefense": 85,
+       "haste": 104,
+       "physicalDefense": 85,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_30759",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_30760",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30761",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Flutternym",
+         "label": "Flutternym",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10231.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_30763",
+           "name": "Gracewing",
+           "label": "Gracewing",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10232.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_30762"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_30766",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_30767",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30768",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_30769",
+        "customKey": "home-1102",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_30770",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_30771",
+        "customKey": "home-1006",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_30772",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Pathfinding",
+      "type": "small",
+      "id": "91630354_30773",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30774",
+       "type": "circle",
+       "props": {
+        "id": "91630354_30775",
+        "customKey": "GLIDE",
+        "icon": "",
+        "iconStyle": "",
+        "iconTitle": "Fly Lv.1",
+        "descTitle": "",
+        "descContent": "",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        },
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_30776",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_30777",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30778",
+       "type": "circle",
+       "props": {
+        "id": "91630354_30779",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1003200_Skill_9400062_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Luminous Prowl",
+        "descContent": "Enters the Cloak state, concealed by pink mist.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_30780",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_30781",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30782",
+       "type": "circle",
+       "props": {
+        "id": "91630354_30783",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1023102_Feature_12371_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Flutter Heal",
+        "descContent": "When entering battle as the active Aniimo, increases healing by 20%. If off field, appears as a phantom. When other Aniimo cast skills or Ultimates, restores HP equal to 0.5% of max HP.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_30784",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_30785",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_30786",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_30787",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30788",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1023100_Skill_10600110_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Purifying Dance",
+           "descContent": "Removes all debuffs on surrounding teammates. Once the debuffs are removed, increases their EP recovery rate by 20% for 10s.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "20",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_30789",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30790",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1004500_Skill_10600301_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Healing Dance",
+           "descContent": "Creates a warm wind area beneath the caster, continuously healing the entire team for 9% of the caster’s Max HP over 8s. Aniimo within the area also gain 40% BREAK damage reduction.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "20",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_30791",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30792",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1023100_Skill_11200270_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Phantom Dance",
+           "descContent": "Removes debuffs from the caster. When off-field, Gracewing automatically appears to remove debuffs from the active teammate.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "20",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_30793",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30794",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1023100_Skill_10900221_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Wind of Rejuvenation",
+           "descContent": "Creates a warm wind area beneath the feet, continuously healing the entire team for 9% of the caster’s Max HP over 8s. Wind-type Aniimo receive an additional 3% healing.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "20",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_30795",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30796",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1023200_Skill_10600251_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Phantomfly",
+           "descContent": "Creates a Phantomfly at the location, restoring 20 EP to all teammates that touch it after a 3s delay. There can be up to 2 Phantomflies at the same time.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "20",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_30797",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30798",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1023100_Skill_10800450_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Wind of Regeneration",
+           "descContent": "Grants allies within the target area a shield equal to 12% of the caster’s Max HP for 20s.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "20",
+            "power": "0"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_30799",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_30800",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30801",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1023200_Skill_10900430_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Help! Gracewing!",
+           "descContent": "Instantly heals the whole team for 30% of the caster’s max HP.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "0",
+            "power": "150"
+           }
+          }
+         },
+         {
+          "id": "91630354_30802",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30803",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1026200_Skill_14400000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of wind to attack targets from a distance.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_30804",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_30805",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30806",
+       "type": "richText",
+       "props": {
+        "id": "91630354_30807",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008932",
+   "entryId": "029",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008934",
+   "entryId": "029",
+   "countryId": 300001,
+   "currentMorphology": "Flowerfield Form",
+   "visible": true
+  },
+  {
+   "id": "10008981",
+   "entryId": "029",
+   "countryId": 300001,
+   "currentMorphology": "Nighttime Form",
+   "visible": true
+  },
+  {
+   "id": "10008925",
+   "entryId": "029",
+   "countryId": 300001,
+   "currentMorphology": "Timberline Form",
+   "visible": true
+  }
+ ]
+}

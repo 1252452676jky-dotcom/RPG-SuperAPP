@@ -1,0 +1,547 @@
+{
+ "id": "10008896",
+ "previousId": "10008803",
+ "nextId": "10008894",
+ "previousAnchor": {
+  "entryId": "059",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "060",
+  "currentMorphology": "Prismana Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 3212,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "060",
+  "sortOrder": 1029300,
+  "name": "Fenmane",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10293.png",
+  "countryId": 300001,
+  "description": "With their highly conductive fur, they harness the power of lightning to extend their wings and dash forth, dispelling the haze and lifting their spirits.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "3",
+  "position": [
+   "position-dps"
+  ],
+  "attributes": [
+   "attributes-electric"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_29091",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_29092",
+      "formData": {
+       "name": "Fenmane",
+       "sortOrder": 1,
+       "serialNumber": "060",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-electric"
+       ],
+       "position": [
+        "position-dps"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "With their highly conductive fur, they harness the power of lightning to extend their wings and dash forth, dispelling the haze and lifting their spirits.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10293.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10293.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10293.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1029300.mp4",
+       "backgroundImage": "",
+       "attributeValue": 505,
+       "hp": 100,
+       "magicAttack": 50,
+       "physicalAttack": 125,
+       "magicDefense": 70,
+       "haste": 90,
+       "physicalDefense": 70,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_29093",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_29094",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29095",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Fentuft",
+         "label": "Fentuft",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10291.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_29097",
+           "name": "Fenmane",
+           "label": "Fenmane",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10293.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_29096"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_29098",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_29099",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29100",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_29101",
+        "customKey": "",
+        "title": "Driftwise Meadow",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_29102",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_29103",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29104",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_29105",
+        "customKey": "home-1004",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_29106",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_29107",
+        "customKey": "home-1100",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_29108",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Pathfinding",
+      "type": "small",
+      "id": "91630354_29109",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29110",
+       "type": "circle",
+       "props": {
+        "id": "91630354_29111",
+        "customKey": "GLIDE",
+        "icon": "",
+        "iconStyle": "",
+        "iconTitle": "Fly Lv.2",
+        "descTitle": "",
+        "descContent": "",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        },
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_29112",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_29113",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29114",
+       "type": "circle",
+       "props": {
+        "id": "91630354_29115",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1036100_Skill_9400107_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Scurry",
+        "descContent": "Rushes forward a short distance.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_29116",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_29117",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29118",
+       "type": "circle",
+       "props": {
+        "id": "91630354_29119",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1029100_Feature_12932_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Thunderbond",
+        "descContent": "When this Aniimo’s attack hits a target, it gains 1 stack of [Thunderbond]. At 30 stacks, it enters the [Thunderwing Stance] when using its next skill or Ultimate. Lasts 10s.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_29120",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_29121",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_29122",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_29123",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29124",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1029100_Skill_10400360_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Thunder Field",
+           "descContent": "Generates a thunder field that follows the target. When a target within the thunder field is hit by a Lightning attack, it is hit by an additional Lightning attack and inflicted with Lightning Debuff. Lightning attacks can trigger this effect no more than once every 0.2s. The thunder field lasts for 8s.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "1"
+           }
+          }
+         },
+         {
+          "id": "91630354_29125",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29126",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1029100_Skill_10400370_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Lightning Dart",
+           "descContent": "Launches a lightning dart at the target, dealing damage to all targets along the way while drawing them closer over time.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "50"
+           }
+          }
+         },
+         {
+          "id": "91630354_29127",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29128",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1029300_Skill_10400350_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Thunder Imprint",
+           "descContent": "Gains [Thunder Imprint]. While active, each hit against a target stores the damage dealt on the target. When the effect ends, all stored damage is dealt at once. Recasting the skill during this period triggers the stored damage early. Lasts 8s. If the target has 10 stacks of [Lightning Debuff], consumes them to deal an additional 100% damage.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "30",
+            "power": "2"
+           }
+          }
+         },
+         {
+          "id": "91630354_29129",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29130",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1029300_Skill_11300130_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Radiant Dart",
+           "descContent": "Launches a Radiant Dart at the target, continuously dealing damage to targets along its path. Each hit applies 1 stack of [Healing Reduction], up to 16 stacks. Each stack reduces healing received by 5% for 20s.",
+           "source": {
+            "attributes": [
+             "13"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "35"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_29131",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_29132",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29133",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1014300_Skill_14000000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of lightning to attack targets from a distance.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         },
+         {
+          "id": "91630354_29134",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29135",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1029300_Skill_10400420_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Thunderfeather Volley",
+           "descContent": "Transforms the lightning wrapped around both wings into 5 arrows and fires them at the target. If in Thunderwing Stance, fires 5 additional arrows and finally deals explosion damage equal to 20 Might.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "100"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_29136",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_29137",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29138",
+       "type": "richText",
+       "props": {
+        "id": "91630354_29139",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008896",
+   "entryId": "060",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008894",
+   "entryId": "060",
+   "countryId": 300001,
+   "currentMorphology": "Prismana Form",
+   "visible": true
+  }
+ ]
+}

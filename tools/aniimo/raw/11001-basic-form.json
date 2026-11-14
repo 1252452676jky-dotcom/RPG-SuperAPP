@@ -1,0 +1,412 @@
+{
+ "id": "10008927",
+ "previousId": "10008966",
+ "nextId": "10008963",
+ "previousAnchor": {
+  "entryId": "10007",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 1000
+ },
+ "nextAnchor": {
+  "entryId": "11001",
+  "currentMorphology": "Prismana Form",
+  "type": "ANIIMO",
+  "countryId": 1000
+ },
+ "viewCount": 3607,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "11001",
+  "sortOrder": 6999300,
+  "name": "Sparkelf",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_69993.png",
+  "countryId": 1000,
+  "description": "Sparkelves from the SylphIsle can draw energy from interactions with humans and Aniimo. The livelier and more joyful the gathering, the more energized they become.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "3",
+  "position": [
+   "position-sup"
+  ],
+  "attributes": [
+   "attributes-fire"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_30519",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_30520",
+      "formData": {
+       "name": "Sparkelf",
+       "sortOrder": 1,
+       "serialNumber": "11001",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-fire"
+       ],
+       "position": [
+        "position-sup"
+       ],
+       "gender": [],
+       "desc": "Sparkelves from the SylphIsle can draw energy from interactions with humans and Aniimo. The livelier and more joyful the gathering, the more energized they become.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_69993.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_69993.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_69993.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/6999300.mp4",
+       "backgroundImage": "",
+       "attributeValue": 517,
+       "hp": 107,
+       "magicAttack": 50,
+       "physicalAttack": 113,
+       "magicDefense": 88,
+       "haste": 99,
+       "physicalDefense": 60,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 3,
+       "countryId": 1000,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_30521",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_30522",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30523",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Sparkelf",
+         "label": "Sparkelf",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_69993.png",
+         "stage": 3,
+         "stageStrength": 3,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": []
+        },
+        "id": "91630354_30524"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_30527",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_30528",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30529",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_30530",
+        "customKey": "home-1000",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_30535",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_30536",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30537",
+       "type": "circle",
+       "props": {
+        "id": "91630354_30538",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/6999300_Feature_6999301_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Reliable Fire Companion",
+        "descContent": "When in a party, increases party 15% Fire Elemental Boost. When Energy is above 40, the effect increases to 20%.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_30539",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_30540",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_30541",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_30542",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30543",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1033300_Skill_10500410_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Inspiration",
+           "descContent": "Ignites flames to inspire the whole team, increasing team Fire Damage by 15% for 12s.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "0",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_30544",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30545",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/6999300_Skill_10500590_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Treat Feed",
+           "descContent": "Pulls out food to heal the team for 8% of the Sparkelf’s HP. If the unit’s HP is below 50%/25%, instead heals them for 12%/16% of the Sparkelf’s HP.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "30",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_30546",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30547",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/6999300_Skill_10500601_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Leaping Sparks",
+           "descContent": "Hurls an empowered fireball that explodes on impact, dealing area damage and causing affected targets to take 100% increased damage while shielded for 20s.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "55"
+           }
+          }
+         },
+         {
+          "id": "91630354_30548",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30549",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/6999300_Skill_10500601_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Spark Energy",
+           "descContent": "Hurls an empowered fireball that explodes on impact, dealing area damage and inflicting 2 stacks of [Fire Debuff].",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "50"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_30550",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_30551",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30552",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1005300_Skill_10500000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of fire to attack targets from a distance.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         },
+         {
+          "id": "91630354_30553",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30554",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/6999300_Skill_10500720_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Keep the Fire Bolt Going!",
+           "descContent": "Passion Heats Up, dealing AoE Damage and increasing nearby allied units' Fire Elemental Boost by 25%% for 30 seconds",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "90"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_30555",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_30556",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30557",
+       "type": "richText",
+       "props": {
+        "id": "91630354_30558",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008927",
+   "entryId": "11001",
+   "countryId": 1000,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008963",
+   "entryId": "11001",
+   "countryId": 1000,
+   "currentMorphology": "Prismana Form",
+   "visible": true
+  }
+ ]
+}

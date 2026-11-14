@@ -1,0 +1,492 @@
+{
+ "id": "10008798",
+ "previousId": "10008904",
+ "nextId": "10009044",
+ "previousAnchor": {
+  "entryId": "044",
+  "currentMorphology": "Nighttime Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "045",
+  "currentMorphology": "Timberline Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 2437,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "045",
+  "sortOrder": 1022100,
+  "name": "Bolty",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10221.png",
+  "countryId": 300001,
+  "description": "They live among the trees. When they attack, golden sparks flash from their tails with crackling electric sounds. Agile and quick on their feet, they are very difficult to catch.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "1",
+  "position": [
+   "position-break"
+  ],
+  "attributes": [
+   "attributes-electric"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_24447",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_24448",
+      "formData": {
+       "name": "Bolty",
+       "sortOrder": 1,
+       "serialNumber": "045",
+       "heightMin": 0,
+       "heightMax": 0,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-electric"
+       ],
+       "position": [
+        "position-break"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "They live among the trees. When they attack, golden sparks flash from their tails with crackling electric sounds. Agile and quick on their feet, they are very difficult to catch.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10221.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10221.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10221.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1022100.mp4",
+       "backgroundImage": "",
+       "attributeValue": 450,
+       "hp": 85,
+       "magicAttack": 87,
+       "physicalAttack": 85,
+       "magicDefense": 60,
+       "haste": 73,
+       "physicalDefense": 60,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 1,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_24449",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_24450",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24451",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Bolty",
+         "label": "Bolty",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10221.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_24453",
+           "name": "Hoptail",
+           "label": "Hoptail",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10223.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 0,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          },
+          {
+           "id": "91630354_24454",
+           "name": "Blazen",
+           "label": "Blazen",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10222.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_24452"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_24455",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_24456",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24457",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_24458",
+        "customKey": "",
+        "title": "Blitzwood",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_24459",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_24460",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24461",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_24462",
+        "customKey": "home-1004",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_24463",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_24464",
+        "customKey": "home-1101",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_24465",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Pathfinding",
+      "type": "small",
+      "id": "91630354_24466",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24467",
+       "type": "circle",
+       "props": {
+        "id": "91630354_24468",
+        "customKey": "CLIMB",
+        "icon": "",
+        "iconStyle": "",
+        "iconTitle": "Climb Lv.2",
+        "descTitle": "",
+        "descContent": "",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        },
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_24469",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_24470",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24471",
+       "type": "circle",
+       "props": {
+        "id": "91630354_24472",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1022100_Skill_9400109_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "High Jump",
+        "descContent": "Allows you to perform a higher jump.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_24473",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_24474",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24475",
+       "type": "circle",
+       "props": {
+        "id": "91630354_24476",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1022100_Feature_12222_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Power Sustain",
+        "descContent": "After skills land 6 critical hits, becomes [Overcharged], immediately gaining a shield equal to 5% HP. All skills cost 12 less EP, but UP cannot be gained. Lasts 6s.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_24477",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_24478",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_24479",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_24480",
+          "type": "circle",
+          "props": {
+           "id": "91630354_24481",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1022100_Skill_10400210_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "High-Voltage Dash",
+           "descContent": "While electrified, charges toward the target to deal damage.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "48"
+           }
+          }
+         },
+         {
+          "id": "91630354_24482",
+          "type": "circle",
+          "props": {
+           "id": "91630354_24483",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1022100_Skill_10400202_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Thunder Tail",
+           "descContent": "Channels the power of lightning, swinging its tail to attack targets ahead. This skill grants 50% additional Crit Rate.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "20"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_24484",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_24485",
+          "type": "circle",
+          "props": {
+           "id": "91630354_24486",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1014300_Skill_14000000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of lightning to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_24487",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_24488",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24489",
+       "type": "richText",
+       "props": {
+        "id": "91630354_24490",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008798",
+   "entryId": "045",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10009044",
+   "entryId": "045",
+   "countryId": 300001,
+   "currentMorphology": "Timberline Form",
+   "visible": true
+  }
+ ]
+}

@@ -1,0 +1,527 @@
+{
+ "id": "10008840",
+ "previousId": "10008931",
+ "nextId": "10009034",
+ "previousAnchor": {
+  "entryId": "015",
+  "currentMorphology": "Prismana Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "017",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 3395,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "016",
+  "sortOrder": 1004500,
+  "name": "Leafy",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10045.png",
+  "countryId": 300001,
+  "description": "They live among lotus flowers and use their lotus leaf tails to conceal their face and show off their elegant nature.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "3",
+  "position": [
+   "position-energy"
+  ],
+  "attributes": [
+   "attributes-grass",
+   "attributes-water"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_26408",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_26409",
+      "formData": {
+       "name": "Leafy",
+       "sortOrder": 1,
+       "serialNumber": "016",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-grass",
+        "attributes-water"
+       ],
+       "position": [
+        "position-energy"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "They live among lotus flowers and use their lotus leaf tails to conceal their face and show off their elegant nature.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10045.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10045.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10045.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1004500.mp4",
+       "backgroundImage": "",
+       "attributeValue": 535,
+       "hp": 120,
+       "magicAttack": 50,
+       "physicalAttack": 95,
+       "magicDefense": 82,
+       "haste": 106,
+       "physicalDefense": 82,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_26410",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_26411",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26412",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Skippy",
+         "label": "Skippy",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10041.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_26414",
+           "name": "Pranky",
+           "label": "Pranky",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10042.png",
+           "stage": 2,
+           "stageStrength": 2,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": [
+            {
+             "id": "91630354_26415",
+             "name": "Glacy",
+             "label": "Glacy",
+             "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10043.png",
+             "stage": 3,
+             "stageStrength": 3,
+             "position": 1,
+             "condition": {
+              "isVariant": false,
+              "list": []
+             },
+             "children": []
+            },
+            {
+             "id": "91630354_26416",
+             "name": "Leafy",
+             "label": "Leafy",
+             "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10045.png",
+             "stage": 3,
+             "stageStrength": 3,
+             "position": 2,
+             "condition": {
+              "isVariant": false,
+              "list": []
+             },
+             "children": []
+            }
+           ]
+          }
+         ]
+        },
+        "id": "91630354_26413"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26417",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_26418",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26419",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_26420",
+        "customKey": "",
+        "title": "The Mistwoods",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26421",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_26422",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26423",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_26424",
+        "customKey": "home-1002",
+        "title": "2",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_26425",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_26426",
+        "customKey": "home-1001",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_26427",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_26428",
+        "customKey": "home-1100",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_26429",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Pathfinding",
+      "type": "small",
+      "id": "91630354_26430",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26431",
+       "type": "circle",
+       "props": {
+        "id": "91630354_26432",
+        "customKey": "SWIM",
+        "icon": "",
+        "iconStyle": "",
+        "iconTitle": "Swim Lv.2",
+        "descTitle": "",
+        "descContent": "",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        },
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26435",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_26436",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26437",
+       "type": "circle",
+       "props": {
+        "id": "91630354_26438",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1004500_Feature_10473_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Power of Nature",
+        "descContent": "While off field, creates a patch of Turf under a teammate after they cast 3 skills.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26439",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_26440",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_26441",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_26442",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26443",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1004500_Skill_10600301_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Vitality Blooms",
+           "descContent": "Creates a circular magic field underfoot, restoring 2.4 EP every second to Grass-type teammates within range for 12s. The field also upgrades nearby Turf into Vitality Blooms, restoring 1% HP every second to Grass-type teammates within range.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "10",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_26444",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26445",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1004500_Skill_10600322_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Cyclone of Leaves",
+           "descContent": "Swipes its tail and releases a forward-moving cyclone of leaves to attack targets. Turf is formed around the Aniimo and along the cyclone's path for 20s.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "10",
+            "power": "33"
+           }
+          }
+         },
+         {
+          "id": "91630354_26446",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26447",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1004500_Skill_10600306_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Vine Entanglement",
+           "descContent": "Launches a circular magic attack around the target. If affected targets are on grass, they are bound by vines and enter a [Stunned] state for 3s.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "10",
+            "power": "16"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_26448",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_26449",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26450",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1004500_Skill_10600420_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Lotus Bloom",
+           "descContent": "Quickly forms a lotus cocoon that bursts open, instantly healing the whole team for 15% of the caster’s max HP, and grants the entire team 15% Grass Elemental Boost for 30s.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "0",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_26451",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26452",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1032400_Skill_14200000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of grass to attack targets from a distance.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_26453",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_26454",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26455",
+       "type": "richText",
+       "props": {
+        "id": "91630354_26456",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008840",
+   "entryId": "016",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  }
+ ]
+}

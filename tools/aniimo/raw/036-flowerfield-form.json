@@ -1,0 +1,456 @@
+{
+ "id": "10008955",
+ "previousId": "10008957",
+ "nextId": "10008954",
+ "previousAnchor": {
+  "entryId": "036",
+  "currentMorphology": "Highland Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "037",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 1004,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "036",
+  "sortOrder": 1047103,
+  "name": "Pomegg",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1047103.png",
+  "countryId": 300001,
+  "description": "Pomeggs living in the Sea of Flowers wear blooms on their heads as camouflage. Their bodies absorb the pigments, turning a soft, pale pink.",
+  "currentMorphology": "Flowerfield Form",
+  "currentStage": "1",
+  "position": [
+   "position-break"
+  ],
+  "attributes": [
+   "attributes-grass"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_31802",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_31803",
+      "formData": {
+       "name": "Pomegg",
+       "sortOrder": 1,
+       "serialNumber": "036",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-grass"
+       ],
+       "position": [
+        "position-break"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "Pomeggs living in the Sea of Flowers wear blooms on their heads as camouflage. Their bodies absorb the pigments, turning a soft, pale pink.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1047103.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1047103.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1047103.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1047103.mp4",
+       "backgroundImage": "",
+       "attributeValue": 455,
+       "hp": 74,
+       "magicAttack": 91,
+       "physicalAttack": 72,
+       "magicDefense": 65,
+       "haste": 85,
+       "physicalDefense": 68,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Flowerfield Form",
+       "currentStage": 1,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_31804",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_31805",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31806",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Pomegg",
+         "label": "Pomegg",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1047103.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_31808",
+           "name": "Pomawk",
+           "label": "Pomawk",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1047503.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_31807"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_31809",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_31810",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31811",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_31812",
+        "customKey": "",
+        "title": "Tideblossom Coast",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_31813",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_31814",
+        "customKey": "",
+        "title": "Forest of Falling Stars",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_31815",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_31816",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31817",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_31818",
+        "customKey": "home-1001",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_31819",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_31820",
+        "customKey": "home-1101",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_31825",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_31826",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31827",
+       "type": "circle",
+       "props": {
+        "id": "91630354_31828",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1047503_Feature_147102_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Tuning",
+        "descContent": "Each skill cast grants 1 stack of [Volume], up to 6 stacks. At 6 stacks of [Volume], increases Crit Rate by 20% for 15s.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_31829",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_31830",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_31831",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_31832",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31833",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1047500_Skill_10200380_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Frost Strike",
+           "descContent": "Strikes targets around itself. Targets hit enter a Frozen state for 2.5s.",
+           "source": {
+            "attributes": [
+             "2"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "45"
+           }
+          }
+         },
+         {
+          "id": "91630354_31834",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31835",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1047500_Skill_10600550_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Jittering Beats",
+           "descContent": "Strikes targets around itself. Targets hit enter a [Silence] state for 4s.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "45"
+           }
+          }
+         },
+         {
+          "id": "91630354_31836",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31837",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1047500_Skill_10600540_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Rhythm Combo",
+           "descContent": "Performs a rhythmic combo on the target. Can be used up to 3 times in a row.Casting with the right timing adds 1 extra stack of [Volume].",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "10",
+            "power": "36"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_31838",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_31839",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31840",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1032400_Skill_14200000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "(BREAK) Wields the power of grass to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_31841",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_31842",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31843",
+       "type": "richText",
+       "props": {
+        "id": "91630354_31844",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008961",
+   "entryId": "036",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008959",
+   "entryId": "036",
+   "countryId": 300001,
+   "currentMorphology": "Snowfield Form",
+   "visible": true
+  },
+  {
+   "id": "10008957",
+   "entryId": "036",
+   "countryId": 300001,
+   "currentMorphology": "Highland Form",
+   "visible": true
+  },
+  {
+   "id": "10008955",
+   "entryId": "036",
+   "countryId": 300001,
+   "currentMorphology": "Flowerfield Form",
+   "visible": true
+  }
+ ]
+}

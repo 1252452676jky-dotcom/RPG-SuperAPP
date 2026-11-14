@@ -1,0 +1,504 @@
+{
+ "id": "10008826",
+ "previousId": "10008851",
+ "nextId": "10008882",
+ "previousAnchor": {
+  "entryId": "013",
+  "currentMorphology": "Flowerfield Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "014",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 1347,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "013",
+  "sortOrder": 1004102,
+  "name": "Skippy",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1004102.png",
+  "countryId": 300001,
+  "description": "Skippies living in cold regions don't find the snow cold at all; instead, they enjoy the cool feeling of the frozen head leaf on their heads.",
+  "currentMorphology": "Snowfield Form",
+  "currentStage": "1",
+  "position": [
+   "position-heal"
+  ],
+  "attributes": [
+   "attributes-water",
+   "attributes-ice"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_25755",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_25756",
+      "formData": {
+       "name": "Skippy",
+       "sortOrder": 1,
+       "serialNumber": "013",
+       "heightMin": 0,
+       "heightMax": 0,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-water",
+        "attributes-ice"
+       ],
+       "position": [
+        "position-heal"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "Skippies living in cold regions don't find the snow cold at all; instead, they enjoy the cool feeling of the frozen head leaf on their heads.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1004102.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1004102.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1004102.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1004102.mp4",
+       "backgroundImage": "",
+       "attributeValue": 402,
+       "hp": 80,
+       "magicAttack": 50,
+       "physicalAttack": 70,
+       "magicDefense": 76,
+       "haste": 60,
+       "physicalDefense": 66,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Snowfield Form",
+       "currentStage": 1,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_25757",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_25758",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25759",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Skippy",
+         "label": "Skippy",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1004102.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_25761",
+           "name": "Pranky",
+           "label": "Pranky",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1004202.png",
+           "stage": 2,
+           "stageStrength": 2,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": [
+            {
+             "id": "91630354_25762",
+             "name": "Glacy",
+             "label": "Glacy",
+             "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1004302.png",
+             "stage": 3,
+             "stageStrength": 3,
+             "position": 1,
+             "condition": {
+              "isVariant": false,
+              "list": []
+             },
+             "children": []
+            }
+           ]
+          }
+         ]
+        },
+        "id": "91630354_25760"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_25763",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_25764",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25765",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_25766",
+        "customKey": "",
+        "title": "Driftwise Meadow",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_25767",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_25768",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25769",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_25770",
+        "customKey": "home-1005",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_25771",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_25772",
+        "customKey": "home-1002",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_25773",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_25774",
+        "customKey": "home-1100",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_25775",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Pathfinding",
+      "type": "small",
+      "id": "91630354_25776",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25777",
+       "type": "circle",
+       "props": {
+        "id": "91630354_25778",
+        "customKey": "SWIM",
+        "icon": "",
+        "iconStyle": "",
+        "iconTitle": "Swim Lv.1",
+        "descTitle": "",
+        "descContent": "",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        },
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_25781",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_25782",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25783",
+       "type": "circle",
+       "props": {
+        "id": "91630354_25784",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1004102_Feature_10402_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Water Spirit",
+        "descContent": "While in water terrain, reduces the EP cost of all skills by 16%.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_25785",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_25786",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_25787",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_25788",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25789",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1004100_Skill_10300040_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Healing Water",
+           "descContent": "Restores all allies’ HP by an amount equal to 8% of the caster’s max HP, and restores HP to the caster equal to 10% of their max HP over 5s.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "20",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_25790",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25791",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1004100_Skill_10300011_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Water Orb",
+           "descContent": "Shoots Water Orbs to attack a target. Press and hold the skill button to aim.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "10",
+            "power": "30"
+           }
+          }
+         },
+         {
+          "id": "91630354_25792",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25793",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1004100_Skill_10200020_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Ice Orb",
+           "descContent": "Fires an Ice Orb at the target, putting the target into a [Frozen] state for 2.5s. Hold the skill key to aim.",
+           "source": {
+            "attributes": [
+             "2"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "10",
+            "power": "20"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_25794",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_25795",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25796",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1054300_Skill_10300000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of water to attack targets from a distance.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_25797",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_25798",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25799",
+       "type": "richText",
+       "props": {
+        "id": "91630354_25800",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008847",
+   "entryId": "013",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008851",
+   "entryId": "013",
+   "countryId": 300001,
+   "currentMorphology": "Flowerfield Form",
+   "visible": true
+  },
+  {
+   "id": "10008826",
+   "entryId": "013",
+   "countryId": 300001,
+   "currentMorphology": "Snowfield Form",
+   "visible": true
+  }
+ ]
+}

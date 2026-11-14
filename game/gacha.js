@@ -12,7 +12,8 @@
   const FR = {
     pokemon:  { label: 'Pokémon',  color: '#dc2626', raw: ['HP', 'Atk', 'Def', 'SpA', 'SpD', 'Spe'] },
     palworld: { label: 'Palworld', color: '#0d9488', raw: ['HP', 'Melee', 'Def', 'Shot', 'Def', 'Run'] },
-    digimon:  { label: 'Digimon',  color: '#ea580c', raw: null }   // generated stats
+    digimon:  { label: 'Digimon',  color: '#ea580c', raw: null },  // generated stats
+    aniimo:   { label: 'Aniimo',   color: '#7c3aed', raw: ['HP', 'ATK', 'P.DEF', 'ATK', 'M.DEF', 'REGEN'] }
   };
   const TIERS = { 1: 'Early', 2: 'Mid', 3: 'Late', 4: 'Legend / Special' };
   const STATS = ['HP', 'Atk', 'Def', 'SpA', 'SpD', 'Spe'];
@@ -193,7 +194,7 @@
       <button onclick="Gacha.exportEdits()" class="bg-fuchsia-800 hover:bg-fuchsia-700 px-2 py-1 rounded"><i class="fa-solid fa-file-export"></i> Export edits (overrides.json)</button>
       <button onclick="Gacha.resetBox()" class="bg-red-800 hover:bg-red-700 px-2 py-1 rounded"><i class="fa-solid fa-rotate-left"></i> Reset collection</button>
     </div>
-    <p class="text-[10px] text-slate-500 mt-4"><span class="mlr-launch"><button type="button" onclick="MonsterRun.open()">▶ Monster Lab Run</button></span>Data: PokéAPI · Pokémon Showdown (MIT) · TCGdex · PalSphere (palsphere.app) · DAPI / Wikimon. Unofficial fan project; all monsters © their owners. Data build ${escapeHtml(DB.version)}</p>`;
+    <p class="text-[10px] text-slate-500 mt-4"><span class="mlr-launch"><button type="button" onclick="MonsterRun.open()">▶ Monster Lab Run</button></span>Data: PokéAPI · Pokémon Showdown (MIT) · TCGdex · PalSphere (palsphere.app) · DAPI / Wikimon · Official Aniimo Wiki (wiki.aniimo.com). Unofficial fan project; all monsters © their owners. Data build ${escapeHtml(DB.version)}</p>`;
   }
 
   /* ---------- detail modal ---------- */
@@ -210,6 +211,7 @@
       r.typesOrig && r.typesOrig.length ? ['Original type', r.typesOrig.join(' / ')] : null,
       r.attribute ? ['Attribute', r.attribute] : null, r.level ? ['Digimon level', r.level] : null,
       r.rarity ? ['Pal rarity', r.rarity] : null, r.special ? ['Special form', r.special] : null,
+      r.role ? ['Aniimo role', r.role] : null, r.traits && r.traits.length ? ['Traits', r.traits.map(t => t.name).join(', ')] : null,
       ['Evolves to', evo], own ? ['Pulled', own.got] : null].filter(Boolean)
       .map(([k, v]) => `<div class="flex justify-between gap-3 border-b border-slate-700 py-0.5"><span class="text-slate-400">${k}</span><span class="text-right">${typeof v === 'string' && k === 'Evolves to' ? v : escapeHtml(String(v))}</span></div>`).join('');
     const inTeam = game.team.includes(key);

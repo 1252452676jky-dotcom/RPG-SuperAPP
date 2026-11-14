@@ -1,0 +1,418 @@
+{
+ "id": "10008801",
+ "previousId": "10008887",
+ "nextId": "10008887",
+ "previousAnchor": {
+  "entryId": "99996",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 0
+ },
+ "nextAnchor": {
+  "entryId": "99996",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 0
+ },
+ "viewCount": 2949,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "99998",
+  "sortOrder": 1036100,
+  "name": "Helion",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10361.png",
+  "countryId": 0,
+  "description": "Enthusiastic and confident, they always stand up for their friends at critical moments, displaying amazing power.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "1",
+  "position": [
+   "position-dps"
+  ],
+  "attributes": [
+   "attributes-holy"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_24588",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_24589",
+      "formData": {
+       "name": "Helion",
+       "sortOrder": 1,
+       "serialNumber": "99998",
+       "heightMin": 0,
+       "heightMax": 0,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-holy"
+       ],
+       "position": [
+        "position-dps"
+       ],
+       "gender": [],
+       "desc": "Enthusiastic and confident, they always stand up for their friends at critical moments, displaying amazing power.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10361.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10361.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10361.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1036100.mp4",
+       "backgroundImage": "",
+       "attributeValue": 514,
+       "hp": 100,
+       "magicAttack": 64,
+       "physicalAttack": 116,
+       "magicDefense": 72,
+       "haste": 90,
+       "physicalDefense": 72,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 1,
+       "countryId": 0,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_24596",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_24597",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24598",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_24599",
+        "customKey": "home-1008",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_24600",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_24601",
+        "customKey": "home-1100",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_24604",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_24605",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24606",
+       "type": "circle",
+       "props": {
+        "id": "91630354_24607",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1036100_Skill_9400107_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Hustle",
+        "descContent": "Enters the Hustle state to move at high speed by continuously consuming stamina.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_24608",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_24609",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24610",
+       "type": "circle",
+       "props": {
+        "id": "91630354_24611",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1044300_Feature_144102_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Solar Grace",
+        "descContent": "When not attacking with an advantageous element, final damage increases by 30%. Every 4 basic attacks grants [Solar Halo], enhancing the next skill.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_24612",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_24613",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_24614",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_24615",
+          "type": "circle",
+          "props": {
+           "id": "91630354_24616",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1036100_Skill_11300040_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Light Bombardment",
+           "descContent": "Dives from the air at the target, causing a Holy Light explosion upon landing. If you have Ring of the Golden Sun, this damage is increased by 30%.",
+           "source": {
+            "attributes": [
+             "13"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "62"
+           }
+          }
+         },
+         {
+          "id": "91630354_24617",
+          "type": "circle",
+          "props": {
+           "id": "91630354_24618",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1036100_Skill_11300020_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Holy Roar",
+           "descContent": "Unleashes a lion’s roar imbued with holy power to attack targets. On hit, increases the user’s Light Damage Amp by 6%, stacking up to 3 times for 20s. [Solar Halo] enhances this skill’s effect, applying 3 stacks each time.",
+           "source": {
+            "attributes": [
+             "13"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "10",
+            "power": "30"
+           }
+          }
+         },
+         {
+          "id": "91630354_24619",
+          "type": "circle",
+          "props": {
+           "id": "91630354_24620",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1036100_Skill_11300140_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Sun-Kissed",
+           "descContent": "Bathes in sunlight and restores 20 EP. [Solar Halo] enhances the skill, restoring an extra 5 EP.",
+           "source": {
+            "attributes": [
+             "13"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "0",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_24621",
+          "type": "circle",
+          "props": {
+           "id": "91630354_24622",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1036100_Skill_11300030_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Holy Storm",
+           "descContent": "Spins and leaps into the air, whipping up a storm that pulls targets toward its center while dealing high BREAK damage based on the Aniimo’s level. [Solar Halo] enhances the skill effect, with the final hit inflicting an additional 1s of stun.",
+           "source": {
+            "attributes": [
+             "13"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "60"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_24623",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_24624",
+          "type": "circle",
+          "props": {
+           "id": "91630354_24625",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1036100_Skill_11300000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of light to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "13"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         },
+         {
+          "id": "91630354_24626",
+          "type": "circle",
+          "props": {
+           "id": "91630354_24627",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1036100_Skill_11300051_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Helios’ Judgment",
+           "descContent": "Unleashes Helios’ Judgment on nearby targets, dealing massive damage. Evolves into Soleon, increases its own Damage Amp by 15% until leaving combat, and gains  Ring of the Golden Sun.",
+           "source": {
+            "attributes": [
+             "13"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "167"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_24628",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_24629",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24630",
+       "type": "richText",
+       "props": {
+        "id": "91630354_24631",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008801",
+   "entryId": "99998",
+   "countryId": 0,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  }
+ ]
+}

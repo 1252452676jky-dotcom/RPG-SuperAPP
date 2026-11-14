@@ -2,7 +2,7 @@
 // Run from the project root:  node tools/build-data.mjs
 // Needs Node 18+. Raw API responses are cached (trimmed) in tools/.cache.
 import vm from 'node:vm';   
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile, readdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -407,6 +407,186 @@ async function buildDigimon() {
 }
 
 
+/* =================== ANIIMO (official wiki pages saved by tools/scrape-aniimo.mjs) =================== */
+const ANII_DIRS = [path.join(ROOT, 'tools', 'aniimo'), path.join(CACHE, 'aniimo')];
+const ANII_POWER = 1.4;                      // Aniimo skill power ~30–70 → ×1.4 ≈ Pokémon scale (cap 150)
+const ANII_EVO_LV = { 2: 16, 3: 36 };         // wiki lists no evolution levels → Pokémon-like defaults
+const ANII_TYPE = { fire: 'fire', water: 'water', grass: 'grass', plant: 'grass', wind: 'flying', ice: 'ice', dark: 'dark',
+  holy: 'fairy', light: 'fairy', thunder: 'electric', electric: 'electric', lightning: 'electric', earth: 'ground', ground: 'ground',
+  rock: 'rock', metal: 'steel', steel: 'steel', poison: 'poison', normal: 'normal', psychic: 'psychic', dragon: 'dragon',
+  bug: 'bug', fighting: 'fighting', ghost: 'ghost' };
+const ANII_CAT = { '1': 'physical', '2': 'special' };   // wiki skill "Type" ids — check the build printout, swap if wrong
+const ANII_ROLE = { dps: 'DPS', break: 'Breaker', heal: 'Healer', sup: 'Support', energy: 'Energy' };
+
+async function walkJson(dir, out = []) {
+  if (!existsSync(dir)) return out;
+  for (const e of await readdir(dir, { withFileTypes: true })) {
+    const p = path.join(dir, e.name);
+    if (e.isDirectory()) await walkJson(p, out); else if (e.name.endsWith('.json')) out.push(p);
+  }
+  return out;
+}
+// Nuxt _payload.json is "devalue" format: one flat array, values point to other indices
+function unflatten(arr) {
+  const memo = new Map();
+  const H = i => {
+    if (typeof i !== 'number') return i;
+    if (i < 0) return i === -3 ? NaN : i === -4 ? Infinity : i === -5 ? -Infinity : i === -6 ? -0 : undefined;
+    if (memo.has(i)) return memo.get(i);
+    const v = arr[i];
+    if (v === null || typeof v !== 'object') { memo.set(i, v); return v; }
+    if (Array.isArray(v)) {
+      if (typeof v[0] === 'string') {                         // type tags: ShallowReactive, Reactive, Ref, Date, Set, Map, null
+        const t = v[0];
+        if (t === 'Date') return v[1];
+        if (t === 'Set') { const o = []; memo.set(i, o); v.slice(1).forEach(j => o.push(H(j))); return o; }
+        if (t === 'Map') { const o = {}; memo.set(i, o); for (let n = 1; n < v.length; n += 2) o[String(H(v[n]))] = H(v[n + 1]); return o; }
+        if (t === 'null') { const o = {}; memo.set(i, o); for (let n = 1; n < v.length; n += 2) o[v[n]] = H(v[n + 1]); return o; }
+        const o = v.length > 1 ? H(v[1]) : undefined; memo.set(i, o); return o;
+      }
+      const o = []; memo.set(i, o); v.forEach(j => o.push(H(j))); return o;
+    }
+    const o = {}; memo.set(i, o); for (const [k, j] of Object.entries(v)) o[k] = H(j); return o;
+  };
+  return H(0);
+}
+function walkNodes(x, fn, seen = new Set()) {
+  if (!x || typeof x !== 'object' || seen.has(x)) return;
+  seen.add(x); fn(x);
+  for (const v of Array.isArray(x) ? x : Object.values(x)) walkNodes(v, fn, seen);
+}
+function aniDetail(json) {
+  if (json && !Array.isArray(json) && json.directories) return { tup: [], d: json };      // already-unpacked page
+  const root = Array.isArray(json) && json[0] && typeof json[0] === 'object' && 'data' in json[0] ? unflatten(json) : json;
+  const data = root && typeof root === 'object' ? (root.data || root) : null;
+  if (!data || typeof data !== 'object') return null;
+  for (const k of Object.keys(data)) if (k.startsWith('aniimo-detail-') && data[k]) {
+    let tup = []; try { tup = JSON.parse(k.slice('aniimo-detail-'.length)); } catch { }   // [id, "001", "Basic Form", "en"]
+    return { tup, d: data[k] };
+  }
+  return null;
+}
+function aniParse(d) {
+  let info = null, tree = null; const skills = [], traits = [];
+  walkNodes(d.directories || d, n => {
+    const p = n.props || {};
+    if (n.type === 'aniimoInfo' && p.formData) info = p.formData;
+    if (n.type === 'evolution' && p.data) tree = p.data;
+    if (p.title === 'Skill Details' && Array.isArray(p.tabs))
+      p.tabs.forEach(tab => (tab.children || []).forEach(c => c && c.props && c.props.descTitle && skills.push({ ...c.props, innate: /innate/i.test(tab.title || '') })));
+    if (p.title === 'Aniimo Traits')
+      (n.children || []).forEach(c => c && c.props && c.props.descTitle && traits.push({ name: c.props.descTitle, desc: c.props.descContent || '' }));
+  });
+  return { info, tree, skills, traits };
+}
+
+async function buildAniimo() {
+  console.log('\n== Aniimo (official wiki pages in tools/aniimo) ==');
+  const files = (await Promise.all(ANII_DIRS.map(d => walkJson(d)))).flat();
+  const pages = new Map();
+  for (const f of files) {
+    let j; try { j = JSON.parse(await readFile(f, 'utf8')); } catch { continue; }
+    const hit = aniDetail(j); if (!hit) continue;
+    const x = aniParse(hit.d); if (!x.info || !x.info.name) continue;
+    const serial = String(x.info.serialNumber ?? hit.tup[1] ?? '').trim();
+    const form = String(hit.tup[2] || x.info.currentMorphology || 'Basic Form');
+    if (!pages.has(serial + '|' + form)) pages.set(serial + '|' + form, { serial, form, ...x, card: hit.d.searchKey || {} });
+  }
+  if (!pages.size) throw new Error('no Aniimo wiki pages found in tools/aniimo/ (run node tools/scrape-aniimo.mjs first)');
+  console.log(`  ${pages.size} form pages (from ${files.length} json files)`);
+
+  const elsOf = p => (p.info.attributes || []).map(a => String(a).replace(/^attributes-/, '').toLowerCase());
+  const skEl = s => [].concat((s.source || {}).attributes || [])[0];
+  // skill element ids → element names, learned from single-element Aniimo (each id and each element used once)
+  const cnt = {};
+  for (const p of pages.values()) { const e = elsOf(p); if (e.length !== 1) continue;
+    for (const s of p.skills) { const a = skEl(s); if (a != null) cnt[a + '|' + e[0]] = (cnt[a + '|' + e[0]] || 0) + 1; } }
+  const EL = {}, takenEl = new Set();
+  Object.entries(cnt).map(([k, n]) => [...k.split('|'), n]).sort((a, b) => b[2] - a[2])
+    .forEach(([a, e]) => { if (!(a in EL) && !takenEl.has(e)) { EL[a] = e; takenEl.add(e); } });
+  console.log('  skill element ids:', Object.entries(EL).map(([a, e]) => `${a}=${e}`).join('  '));
+  const catHist = {};
+  const catOf = s => { const t = String([].concat((s.source || {}).type || [])[0] ?? ''); catHist[t] = (catHist[t] || 0) + 1;
+    return ANII_CAT[t] || (/phys/i.test(t) ? 'physical' : /mag|spec/i.test(t) ? 'special' : ''); };
+
+  // evolution trees (every page carries its whole family tree)
+  const kids = new Map(), stageOf = new Map(), hasParent = new Set();
+  const walkTree = n => {
+    if (!n || !n.name) return;
+    if (n.stage != null && !stageOf.has(n.name)) stageOf.set(n.name, +n.stage || 1);
+    for (const c of n.children || []) {
+      if (!c || !c.name) continue;
+      if (!kids.has(n.name)) kids.set(n.name, new Map());
+      kids.get(n.name).set(c.name, +c.stage || 0); hasParent.add(c.name); walkTree(c);
+    }
+  };
+  for (const p of pages.values()) walkTree(p.tree);
+
+  // keys: anii:emberpup, anii:emberpup-highland, anii:glameep-prismana; a renamed Prismana (Inferlupa) is its own monster
+  const list = [...pages.values()].sort((a, b) => (+a.serial || 0) - (+b.serial || 0)
+    || (a.form === 'Basic Form' ? -1 : b.form === 'Basic Form' ? 1 : a.form.localeCompare(b.form)));
+  const basicName = new Map();
+  list.forEach(p => { if (p.form === 'Basic Form' && !basicName.has(p.serial)) basicName.set(p.serial, p.info.name); });
+  const used = new Set(), keyByName = new Map();
+  for (const p of list) {
+    p.short = p.form.replace(/\s*form$/i, '').trim();
+    p.variant = p.form !== 'Basic Form' && basicName.get(p.serial) === p.info.name;
+    let k = 'anii:' + slug(p.info.name) + (p.variant ? '-' + slug(p.short) : '');
+    if (used.has(k)) k += '-' + slug(p.short);
+    if (used.has(k)) k += '-' + slug(p.serial);
+    used.add(k); p.key = k;
+    if (!p.variant && !keyByName.has(p.info.name)) keyByName.set(p.info.name, k);
+  }
+
+  const records = [], learnsets = {}, moves = {}, unknownEl = new Set();
+  for (const p of list) {
+    const st = p.info, base = p.variant ? basicName.get(p.serial) : st.name, els = elsOf(p);
+    els.forEach(e => { if (!ANII_TYPE[e]) unknownEl.add(e); });
+    const types = [...new Set(els.map(e => ANII_TYPE[e] || 'normal'))].slice(0, 2);
+    const raw = [st.hp, st.physicalAttack, st.physicalDefense, st.physicalAttack, st.magicDefense, st.haste].map(v => Math.max(1, +v || 0));
+    const stage = stageOf.get(base) || +st.currentStage || 1;
+    const prismana = p.variant && /prismana/i.test(p.form), serialN = +p.serial || 0;
+    const evo = [];
+    if (!prismana) for (const [child, cst] of kids.get(base) || []) {
+      const ck = keyByName.get(child); if (!ck) continue;
+      const alt = p.variant && used.has(ck + '-' + slug(p.short)) ? ck + '-' + slug(p.short) : ck;   // Highland → Highland
+      evo.push({ to: alt, lv: ANII_EVO_LV[cst] || ANII_EVO_LV[stage + 1] || 30 });
+    }
+    const role = (st.position || []).map(x => { const s = String(x).replace(/^position-/, ''); return ANII_ROLE[s] || s; }).join(' / ') || null;
+    records.push({ key: p.key, fr: 'aniimo', name: st.name + (prismana ? ' (Prismana)' : p.variant ? ` (${p.short})` : ''),
+      ja: null, spName: base, dex: serialN, img: st.maleImage || st.noGenderImage || st.femaleImage || p.card.imageUrl || null,
+      types: types.length ? types : ['normal'], typesOrig: els, raw, stage, tier: 0, final: !evo.length,
+      legendary: serialN >= 900, special: prismana ? 'prismana' : null, isDefault: !p.variant, evo,
+      form: p.form, role, desc: st.desc || p.card.description || null, traits: p.traits.slice(0, 4), _root: !hasParent.has(base) });
+
+    const seen = new Set(), ls = [], start = { 1: 1, 2: 16, 3: 36 }[stage] || 1; let i = 0;
+    for (const s of p.skills.slice().sort((a, b) => b.innate - a.innate)) {
+      const name = String(s.descTitle || '').trim(); if (!name || seen.has(name)) continue; seen.add(name);
+      const src = s.source || {}, pw = +src.power || 0, el = EL[skEl(s)] || null;
+      let id = 'ani-' + slug(name);
+      if (moves[id] && moves[id].powerRaw !== pw) id += '-' + pw;               // same name, different numbers
+      if (!moves[id]) moves[id] = { name, type: ANII_TYPE[el] || types[0] || 'normal', typeOrig: el, cat: pw ? catOf(s) : 'status',
+        power: pw ? Math.min(150, Math.max(20, Math.round(pw * ANII_POWER))) : null, powerRaw: pw, ep: +src.consume || 0,
+        innate: !!s.innate, desc: s.descContent || null, icon: s.icon || null };
+      ls.push([id, s.innate ? 1 : Math.min(70, start + 4 * i++)]);
+    }
+    learnsets[p.key] = ls;
+  }
+  // pools: stage 1/2/3 → Early/Mid/Late; never-evolving → by stat total; wiki no. ≥ 900 and Prismana variants → Legend
+  const totals = records.filter(r => !r.special && !r.legendary).map(r => sum(r.raw)).sort((a, b) => a - b);
+  for (const r of records) {
+    if (r.legendary || r.special) r.tier = 4;
+    else if (r.stage <= 1 && r.final && r._root) { const q = pctRank(totals, sum(r.raw)); r.tier = q < 0.4 ? 1 : q < 0.8 ? 2 : 3; }
+    else r.tier = Math.min(3, Math.max(1, r.stage));
+    delete r._root;
+  }
+  console.log('  skill category ids:', Object.entries(catHist).map(([t, n]) => `"${t}"×${n}→${ANII_CAT[t] || '?'}`).join('  '));
+  const ex = records[0];
+  if (ex) console.log(`  check ${ex.name}:`, (learnsets[ex.key] || []).map(([id]) => `${moves[id].name}=${moves[id].cat}/${moves[id].type}`).join(', '));
+  if (unknownEl.size) console.warn('  !! elements with no Pokémon type yet (typed normal):', [...unknownEl].join(', '));
+  return { records, learnsets, moves };
+}
+
 /* =================== MAIN =================== */
 async function writeJSON(name, data, pretty) { await writeFile(path.join(OUT, name), JSON.stringify(data, null, pretty ? 2 : 0)); }
 
@@ -421,7 +601,7 @@ async function main() {
   const refMed = [0, 1, 2, 3, 4, 5].map(i => median(ref.map(r => r.raw[i])));
   out.pokemon.records.forEach(r => { r.base = r.raw.map(v => Math.min(255, v)); r.bst = sum(r.base); });
 
-  for (const [fr, fn] of [['palworld', buildPalworld], ['digimon', buildDigimon]]) {
+  for (const [fr, fn] of [['palworld', buildPalworld], ['digimon', buildDigimon], ['aniimo', buildAniimo]]) {
     try { out[fr] = await fn(); normalize(out[fr].records, refBst, refMed); }
     catch (e) { console.error(`  !! ${fr} failed: ${e.message}`); }
   }
@@ -430,7 +610,7 @@ async function main() {
   const old = existsSync(idxFile) ? JSON.parse(await readFile(idxFile, 'utf8')) : null;
   const index = { version: new Date().toISOString(), franchises: {} };
   console.log('\n== Writing /data ==');
-  for (const fr of ['pokemon', 'palworld', 'digimon']) {
+  for (const fr of ['pokemon', 'palworld', 'digimon', 'aniimo']) {
     if (out[fr]) {
       await writeJSON(`monsters.${fr}.json`, out[fr].records);
       await writeJSON(`learnsets.${fr}.json`, out[fr].learnsets);

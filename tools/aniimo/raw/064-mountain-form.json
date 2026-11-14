@@ -1,0 +1,425 @@
+{
+ "id": "10008808",
+ "previousId": "10009017",
+ "nextId": "10008905",
+ "previousAnchor": {
+  "entryId": "064",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "065",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 1144,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "064",
+  "sortOrder": 1002401,
+  "name": "Jawling",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1002401.png",
+  "countryId": 300001,
+  "description": "Loves to sharpen its teeth on Metal ores. The Metal elements it consumes make its entire skin tougher, with its jaw becoming completely metallic.",
+  "currentMorphology": "Mountain Form",
+  "currentStage": "1",
+  "position": [
+   "position-break"
+  ],
+  "attributes": [
+   "attributes-wind"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_24919",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_24920",
+      "formData": {
+       "name": "Jawling",
+       "sortOrder": 1,
+       "serialNumber": "064",
+       "heightMin": 0,
+       "heightMax": 0,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-wind"
+       ],
+       "position": [
+        "position-break"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "Loves to sharpen its teeth on Metal ores. The Metal elements it consumes make its entire skin tougher, with its jaw becoming completely metallic.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1002401.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1002401.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1002401.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1002401.mp4",
+       "backgroundImage": "",
+       "attributeValue": 407,
+       "hp": 78,
+       "magicAttack": 76,
+       "physicalAttack": 65,
+       "magicDefense": 51,
+       "haste": 63,
+       "physicalDefense": 74,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Mountain Form",
+       "currentStage": 1,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_24921",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_24922",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24923",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Jawling",
+         "label": "Jawling",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1002401.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": []
+        },
+        "id": "91630354_24924"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_24925",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_24926",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24927",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_24928",
+        "customKey": "",
+        "title": "Russet Highlands",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_24929",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_24930",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24931",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_24932",
+        "customKey": "home-1100",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_24933",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_24934",
+        "customKey": "home-1006",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_24937",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_24938",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24939",
+       "type": "circle",
+       "props": {
+        "id": "91630354_24940",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1002401_Skill_9400051_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Bilateral",
+        "descContent": "Enters Bilateral mode to see a different perspective.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_24941",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_24942",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24943",
+       "type": "circle",
+       "props": {
+        "id": "91630354_24944",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1002401_Feature_10281_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Counter Strike",
+        "descContent": "After being attacked, increases BREAK efficiency by 25% for 10s.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_24945",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_24946",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_24947",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_24948",
+          "type": "circle",
+          "props": {
+           "id": "91630354_24949",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1002400_Skill_10900200_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Wind Tackle",
+           "descContent": "Tackles and pushes small-sized targets. Increases own damage reduction by 15% for 10s.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "15",
+            "power": "45"
+           }
+          }
+         },
+         {
+          "id": "91630354_24950",
+          "type": "circle",
+          "props": {
+           "id": "91630354_24951",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1002400_Skill_10700180_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Overcharged Claw Strike",
+           "descContent": "Claws a target, dealing damage.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "68"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_24952",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_24953",
+          "type": "circle",
+          "props": {
+           "id": "91630354_24954",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1026200_Skill_14400000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "(BREAK) Wields the power of wind to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_24955",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_24956",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_24957",
+       "type": "richText",
+       "props": {
+        "id": "91630354_24958",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10009017",
+   "entryId": "064",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008808",
+   "entryId": "064",
+   "countryId": 300001,
+   "currentMorphology": "Mountain Form",
+   "visible": true
+  }
+ ]
+}

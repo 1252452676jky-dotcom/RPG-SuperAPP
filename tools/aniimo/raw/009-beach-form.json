@@ -1,0 +1,651 @@
+{
+ "id": "10008848",
+ "previousId": "10008845",
+ "nextId": "10008832",
+ "previousAnchor": {
+  "entryId": "009",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "009",
+  "currentMorphology": "Prismana Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 1278,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "009",
+  "sortOrder": 1018501,
+  "name": "Cornet",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1018501.png",
+  "countryId": 300001,
+  "description": "Standing on a high reef, they practice diligently to make their voices carry farther across the sea, as if convinced that one day, an echo will come from the other side.",
+  "currentMorphology": "Beach Form",
+  "currentStage": "3",
+  "position": [
+   "position-dps"
+  ],
+  "attributes": [
+   "attributes-wind",
+   "attributes-water"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_26807",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_26808",
+      "formData": {
+       "name": "Cornet",
+       "sortOrder": 1,
+       "serialNumber": "009",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-wind",
+        "attributes-water"
+       ],
+       "position": [
+        "position-dps"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "Standing on a high reef, they practice diligently to make their voices carry farther across the sea, as if convinced that one day, an echo will come from the other side.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1018501.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1018501.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1018501.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1018501.mp4",
+       "backgroundImage": "",
+       "attributeValue": 509,
+       "hp": 96,
+       "magicAttack": 54,
+       "physicalAttack": 121,
+       "magicDefense": 70,
+       "haste": 94,
+       "physicalDefense": 74,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Beach Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_26809",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_26810",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26811",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Chirpi",
+         "label": "Chirpi",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1018101.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_26813",
+           "name": "Tromber",
+           "label": "Tromber",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1018401.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 0,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          },
+          {
+           "id": "91630354_26814",
+           "name": "Cornet",
+           "label": "Cornet",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1018501.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          },
+          {
+           "id": "91630354_26815",
+           "name": "Tubster",
+           "label": "Tubster",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1018701.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 2,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_26812"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26816",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_26817",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26818",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_26819",
+        "customKey": "",
+        "title": "Echoback Landing",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_26820",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_26821",
+        "customKey": "",
+        "title": "Forest of Falling Stars",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26822",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_26823",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26824",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_26825",
+        "customKey": "home-1006",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_26826",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_26827",
+        "customKey": "home-1002",
+        "title": "2",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_26828",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Pathfinding",
+      "type": "small",
+      "id": "91630354_26829",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26830",
+       "type": "circle",
+       "props": {
+        "id": "91630354_26831",
+        "customKey": "GLIDE",
+        "icon": "",
+        "iconStyle": "",
+        "iconTitle": "Fly Lv.2",
+        "descTitle": "",
+        "descContent": "",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        },
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26832",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_26833",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26834",
+       "type": "circle",
+       "props": {
+        "id": "91630354_26835",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018401_Skill_9400102_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Take Off",
+        "descContent": "Enters the Flying state to evade attacks from ground enemies. Takes more DMG while airborne.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26836",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_26837",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26838",
+       "type": "circle",
+       "props": {
+        "id": "91630354_26839",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018502_Feature_11874_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Air Superiority",
+        "descContent": "Increases Crit Rate by 20% while flying.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26840",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_26841",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_26842",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_26843",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26844",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018500_Skill_10400300_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Lightning Splitter",
+           "descContent": "Fires multiple Electric Projectiles at nearby targets. If multiple projectiles hit the same unit, [paralyzes] the target for 5s. Hold the skill button to automatically enter the Fly state after the skill is cast.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "10",
+            "power": "30"
+           }
+          }
+         },
+         {
+          "id": "91630354_26845",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26846",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018500_Skill_10900390_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Wind Bomb Rush",
+           "descContent": "Goes all out, rapidly firing a continuous barrage of Wind Bombs.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "45",
+            "power": "157"
+           }
+          }
+         },
+         {
+          "id": "91630354_26847",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26848",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018400_Skill_10900041_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Tornado",
+           "descContent": "Releases an air vortex at the target location, dealing damage and pulling enemies toward the center.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "59"
+           }
+          }
+         },
+         {
+          "id": "91630354_26849",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26850",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018500_Skill_10900191_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Scream Splitter",
+           "descContent": "Fires multiple Screech Rounds at nearby targets. If multiple projectiles hit the same unit, Cornet’s damage increases by 30% for 15s. Hold the Skill button to automatically enter the Fly state after the skill is cast.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "10",
+            "power": "30"
+           }
+          }
+         },
+         {
+          "id": "91630354_26851",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26852",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018400_Skill_10300220_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Water Tornado",
+           "descContent": "Releases a water vortex at the target location, dealing damage and pulling enemies toward the center. Each hit deducts 4 Energy from the target.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "45"
+           }
+          }
+         },
+         {
+          "id": "91630354_26853",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26854",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018400_Skill_10600600_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Leaf Tornado",
+           "descContent": "Releases a leaf vortex at the target location, dealing damage and pulling enemies toward the center. Continuously absorbs puddles nearby, dealing 100% extra damage upon successful absorption.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "45"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_26855",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_26856",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26857",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1026200_Skill_14400000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of wind to attack targets from a distance.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         },
+         {
+          "id": "91630354_26858",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26859",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018400_Skill_10900290_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Avian Harmony Ensemble",
+           "descContent": "Fires a powerful wind-type beam at the target. If you have all three Movements equipped, the attack’s area of effect expands.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "179"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_26860",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_26861",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26862",
+       "type": "richText",
+       "props": {
+        "id": "91630354_26863",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008845",
+   "entryId": "009",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008848",
+   "entryId": "009",
+   "countryId": 300001,
+   "currentMorphology": "Beach Form",
+   "visible": true
+  },
+  {
+   "id": "10008832",
+   "entryId": "009",
+   "countryId": 300001,
+   "currentMorphology": "Prismana Form",
+   "visible": true
+  },
+  {
+   "id": "10008993",
+   "entryId": "009",
+   "countryId": 300001,
+   "currentMorphology": "Highland Form",
+   "visible": true
+  }
+ ]
+}

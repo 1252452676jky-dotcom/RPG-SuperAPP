@@ -7,8 +7,8 @@
    ===================================================================== */
 (function () {
   'use strict';
-  let SAVE = 'ml.run'; const META = 'ml.meta', FRS = ['pokemon', 'palworld', 'digimon'];
-  const FR_LABEL = { pokemon: 'Pokémon', palworld: 'Palworld', digimon: 'Digimon' };
+  let SAVE = 'ml.run'; const META = 'ml.meta', FRS = ['pokemon', 'palworld', 'digimon', 'aniimo'];
+  const FR_LABEL = { pokemon: 'Pokémon', palworld: 'Palworld', digimon: 'Digimon', aniimo: 'Aniimo' };
   const STARTERS = ('bulbasaur charmander squirtle chikorita cyndaquil totodile treecko torchic mudkip turtwig chimchar piplup ' +
     'snivy tepig oshawott chespin fennekin froakie rowlet litten popplio grookey scorbunny sobble sprigatito fuecoco quaxly')
     .split(' ').map(n => 'pkmn:' + n);
@@ -31,7 +31,7 @@
   const toMap = x => Array.isArray(x) ? Object.fromEntries(x.filter(o => o && o.id).map(o => [o.id, o])) : (x || {});
   const R = k => (k && window.Gacha && Gacha.mon(k)) || null;
   const nm = k => String(k).split(':').slice(1).join(':') || String(k);
-  const isForm = k => /-(mega(-[a-z])?|gmax|primal|eternamax)$/.test(nm(k));
+  const isForm = k => /-(mega(-[a-z])?|gmax|primal|eternamax|prismana)$/.test(nm(k));
   const TIER_NAMES = ['early', 'mid', 'late', 'legend'];
   function tierOf(r) {
     if (!r) return '';
@@ -70,8 +70,8 @@
   function firstStage(k) {
     const r = R(k); if (!r) return null;
     let cur = k;
-    if (r.fr === 'pokemon' && (isForm(k) || !r.isDefault)) {
-      const base = KEYS.find(x => { const y = R(x); return y && y.fr === 'pokemon' && y.dex === r.dex && y.isDefault; });
+    if ((r.fr === 'pokemon' || r.fr === 'aniimo') && (isForm(k) || !r.isDefault)) {
+      const base = KEYS.find(x => { const y = R(x); return y && y.fr === r.fr && y.dex === r.dex && y.isDefault; });
       if (base) cur = base;
     }
     for (let i = 0; i < 4; i++) {
@@ -113,7 +113,7 @@
       KEYS.push(...arr.filter(r => r && typeof r === 'object' && r.key).map(r => r.key));
       LEARN[f] = res[i * 3 + 1] || {}; MOVES[f] = toMap(res[i * 3 + 2]);
     });
-    ITEMTXT = toMap(res[9]); ABTXT = toMap(res[10]);
+    ITEMTXT = toMap(res[FRS.length * 3]); ABTXT = toMap(res[FRS.length * 3 + 1]);
     loaded = true;
   }
   function normLearn(raw) {
@@ -288,9 +288,9 @@
     setAbilities(m, !!enemy); grow(m, lv); return m;
   }
   function formsOf(m) {
-    const r = R(m.key); if (!r || r.fr !== 'pokemon') return [];
+    const r = R(m.key); if (!r || (r.fr !== 'pokemon' && r.fr !== 'aniimo')) return [];
     const M = metaGet();
-    return KEYS.filter(k => isForm(k) && M.mega[k]).filter(k => { const f = R(k); return f && f.dex === r.dex; });
+    return KEYS.filter(k => isForm(k) && M.mega[k]).filter(k => { const f = R(k); return f && f.fr === r.fr && f.dex === r.dex; });
   }
   function enemyMoves(list) {
     const recent = list.slice(-4);
@@ -387,7 +387,7 @@
 
   /* ---------------- flow ---------------- */
   function newDraft() { draft = { picks: [], granted: [], offer: null, offerUsed: false, rolls: 2, msg: '', mons: [],
-    filter: { pokemon: true, palworld: true, digimon: true } }; }
+    filter: { pokemon: true, palworld: true, digimon: true, aniimo: true } }; }
   function beginRun() {
     const M = metaGet(); M.runs++; saveMeta(M);
     run = { v: 1, mode: nextMode, floor: 1, team: draft.mons.slice(0, TEAM_MAX), box: draft.mons.slice(TEAM_MAX), bag: [],

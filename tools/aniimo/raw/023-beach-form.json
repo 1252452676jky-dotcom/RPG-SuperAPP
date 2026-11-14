@@ -1,0 +1,477 @@
+{
+ "id": "10009020",
+ "previousId": "10008880",
+ "nextId": "10009018",
+ "previousAnchor": {
+  "entryId": "023",
+  "currentMorphology": "Mudflat Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "023",
+  "currentMorphology": "Bay Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 1118,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "023",
+  "sortOrder": 1016102,
+  "name": "Budclaw",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1016102.png",
+  "countryId": 300001,
+  "description": "For Budclaws that live on the beach, wearing a coconut husk is a no-brainer, both for protection and camouflage.",
+  "currentMorphology": "Beach Form",
+  "currentStage": "1",
+  "position": [
+   "position-break"
+  ],
+  "attributes": [
+   "attributes-rock"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_34785",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_34786",
+      "formData": {
+       "name": "Budclaw",
+       "sortOrder": 1,
+       "serialNumber": "023",
+       "heightMin": 0,
+       "heightMax": 0,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-rock"
+       ],
+       "position": [
+        "position-break"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "For Budclaws that live on the beach, wearing a coconut husk is a no-brainer, both for protection and camouflage.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1016102.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1016102.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1016102.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1016102.mp4",
+       "backgroundImage": "",
+       "attributeValue": 454,
+       "hp": 76,
+       "magicAttack": 84,
+       "physicalAttack": 64,
+       "magicDefense": 65,
+       "haste": 72,
+       "physicalDefense": 93,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Beach Form",
+       "currentStage": 1,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_34787",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_34788",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34789",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Budclaw",
+         "label": "Budclaw",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1016102.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_34791",
+           "name": "Shrubclaw",
+           "label": "Shrubclaw",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1016202.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_34790"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_34792",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_34793",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34794",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_34795",
+        "customKey": "",
+        "title": "Echoback Landing",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_34796",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_34797",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34798",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_34799",
+        "customKey": "home-1100",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_34800",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_34801",
+        "customKey": "home-1003",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_34804",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_34805",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34806",
+       "type": "circle",
+       "props": {
+        "id": "91630354_34807",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1028400_Skill_9400091_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Tunnel",
+        "descContent": "Enters the Tunneling state, becoming immune to ranged attacks while continuously consuming stamina, but can be knocked into the air by pound skills.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_34808",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_34809",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34810",
+       "type": "circle",
+       "props": {
+        "id": "91630354_34811",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1016101_Feature_116101_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Stealth",
+        "descContent": "Builds Momentum when dealing damage, up to 6 stacks. Momentum gain is doubled while tunneling. At max stacks, BREAK efficiency increases by 30% for 20s.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_34812",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_34813",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_34814",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_34815",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34816",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1016100_Skill_10800320_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "The Luminus Gust",
+           "descContent": "Spins Cores around itself, continuously dealing damage and applying [Earth Debuff] for 5.5s.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "10",
+            "power": "35"
+           }
+          }
+         },
+         {
+          "id": "91630354_34817",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34818",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1016100_Skill_10600520_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Verdant Beam",
+           "descContent": "Fires an energy beam in the direction the camera is facing, continuously dealing damage to targets within range. Consecutive hits gradually increase its Might.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "67"
+           }
+          }
+         },
+         {
+          "id": "91630354_34819",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34820",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1016100_Skill_10600060_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Leaf Slash",
+           "descContent": "Spins leaves around itself, dealing damage for 5.5s.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "10",
+            "power": "40"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_34821",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_34822",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34823",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1043100_Skill_14300000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "(BREAK) Wields the power of earth to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_34824",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_34825",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34826",
+       "type": "richText",
+       "props": {
+        "id": "91630354_34827",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10009007",
+   "entryId": "023",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008880",
+   "entryId": "023",
+   "countryId": 300001,
+   "currentMorphology": "Mudflat Form",
+   "visible": true
+  },
+  {
+   "id": "10009020",
+   "entryId": "023",
+   "countryId": 300001,
+   "currentMorphology": "Beach Form",
+   "visible": true
+  },
+  {
+   "id": "10009018",
+   "entryId": "023",
+   "countryId": 300001,
+   "currentMorphology": "Bay Form",
+   "visible": true
+  }
+ ]
+}

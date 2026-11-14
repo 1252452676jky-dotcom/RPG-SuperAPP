@@ -1,0 +1,509 @@
+{
+ "id": "10009045",
+ "previousId": "10008823",
+ "nextId": "10009046",
+ "previousAnchor": {
+  "entryId": "068",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "069",
+  "currentMorphology": "Prismana Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 2066,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "069",
+  "sortOrder": 1050300,
+  "name": "Grizbo",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10503.png",
+  "countryId": 300001,
+  "description": "Beneath their gentle exterior lies constant restraint and suppressed aggression. However, when provoked or hungry, they lose control and fall into a frenzy.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "3",
+  "position": [
+   "position-dps"
+  ],
+  "attributes": [
+   "attributes-rock"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_33120",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_33121",
+      "formData": {
+       "name": "Grizbo",
+       "sortOrder": 1,
+       "serialNumber": "069",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-rock"
+       ],
+       "position": [
+        "position-dps"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "Beneath their gentle exterior lies constant restraint and suppressed aggression. However, when provoked or hungry, they lose control and fall into a frenzy.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10503.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10503.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10503.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1050300.mp4",
+       "backgroundImage": "",
+       "attributeValue": 506,
+       "hp": 104,
+       "magicAttack": 50,
+       "physicalAttack": 124,
+       "magicDefense": 70,
+       "haste": 75,
+       "physicalDefense": 83,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_33122",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_33123",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_33124",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Cubbo",
+         "label": "Cubbo",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10501.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_33126",
+           "name": "Grizbo",
+           "label": "Grizbo",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10503.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_33125"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_33127",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_33128",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_33129",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_33130",
+        "customKey": "",
+        "title": "Rosetower Woods",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_33131",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_33132",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_33133",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_33134",
+        "customKey": "home-1100",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_33135",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_33136",
+        "customKey": "home-1003",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_33139",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_33140",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_33141",
+       "type": "circle",
+       "props": {
+        "id": "91630354_33142",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1050100_Skill_9400137_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Head Hammer",
+        "descContent": "Uses Head Hammer to deliver a powerful impact.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_33143",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_33144",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_33145",
+       "type": "circle",
+       "props": {
+        "id": "91630354_33146",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1050100_Feature_150102_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Raging Rampage",
+        "descContent": "Builds [Rage] during battle. Basic attacks grant 2 points, every 10 EP spent on skills grants 10, and taking damage grants 2. At 100 points, enters the [Enraged] state.[Enraged] increases own skill damage by 30%, increases the REGEN rate by 25%, and prevents [Rage] gain. Lasts 20s.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_33147",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_33148",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_33149",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_33150",
+          "type": "circle",
+          "props": {
+           "id": "91630354_33151",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1050300_Skill_11200480_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Claw of Madness",
+           "descContent": "Claws the target up to 3 times. When the third hit lands, the next skill grants double [Rage].When in the [Enraged] state, each hit applies 2 stacks of [Claw Mark], up to 6 stacks.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "10",
+            "power": "30"
+           }
+          }
+         },
+         {
+          "id": "91630354_33152",
+          "type": "circle",
+          "props": {
+           "id": "91630354_33153",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1050100_Skill_10800340_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Fanatic Clawing",
+           "descContent": "Claws the target up to 3 times. When the third hit lands, the next skill gains double [Rage].In the [Enraged] state, each hit applies 2 stacks of [Claw Mark], up to 6 stacks.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "10",
+            "power": "30"
+           }
+          }
+         },
+         {
+          "id": "91630354_33154",
+          "type": "circle",
+          "props": {
+           "id": "91630354_33155",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1050100_Skill_10800350_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Earthquake",
+           "descContent": "Stomps the ground to shockwave-strike targets in front, dealing damage and clearing all Claw Mark effects on the target. Each stack of Claw Mark deals additional damage equal to 10% Might and inflicts 2s of stun.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "38"
+           }
+          }
+         },
+         {
+          "id": "91630354_33156",
+          "type": "circle",
+          "props": {
+           "id": "91630354_33157",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1050300_Skill_10800440_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Critical Hit",
+           "descContent": "Strikes hard to deal high damage and remove all [Claw Mark] effects from the target. Each stack of [Claw Mark] deals additional damage equal to 10% of Might.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "30",
+            "power": "90"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_33158",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_33159",
+          "type": "circle",
+          "props": {
+           "id": "91630354_33160",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1050300_Skill_10800430_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Rock Smash",
+           "descContent": "Leaps high, immediately gains 100 [Rage], and becomes [Enraged], then crashes down with thunderous force, dealing delayed burst damage to targets around the impact point.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "260"
+           }
+          }
+         },
+         {
+          "id": "91630354_33161",
+          "type": "circle",
+          "props": {
+           "id": "91630354_33162",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1043100_Skill_14300000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of earth to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_33163",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_33164",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_33165",
+       "type": "richText",
+       "props": {
+        "id": "91630354_33166",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10009045",
+   "entryId": "069",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10009046",
+   "entryId": "069",
+   "countryId": 300001,
+   "currentMorphology": "Prismana Form",
+   "visible": true
+  }
+ ]
+}

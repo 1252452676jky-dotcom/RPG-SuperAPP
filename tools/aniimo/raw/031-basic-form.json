@@ -1,0 +1,464 @@
+{
+ "id": "10008890",
+ "previousId": "10009028",
+ "nextId": "10008794",
+ "previousAnchor": {
+  "entryId": "030",
+  "currentMorphology": "Prismana Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "032",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 2484,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "031",
+  "sortOrder": 1044100,
+  "name": "Eko",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10441.png",
+  "countryId": 300001,
+  "description": "With their big ears perked up, they are extremely sensitive to sound. They won’t miss any movement that catches their attention, near or far.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "1",
+  "position": [
+   "position-sup"
+  ],
+  "attributes": [
+   "attributes-wind"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_28770",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_28771",
+      "formData": {
+       "name": "Eko",
+       "sortOrder": 1,
+       "serialNumber": "031",
+       "heightMin": 0,
+       "heightMax": 0,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-wind"
+       ],
+       "position": [
+        "position-sup"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "With their big ears perked up, they are extremely sensitive to sound. They won’t miss any movement that catches their attention, near or far.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10441.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10441.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10441.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1044100.mp4",
+       "backgroundImage": "",
+       "attributeValue": 427,
+       "hp": 70,
+       "magicAttack": 42,
+       "physicalAttack": 108,
+       "magicDefense": 57,
+       "haste": 80,
+       "physicalDefense": 70,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 1,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_28772",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_28773",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_28774",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Eko",
+         "label": "Eko",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10441.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_28776",
+           "name": "Ekrim",
+           "label": "Ekrim",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10444.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 0,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          },
+          {
+           "id": "91630354_28777",
+           "name": "Eklue",
+           "label": "Eklue",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10443.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_28775"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_28778",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_28779",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_28780",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_28781",
+        "customKey": "",
+        "title": "Cloudreach Falls",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_28782",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_28783",
+        "customKey": "",
+        "title": "Forest of Falling Stars",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_28784",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_28785",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_28786",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_28787",
+        "customKey": "home-1101",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_28788",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_28789",
+        "customKey": "home-1006",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_28790",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Pathfinding",
+      "type": "small",
+      "id": "91630354_28791",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_28792",
+       "type": "circle",
+       "props": {
+        "id": "91630354_28793",
+        "customKey": "GLIDE",
+        "icon": "",
+        "iconStyle": "",
+        "iconTitle": "Fly Lv.1",
+        "descTitle": "",
+        "descContent": "",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        },
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_28796",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_28797",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_28798",
+       "type": "circle",
+       "props": {
+        "id": "91630354_28799",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1044300_Feature_144102_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Judgment Storm",
+        "descContent": "When applies a debuff to a target, Wind damage for the whole team increases by 16% for 20s.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_28800",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_28801",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_28802",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_28803",
+          "type": "circle",
+          "props": {
+           "id": "91630354_28804",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1044300_Skill_10900480_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Sonar Attack",
+           "descContent": "Fires a Sonar Attack in a cone, dealing damage 10 times to targets within range. The final hit applies Weakness Mark, reducing the Crit Resistance Rate of targets hit by 12% for 5s.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "20",
+            "power": "30"
+           }
+          }
+         },
+         {
+          "id": "91630354_28805",
+          "type": "circle",
+          "props": {
+           "id": "91630354_28806",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1044300_Skill_10900490_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Arc Strike",
+           "descContent": "Performs an arc-shaped sweep. Enemies hit while affected by [Weakness Mark] are also [stunned] for 2.5s.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "10",
+            "power": "20"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_28807",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_28808",
+          "type": "circle",
+          "props": {
+           "id": "91630354_28809",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1026200_Skill_14400000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of wind to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_28810",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_28811",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_28812",
+       "type": "richText",
+       "props": {
+        "id": "91630354_28813",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008890",
+   "entryId": "031",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  }
+ ]
+}

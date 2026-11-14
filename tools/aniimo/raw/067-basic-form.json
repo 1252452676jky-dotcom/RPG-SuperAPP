@@ -1,0 +1,525 @@
+{
+ "id": "10008868",
+ "previousId": "10009005",
+ "nextId": "10008823",
+ "previousAnchor": {
+  "entryId": "066",
+  "currentMorphology": "Mountain Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "068",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 4258,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "067",
+  "sortOrder": 1002500,
+  "name": "Infergon",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10025.png",
+  "countryId": 300001,
+  "description": "Clad in heavy metal armor forged in searing flames, it can unleash a fury of fire that turns everything around it into molten lava. If you don’t want to be reduced to ash, stay as far away from it as possible.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "3",
+  "position": [
+   "position-dps"
+  ],
+  "attributes": [
+   "attributes-fire"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_27734",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_27735",
+      "formData": {
+       "name": "Infergon",
+       "sortOrder": 1,
+       "serialNumber": "067",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-fire"
+       ],
+       "position": [
+        "position-dps"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "Clad in heavy metal armor forged in searing flames, it can unleash a fury of fire that turns everything around it into molten lava. If you don’t want to be reduced to ash, stay as far away from it as possible.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10025.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10025.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10025.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1002500.mp4",
+       "backgroundImage": "",
+       "attributeValue": 505,
+       "hp": 95,
+       "magicAttack": 50,
+       "physicalAttack": 125,
+       "magicDefense": 85,
+       "haste": 80,
+       "physicalDefense": 70,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_27736",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_27737",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_27738",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Helmwhelp",
+         "label": "Helmwhelp",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10022.png",
+         "stage": 2,
+         "stageStrength": 2,
+         "position": 1,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_27740",
+           "name": "Helgon",
+           "label": "Helgon",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10023.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          },
+          {
+           "id": "91630354_27741",
+           "name": "Infergon",
+           "label": "Infergon",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10025.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 2,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_27739"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_27744",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_27745",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_27746",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_27747",
+        "customKey": "home-1000",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_27748",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_27749",
+        "customKey": "home-1100",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_27750",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Pathfinding",
+      "type": "small",
+      "id": "91630354_27751",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_27752",
+       "type": "circle",
+       "props": {
+        "id": "91630354_27753",
+        "customKey": "GLIDE",
+        "icon": "",
+        "iconStyle": "",
+        "iconTitle": "Fly Lv.3",
+        "descTitle": "",
+        "descContent": "",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        },
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_27754",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_27755",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_27756",
+       "type": "circle",
+       "props": {
+        "id": "91630354_27757",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1002401_Skill_9400051_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Bilateral",
+        "descContent": "Enters Bilateral mode to see a different perspective.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_27758",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_27759",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_27760",
+       "type": "circle",
+       "props": {
+        "id": "91630354_27761",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1002503_Feature_10252_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Power of Fire",
+        "descContent": "Deals 30% extra damage to targets with more than 5 stacks of Fire Debuff.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_27762",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_27763",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_27764",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_27765",
+          "type": "circle",
+          "props": {
+           "id": "91630354_27766",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1002500_Skill_10500021_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Fiery Charge",
+           "descContent": "Charges at the target to deal damage. If used while flying, dives at the target and stops flying. On hit, gains a shield equal to 5% of max HP for 10s.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "60"
+           }
+          }
+         },
+         {
+          "id": "91630354_27767",
+          "type": "circle",
+          "props": {
+           "id": "91630354_27768",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1002500_Skill_10500420_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Flaming Claws",
+           "descContent": "Casts Flaming Claws at the target. A powerful claw strike can be cast again within 5s. Both 2 claw strikes can consume 2 stacks of [Fire Debuff] from the target to deal additional damage equal to 30% Might.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "15",
+            "power": "45"
+           }
+          }
+         },
+         {
+          "id": "91630354_27769",
+          "type": "circle",
+          "props": {
+           "id": "91630354_27770",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1002500_Skill_10900680_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Gale Charge",
+           "descContent": "Rushes toward the target, dealing Damage. If used while in Fly state, dives at the target and ends Fly. During the charge, reflects incoming Projectile attacks.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "60"
+           }
+          }
+         },
+         {
+          "id": "91630354_27771",
+          "type": "circle",
+          "props": {
+           "id": "91630354_27772",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1033300_Skill_10500360_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Lava Breath",
+           "descContent": "Breathes fire forward, attacking targets and applying 8 stacks of [Fire Debuff].",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "62"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_27773",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_27774",
+          "type": "circle",
+          "props": {
+           "id": "91630354_27775",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1028300_Skill_10500440_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Hot Breath",
+           "descContent": "Breathes powerful Lava Breath from the air, dealing damage to all targets within a large area in front and applying 8 stacks of [Fire Debuff].",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "168"
+           }
+          }
+         },
+         {
+          "id": "91630354_27776",
+          "type": "circle",
+          "props": {
+           "id": "91630354_27777",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1005300_Skill_10500000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of fire to attack targets from a distance.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_27778",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_27779",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_27780",
+       "type": "richText",
+       "props": {
+        "id": "91630354_27781",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008868",
+   "entryId": "067",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  }
+ ]
+}

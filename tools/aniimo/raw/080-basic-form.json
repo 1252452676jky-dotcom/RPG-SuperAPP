@@ -1,0 +1,480 @@
+{
+ "id": "10008838",
+ "previousId": "10008796",
+ "nextId": "10008938",
+ "previousAnchor": {
+  "entryId": "079",
+  "currentMorphology": "Prismana Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "081",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 1198,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "080",
+  "sortOrder": 1048100,
+  "name": "Fahloo",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10481.png",
+  "countryId": 300001,
+  "description": "They rub the oils on their bodies to create lots of foam that cleans and protects them, though they sometimes step on it and slip.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "1",
+  "position": [
+   "position-energy"
+  ],
+  "attributes": [
+   "attributes-water"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_26321",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_26322",
+      "formData": {
+       "name": "Fahloo",
+       "sortOrder": 1,
+       "serialNumber": "080",
+       "heightMin": 0,
+       "heightMax": 0,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-water"
+       ],
+       "position": [
+        "position-energy"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "They rub the oils on their bodies to create lots of foam that cleans and protects them, though they sometimes step on it and slip.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10481.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10481.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10481.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1048100.mp4",
+       "backgroundImage": "",
+       "attributeValue": 459,
+       "hp": 102,
+       "magicAttack": 44,
+       "physicalAttack": 76,
+       "magicDefense": 76,
+       "haste": 93,
+       "physicalDefense": 68,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 1,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_26323",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_26324",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26325",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Fahloo",
+         "label": "Fahloo",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10481.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_26327",
+           "name": "Erlath",
+           "label": "Erlath",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10483.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_26326"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26328",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_26329",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26330",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_26331",
+        "customKey": "",
+        "title": "Tideblossom Coast",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26332",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_26333",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26334",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_26335",
+        "customKey": "home-1002",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_26336",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Pathfinding",
+      "type": "small",
+      "id": "91630354_26337",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26338",
+       "type": "circle",
+       "props": {
+        "id": "91630354_26339",
+        "customKey": "GLIDE",
+        "icon": "",
+        "iconStyle": "",
+        "iconTitle": "Fly Lv.1",
+        "descTitle": "",
+        "descContent": "",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        },
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_26340",
+       "type": "circle",
+       "props": {
+        "id": "91630354_26341",
+        "customKey": "SWIM",
+        "icon": "",
+        "iconStyle": "",
+        "iconTitle": "Swim Lv.1",
+        "descTitle": "",
+        "descContent": "",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        },
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26342",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_26343",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26344",
+       "type": "circle",
+       "props": {
+        "id": "91630354_26345",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1026201_Skill_9400130_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Floaty Bubble",
+        "descContent": "Scrubs itself to create a large bubble around itself.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26346",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_26347",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26348",
+       "type": "circle",
+       "props": {
+        "id": "91630354_26349",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1048100_Feature_148301_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Bubble",
+        "descContent": "Every 12s, enters Bathing. The next skill cast creates a puddle.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26350",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_26351",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_26352",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_26353",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26354",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1048100_Skill_10301050_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Here Comes the Bubble",
+           "descContent": "Releases a giant bubble, reducing the movement speed of targets within range by 15% and their EP recovery rate by 20%. Also increases the movement speed of allies within range by 15%. Lasts for 15s.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "20",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_26355",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26356",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1048100_Skill_10301040_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Bubble Blast",
+           "descContent": "Shoots a bubble in the target direction, knocking targets back and dealing damage, while leaving a bubble behind that lasts 9s. This skill can be cast consecutively, storing up to 3 charges.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "10",
+            "power": "30"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_26357",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_26358",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26359",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1054300_Skill_10300000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of water to attack targets from a distance.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_26360",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_26361",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26362",
+       "type": "richText",
+       "props": {
+        "id": "91630354_26363",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008838",
+   "entryId": "080",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  }
+ ]
+}

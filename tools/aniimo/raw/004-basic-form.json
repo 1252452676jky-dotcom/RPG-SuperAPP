@@ -1,0 +1,518 @@
+{
+ "id": "10008928",
+ "previousId": "10008811",
+ "nextId": "10008267",
+ "previousAnchor": {
+  "entryId": "003",
+  "currentMorphology": "Timberline Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "005",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 6463,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "004",
+  "sortOrder": 1005500,
+  "name": "Inferlupa",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10055.png",
+  "countryId": 300001,
+  "description": "A Flameruff who challenged the strong and lost. Having absorbed the souls of companions who fell with equal bitterness, it is driven by the desire for revenge.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "3",
+  "position": [
+   "position-break"
+  ],
+  "attributes": [
+   "attributes-fire",
+   "attributes-dark"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_30559",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_30560",
+      "formData": {
+       "name": "Inferlupa",
+       "sortOrder": 1,
+       "serialNumber": "004",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-fire",
+        "attributes-dark"
+       ],
+       "position": [
+        "position-break"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "A Flameruff who challenged the strong and lost. Having absorbed the souls of companions who fell with equal bitterness, it is driven by the desire for revenge.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10055.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10055.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10055.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1005500.mp4",
+       "backgroundImage": "",
+       "attributeValue": 541,
+       "hp": 95,
+       "magicAttack": 108,
+       "physicalAttack": 89,
+       "magicDefense": 80,
+       "haste": 99,
+       "physicalDefense": 70,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_30561",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_30562",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30563",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Emberpup",
+         "label": "Emberpup",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10051.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_30565",
+           "name": "Flameruff",
+           "label": "Flameruff",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10052.png",
+           "stage": 2,
+           "stageStrength": 2,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": [
+            {
+             "id": "91630354_30566",
+             "name": "Scorchhowl",
+             "label": "Scorchhowl",
+             "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10053.png",
+             "stage": 3,
+             "stageStrength": 3,
+             "position": 1,
+             "condition": {
+              "isVariant": false,
+              "list": []
+             },
+             "children": []
+            },
+            {
+             "id": "91630354_30567",
+             "name": "Inferlupa",
+             "label": "Inferlupa",
+             "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10055.png",
+             "stage": 3,
+             "stageStrength": 3,
+             "position": 2,
+             "condition": {
+              "isVariant": false,
+              "list": []
+             },
+             "children": []
+            }
+           ]
+          }
+         ]
+        },
+        "id": "91630354_30564"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_30570",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_30571",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30572",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_30573",
+        "customKey": "home-1100",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_30574",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_30575",
+        "customKey": "home-1000",
+        "title": "2",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_30576",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_30577",
+        "customKey": "home-1007",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_30580",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_30581",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30582",
+       "type": "circle",
+       "props": {
+        "id": "91630354_30583",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1036100_Skill_9400107_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Hustle",
+        "descContent": "Enters the Hustle state to move at high speed by continuously consuming stamina.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_30584",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_30585",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30586",
+       "type": "circle",
+       "props": {
+        "id": "91630354_30587",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1005503_Feature_105502_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Full Energy",
+        "descContent": "After using 8 basic attacks in battle, Inferlupa enters Full Energy, enhancing its next skill. Damage dealt by that skill is treated as basic attack damage.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_30588",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_30589",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_30590",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_30591",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30592",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1005500_Skill_10500730_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Blazing Wolf Assault",
+           "descContent": "Summons 2 clones to attack the selected location. Summons 1 extra clone that gains [Super Armor] for 10s while in the [Full Energy] state.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "15",
+            "power": "60"
+           }
+          }
+         },
+         {
+          "id": "91630354_30593",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30594",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1005500_Skill_11200300_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Hunting Pack",
+           "descContent": "Summons 2 clones to attack the selected location. Summons 1 extra clone while in the [Full Energy] state.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "60"
+           }
+          }
+         },
+         {
+          "id": "91630354_30595",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30596",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1005500_Skill_10500470_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Crossfire",
+           "descContent": "Fires a flame ray that penetrates targets and deals up to 9 hits of damage. While [Full Energy] is active, Might increases by 45%.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "65"
+           }
+          }
+         },
+         {
+          "id": "91630354_30597",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30598",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1005500_Skill_11200290_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Unbroken Flameruff Spirit",
+           "descContent": "Fires a Flameruff Spirit that ricochets between targets, increasing BREAK efficiency against them by 10% per stack, up to 3 stacks, for 20s. Ricochets 5 times by default. While in the [Full Energy] state, ricochets 7 times.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "60"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_30599",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_30600",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30601",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1003200_Skill_11200000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "(BREAK) Wields the power of darkness to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         },
+         {
+          "id": "91630354_30602",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30603",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1005500_Skill_11200410_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Wolfpack Onslaught",
+           "descContent": "Summons a soul clone to perform a forward Tackle. Upon hitting a target, it explodes, dealing damage.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "194"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_30604",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_30605",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30606",
+       "type": "richText",
+       "props": {
+        "id": "91630354_30607",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008928",
+   "entryId": "004",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  }
+ ]
+}

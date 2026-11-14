@@ -1,0 +1,475 @@
+{
+ "id": "10008926",
+ "previousId": "10009038",
+ "nextId": "10008803",
+ "previousAnchor": {
+  "entryId": "058",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "059",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 1237,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "058",
+  "sortOrder": 1045401,
+  "name": "Bouldus",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1045401.png",
+  "countryId": 300001,
+  "description": "A Bouldus that lives in the snowfield. They roll constantly in the snow, compressing the frost on their bodies into solid ice crystals, including the carrot that came from nowhere.",
+  "currentMorphology": "Snowfield Form",
+  "currentStage": "3",
+  "position": [
+   "position-sup"
+  ],
+  "attributes": [
+   "attributes-rock",
+   "attributes-ice"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_30473",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_30474",
+      "formData": {
+       "name": "Bouldus",
+       "sortOrder": 1,
+       "serialNumber": "058",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-rock",
+        "attributes-ice"
+       ],
+       "position": [
+        "position-sup"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "A Bouldus that lives in the snowfield. They roll constantly in the snow, compressing the frost on their bodies into solid ice crystals, including the carrot that came from nowhere.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1045401.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1045401.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1045401.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1045401.mp4",
+       "backgroundImage": "",
+       "attributeValue": 516,
+       "hp": 91,
+       "magicAttack": 52,
+       "physicalAttack": 114,
+       "magicDefense": 54,
+       "haste": 104,
+       "physicalDefense": 101,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Snowfield Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_30475",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_30476",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30477",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Baleetle",
+         "label": "Baleetle",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1045101.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_30479",
+           "name": "Waleetle",
+           "label": "Waleetle",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1045301.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 0,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          },
+          {
+           "id": "91630354_30480",
+           "name": "Bouldus",
+           "label": "Bouldus",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1045401.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_30478"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_30483",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_30484",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30485",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_30486",
+        "customKey": "home-1005",
+        "title": "2",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_30487",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_30488",
+        "customKey": "home-1003",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_30489",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_30490",
+        "customKey": "home-1100",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_30495",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_30496",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30497",
+       "type": "circle",
+       "props": {
+        "id": "91630354_30498",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1045401_Feature_145402_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Rock Empowerment",
+        "descContent": "[Rock Piles] created by Bouldus can be destroyed by Waleetle’s [Stone Ball Drift], releasing shock waves and applying [Disintegration] to the target. [Disintegration]: Each stack reduces Earth Resistance by 6% and Movement Speed by 5% for 20s, up to 6 stacks.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_30499",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_30500",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_30501",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_30502",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30503",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1043100_Skill_10800330_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Clay Ball",
+           "descContent": "Throws a clay ball in a straight line in the direction faced, dealing damage on hit and applying Disintegration.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "10",
+            "power": "40"
+           }
+          }
+         },
+         {
+          "id": "91630354_30504",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30505",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1045400_Skill_10800460_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Rock Tackle",
+           "descContent": "Charges briefly in place, then rushes at the target and slams into it, dealing damage and creating 4 [Rock Piles] around the target.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "30"
+           }
+          }
+         },
+         {
+          "id": "91630354_30506",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30507",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1045400_Skill_10200370_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Ice Sphere",
+           "descContent": "Transforms into a ball that moves forward automatically for 15s. Direction can be adjusted. Hitting an enemy deals damage, while bouncing off a wall deals AoE damage equal to 15 Might to nearby targets. Jump is available in the Rolling Ball state, dealing AoE damage equal to 20 Might on landing. Jump cooldown: 5s.",
+           "source": {
+            "attributes": [
+             "2"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "40",
+            "power": "10"
+           }
+          }
+         },
+         {
+          "id": "91630354_30508",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30509",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1045400_Skill_10800470_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Rolling Ball",
+           "descContent": "Transforms into a ball that moves forward automatically for 15s. Direction can be adjusted. Hitting an enemy deals damage, while bouncing off a wall deals AoE damage equal to 15 Might to nearby targets. Jump is available in the Rolling Ball state, dealing AoE damage equal to 20 Might on landing. Jump cooldown: 5s.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "40",
+            "power": "10"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_30510",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_30511",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30512",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1045400_Skill_10800522_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Boulder Blast",
+           "descContent": "Spins rapidly across the ground, pulling in debris before detonating violently. On explosion, deals AoE damage and generates 6 [Rock Piles] around the Bouldus.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "175"
+           }
+          }
+         },
+         {
+          "id": "91630354_30513",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30514",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1043100_Skill_14300000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of earth to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_30515",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_30516",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30517",
+       "type": "richText",
+       "props": {
+        "id": "91630354_30518",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10009038",
+   "entryId": "058",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008926",
+   "entryId": "058",
+   "countryId": 300001,
+   "currentMorphology": "Snowfield Form",
+   "visible": true
+  }
+ ]
+}

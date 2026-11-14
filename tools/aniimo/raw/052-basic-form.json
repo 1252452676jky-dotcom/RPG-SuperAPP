@@ -1,0 +1,548 @@
+{
+ "id": "10008996",
+ "previousId": "10008865",
+ "nextId": "10009021",
+ "previousAnchor": {
+  "entryId": "051",
+  "currentMorphology": "Nighttime Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "052",
+  "currentMorphology": "Nighttime Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 2932,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "052",
+  "sortOrder": 1017400,
+  "name": "Panpanta",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10174.png",
+  "countryId": 300001,
+  "description": "They are strong and powerful, but they’d rather stay in their nests and decorate than show off their muscles.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "3",
+  "position": [
+   "position-break"
+  ],
+  "attributes": [
+   "attributes-water"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_35323",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_35324",
+      "formData": {
+       "name": "Panpanta",
+       "sortOrder": 1,
+       "serialNumber": "052",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-water"
+       ],
+       "position": [
+        "position-break"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "They are strong and powerful, but they’d rather stay in their nests and decorate than show off their muscles.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10174.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10174.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10174.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1017400.mp4",
+       "backgroundImage": "",
+       "attributeValue": 545,
+       "hp": 104,
+       "magicAttack": 100,
+       "physicalAttack": 85,
+       "magicDefense": 106,
+       "haste": 80,
+       "physicalDefense": 70,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_35325",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_35326",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_35327",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Susuta",
+         "label": "Susuta",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10171.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_35329",
+           "name": "Popota",
+           "label": "Popota",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10172.png",
+           "stage": 2,
+           "stageStrength": 2,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": [
+            {
+             "id": "91630354_35330",
+             "name": "Panpanta",
+             "label": "Panpanta",
+             "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10174.png",
+             "stage": 3,
+             "stageStrength": 3,
+             "position": 1,
+             "condition": {
+              "isVariant": false,
+              "list": []
+             },
+             "children": []
+            },
+            {
+             "id": "91630354_35331",
+             "name": "Piopiota",
+             "label": "Piopiota",
+             "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10173.png",
+             "stage": 3,
+             "stageStrength": 3,
+             "position": 2,
+             "condition": {
+              "isVariant": false,
+              "list": []
+             },
+             "children": []
+            }
+           ]
+          }
+         ]
+        },
+        "id": "91630354_35328"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_35332",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_35333",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_35334",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_35335",
+        "customKey": "",
+        "title": "Echoback Landing",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_35336",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_35337",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_35338",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_35339",
+        "customKey": "home-1102",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_35340",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_35341",
+        "customKey": "home-1002",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_35342",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Pathfinding",
+      "type": "small",
+      "id": "91630354_35343",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_35344",
+       "type": "circle",
+       "props": {
+        "id": "91630354_35345",
+        "customKey": "SWIM",
+        "icon": "",
+        "iconStyle": "",
+        "iconTitle": "Swim Lv.1",
+        "descTitle": "",
+        "descContent": "",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        },
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_35348",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_35349",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_35350",
+       "type": "circle",
+       "props": {
+        "id": "91630354_35351",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1017200_Feature_11771_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Appeal",
+        "descContent": "When entering battle, if the party has an opposite-sex Susuta family member, increases own BREAK efficiency by 30% for 15s. Cooldown: 20s.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_35352",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_35353",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_35354",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_35355",
+          "type": "circle",
+          "props": {
+           "id": "91630354_35356",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1017200_Skill_10300111_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Water Cannon",
+           "descContent": "Jumps up and hurls a huge water ball at the target, dealing AoE damage and creating a puddle.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "65"
+           }
+          }
+         },
+         {
+          "id": "91630354_35357",
+          "type": "circle",
+          "props": {
+           "id": "91630354_35358",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1017200_Skill_10300111_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Water Cannonade",
+           "descContent": "Jumps up and hurls a huge water ball at the target, dealing AoE damage, creating a water puddle, and applying 5 stacks of Water Debuff to targets hit.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "40"
+           }
+          }
+         },
+         {
+          "id": "91630354_35359",
+          "type": "circle",
+          "props": {
+           "id": "91630354_35360",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1017400_Skill_10300083_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Hydro Roll",
+           "descContent": "Rolls continuously to ram targets while draining stamina. If cast near a water environment, absorbs water to increase BREAK Efficiency by 30% for 15s.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "30",
+            "power": "18"
+           }
+          }
+         },
+         {
+          "id": "91630354_35361",
+          "type": "circle",
+          "props": {
+           "id": "91630354_35362",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1017400_Skill_10301530_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Splash Shield",
+           "descContent": "Gains a Water Shield equal to 11% of max HP for 15s. While active, each skill hit deals one additional instance of skill damage to the target. Trigger interval: 0.5s.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "30"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_35363",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_35364",
+          "type": "circle",
+          "props": {
+           "id": "91630354_35365",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1017400_Skill_10300160_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Home Run",
+           "descContent": "Swings the shovel with full force to deliver a powerful strike, dealing damage.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "176"
+           }
+          }
+         },
+         {
+          "id": "91630354_35366",
+          "type": "circle",
+          "props": {
+           "id": "91630354_35367",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1054300_Skill_10300000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "(BREAK) Wields the power of water to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_35368",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_35369",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_35370",
+       "type": "richText",
+       "props": {
+        "id": "91630354_35371",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008996",
+   "entryId": "052",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10009021",
+   "entryId": "052",
+   "countryId": 300001,
+   "currentMorphology": "Nighttime Form",
+   "visible": true
+  },
+  {
+   "id": "10009035",
+   "entryId": "052",
+   "countryId": 300001,
+   "currentMorphology": "Prismana Form",
+   "visible": true
+  }
+ ]
+}

@@ -227,7 +227,7 @@
       const draw = () => {
         const sy = el.scrollTop;
         el.innerHTML = `<div class="mlr-wrap"><h2>Edit types & moves: ${esc(r.name)}</h2>
-          <p class="mlr-dim">Ticked moves use your settings. ${r.fr === 'palworld' ? 'Unticked Pal moves keep their original damage.' : 'Unticked Digimon moves are not usable; the monster uses placeholder moves until some are ticked.'}
+          <p class="mlr-dim">Ticked moves use your settings. ${r.fr !== 'digimon' ? 'Unticked moves keep their original damage.' : 'Unticked Digimon moves are not usable; the monster uses placeholder moves until some are ticked.'}
             Tip: pick a Pokémon base move, then change what you want. Changing any setting ticks the move.</p>
           ${r.fr === 'digimon' ? `<label class="mlr-box" style="display:block"><input type="checkbox" id="mle-ver" ${r.verified ? 'checked' : ''}> <b>Finished</b>: this Digimon can now appear as a wild enemy</label>` : ''}
           <div class="mlr-box"><b>Battle types</b> <span class="mlr-dim">(pick up to 2 · now: ${esc((r.types || []).join(' / ') || 'none')})</span>

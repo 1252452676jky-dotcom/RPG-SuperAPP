@@ -1,0 +1,418 @@
+{
+ "id": "10008887",
+ "previousId": "10008801",
+ "nextId": "10008801",
+ "previousAnchor": {
+  "entryId": "99998",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 0
+ },
+ "nextAnchor": {
+  "entryId": "99998",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 0
+ },
+ "viewCount": 3077,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "99996",
+  "sortOrder": 1037100,
+  "name": "Lunara",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10371.png",
+  "countryId": 0,
+  "description": "Their eyes shimmer with the deep blue light of the moon, and mysterious patterns appear when they wield their power.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "1",
+  "position": [
+   "position-dps"
+  ],
+  "attributes": [
+   "attributes-holy"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_28636",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_28637",
+      "formData": {
+       "name": "Lunara",
+       "sortOrder": 1,
+       "serialNumber": "99996",
+       "heightMin": 0,
+       "heightMax": 0,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-holy"
+       ],
+       "position": [
+        "position-dps"
+       ],
+       "gender": [],
+       "desc": "Their eyes shimmer with the deep blue light of the moon, and mysterious patterns appear when they wield their power.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10371.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10371.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10371.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1037100.mp4",
+       "backgroundImage": "",
+       "attributeValue": 514,
+       "hp": 100,
+       "magicAttack": 64,
+       "physicalAttack": 116,
+       "magicDefense": 72,
+       "haste": 90,
+       "physicalDefense": 72,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 1,
+       "countryId": 0,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_28644",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_28645",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_28646",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_28647",
+        "customKey": "home-1008",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_28648",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_28649",
+        "customKey": "home-1100",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_28652",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_28653",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_28654",
+       "type": "circle",
+       "props": {
+        "id": "91630354_28655",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1036100_Skill_9400107_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Hustle",
+        "descContent": "Enters the Hustle state to move at high speed by continuously consuming stamina.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_28656",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_28657",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_28658",
+       "type": "circle",
+       "props": {
+        "id": "91630354_28659",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1037100_Feature_13711_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Lunar Power",
+        "descContent": "When not attacking with an advantageous element, final damage increases by 30%.Casting a skill or Ultimate grants 4 stacks of [Silver Moon Mark]. Each basic attack hit consumes 1 stack, deals 100% extra damage, and restores 0.5% HP.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_28660",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_28661",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_28662",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_28663",
+          "type": "circle",
+          "props": {
+           "id": "91630354_28664",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1037100_Skill_11300080_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Moon Impact",
+           "descContent": "Drops a full moon onto the target, triggering an explosion and dealing damage. If it hits a target with [Fox Mark], deals additional small-area damage around the target equal to 10%.",
+           "source": {
+            "attributes": [
+             "13"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "15",
+            "power": "45"
+           }
+          }
+         },
+         {
+          "id": "91630354_28665",
+          "type": "circle",
+          "props": {
+           "id": "91630354_28666",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1037100_Skill_11300150_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Moon-Washed",
+           "descContent": "Bathes in moonlight and recovers 20 EP.",
+           "source": {
+            "attributes": [
+             "13"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "0",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_28667",
+          "type": "circle",
+          "props": {
+           "id": "91630354_28668",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1037100_Skill_11300061_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Lunar Eclipse",
+           "descContent": "Pours the power of moonlight onto the target, dealing massive additional BREAK damage based on the Aniimo’s level.",
+           "source": {
+            "attributes": [
+             "13"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "60"
+           }
+          }
+         },
+         {
+          "id": "91630354_28669",
+          "type": "circle",
+          "props": {
+           "id": "91630354_28670",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1037100_Skill_11300071_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Lumin Bolts",
+           "descContent": "Fires 3 Light missiles at targets, prioritizing different targets. Applies [Fox Mark] to targets hit, reducing their Light Resistance by 5%. Stacks up to 3 times and lasts 10s.",
+           "source": {
+            "attributes": [
+             "13"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "55"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_28671",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_28672",
+          "type": "circle",
+          "props": {
+           "id": "91630354_28673",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1036100_Skill_11300000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of light to attack targets from a distance.",
+           "source": {
+            "attributes": [
+             "13"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         },
+         {
+          "id": "91630354_28674",
+          "type": "circle",
+          "props": {
+           "id": "91630354_28675",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1037100_Skill_11300091_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Selene’s Judgment",
+           "descContent": "Unleashes Selene’s Judgment on nearby targets, dealing massive damage, evolves into Fennelun, and increases its Damage Amp by 15% until combat ends. Also gains 4 stacks of Silvermoon Mark.",
+           "source": {
+            "attributes": [
+             "13"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "167"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_28676",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_28677",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_28678",
+       "type": "richText",
+       "props": {
+        "id": "91630354_28679",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008887",
+   "entryId": "99996",
+   "countryId": 0,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  }
+ ]
+}

@@ -1,0 +1,530 @@
+{
+ "id": "10008882",
+ "previousId": "10008826",
+ "nextId": "10008884",
+ "previousAnchor": {
+  "entryId": "013",
+  "currentMorphology": "Snowfield Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "014",
+  "currentMorphology": "Flowerfield Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 1414,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "014",
+  "sortOrder": 1004200,
+  "name": "Pranky",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10042.png",
+  "countryId": 300001,
+  "description": "They like to stay cool and moist. That’s what the layer of film over their bodies is for.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "2",
+  "position": [
+   "position-heal"
+  ],
+  "attributes": [
+   "attributes-water"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_28394",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_28395",
+      "formData": {
+       "name": "Pranky",
+       "sortOrder": 1,
+       "serialNumber": "014",
+       "heightMin": 0,
+       "heightMax": 0,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-water"
+       ],
+       "position": [
+        "position-heal"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "They like to stay cool and moist. That’s what the layer of film over their bodies is for.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10042.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10042.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10042.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1004200.mp4",
+       "backgroundImage": "",
+       "attributeValue": 482,
+       "hp": 109,
+       "magicAttack": 50,
+       "physicalAttack": 85,
+       "magicDefense": 98,
+       "haste": 74,
+       "physicalDefense": 66,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 2,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_28396",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_28397",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_28398",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Skippy",
+         "label": "Skippy",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10041.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_28400",
+           "name": "Pranky",
+           "label": "Pranky",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10042.png",
+           "stage": 2,
+           "stageStrength": 2,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": [
+            {
+             "id": "91630354_28401",
+             "name": "Glacy",
+             "label": "Glacy",
+             "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10043.png",
+             "stage": 3,
+             "stageStrength": 3,
+             "position": 1,
+             "condition": {
+              "isVariant": false,
+              "list": []
+             },
+             "children": []
+            },
+            {
+             "id": "91630354_28402",
+             "name": "Leafy",
+             "label": "Leafy",
+             "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10045.png",
+             "stage": 3,
+             "stageStrength": 3,
+             "position": 2,
+             "condition": {
+              "isVariant": false,
+              "list": []
+             },
+             "children": []
+            }
+           ]
+          }
+         ]
+        },
+        "id": "91630354_28399"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_28403",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_28404",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_28405",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_28406",
+        "customKey": "",
+        "title": "Nimbus Fields",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_28407",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_28408",
+        "customKey": "",
+        "title": "The Mistwoods",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_28409",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_28410",
+        "customKey": "",
+        "title": "Forest of Falling Stars",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_28411",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_28412",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_28413",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_28414",
+        "customKey": "home-1100",
+        "title": "2",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_28415",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_28416",
+        "customKey": "home-1002",
+        "title": "2",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_28417",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Pathfinding",
+      "type": "small",
+      "id": "91630354_28418",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_28419",
+       "type": "circle",
+       "props": {
+        "id": "91630354_28420",
+        "customKey": "SWIM",
+        "icon": "",
+        "iconStyle": "",
+        "iconTitle": "Swim Lv.2",
+        "descTitle": "",
+        "descContent": "",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        },
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_28423",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_28424",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_28425",
+       "type": "circle",
+       "props": {
+        "id": "91630354_28426",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1004102_Feature_10402_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Water Spirit",
+        "descContent": "While in water terrain, reduces the EP cost of all skills by 16%.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_28427",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_28428",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_28429",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_28430",
+          "type": "circle",
+          "props": {
+           "id": "91630354_28431",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1004100_Skill_10300040_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Healing Water",
+           "descContent": "Restores all allies’ HP by an amount equal to 8% of the caster’s max HP, and restores HP to the caster equal to 10% of their max HP over 5s.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "20",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_28432",
+          "type": "circle",
+          "props": {
+           "id": "91630354_28433",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1004100_Skill_10300011_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Water Orb",
+           "descContent": "Shoots Water Orbs to attack a target. Press and hold the skill button to aim.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "10",
+            "power": "30"
+           }
+          }
+         },
+         {
+          "id": "91630354_28434",
+          "type": "circle",
+          "props": {
+           "id": "91630354_28435",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1004100_Skill_10200020_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Ice Orb",
+           "descContent": "Fires an Ice Orb at the target, putting the target into a [Frozen] state for 2.5s. Hold the skill key to aim.",
+           "source": {
+            "attributes": [
+             "2"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "10",
+            "power": "20"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_28436",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_28437",
+          "type": "circle",
+          "props": {
+           "id": "91630354_28438",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1054300_Skill_10300000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of water to attack targets from a distance.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_28439",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_28440",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_28441",
+       "type": "richText",
+       "props": {
+        "id": "91630354_28442",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008882",
+   "entryId": "014",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008884",
+   "entryId": "014",
+   "countryId": 300001,
+   "currentMorphology": "Flowerfield Form",
+   "visible": true
+  },
+  {
+   "id": "10008888",
+   "entryId": "014",
+   "countryId": 300001,
+   "currentMorphology": "Snowfield Form",
+   "visible": true
+  }
+ ]
+}

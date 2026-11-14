@@ -1,0 +1,569 @@
+{
+ "id": "10008815",
+ "previousId": "10008990",
+ "nextId": "10008812",
+ "previousAnchor": {
+  "entryId": "071",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "072",
+  "currentMorphology": "Prismana Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 3222,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "072",
+  "sortOrder": 1028300,
+  "name": "Magmarex",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10283.png",
+  "countryId": 300001,
+  "description": "Scorching crystals grow on their body like solidified lava. If the stored heat erupts, it can melt everything in their path.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "3",
+  "position": [
+   "position-break"
+  ],
+  "attributes": [
+   "attributes-fire",
+   "attributes-rock"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_25235",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_25236",
+      "formData": {
+       "name": "Magmarex",
+       "sortOrder": 1,
+       "serialNumber": "072",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-fire",
+        "attributes-rock"
+       ],
+       "position": [
+        "position-break"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "Scorching crystals grow on their body like solidified lava. If the stored heat erupts, it can melt everything in their path.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10283.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10283.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10283.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1028300.mp4",
+       "backgroundImage": "",
+       "attributeValue": 539,
+       "hp": 110,
+       "magicAttack": 104,
+       "physicalAttack": 91,
+       "magicDefense": 89,
+       "haste": 75,
+       "physicalDefense": 70,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_25237",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_25238",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25239",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Pebbling",
+         "label": "Pebbling",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10281.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_25241",
+           "name": "Lavazar",
+           "label": "Lavazar",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10282.png",
+           "stage": 2,
+           "stageStrength": 2,
+           "position": 0,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": [
+            {
+             "id": "91630354_25242",
+             "name": "Magmarex",
+             "label": "Magmarex",
+             "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10283.png",
+             "stage": 3,
+             "stageStrength": 3,
+             "position": 0,
+             "condition": {
+              "isVariant": false,
+              "list": []
+             },
+             "children": []
+            }
+           ]
+          },
+          {
+           "id": "91630354_25243",
+           "name": "Geodeback",
+           "label": "Geodeback",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10284.png",
+           "stage": 2,
+           "stageStrength": 2,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": [
+            {
+             "id": "91630354_25244",
+             "name": "Minespine",
+             "label": "Minespine",
+             "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10285.png",
+             "stage": 3,
+             "stageStrength": 3,
+             "position": 2,
+             "condition": {
+              "isVariant": false,
+              "list": []
+             },
+             "children": []
+            }
+           ]
+          }
+         ]
+        },
+        "id": "91630354_25240"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_25245",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_25246",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25247",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_25248",
+        "customKey": "",
+        "title": "Zephyrus Landbridge",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_25249",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_25250",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25251",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_25252",
+        "customKey": "home-1003",
+        "title": "2",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_25253",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_25254",
+        "customKey": "home-1000",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_25255",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_25256",
+        "customKey": "home-1100",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_25259",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_25260",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25261",
+       "type": "circle",
+       "props": {
+        "id": "91630354_25262",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1036100_Skill_9400107_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Fast and Furious",
+        "descContent": "Enters Fast and Furious state, increasing movement speed while allowing you to knock away certain obstacles, consuming stamina.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_25263",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_25264",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25265",
+       "type": "circle",
+       "props": {
+        "id": "91630354_25266",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1028301_Feature_128301_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Pyro Charge",
+        "descContent": "After spending a total of 50 EP, gains [Pyro Charge]. Every 2s, applies 1 stack of [Fire Debuff] to nearby targets for 10s.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_25267",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_25268",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_25269",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_25270",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25271",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1028300_Skill_10500460_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Lava Punch",
+           "descContent": "Dashes forward with a punch, dealing damage and piercing through targets. Also removes all [Fire Debuff] stacks from the target. Each stack of [Fire Debuff] deals additional damage equal to 5% Might.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "64"
+           }
+          }
+         },
+         {
+          "id": "91630354_25272",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25273",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1028300_Skill_10500340_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Magma Surge",
+           "descContent": "Drives both claws into the ground, causing underground crystals to erupt with magma. A cone of molten spikes surges forward, damaging targets. If it hits a target with more than 5 stacks of [Fire Debuff], it [stuns] them for 3.5s.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "30"
+           }
+          }
+         },
+         {
+          "id": "91630354_25274",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25275",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1028300_Skill_11200470_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Dark Energy Surge",
+           "descContent": "Plunges both claws into the underground crystals, causing them to erupt and send a cone-shaped wave of Dark molten rock spikes surging forward. The spikes deal damage to targets and [stun] them for 2.5s.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "30"
+           }
+          }
+         },
+         {
+          "id": "91630354_25276",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25277",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1028300_Skill_10500440_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Lava Breath",
+           "descContent": "Sprays flames at the target in front, dealing damage over time and applying [Fire Debuff] to the target hit.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "35"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_25278",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_25279",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25280",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1028300_Skill_10500350_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Burning Sun",
+           "descContent": "The crystals on its elbows erupt with magma energy, hurling a massive molten boulder that explodes to deal wide-area damage. Damage increases by 2% for each stack of [Fire Debuff] on the target.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "140"
+           }
+          }
+         },
+         {
+          "id": "91630354_25281",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25282",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1005300_Skill_10500000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "(BREAK) Wields the power of fire to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_25283",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_25284",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25285",
+       "type": "richText",
+       "props": {
+        "id": "91630354_25286",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008815",
+   "entryId": "072",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008812",
+   "entryId": "072",
+   "countryId": 300001,
+   "currentMorphology": "Prismana Form",
+   "visible": true
+  }
+ ]
+}

@@ -1,0 +1,518 @@
+{
+ "id": "10008849",
+ "previousId": "10008846",
+ "nextId": "10009040",
+ "previousAnchor": {
+  "entryId": "046",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "046",
+  "currentMorphology": "Timberline Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 2186,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "046",
+  "sortOrder": 1022201,
+  "name": "Blazen",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1022201.png",
+  "countryId": 300001,
+  "description": "The power of prismana weaves through their fur, emitting blinding and threatening rays, warning others to stay away.",
+  "currentMorphology": "Prismana Form",
+  "currentStage": "3",
+  "position": [
+   "position-break"
+  ],
+  "attributes": [
+   "attributes-dark",
+   "attributes-electric"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_26864",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_26865",
+      "formData": {
+       "name": "Blazen",
+       "sortOrder": 1,
+       "serialNumber": "046",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-dark",
+        "attributes-electric"
+       ],
+       "position": [
+        "position-break"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "The power of prismana weaves through their fur, emitting blinding and threatening rays, warning others to stay away.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1022201.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1022201.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1022201.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1022201.mp4",
+       "backgroundImage": "",
+       "attributeValue": 544,
+       "hp": 112,
+       "magicAttack": 104,
+       "physicalAttack": 90,
+       "magicDefense": 70,
+       "haste": 98,
+       "physicalDefense": 70,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Prismana Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_26870",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_26871",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26872",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_26873",
+        "customKey": "",
+        "title": "Blitzwood",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26874",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_26875",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26876",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_26877",
+        "customKey": "home-1004",
+        "title": "4",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_26878",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_26879",
+        "customKey": "home-1101",
+        "title": "4",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_26880",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_26881",
+        "customKey": "home-1007",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_26882",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Pathfinding",
+      "type": "small",
+      "id": "91630354_26883",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26884",
+       "type": "circle",
+       "props": {
+        "id": "91630354_26885",
+        "customKey": "CLIMB",
+        "icon": "",
+        "iconStyle": "",
+        "iconTitle": "Climb Lv.3",
+        "descTitle": "",
+        "descContent": "",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        },
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26886",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_26887",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26888",
+       "type": "circle",
+       "props": {
+        "id": "91630354_26889",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1022100_Skill_9400109_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "High Jump",
+        "descContent": "Allows you to perform a higher jump.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26890",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_26891",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26892",
+       "type": "circle",
+       "props": {
+        "id": "91630354_26893",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1022100_Feature_12222_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Power Sustain",
+        "descContent": "After skills land 6 critical hits, becomes [Overcharged], immediately gaining a shield equal to 5% HP. All skills cost 12 less EP, but UP cannot be gained. Lasts 6s.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26894",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_26895",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_26896",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_26897",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26898",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1022200_Skill_10400211_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Lightning Cross",
+           "descContent": "Channels the power of lightning, sending a lightning claw mark surging forward that deals up to 3 hits to the target. This skill grants an additional 50% CRIT Rate.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "45"
+           }
+          }
+         },
+         {
+          "id": "91630354_26899",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26900",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1022200_Skill_10400190_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Electrified Impact",
+           "descContent": "Dashes toward the target with electricity and cannot be blocked during the dash. Restores 5 EP when landing a critical hit.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "33"
+           }
+          }
+         },
+         {
+          "id": "91630354_26901",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26902",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1022200_Skill_11200170_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Dark Claw",
+           "descContent": "Unleashes consecutive Dark claw strikes on the target, dealing damage and [silencing] the target for 4s.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "30"
+           }
+          }
+         },
+         {
+          "id": "91630354_26903",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26904",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1022200_Skill_10400200_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Lightning Claw",
+           "descContent": "Channels the power of lightning and strikes the target with a three-hit claw combo. This skill grants an additional 50% CRIT Rate.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "20"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_26905",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_26906",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26907",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1014300_Skill_14000000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of lightning to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         },
+         {
+          "id": "91630354_26908",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26909",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1022200_Skill_10400220_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Lightning Flash",
+           "descContent": "Leaps up at high speed, gathers electricity, then slams down onto the target and enters the [Overcharged] state.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "135"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_26910",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_26911",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26912",
+       "type": "richText",
+       "props": {
+        "id": "91630354_26913",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008846",
+   "entryId": "046",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008849",
+   "entryId": "046",
+   "countryId": 300001,
+   "currentMorphology": "Prismana Form",
+   "visible": true
+  },
+  {
+   "id": "10009040",
+   "entryId": "046",
+   "countryId": 300001,
+   "currentMorphology": "Timberline Form",
+   "visible": true
+  }
+ ]
+}

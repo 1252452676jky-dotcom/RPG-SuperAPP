@@ -1,0 +1,503 @@
+{
+ "id": "10008979",
+ "previousId": "10009043",
+ "nextId": "10008972",
+ "previousAnchor": {
+  "entryId": "021",
+  "currentMorphology": "Mountain Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "022",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 1838,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "021",
+  "sortOrder": 1020302,
+  "name": "Hexxin",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1020302.png",
+  "countryId": 300001,
+  "description": "Prismatic energy gathers within the Hexxin’s veins, making its body and the inside of its leaf hat glow with mesmerizing light, as well as strengthening its ability to invade minds.",
+  "currentMorphology": "Prismana Form",
+  "currentStage": "3",
+  "position": [
+   "position-energy"
+  ],
+  "attributes": [
+   "attributes-dark",
+   "attributes-grass"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_32684",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_32685",
+      "formData": {
+       "name": "Hexxin",
+       "sortOrder": 1,
+       "serialNumber": "021",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-dark",
+        "attributes-grass"
+       ],
+       "position": [
+        "position-energy"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "Prismatic energy gathers within the Hexxin’s veins, making its body and the inside of its leaf hat glow with mesmerizing light, as well as strengthening its ability to invade minds.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1020302.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1020302.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1020302.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1020302.mp4",
+       "backgroundImage": "",
+       "attributeValue": 554,
+       "hp": 115,
+       "magicAttack": 50,
+       "physicalAttack": 100,
+       "magicDefense": 90,
+       "haste": 115,
+       "physicalDefense": 84,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Prismana Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_32690",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_32691",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_32692",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_32693",
+        "customKey": "",
+        "title": "The Mistwoods",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_32694",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_32695",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_32696",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_32697",
+        "customKey": "home-1101",
+        "title": "4",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_32698",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_32699",
+        "customKey": "home-1001",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_32700",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_32701",
+        "customKey": "home-1007",
+        "title": "4",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_32704",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_32705",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_32706",
+       "type": "circle",
+       "props": {
+        "id": "91630354_32707",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1014302_Skill_9400023_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Luminous Seed",
+        "descContent": "Throws luminous seeds that light up the surrounding area when they land.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_32708",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_32709",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_32710",
+       "type": "circle",
+       "props": {
+        "id": "91630354_32711",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1020300_Feature_12074_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Prank",
+        "descContent": "Every 18s, the next skill applies [Curse] to enemies hit for 10s. Dark basic attacks restore 0.4 EP when hitting enemies with [Curse].",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_32712",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_32713",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_32714",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_32715",
+          "type": "circle",
+          "props": {
+           "id": "91630354_32716",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1020300_Skill_11200193_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Malicious Outburst",
+           "descContent": "Releases a wide-area energy burst around the target, dealing damage to targets hit and reducing subsequent shield values gained by 44% for 20s.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "82"
+           }
+          }
+         },
+         {
+          "id": "91630354_32717",
+          "type": "circle",
+          "props": {
+           "id": "91630354_32718",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1020100_Skill_10600530_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Euphoric Sonic Blast",
+           "descContent": "Lets out a special scream, piercing all enemies ahead and restoring 10 Energy.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "36"
+           }
+          }
+         },
+         {
+          "id": "91630354_32719",
+          "type": "circle",
+          "props": {
+           "id": "91630354_32720",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1020300_Skill_10800300_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Shard Impact",
+           "descContent": "Quickly steps back while leaving an Earthen sigil beneath the target—shrapnel continuously launches from the sigil to strike and Stun them for 2s.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "65"
+           }
+          }
+         },
+         {
+          "id": "91630354_32721",
+          "type": "circle",
+          "props": {
+           "id": "91630354_32722",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1020300_Skill_11200180_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Black Hole Domain",
+           "descContent": "Quickly backsteps a short distance, leaving a black hole beneath the target that continuously pulls the target in and deals damage.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "65"
+           }
+          }
+         },
+         {
+          "id": "91630354_32723",
+          "type": "circle",
+          "props": {
+           "id": "91630354_32724",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1020300_Skill_11200193_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Oozing Malice",
+           "descContent": "Releases an energy shock wave around the target, dealing damage to enemies hit and reducing their healing received by 44% for 20s.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "82"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_32725",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_32726",
+          "type": "circle",
+          "props": {
+           "id": "91630354_32727",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1003200_Skill_11200000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields dark power to attack targets from a distance.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         },
+         {
+          "id": "91630354_32728",
+          "type": "circle",
+          "props": {
+           "id": "91630354_32729",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1020300_Skill_11200230_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Annihilation Bomb",
+           "descContent": "Gathers annihilation energy in the palm and hurls it toward the target, dealing massive AoE damage.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "197"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_32730",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_32731",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_32732",
+       "type": "richText",
+       "props": {
+        "id": "91630354_32733",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008921",
+   "entryId": "021",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10009043",
+   "entryId": "021",
+   "countryId": 300001,
+   "currentMorphology": "Mountain Form",
+   "visible": true
+  },
+  {
+   "id": "10008979",
+   "entryId": "021",
+   "countryId": 300001,
+   "currentMorphology": "Prismana Form",
+   "visible": true
+  }
+ ]
+}

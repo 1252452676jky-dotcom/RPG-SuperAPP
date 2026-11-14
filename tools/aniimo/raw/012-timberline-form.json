@@ -1,0 +1,521 @@
+{
+ "id": "10008947",
+ "previousId": "10008964",
+ "nextId": "10008847",
+ "previousAnchor": {
+  "entryId": "012",
+  "currentMorphology": "Plateau Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "013",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 1351,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "012",
+  "sortOrder": 1021206,
+  "name": "Irisal",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1021206.png",
+  "countryId": 300001,
+  "description": "Evolved from Irises in mountain forests, they have taken on an elegant verdant color nurtured by the wild. As they dance, they release the fresh fragrance of greenery.",
+  "currentMorphology": "Timberline Form",
+  "currentStage": "3",
+  "position": [
+   "position-dps"
+  ],
+  "attributes": [
+   "attributes-grass"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_31452",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_31453",
+      "formData": {
+       "name": "Irisal",
+       "sortOrder": 1,
+       "serialNumber": "012",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-grass"
+       ],
+       "position": [
+        "position-dps"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "Evolved from Irises in mountain forests, they have taken on an elegant verdant color nurtured by the wild. As they dance, they release the fresh fragrance of greenery.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1021206.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1021206.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1021206.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1021206.mp4",
+       "backgroundImage": "",
+       "attributeValue": 504,
+       "hp": 100,
+       "magicAttack": 52,
+       "physicalAttack": 118,
+       "magicDefense": 70,
+       "haste": 94,
+       "physicalDefense": 70,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Timberline Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_31454",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_31455",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31456",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Iris",
+         "label": "Iris",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1021106.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_31458",
+           "name": "Irisal",
+           "label": "Irisal",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1021206.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_31457"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_31459",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_31460",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31461",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_31462",
+        "customKey": "",
+        "title": "Berylline Vale",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_31463",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_31464",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31465",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_31466",
+        "customKey": "home-1001",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_31467",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_31468",
+        "customKey": "home-1102",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_31471",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_31472",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31473",
+       "type": "circle",
+       "props": {
+        "id": "91630354_31474",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1057300_Skill_9400150_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Blooming",
+        "descContent": "Flowers bloom wherever it dances.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_31475",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_31476",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31477",
+       "type": "circle",
+       "props": {
+        "id": "91630354_31478",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1021106_Feature_121102_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Disco Aniimo",
+        "descContent": "While on Turf, Damage Amp increases by 30%. After entering battle, each skill hit grants 1 [Dance Power]. Hitting multiple targets does not grant extra [Dance Power]. At 24, the next skill costs no EP.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_31479",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_31480",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_31481",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_31482",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31483",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1016100_Skill_10600520_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Focused Beam",
+           "descContent": "Fires an energy beam at targets ahead. After gaining 24 points of [Dance Power], the next skill cast has a larger range.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "50",
+            "power": "120"
+           }
+          }
+         },
+         {
+          "id": "91630354_31484",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31485",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1021100_Skill_10600913_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Floral Storm",
+           "descContent": "Spins while moving and releases magical petals that track targets. The number of petals released increases by 1 over time, up to 3 at once. Press the skill again to stop casting.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "13",
+            "power": "30"
+           }
+          }
+         },
+         {
+          "id": "91630354_31486",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31487",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1021100_Skill_10600150_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Vortex of Petals",
+           "descContent": "Generates a large vortex of petals at the feet of the target to attack it.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "60"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_31488",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_31489",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31490",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1021200_Skill_10600930_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Dancing Petals",
+           "descContent": "Spins and releases a storm of petals to attack a target.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "187"
+           }
+          }
+         },
+         {
+          "id": "91630354_31491",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31492",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1032400_Skill_14200000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of grass to attack targets from a distance.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_31493",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_31494",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31495",
+       "type": "richText",
+       "props": {
+        "id": "91630354_31496",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008976",
+   "entryId": "012",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008980",
+   "entryId": "012",
+   "countryId": 300001,
+   "currentMorphology": "Highland Form",
+   "visible": true
+  },
+  {
+   "id": "10009031",
+   "entryId": "012",
+   "countryId": 300001,
+   "currentMorphology": "Forest Form",
+   "visible": true
+  },
+  {
+   "id": "10008998",
+   "entryId": "012",
+   "countryId": 300001,
+   "currentMorphology": "Grassland Form",
+   "visible": true
+  },
+  {
+   "id": "10009027",
+   "entryId": "012",
+   "countryId": 300001,
+   "currentMorphology": "Prismana Form",
+   "visible": true
+  },
+  {
+   "id": "10008964",
+   "entryId": "012",
+   "countryId": 300001,
+   "currentMorphology": "Plateau Form",
+   "visible": true
+  },
+  {
+   "id": "10008947",
+   "entryId": "012",
+   "countryId": 300001,
+   "currentMorphology": "Timberline Form",
+   "visible": true
+  }
+ ]
+}

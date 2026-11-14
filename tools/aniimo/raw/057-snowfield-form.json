@@ -1,0 +1,562 @@
+{
+ "id": "10009009",
+ "previousId": "10008879",
+ "nextId": "10009038",
+ "previousAnchor": {
+  "entryId": "057",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "058",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 1005,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "057",
+  "sortOrder": 1045301,
+  "name": "Waleetle",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1045301.png",
+  "countryId": 300001,
+  "description": "Waleetles speeding through the snow wrap frozen thorns around their snowballs like chains, keeping them from flipping even when racing across smooth ice.",
+  "currentMorphology": "Snowfield Form",
+  "currentStage": "3",
+  "position": [
+   "position-dps"
+  ],
+  "attributes": [
+   "attributes-rock",
+   "attributes-ice"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_34305",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_34306",
+      "formData": {
+       "name": "Waleetle",
+       "sortOrder": 1,
+       "serialNumber": "057",
+       "heightMin": 0,
+       "heightMax": 0,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-rock",
+        "attributes-ice"
+       ],
+       "position": [
+        "position-dps"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "Waleetles speeding through the snow wrap frozen thorns around their snowballs like chains, keeping them from flipping even when racing across smooth ice.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1045301.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1045301.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1045301.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1045301.mp4",
+       "backgroundImage": "",
+       "attributeValue": 522,
+       "hp": 90,
+       "magicAttack": 52,
+       "physicalAttack": 120,
+       "magicDefense": 80,
+       "haste": 100,
+       "physicalDefense": 80,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Snowfield Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_34307",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_34308",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34309",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Baleetle",
+         "label": "Baleetle",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1045101.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_34311",
+           "name": "Waleetle",
+           "label": "Waleetle",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1045301.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 0,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          },
+          {
+           "id": "91630354_34312",
+           "name": "Bouldus",
+           "label": "Bouldus",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1045401.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_34310"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_34313",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_34314",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34315",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_34316",
+        "customKey": "",
+        "title": "Russet Highlands",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_34317",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_34318",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34319",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_34320",
+        "customKey": "home-1005",
+        "title": "2",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_34321",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_34322",
+        "customKey": "home-1003",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_34323",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_34324",
+        "customKey": "home-1100",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_34327",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_34328",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34329",
+       "type": "circle",
+       "props": {
+        "id": "91630354_34330",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1036100_Skill_9400107_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Hustle",
+        "descContent": "Enters the Hustle state to move at high speed by continuously consuming stamina.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_34331",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_34332",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34333",
+       "type": "circle",
+       "props": {
+        "id": "91630354_34334",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1045300_Feature_145301_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Overloaded Engine",
+        "descContent": "Moving and using skills builds [Overload Energy]. When fully charged, the next skill deals 40% extra damage and immediately brings [Sandstorm Spin] to maximum speed.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_34335",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_34336",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_34337",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_34338",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34339",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1045300_Skill_11200640_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Darkwheel Slash",
+           "descContent": "Lifts a mud ball and rolls it forward at high speed, dealing damage to enemies ahead and dealing 400% extra damage to shields.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "60"
+           }
+          }
+         },
+         {
+          "id": "91630354_34340",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34341",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1045300_Skill_10200286_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Ice Ball Cutting",
+           "descContent": "Raises the ice ball and rolls forward, dealing a large amount of damage.",
+           "source": {
+            "attributes": [
+             "2"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "67"
+           }
+          }
+         },
+         {
+          "id": "91630354_34342",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34343",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1045300_Skill_10800240_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Mud Ball Slice",
+           "descContent": "Lifts a mud ball and rolls it at high speed, dealing damage to targets ahead.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "67"
+           }
+          }
+         },
+         {
+          "id": "91630354_34344",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34345",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1045300_Skill_10800250_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Mud Ball Drift",
+           "descContent": "Spins around to deal damage to a target in front. Each hit increases damage by 8% for 20s, stacking up to 4 times.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "61"
+           }
+          }
+         },
+         {
+          "id": "91630354_34346",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34347",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1045300_Skill_10800260_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Sandstorm Spin",
+           "descContent": "Spins around by continuously consuming EP, dealing damage. Deals 20% extra damage to BREAK targets. Spin speed gradually increases, raising damage frequency by up to 100% without increasing EP cost.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "10",
+            "power": "18"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_34348",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_34349",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34350",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1045300_Skill_10800270_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Mudwheel Ashburst",
+           "descContent": "Fires a gigantic mud ball forward. It crushes the target, then explodes.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "195"
+           }
+          }
+         },
+         {
+          "id": "91630354_34351",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34352",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1043100_Skill_14300000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of earth to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "8"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_34353",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_34354",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34355",
+       "type": "richText",
+       "props": {
+        "id": "91630354_34356",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008879",
+   "entryId": "057",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10009009",
+   "entryId": "057",
+   "countryId": 300001,
+   "currentMorphology": "Snowfield Form",
+   "visible": true
+  }
+ ]
+}

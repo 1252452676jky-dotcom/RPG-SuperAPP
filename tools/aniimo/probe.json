@@ -1,0 +1,3636 @@
+{
+ "header-aniimo-list-en": [
+  {
+   "id": "10008887",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "99996",
+    "sortOrder": 1037100,
+    "name": "Lunara",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10371.png",
+    "countryId": 0,
+    "description": "Their eyes shimmer with the deep blue light of the moon, and mysterious patterns appear when they wield their power.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-holy"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008801",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "99998",
+    "sortOrder": 1036100,
+    "name": "Helion",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10361.png",
+    "countryId": 0,
+    "description": "Enthusiastic and confident, they always stand up for their friends at critical moments, displaying amazing power.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-holy"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008912",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "004",
+    "sortOrder": 1005503,
+    "name": "Inferlupa",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1005503.png",
+    "countryId": 1000,
+    "description": "Driven by Prismana, the flames of vengeance burn ever more fiercely, scorching Inferlupa’s body. The drifting soul-heads at its side let out frenzied howls, releasing a chilling aura of overwhelming pressure that strikes fear into the heart.",
+    "currentMorphology": "Prismana Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-fire",
+     "attributes-dark"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008867",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "008",
+    "sortOrder": 1063303,
+    "name": "Pouchwisp",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1063303.png",
+    "countryId": 1000,
+    "description": "Prismatic Energy is drawn into Pouchwisp’s belly. As that abundant energy condenses into dazzling crystals, elegant gold patterns bloom across its body. Even the Pennywisps living on it glow with a brilliant golden radiance.",
+    "currentMorphology": "Prismana Form",
+    "currentStage": "3",
+    "position": [
+     "position-energy"
+    ],
+    "attributes": [
+     "attributes-dark"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008831",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "010",
+    "sortOrder": 1058301,
+    "name": "Glameep",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1058301.png",
+    "countryId": 1000,
+    "description": "Prismana has transformed Glameep’s leaf-feathers into something clear and glass-like, while the golden branch on its head has grown into a crown, as if nature itself had chosen to bless it.",
+    "currentMorphology": "Prismana Form",
+    "currentStage": "3",
+    "position": [
+     "position-heal"
+    ],
+    "attributes": [
+     "attributes-dark",
+     "attributes-grass"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008936",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "022",
+    "sortOrder": 1061403,
+    "name": "Royalby",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1061403.png",
+    "countryId": 1000,
+    "description": "It feeds on nectar steeped in Prismana, while Prismana-dusted pollen drifts down from its crown. Graceful wings trail behind the queen, and its floral raiment, blooming in Prismana, shimmers with opulent radiance.",
+    "currentMorphology": "Prismana Form",
+    "currentStage": "3",
+    "position": [
+     "position-energy"
+    ],
+    "attributes": [
+     "attributes-holy",
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008897",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "028",
+    "sortOrder": 1069301,
+    "name": "Jeburst",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1069301.png",
+    "countryId": 1000,
+    "description": "Influenced by Prismatic Energy, Jeburst’s wings shift into tranquil, deep starry-sky hues. It beats its wings and flies against the current toward even higher peaks, leaping into the far end where the seas of stars converge.",
+    "currentMorphology": "Prismana Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-dark",
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008830",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "029",
+    "sortOrder": 1044403,
+    "name": "Ekrim",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1044403.png",
+    "countryId": 1000,
+    "description": "Under the influence of iridescent energy, Ekrim grows razor-sharp bony spurs at its wing joints, and its tail-tip turns into a scythe-like blade. It darts through the night at will, snatching every hidden treasure from the shadows.",
+    "currentMorphology": "Prismana Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-fire",
+     "attributes-dark"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008800",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "035",
+    "sortOrder": 1032402,
+    "name": "Melloblum",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1032402.png",
+    "countryId": 1000,
+    "description": "Prismana transforms the pure white floral gown into a crystal-like skirt, shimmering with dazzling light as it sways. The thorns entwining the roses form a crown, each sharp point softened into a gentle protection.",
+    "currentMorphology": "Prismana Form",
+    "currentStage": "3",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-holy",
+     "attributes-grass"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008920",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "044",
+    "sortOrder": 1013301,
+    "name": "Glynsera",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1013301.png",
+    "countryId": 1000,
+    "description": "The prismana turns the tips of their fur and the blades in their mouth red as a warning to other creatures.",
+    "currentMorphology": "Prismana Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-holy",
+     "attributes-ice"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009036",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "057",
+    "sortOrder": 1045302,
+    "name": "Waleetle",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1045302.png",
+    "countryId": 1000,
+    "description": "After absorbing Prismatic Energy, Waleetle’s instinct for top speed erupts into flame, burning its mud ball into blistering lava. When it dashes, the roar shakes the air and firelight surges, as if it’s about to crush everything ahead.",
+    "currentMorphology": "Prismana Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-dark",
+     "attributes-rock"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008855",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "067",
+    "sortOrder": 1002503,
+    "name": "Infergon",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1002503.png",
+    "countryId": 1000,
+    "description": "Prismana causes Infergon’s Power of Fire to grow ever more violent, erupting from its armor as blazing violet flames, as if to reduce everything around it to ashes.",
+    "currentMorphology": "Prismana Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-fire",
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008809",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "10001",
+    "sortOrder": 1021300,
+    "name": "Irisalis",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10213.png",
+    "countryId": 1000,
+    "description": "They absorb the world’s colors as floral raiment, bringing colorful vitality to nature. If petals wither, they can bloom again by returning to the earth’s embrace.",
+    "currentMorphology": "Prismana Form",
+    "currentStage": "4",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-grass"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008895",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "10002",
+    "sortOrder": 1047400,
+    "name": "Dazmand",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10474.png",
+    "countryId": 1000,
+    "description": "They have flexible limbs and love to show off their flashy kicks to anyone watching. They wear their shed skin over their heads like a cool hood.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-electric"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008857",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "10003",
+    "sortOrder": 1003300,
+    "name": "Fulmintis",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10033.png",
+    "countryId": 1000,
+    "description": "Evolved from a Wisptis with broken forelimbs absorbing the power of lightning. The reshaped reverse blades are incredibly sharp and flash with dazzling electric light.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-electric"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008891",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "10004",
+    "sortOrder": 1022300,
+    "name": "Hoptail",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10223.png",
+    "countryId": 1000,
+    "description": "They use their special fur to capture charged particles in the air to produce and store electricity.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-wind",
+     "attributes-electric"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009049",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "10006",
+    "sortOrder": 1057400,
+    "name": "Hypnyto",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10574.png",
+    "countryId": 1000,
+    "description": "Lazy yet sharp, Hypnyto loves to lounge in soft, cozy nests. The pair of eye-like markings on its wings enhance the hypnotic effect when it releases its waves.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008966",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "10007",
+    "sortOrder": 1071300,
+    "name": "Jaguaraun",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10713.png",
+    "countryId": 1000,
+    "description": "Jaguaraun’s neck fur is incredibly thick, brimming with abundant Lightning Element. Like a brewing thundercloud, a dark tide churns beneath it. When it sprints, it tears past with the howl of a thunderstorm.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-electric"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008927",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "11001",
+    "sortOrder": 6999300,
+    "name": "Sparkelf",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_69993.png",
+    "countryId": 1000,
+    "description": "Sparkelves from the SylphIsle can draw energy from interactions with humans and Aniimo. The livelier and more joyful the gathering, the more energized they become.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-fire"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008933",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "001",
+    "sortOrder": 1005100,
+    "name": "Emberpup",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10051.png",
+    "countryId": 300001,
+    "description": "Lively and energetic, the creatures like to follow Flameruffs around. Once their fluffy charcoal-like fur starts to burn, they grow.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-fire"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008999",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "002",
+    "sortOrder": 1005200,
+    "name": "Flameruff",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10052.png",
+    "countryId": 300001,
+    "description": "Pack creatures that prize loyalty and unity, these hunters have calm, focused eyes that conceal their fiery hearts.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "2",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-fire"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008824",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "003",
+    "sortOrder": 1005300,
+    "name": "Scorchhowl",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10053.png",
+    "countryId": 300001,
+    "description": "The scorch marks on their bodies are proof of victories in battle. They seek strong opponents to dominate.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-fire"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008928",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "004",
+    "sortOrder": 1005500,
+    "name": "Inferlupa",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10055.png",
+    "countryId": 300001,
+    "description": "A Flameruff who challenged the strong and lost. Having absorbed the souls of companions who fell with equal bitterness, it is driven by the desire for revenge.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-fire",
+     "attributes-dark"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008267",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "005",
+    "sortOrder": 1001100,
+    "name": "Celestis",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10011.png",
+    "countryId": 300001,
+    "description": "They love food! When they search the forest for food, the glowing stars on their heads are often mistaken for comets. They like hoarding food, adorning their nest with it.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-dark"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008819",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "006",
+    "sortOrder": 1001200,
+    "name": "Stellarys",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10012.png",
+    "countryId": 300001,
+    "description": "They prefer solitude and often move through the night. Their forms resemble mysterious mages draped in cloaks of stars, and they can teleport using psychic energy.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-dark"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008852",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "007",
+    "sortOrder": 1018100,
+    "name": "Chirpi",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10181.png",
+    "countryId": 300001,
+    "description": "They often hover at low altitudes, paying attention to every movement on the beach and causing a ruckus.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009008",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "008",
+    "sortOrder": 1018400,
+    "name": "Tromber",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10184.png",
+    "countryId": 300001,
+    "description": "They like having fun and producing rhythmic music, so don’t be surprised to see a grand symphony.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008845",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "009",
+    "sortOrder": 1018500,
+    "name": "Cornet",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10185.png",
+    "countryId": 300001,
+    "description": "They can produce loud, piercing noises that resonate throughout the entire beach just to draw attention.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008943",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "010",
+    "sortOrder": 1018700,
+    "name": "Tubster",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10187.png",
+    "countryId": 300001,
+    "description": "Creates deep, tuba-like sounds that match its steady, friendly character.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008907",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "011",
+    "sortOrder": 1021100,
+    "name": "Iris",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10211.png",
+    "countryId": 300001,
+    "description": "Iris possesses an extremely lightweight body, often lifted by the wind. It then either slowly spirals downward using the resistance from its petal skirt, or simply allows itself to be carried away by the wind.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-grass"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008976",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "012",
+    "sortOrder": 1021200,
+    "name": "Irisal",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10212.png",
+    "countryId": 300001,
+    "description": "Devoted to the art of dance, they constantly hone their craft, hoping to share the pure joy and energy of movement.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-grass"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008847",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "013",
+    "sortOrder": 1004100,
+    "name": "Skippy",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10041.png",
+    "countryId": 300001,
+    "description": "They like to hide underwater and observe their surroundings using a lotus leaf as a strikingly ineffective disguise.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-heal"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008882",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "014",
+    "sortOrder": 1004200,
+    "name": "Pranky",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10042.png",
+    "countryId": 300001,
+    "description": "They like to stay cool and moist. That’s what the layer of film over their bodies is for.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "2",
+    "position": [
+     "position-heal"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008946",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "015",
+    "sortOrder": 1004300,
+    "name": "Glacy",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10043.png",
+    "countryId": 300001,
+    "description": "They are elegant and kind Aniimo that always take care of weaker ones, and freeze anyone who crosses them in ice.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-heal"
+    ],
+    "attributes": [
+     "attributes-water",
+     "attributes-ice"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008840",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "016",
+    "sortOrder": 1004500,
+    "name": "Leafy",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10045.png",
+    "countryId": 300001,
+    "description": "They live among lotus flowers and use their lotus leaf tails to conceal their face and show off their elegant nature.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-energy"
+    ],
+    "attributes": [
+     "attributes-grass",
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009034",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "017",
+    "sortOrder": 1026100,
+    "name": "Nimbi",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10261.png",
+    "countryId": 300001,
+    "description": "Don’t be surprised to see them floating in the clouds in small groups above the grasslands.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008795",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "018",
+    "sortOrder": 1026200,
+    "name": "Turbo",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10262.png",
+    "countryId": 300001,
+    "description": "They like to sleep hidden in the clouds, because with the presence of wind pressure and static electricity, the fluffy wool easily attracts things carried by the winds.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008839",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "019",
+    "sortOrder": 1026300,
+    "name": "Dreaple",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10263.png",
+    "countryId": 300001,
+    "description": "Their fur that has absorbed dream energy presents a mesmerizing illusion of colors. When the fur is used as a pillow, Pathfinders sink into sweet dreams.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-dark"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008983",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "020",
+    "sortOrder": 1020100,
+    "name": "Hummin",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10201.png",
+    "countryId": 300001,
+    "description": "They live on the grassland in groups, they like burrowing for nutrients, and they love singing off-key together!",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-grass"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008921",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "021",
+    "sortOrder": 1020300,
+    "name": "Hexxin",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10203.png",
+    "countryId": 300001,
+    "description": "They make bizarre noises to drive intruders to madness, lower their defenses and even cause them to pass out.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-energy"
+    ],
+    "attributes": [
+     "attributes-dark",
+     "attributes-grass"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008972",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "022",
+    "sortOrder": 1020700,
+    "name": "Tuckin",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10207.png",
+    "countryId": 300001,
+    "description": "They need to absorb nutrients from the soil through their roots to maintain vitality and hate leaving the ground.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-grass"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009007",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "023",
+    "sortOrder": 1016100,
+    "name": "Budclaw",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10161.png",
+    "countryId": 300001,
+    "description": "Mating for life, they’re always found in pairs. The heartbloom atop their shells indicates their state of happiness.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-rock",
+     "attributes-grass"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008997",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "024",
+    "sortOrder": 1016200,
+    "name": "Shrubclaw",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10162.png",
+    "countryId": 300001,
+    "description": "The lush plants that cover their shells convert sunlight into nutrients, so they don’t even need to eat on sunny days.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-rock",
+     "attributes-grass"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009016",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "025",
+    "sortOrder": 1016300,
+    "name": "Geoclaw",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10163.png",
+    "countryId": 300001,
+    "description": "They live in caves, feed on minerals, and use their beautifully crystallized shells to lure prey.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-ice"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008944",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "026",
+    "sortOrder": 1033100,
+    "name": "Sparki",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10331.png",
+    "countryId": 300001,
+    "description": "Though they look like fire, those flames are only flowing energy. They give off no heat at all—in fact, they absorb heat from their surroundings. Sometimes they use this to disguise themselves as campfires and play tricks on others.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-energy"
+    ],
+    "attributes": [
+     "attributes-fire"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009000",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "027",
+    "sortOrder": 1033300,
+    "name": "Flamerion",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10333.png",
+    "countryId": 300001,
+    "description": "They only come out at night. Since their bodies are made of gaseous energy, they can split at will and even create clones.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-energy"
+    ],
+    "attributes": [
+     "attributes-fire"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008883",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "028",
+    "sortOrder": 1023100,
+    "name": "Flutternym",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10231.png",
+    "countryId": 300001,
+    "description": "They are timid and hide whenever they sense danger, but the fluorescent scales they shake off always give them away.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-heal"
+    ],
+    "attributes": [
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008932",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "029",
+    "sortOrder": 1023200,
+    "name": "Gracewing",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10232.png",
+    "countryId": 300001,
+    "description": "Lone wanderers. They create illusions by shedding scales from their wings when threats approach.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-heal"
+    ],
+    "attributes": [
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009028",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "030",
+    "sortOrder": 1023300,
+    "name": "Somniwing",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10233.png",
+    "countryId": 300001,
+    "description": "Their magnificent wings spread scales to help flowers grow and spread vitality wherever they fly.",
+    "currentMorphology": "Prismana Form",
+    "currentStage": "4",
+    "position": [
+     "position-energy"
+    ],
+    "attributes": [
+     "attributes-wind",
+     "attributes-grass"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008890",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "031",
+    "sortOrder": 1044100,
+    "name": "Eko",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10441.png",
+    "countryId": 300001,
+    "description": "With their big ears perked up, they are extremely sensitive to sound. They won’t miss any movement that catches their attention, near or far.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008794",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "032",
+    "sortOrder": 1044300,
+    "name": "Eklue",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10443.png",
+    "countryId": 300001,
+    "description": "Curious and eager to search for traces and track targets. The ring on their tail amplifies ultrasound, allowing them to easily detect cloaked creatures.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008861",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "033",
+    "sortOrder": 1032100,
+    "name": "Budsquire",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10321.png",
+    "countryId": 300001,
+    "description": "The timid crybabies can also rise up against enemies when cornered. The buds on their heads will blossom as they do so.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-grass"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008962",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "034",
+    "sortOrder": 1032300,
+    "name": "Thornblade",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10323.png",
+    "countryId": 300001,
+    "description": "The swords made from thorny stems are drawn only when it’s time to protect their family against enemies.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-grass"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008802",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "035",
+    "sortOrder": 1032400,
+    "name": "Melloblum",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10324.png",
+    "countryId": 300001,
+    "description": "To quell disputes, they scatter fragrant petals, causing those who touch them to feel happiness and crush their fighting spirit.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-grass"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008961",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "036",
+    "sortOrder": 1047100,
+    "name": "Pomegg",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10471.png",
+    "countryId": 300001,
+    "description": "They retreat into their shells to rest, often getting mistaken for eggs. They fear battle but love a crowd, dancing with grass pompoms to cheer others on.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-grass"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008954",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "037",
+    "sortOrder": 1047500,
+    "name": "Pomawk",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10475.png",
+    "countryId": 300001,
+    "description": "Their towering manes display their wild nature, while their feral roars reveal their true colors. Their tails are built to store sound waves, releasing a sonic boom when they strike an opponent.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-grass"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008914",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "038",
+    "sortOrder": 1035100,
+    "name": "Dewy",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10351.png",
+    "countryId": 300001,
+    "description": "As partners to perfumers, they store and ferment nectar within their bodies, transforming it into perfume ingredients.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-dark"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008987",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "039",
+    "sortOrder": 1035200,
+    "name": "Fragrancier",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10352.png",
+    "countryId": 300001,
+    "description": "They’re picky about odors, so they harvest and store various nectar within them to craft unique perfume ingredients.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-dark"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008974",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "040",
+    "sortOrder": 1003100,
+    "name": "Wisptis",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10031.png",
+    "countryId": 300001,
+    "description": "If the only way to evolve is to defeat other Wisptises, then there is no other choice but to keep their claws sharp.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-dark"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008797",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "041",
+    "sortOrder": 1003200,
+    "name": "Ignitis",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10032.png",
+    "countryId": 300001,
+    "description": "They sharpen their blades and wait for the perfect moment, hiding in the shadows as they toy with their prey. As cold-blooded assassins, they seek to end every fight in a single strike.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-dark"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008821",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "042",
+    "sortOrder": 1013100,
+    "name": "Bonesky",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10131.png",
+    "countryId": 300001,
+    "description": "An energetic pup with a pair of big ears. The ice-bone bow tie on its chest is its favorite toy. It hates Emberpups that don’t respect personal space.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-ice"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008860",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "043",
+    "sortOrder": 1013200,
+    "name": "Fenrier",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10132.png",
+    "countryId": 300001,
+    "description": "Resisting gentle pets that might soften its resolve, it leads family hunts with its ice blade.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "2",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-ice"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008922",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "044",
+    "sortOrder": 1013300,
+    "name": "Glynsera",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10133.png",
+    "countryId": 300001,
+    "description": "Proud and confident warriors, they send shivers down their enemies’ spines with the chilling blades in their mouths.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-ice"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008798",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "045",
+    "sortOrder": 1022100,
+    "name": "Bolty",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10221.png",
+    "countryId": 300001,
+    "description": "They live among the trees. When they attack, golden sparks flash from their tails with crackling electric sounds. Agile and quick on their feet, they are very difficult to catch.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-electric"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008846",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "046",
+    "sortOrder": 1022200,
+    "name": "Blazen",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10222.png",
+    "countryId": 300001,
+    "description": "It stores power by using the static electricity in its special fur to attract charged particles from the air. Water weakens this ability, so it rarely appears on rainy days.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-electric"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008829",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "047",
+    "sortOrder": 1051100,
+    "name": "Squarrel",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10511.png",
+    "countryId": 300001,
+    "description": "Squarrel has a large, fist-shaped tail. When its greasy tail fur is rubbed even slightly, it can burst into flames. Anyone who eyes its stockpiled pinecones will get a taste of its scorching fire fists.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-fire"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009050",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "048",
+    "sortOrder": 1051200,
+    "name": "Squashel",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10512.png",
+    "countryId": 300001,
+    "description": "Squashel has twin fist-like tails, giving its power a super-boost. Pinecones thrown with that force strike like cannonballs — not to be underestimated.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-fire"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009023",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "049",
+    "sortOrder": 1017100,
+    "name": "Susuta",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10171.png",
+    "countryId": 300001,
+    "description": "They dig around to search for gifts to give to their crushes, but their wooing always fails because they are so shy.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008814",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "050",
+    "sortOrder": 1017200,
+    "name": "Popota",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10172.png",
+    "countryId": 300001,
+    "description": "They select shells and make them into shovels. It’s said that they produce pink bubbles when they see someone they love.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "2",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008862",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "051",
+    "sortOrder": 1017300,
+    "name": "Piopiota",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10173.png",
+    "countryId": 300001,
+    "description": "Narcissistic little creatures who spend a large amount of time grooming their fur and striking the perfect pose.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008996",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "052",
+    "sortOrder": 1017400,
+    "name": "Panpanta",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10174.png",
+    "countryId": 300001,
+    "description": "They are strong and powerful, but they’d rather stay in their nests and decorate than show off their muscles.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009039",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "053",
+    "sortOrder": 1019100,
+    "name": "Shelly",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10191.png",
+    "countryId": 300001,
+    "description": "Conceals itself among beach shells using its soft appendages to hold shells in place. Remains sealed during daylight.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009042",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "054",
+    "sortOrder": 1019200,
+    "name": "Sheldon",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10192.png",
+    "countryId": 300001,
+    "description": "Lying on their shells, they face the night sky, falling into a deep dream woven by the stars.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "2",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008995",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "055",
+    "sortOrder": 1019400,
+    "name": "Sherro",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10194.png",
+    "countryId": 300001,
+    "description": "They turn the shells that once covered them into swords and shields to protect fragile Shellies along the coastline.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009030",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "056",
+    "sortOrder": 1045100,
+    "name": "Baleetle",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10451.png",
+    "countryId": 300001,
+    "description": "From the moment it’s born, it’s inseparable from its mud ball, rolling it again and again until it gets rounder and rounder. But the mud ball it pushes doesn’t seem as simple as it looks.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-rock"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008879",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "057",
+    "sortOrder": 1045300,
+    "name": "Waleetle",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10453.png",
+    "countryId": 300001,
+    "description": "They move backwards like their kin, but in a much fancier way.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-rock"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009038",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "058",
+    "sortOrder": 1045400,
+    "name": "Bouldus",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10454.png",
+    "countryId": 300001,
+    "description": "The minerals packed into its mud ball gradually bind and compress through constant jolts, turning it into a stone ball and awakening consciousness within. Sick of being pushed around, it devours an insect body and can finally move by its own will.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-rock"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008803",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "059",
+    "sortOrder": 1029100,
+    "name": "Fentuft",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10291.png",
+    "countryId": 300001,
+    "description": "They always wear their signature smiles and invite other Aniimo to play. Their mischief and greed may get them into trouble now and then, but they’re always forgiven.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-electric"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008896",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "060",
+    "sortOrder": 1029300,
+    "name": "Fenmane",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10293.png",
+    "countryId": 300001,
+    "description": "With their highly conductive fur, they harness the power of lightning to extend their wings and dash forth, dispelling the haze and lifting their spirits.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-electric"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009010",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "061",
+    "sortOrder": 1002100,
+    "name": "Helmut",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10021.png",
+    "countryId": 300001,
+    "description": "That tough helmet keeps its squishy body safe, while those extendable mouth-claws help it hunt.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-dark"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009004",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "062",
+    "sortOrder": 1002600,
+    "name": "Pawney",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10026.png",
+    "countryId": 300001,
+    "description": "Armed with a broken sword and armor, blessed with courage and might, it defends its friends and challenges its foes.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-dark"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008988",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "063",
+    "sortOrder": 1002700,
+    "name": "Rookey",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10027.png",
+    "countryId": 300001,
+    "description": "Despite its imposing size, it is timid and gentle, always avoiding conflict. Whenever danger approaches, it curls up into a ball, but it always musters the courage to fight when its friends need protection.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-dark"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009017",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "064",
+    "sortOrder": 1002400,
+    "name": "Jawling",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10024.png",
+    "countryId": 300001,
+    "description": "It loves to take a bite out of anything it comes across. Its highly flexible jaw can open extremely wide. It shows affection and happiness through gentle nibbles, and especially loves biting metal objects because they are hard to damage.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008905",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "065",
+    "sortOrder": 1002200,
+    "name": "Helmwhelp",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10022.png",
+    "countryId": 300001,
+    "description": "A fledgling dragon that hides its weakness beneath its helmet, yearning to grow stronger so it can soar freely to every corner of the world in search of hidden treasures.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "2",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009001",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "066",
+    "sortOrder": 1002300,
+    "name": "Helgon",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10023.png",
+    "countryId": 300001,
+    "description": "Covered in hard armor, they look like tall statues when they stand still, as if standing guard over ancient treasures.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008868",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "067",
+    "sortOrder": 1002500,
+    "name": "Infergon",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10025.png",
+    "countryId": 300001,
+    "description": "Clad in heavy metal armor forged in searing flames, it can unleash a fury of fire that turns everything around it into molten lava. If you don’t want to be reduced to ash, stay as far away from it as possible.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-fire"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008823",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "068",
+    "sortOrder": 1050100,
+    "name": "Cubbo",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10501.png",
+    "countryId": 300001,
+    "description": "They spend their days sleepwalking. The moment they are awakened, they become agitated and lose control. Once they run out of energy, they peacefully drift back to sleep like a baby.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-rock"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009045",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "069",
+    "sortOrder": 1050300,
+    "name": "Grizbo",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10503.png",
+    "countryId": 300001,
+    "description": "Beneath their gentle exterior lies constant restraint and suppressed aggression. However, when provoked or hungry, they lose control and fall into a frenzy.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-rock"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008917",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "070",
+    "sortOrder": 1028100,
+    "name": "Pebbling",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10281.png",
+    "countryId": 300001,
+    "description": "They are natural geologists who like eating all kinds of ores. And what they eat determines how they grow.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-rock"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008990",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "071",
+    "sortOrder": 1028200,
+    "name": "Lavazar",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10282.png",
+    "countryId": 300001,
+    "description": "They use hard claws to crush crystals and eat them to store heat, causing fiery red patterns to appear on their body. Though small, they can continuously spew high-heat flame streams from their mouth.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "2",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-fire",
+     "attributes-rock"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008815",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "072",
+    "sortOrder": 1028300,
+    "name": "Magmarex",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10283.png",
+    "countryId": 300001,
+    "description": "Scorching crystals grow on their body like solidified lava. If the stored heat erupts, it can melt everything in their path.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-fire",
+     "attributes-rock"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008864",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "073",
+    "sortOrder": 1028400,
+    "name": "Geodeback",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10284.png",
+    "countryId": 300001,
+    "description": "The minerals they eat are refined within their bodies and transformed into crystal spines infused with pure energy.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "2",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-rock"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008908",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "074",
+    "sortOrder": 1028500,
+    "name": "Minespine",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10285.png",
+    "countryId": 300001,
+    "description": "Wherever crystal minerals are found, so are they. Their hard spines serve both as protection and as storage for energy.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-rock"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008807",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "075",
+    "sortOrder": 1043100,
+    "name": "Cozite",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10431.png",
+    "countryId": 300001,
+    "description": "Cozites build their shells bit by bit with mud. When in danger, they spray smoke from the top hole to cover the surroundings and hide themselves.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-rock"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008901",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "076",
+    "sortOrder": 1043300,
+    "name": "Bailite",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10433.png",
+    "countryId": 300001,
+    "description": "Their upper and lower bodies can rotate independently, allowing Bailites to survey their surroundings with ease and transform into turrets to drive off opponents.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-rock"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009025",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "077",
+    "sortOrder": 1014100,
+    "name": "Bulbly",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10141.png",
+    "countryId": 300001,
+    "description": "Their first reaction to everything is to escape, and their bulb-like organs indicate whether they are healthy.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-electric"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008952",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "078",
+    "sortOrder": 1014200,
+    "name": "Veilfloat",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10142.png",
+    "countryId": 300001,
+    "description": "A light-dependent creature that glows when night falls, keeping its light on even while sleeping.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "2",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-electric"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008982",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "079",
+    "sortOrder": 1014300,
+    "name": "Luminelle",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10143.png",
+    "countryId": 300001,
+    "description": "Changes its glow to match its mood while its tentacles create mesmerizing patterns and deliver shocking attacks.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-electric"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008838",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "080",
+    "sortOrder": 1048100,
+    "name": "Fahloo",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10481.png",
+    "countryId": 300001,
+    "description": "They rub the oils on their bodies to create lots of foam that cleans and protects them, though they sometimes step on it and slip.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-energy"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008938",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "081",
+    "sortOrder": 1048300,
+    "name": "Erlath",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10483.png",
+    "countryId": 300001,
+    "description": "Their feathers constantly secrete oil, which produces all kinds of bubbles with just a little rubbing. Naturally, they use the softest, fluffiest foam to protect the Fahloos on their backs.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-energy"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009014",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "082",
+    "sortOrder": 1012200,
+    "name": "Besauce",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10122.png",
+    "countryId": 300001,
+    "description": "Troubled by the beat of its own heart, Besauce constantly searches for rhythms to drown it out. It loves to groove to music and has a passion for avant-garde music.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-energy"
+    ],
+    "attributes": [
+     "attributes-electric"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009015",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "001",
+    "sortOrder": 1038100,
+    "name": "Reefish",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10381.png",
+    "countryId": 300301,
+    "description": "They burrow underground to camouflage as coral and bite any prey that comes near. However, they sometimes get impatient and peek around.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-energy"
+    ],
+    "attributes": [
+     "attributes-rock",
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008872",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "002",
+    "sortOrder": 1038300,
+    "name": "Coraliz",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10383.png",
+    "countryId": 300301,
+    "description": "They love to bury themselves in sand, mimicking coral clumps. They use the glow of the coral on their head and back to lure creatures for a surprise attack.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-energy"
+    ],
+    "attributes": [
+     "attributes-rock",
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008869",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "003",
+    "sortOrder": 1057100,
+    "name": "Hypnowl",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10571.png",
+    "countryId": 300301,
+    "description": "Keen-eared, it can pick up every tiny sound around it. The moment it senses an intruder, it locks on with its big eyes, then unleashes hypnotic waves to confuse its target.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-energy"
+    ],
+    "attributes": [
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008825",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "004",
+    "sortOrder": 1057300,
+    "name": "Mesmerowl",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10573.png",
+    "countryId": 300301,
+    "description": "Mesmerowl beats its ear-feather wings as it patrols its territory at low altitude. When it unleashes hypnotic waves, its glowing tail tuft swings like a pendulum, leaving its opponent even more dazed.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-energy"
+    ],
+    "attributes": [
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008915",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "005",
+    "sortOrder": 1065100,
+    "name": "Dewlop",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10651.png",
+    "countryId": 300301,
+    "description": "Dewlop is active around waterways. Its body is almost entirely made of water, letting it shift shapes with ease. Maybe it’s just in its nature. It always wants to blend into any body of water it comes across.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008877",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "006",
+    "sortOrder": 1065300,
+    "name": "Dewple",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10653.png",
+    "countryId": 300301,
+    "description": "Made up of multiple Dewlops, Dewple’s individuals may drift apart now and then, but they never truly separate—always moving in sync as they follow the largest one.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008900",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "007",
+    "sortOrder": 1063100,
+    "name": "Coinwisp",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10631.png",
+    "countryId": 300301,
+    "description": "Coinwisp’s cap looks just like an oversized gold coin. It often hides inside, mischievously luring other creatures into chasing it. When danger strikes, it flings its cap to confuse its opponent, then slips away.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-energy"
+    ],
+    "attributes": [
+     "attributes-dark"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008866",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "008",
+    "sortOrder": 1063300,
+    "name": "Pouchwisp",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10633.png",
+    "countryId": 300301,
+    "description": "Its body is like a super-springy giant coin pouch, home to a whole swarm of Pennywisps. It may look like it’s generously tossing gold coins everywhere, but it’s really just letting the Pennywisps out to play.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-energy"
+    ],
+    "attributes": [
+     "attributes-dark"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008875",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "009",
+    "sortOrder": 1058100,
+    "name": "Bubbeep",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10581.png",
+    "countryId": 300301,
+    "description": "It stretches its leafy feathers with lazy ease, always chewing away as it turns algae and slime into floating bubbles. One light hop, and off it drifts, riding the bubbles like a little boat in the breeze.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-heal"
+    ],
+    "attributes": [
+     "attributes-grass",
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008833",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "010",
+    "sortOrder": 1058300,
+    "name": "Glameep",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10583.png",
+    "countryId": 300301,
+    "description": "Draped in fresh green leaf-feathers, Glameep moves lightly along the lake shore. It adores clear water most of all, especially when that water reflects its own graceful, unhurried beauty.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-heal"
+    ],
+    "attributes": [
+     "attributes-grass",
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008893",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "011",
+    "sortOrder": 1062100,
+    "name": "Popapus",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10621.png",
+    "countryId": 300301,
+    "description": "It loves collecting colorful bubbles. They bob and sway inside its air sac as it moves, and when inspiration strikes, it uses them to doodle strange little wonders in the air.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008859",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "012",
+    "sortOrder": 1062300,
+    "name": "Gachapus",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10623.png",
+    "countryId": 300301,
+    "description": "With a quick tap from its nimble tentacles, it can launch all kinds of capsule bubbles from its head. No one knows what will pop out next, a delightful surprise or a complete accident.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008881",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "013",
+    "sortOrder": 1059100,
+    "name": "Sugarfish",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10591.png",
+    "countryId": 300301,
+    "description": "Sugarfish likes to stay in the shade, but once it’s out in the sun, it secretes slime to protect its fragile skin, making it look like it’s melting.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-energy"
+    ],
+    "attributes": [
+     "attributes-ice"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008842",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "014",
+    "sortOrder": 1059300,
+    "name": "Sugarslime",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10593.png",
+    "countryId": 300301,
+    "description": "Sugarslime is naturally warm and outgoing. It loves to scoop up slime in the shell it carries and share it with other Aniimo, but its odd looks often scare them off. Luckily, it’s so forgetful that the gloom fades fast.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-energy"
+    ],
+    "attributes": [
+     "attributes-ice"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008923",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "015",
+    "sortOrder": 1059400,
+    "name": "Sugartini",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10594.png",
+    "countryId": 300301,
+    "description": "Sugartini is all about appearances. To avoid messing up its carefully styled look, it keeps up a graceful demeanor at all times. But if you point out that its “bangs” are actually its nose, it instantly flies into a rage.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-ice"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008854",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "016",
+    "sortOrder": 1054100,
+    "name": "Lilipole",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10541.png",
+    "countryId": 300301,
+    "description": "Lively and mischievous, Lilipole loves to swish its long leaf-like tail and play around in the water. Whether it’s one of its own kind or a passing Aniimo, someone’s always getting splashed by its sudden spray.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008813",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "017",
+    "sortOrder": 1054300,
+    "name": "Scrubbit",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10543.png",
+    "countryId": 300301,
+    "description": "Though it’s round and chubby, Scrubbit is surprisingly nimble. That shed long tail-leaf in its hands is both a scrub towel for washing its body and a sharp tool for whipping opponents.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008886",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "018",
+    "sortOrder": 1060100,
+    "name": "Salabask",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10601.png",
+    "countryId": 300301,
+    "description": "Salabask’s head looks like a piece of driftwood covered in moss. It loves soaking in the water with only its head above the surface, basking in the sun. Sometimes other Aniimo mistake it for a floating plank to cross the river, and one careless step can knock it out cold.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-grass",
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008850",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "019",
+    "sortOrder": 1060300,
+    "name": "Crocobask",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10603.png",
+    "countryId": 300301,
+    "description": "It loves to float motionless on the river’s surface, soaking up the sun, and doesn’t mind being used like driftwood to step across. Just don’t stand on its back too long. It might suddenly flip over.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-sup"
+    ],
+    "attributes": [
+     "attributes-grass",
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008889",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "020",
+    "sortOrder": 1061100,
+    "name": "Puffby",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10611.png",
+    "countryId": 300301,
+    "description": "It flits busily through the night, gathering pollen from glowing plants and carefully rolling it into pretty pollen balls to bring back to the hive. When danger strikes, it swings the pollen ball like a weapon to bash its enemies.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008856",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "021",
+    "sortOrder": 1061300,
+    "name": "Buffby",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10613.png",
+    "countryId": 300301,
+    "description": "A burly powerhouse with exceptional strength but none of the brute attitude, it’s gentle at heart and meticulous in action. It patrols tirelessly around the hive, day and night, protecting the swarm.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008935",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "022",
+    "sortOrder": 1061400,
+    "name": "Royalby",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10614.png",
+    "countryId": 300301,
+    "description": "The queen of the swarm and the hive’s highest ruler, she is revered by her kin and lives within the royal nest the workers craft for her, commanding the entire swarm.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-energy"
+    ],
+    "attributes": [
+     "attributes-wind"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10009002",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "023",
+    "sortOrder": 1039100,
+    "name": "Saws",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10391.png",
+    "countryId": 300301,
+    "description": "The wave-splitting Saws is crazy about chasing creatures through the water. When it dashes, its serrated dorsal fin can quickly slice through anything in the raging current that gets in its way.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008973",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "024",
+    "sortOrder": 1039300,
+    "name": "Whirlbite",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10393.png",
+    "countryId": 300301,
+    "description": "A ferocious hunter that treats its extendable lower jaw as a weapon, it cruises between the shadows of the waves. The moment its grim dorsal fin breaks the surface, its prey has nowhere left to run.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-dps"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008953",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "025",
+    "sortOrder": 1040100,
+    "name": "Prawnch",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10401.png",
+    "countryId": 300301,
+    "description": "Prawnch trains hard in the rapids, raising its claw-fists high and picking fights with every opponent in sight. It even treats passing creatures as imaginary enemies. The more it gets ignored, the more it itches to throw down.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-ice"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008844",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "026",
+    "sortOrder": 1040300,
+    "name": "Jabster",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10403.png",
+    "countryId": 300301,
+    "description": "A master of all kinds of boxing combos, it constantly hones its techniques. With head-bobs and tail-wags as feints to confuse its opponent, it then ricochets its claw-fist forward for a fight-ending blow.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-dark",
+     "attributes-ice"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008939",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "027",
+    "sortOrder": 1069100,
+    "name": "Jeglid",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10691.png",
+    "countryId": 300301,
+    "description": "As Jeglid bursts from the water’s surface, the flying fins on either side blast out stored water with force, launching it into the air for a glide. Its form is especially agile and strong.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "1",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008968",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "028",
+    "sortOrder": 1069300,
+    "name": "Jeburst",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10693.png",
+    "countryId": 300301,
+    "description": "The wing membranes sprouting from its forelimbs are airy yet tough. Two well-developed pairs of water storage organs on its wings can jet powerful streams, pushing its body like an arrow to cleave through the water pressure, surge upstream, and vault all the way to the top of the falls.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-water"
+    ]
+   },
+   "visible": true
+  },
+  {
+   "id": "10008984",
+   "viewCount": null,
+   "searchKey": {
+    "type": "ANIIMO",
+    "entryId": "029",
+    "sortOrder": 1044400,
+    "name": "Ekrim",
+    "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10444.png",
+    "countryId": 300301,
+    "description": "Elusive Ekrim can skillfully grab treasures with the talon on its tail and then vanish into the darkness without a trace.",
+    "currentMorphology": "Basic Form",
+    "currentStage": "3",
+    "position": [
+     "position-break"
+    ],
+    "attributes": [
+     "attributes-dark"
+    ]
+   },
+   "visible": true
+  }
+ ],
+ "morphology-tags-en": [
+  {
+   "id": "07e99acfc5fd76a7f11470ee641aa0eb",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Highland Form",
+   "name": "Highland Form",
+   "language": "en-US",
+   "sort": 3
+  },
+  {
+   "id": "08dfaebba876601b96c3d7c5b1ff7256",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Mudflat Form",
+   "name": "Mudflat Form",
+   "language": "en-US",
+   "sort": 8
+  },
+  {
+   "id": "0c51cf959abcbe25d8c5cb560a259c0a",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Rainfall Form",
+   "name": "Rainfall Form",
+   "language": "en-US",
+   "sort": 7
+  },
+  {
+   "id": "53127d4adf96a4ff2f6ce383f7d288d7",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Bay Form",
+   "name": "Bay Form",
+   "language": "en-US",
+   "sort": 10
+  },
+  {
+   "id": "60d91594bc1a90b2d41de5a3ffe301f2",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Regional Form",
+   "name": "Regional Form",
+   "language": "en-US",
+   "sort": 2
+  },
+  {
+   "id": "6793a9c0a6e293c8b743d89c39e7e6d1",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Beach Form",
+   "name": "Beach Form",
+   "language": "en-US",
+   "sort": 9
+  },
+  {
+   "id": "68d9c48a46f174b5f81335e09af63e18",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Thunderstorm Form",
+   "name": "Thunderstorm Form",
+   "language": "en-US",
+   "sort": 5
+  },
+  {
+   "id": "6fd6f414f735492b0ae0a031fd026de7",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Plateau Form",
+   "name": "Plateau Form",
+   "language": "en-US",
+   "sort": 17
+  },
+  {
+   "id": "7df4e9fe3616c2e904433cb1f9eef2b2",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Tempest Form",
+   "name": "Tempest Form",
+   "language": "en-US",
+   "sort": 20
+  },
+  {
+   "id": "812be2838adbb5f98d2daa1382554217",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Snowfield Form",
+   "name": "Snowfield Form",
+   "language": "en-US",
+   "sort": 12
+  },
+  {
+   "id": "84d6e1556a5f087a5934f04beb50692a",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Nighttime Form",
+   "name": "Nighttime Form",
+   "language": "en-US",
+   "sort": 11
+  },
+  {
+   "id": "9898ea8b1b1cdf09bcb2423a8ac30532",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Forest Form",
+   "name": "Forest Form",
+   "language": "en-US",
+   "sort": 15
+  },
+  {
+   "id": "abb572e4ee0318fb03a70b32a6644a57",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Timberline Form",
+   "name": "Timberline Form",
+   "language": "en-US",
+   "sort": 4
+  },
+  {
+   "id": "b8ea22da72a592c1dd188bd66ecbedc3",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Waterfall Form",
+   "name": "Waterfall Form",
+   "language": "en-US",
+   "sort": 21
+  },
+  {
+   "id": "ba4c30c8d87cfee14cef99ce7b61c817",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Basic Form",
+   "name": "Basic Form",
+   "language": "en-US",
+   "sort": 1
+  },
+  {
+   "id": "c6843eff20110ae5e388d9cb5da26ce9",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Mountain Form",
+   "name": "Mountain Form",
+   "language": "en-US",
+   "sort": 13
+  },
+  {
+   "id": "cef49afec73d02524de50d9b9ba46f31",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Flowerfield Form",
+   "name": "Flowerfield Form",
+   "language": "en-US",
+   "sort": 14
+  },
+  {
+   "id": "d3f5a3ad6ab54bd1c187389780ded877",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Prismana Form",
+   "name": "Prismana Form",
+   "language": "en-US",
+   "sort": 6
+  },
+  {
+   "id": "f1f9b339a45d5651927fee2e259ba8bd",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Grassland Form",
+   "name": "Grassland Form",
+   "language": "en-US",
+   "sort": 16
+  },
+  {
+   "id": "f4087320d3bba33be906dcb966d4734a",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Towerwood Form",
+   "name": "Towerwood Form",
+   "language": "en-US",
+   "sort": 19
+  },
+  {
+   "id": "f8d312d38498768ee36a5bc397eedafa",
+   "parentId": "1250",
+   "tagType": "morphologyTypes",
+   "tagKey": "Cloudmist Form",
+   "name": "Cloudmist Form",
+   "language": "en-US",
+   "sort": 18
+  }
+ ],
+ "aniimo-detail-[300001,\"001\",\"Basic Form\",\"en\"]": {
+  "id": "10008933",
+  "previousId": "10009014",
+  "nextId": "10008985",
+  "previousAnchor": {
+   "entryId": "082",
+   "currentMorphology": "Basic Form",
+   "type": "ANIIMO",
+   "countryId": 300001
+  },
+  "nextAnchor": {
+   "entryId": "001",
+   "currentMorphology": "Highland Form",
+   "type": "ANIIMO",
+   "countryId": 300001
+  },
+  "viewCount": 3748,
+  "visible": true,
+  "searchKey": {
+   "type": "ANIIMO",
+   "entryId": "001",
+   "sortOrder": 1005100,
+   "name": "Emberpup",
+   "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10051.png",
+   "countryId": 300001,
+   "description": "Lively and energetic, the creatures like to follow Flameruffs around. Once their fluffy charcoal-like fur starts to burn, they grow.",
+   "currentMorphology": "Basic Form",
+   "currentStage": "1",
+   "position": [
+    "position-dps"
+   ],
+   "attributes": [
+    "attributes-fire"
+   ]
+  },
+  "directories": [
+   {
+    "id": 1,
+    "title": "Basic Info",
+    "components": [
+     {
+      "id": "91630354_30808",
+      "type": "aniimoInfo",
+      "props": {
+       "id": "91630354_30809",
+       "formData": {
+        "name": "Emberpup",
+        "sortOrder": 1,
+        "serialNumber": "001",
+        "heightMin": 0,
+        "heightMax": 0,
+        "weightMin": 23.4,
+        "weightMax": 34.93,
+        "attributes": [
+         "attributes-fire"
+        ],
+        "position": [
+         "position-dps"
+        ],
+        "gender": [
+         "male",
+         "female"
+        ],
+        "desc": "Lively and energetic, the creatures like to follow Flameruffs around. Once their fluffy charcoal-like fur starts to burn, they grow.",
+        "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10051.png",
+        "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10051.png",
+        "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10051.png",
+        "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1005100.mp4",
+        "backgroundImage": "",
+        "attributeValue": 382,
+        "hp": 67,
+        "magicAttack": 40,
+        "physicalAttack": 90,
+        "magicDefense": 57,
+        "haste": 68,
+        "physicalDefense": 60,
+        "displayNames": {
+         "maleImage": "Stellarys.png",
+         "femaleImage": "Scorchhowl.png",
+         "illustrationImage": "evolutionarySpirit.png",
+         "backgroundImage": "",
+         "noGenderImage": ""
+        },
+        "currentMorphology": "Basic Form",
+        "currentStage": 1,
+        "countryId": 300001,
+        "femaleIllustrationImage": "",
+        "maleIllustrationImage": ""
+       }
+      },
+      "children": null
+     },
+     {
+      "id": "91630354_30810",
+      "type": "crumbTitle",
+      "props": {
+       "title": "Evolution",
+       "type": "big",
+       "id": "91630354_30811",
+       "isUse": true,
+       "isEdit": true,
+       "useTabs": false,
+       "blackHeader": false
+      },
+      "children": [
+       {
+        "id": "91630354_30812",
+        "type": "evolution",
+        "props": {
+         "data": {
+          "id": "root",
+          "name": "Emberpup",
+          "label": "Emberpup",
+          "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10051.png",
+          "stage": 1,
+          "stageStrength": 1,
+          "position": 0,
+          "condition": {
+           "isVariant": false,
+           "list": []
+          },
+          "children": [
+           {
+            "id": "91630354_30814",
+            "name": "Flameruff",
+            "label": "Flameruff",
+            "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10052.png",
+            "stage": 2,
+            "stageStrength": 2,
+            "position": 1,
+            "condition": {
+             "isVariant": false,
+             "list": []
+            },
+            "children": [
+             {
+              "id": "91630354_30815",
+              "name": "Scorchhowl",
+              "label": "Scorchhowl",
+              "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10053.png",
+              "stage": 3,
+              "stageStrength": 3,
+              "position": 1,
+              "condition": {
+               "isVariant": false,
+               "list": []
+              },
+              "children": []
+             },
+             {
+              "id": "91630354_30816",
+              "name": "Inferlupa",
+              "label": "Inferlupa",
+              "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10055.png",
+              "stage": 3,
+              "stageStrength": 3,
+              "position": 2,
+              "condition": {
+               "isVariant": false,
+               "list": []
+              },
+              "children": []
+             }
+            ]
+           }
+          ]
+         },
+         "id": "91630354_30813"
+        },
+        "children": null
+       }
+      ]
+     },
+     {
+      "id": "91630354_30817",
+      "type": "crumbTitle",
+      "props": {
+       "title": "Habitats",
+       "type": "small",
+       "id": "91630354_30818",
+       "isUse": true,
+       "isEdit": true,
+       "useTabs": false,
+       "blackHeader": false
+      },
+      "children": [
+       {
+        "id": "91630354_30819",
+        "type": "capsule",
+        "props": {
+         "id": "91630354_30820",
+         "customKey": "",
+         "title": "Nimbus Fields",
+         "icon": "",
+         "bgColor": "#dee2ec",
+         "fontColor": "#60606e",
+         "type": "normal"
+        },
+        "children": null
+       },
+       {
+        "id": "91630354_30821",
+        "type": "capsule",
+        "props": {
+         "id": "91630354_30822",
+         "customKey": "",
+         "title": "The Mistwoods",
+         "icon": "",
+         "bgColor": "#dee2ec",
+         "fontColor": "#60606e",
+         "type": "normal"
+        },
+        "children": null
+       },
+       {
+        "id": "91630354_30823",
+        "type": "capsule",
+        "props": {
+         "id": "91630354_30824",
+         "customKey": "",
+         "title": "The Argent Strait",
+         "icon": "",
+         "bgColor": "#dee2ec",
+         "fontColor": "#60606e",
+         "type": "normal"
+        },
+        "children": null
+       },
+       {
+        "id": "91630354_30825",
+        "type": "capsule",
+        "props": {
+         "id": "91630354_30826",
+         "customKey": "",
+         "title": "Echoback Landing",
+         "icon": "",
+         "bgColor": "#dee2ec",
+         "fontColor": "#60606e",
+         "type": "normal"
+        },
+        "children": null
+       },
+       {
+        "id": "91630354_30827",
+        "type": "capsule",
+        "props": {
+         "id": "91630354_30828",
+         "customKey": "",
+         "title": "Beast Fang Ridge",
+         "icon": "",
+         "bgColor": "#dee2ec",
+         "fontColor": "#60606e",
+         "type": "normal"
+        },
+        "children": null
+       }
+      ]
+     },
+     {
+      "id": "91630354_30829",
+      "type": "crumbTitle",
+      "props": {
+       "title": "Home Abilities",
+       "type": "small",
+       "id": "91630354_30830",
+       "isUse": true,
+       "isEdit": true,
+       "useTabs": false,
+       "blackHeader": false
+      },
+      "children": [
+       {
+        "id": "91630354_30831",
+        "type": "capsule",
+        "props": {
+         "id": "91630354_30832",
+         "customKey": "home-1000",
+         "title": "1",
+         "icon": "",
+         "bgColor": "",
+         "fontColor": "",
+         "type": "spritePic"
+        },
+        "children": null
+       },
+       {
+        "id": "91630354_30833",
+        "type": "capsule",
+        "props": {
+         "id": "91630354_30834",
+         "customKey": "home-1100",
+         "title": "1",
+         "icon": "",
+         "bgColor": "",
+         "fontColor": "",
+         "type": "spritePic"
+        },
+        "children": null
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": 2,
+    "title": "Aniimo Ability",
+    "components": [
+     {
+      "id": "91630354_30837",
+      "type": "crumbTitle",
+      "props": {
+       "title": "Mobility",
+       "type": "small",
+       "id": "91630354_30838",
+       "isUse": true,
+       "isEdit": true,
+       "useTabs": false,
+       "blackHeader": false
+      },
+      "children": [
+       {
+        "id": "91630354_30839",
+        "type": "circle",
+        "props": {
+         "id": "91630354_30840",
+         "customKey": "",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1036100_Skill_9400107_Icon.png",
+         "iconStyle": "small",
+         "iconTitle": "",
+         "descTitle": "Hustle",
+         "descContent": "Enters the Hustle state to move at high speed by continuously consuming stamina.",
+         "source": {
+          "attributes": [],
+          "type": [],
+          "consume": "",
+          "power": ""
+         }
+        },
+        "children": null
+       }
+      ]
+     },
+     {
+      "id": "91630354_30841",
+      "type": "crumbTitle",
+      "props": {
+       "title": "Aniimo Traits",
+       "type": "big",
+       "id": "91630354_30842",
+       "isUse": true,
+       "isEdit": true,
+       "useTabs": false,
+       "blackHeader": false
+      },
+      "children": [
+       {
+        "id": "91630354_30843",
+        "type": "circle",
+        "props": {
+         "id": "91630354_30844",
+         "customKey": "",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1005304_Feature_10503_Icon.png",
+         "iconStyle": "big",
+         "iconTitle": "",
+         "descTitle": "Scorching Flames",
+         "descContent": "Increases damage dealt to elementally countered targets by 25%.",
+         "source": {
+          "attributes": [],
+          "type": [],
+          "consume": "",
+          "power": ""
+         }
+        },
+        "children": null
+       }
+      ]
+     },
+     {
+      "id": "91630354_30845",
+      "type": "crumbTitle",
+      "props": {
+       "title": "Skill Details",
+       "type": "big",
+       "id": "91630354_30846",
+       "isUse": true,
+       "isEdit": true,
+       "useTabs": true,
+       "blackHeader": false,
+       "tabs": [
+        {
+         "id": "91630354_30847",
+         "title": "Combat Skills",
+         "children": [
+          {
+           "id": "91630354_30848",
+           "type": "circle",
+           "props": {
+            "id": "91630354_30849",
+            "customKey": "",
+            "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1005300_Skill_10500080_Icon.png",
+            "iconStyle": "big",
+            "iconTitle": "",
+            "descTitle": "Fire Kick",
+            "descContent": "Jumps up to dodge an attack, allowing flames to swirl around it before diving down and dealing damage to targets around the landing point. A successful dodge also deals 120% damage and increases damage by 20% for 20s.",
+            "source": {
+             "attributes": [
+              "5"
+             ],
+             "type": [
+              "1"
+             ],
+             "consume": "0",
+             "power": "72"
+            }
+           }
+          },
+          {
+           "id": "91630354_30850",
+           "type": "circle",
+           "props": {
+            "id": "91630354_30851",
+            "customKey": "",
+            "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1005300_Skill_10800280_Icon.png",
+            "iconStyle": "big",
+            "iconTitle": "",
+            "descTitle": "Pebble Kick",
+            "descContent": "Jumps up to dodge an attack, allowing broken stones to swirl around it before diving down and dealing damage to targets around the landing point. A successful dodge also deals 120% damage and inflicts [Lockdown] on hit targets for 8s.",
+            "source": {
+             "attributes": [
+              "8"
+             ],
+             "type": [
+              "1"
+             ],
+             "consume": "0",
+             "power": "40"
+            }
+           }
+          },
+          {
+           "id": "91630354_30852",
+           "type": "circle",
+           "props": {
+            "id": "91630354_30853",
+            "customKey": "",
+            "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1005300_Skill_10500230_Icon.png",
+            "iconStyle": "big",
+            "iconTitle": "",
+            "descTitle": "Fire Bolt",
+            "descContent": "Launches a fireball at the target and applies 2 stacks of [Fire Debuff] for 5s. Hold the skill button to aim.",
+            "source": {
+             "attributes": [
+              "5"
+             ],
+             "type": [
+              "2"
+             ],
+             "consume": "10",
+             "power": "30"
+            }
+           }
+          }
+         ]
+        },
+        {
+         "id": "91630354_30854",
+         "title": "Innate Skills",
+         "children": [
+          {
+           "id": "91630354_30855",
+           "type": "circle",
+           "props": {
+            "id": "91630354_30856",
+            "customKey": "",
+            "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1005300_Skill_10500000_Icon.png",
+            "iconStyle": "big",
+            "iconTitle": "",
+            "descTitle": "ATK",
+            "descContent": "Wields the power of fire to attack targets at close range.",
+            "source": {
+             "attributes": [
+              "5"
+             ],
+             "type": [
+              "1"
+             ],
+             "consume": "0",
+             "power": "6"
+            }
+           }
+          }
+         ]
+        }
+       ]
+      },
+      "children": null
+     }
+    ]
+   },
+   {
+    "id": 3,
+    "title": "Aniimo Training",
+    "components": [
+     {
+      "id": "91630354_30857",
+      "type": "crumbTitle",
+      "props": {
+       "title": "Resonance Training",
+       "type": "big",
+       "id": "91630354_30858",
+       "isUse": true,
+       "isEdit": true,
+       "useTabs": false,
+       "blackHeader": false
+      },
+      "children": [
+       {
+        "id": "91630354_30859",
+        "type": "richText",
+        "props": {
+         "id": "91630354_30860",
+         "isEdit": false,
+         "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+        },
+        "children": null
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "morphologyList": [
+   {
+    "id": "10008933",
+    "entryId": "001",
+    "countryId": 300001,
+    "currentMorphology": "Basic Form",
+    "visible": true
+   },
+   {
+    "id": "10008985",
+    "entryId": "001",
+    "countryId": 300001,
+    "currentMorphology": "Highland Form",
+    "visible": true
+   },
+   {
+    "id": "10008994",
+    "entryId": "001",
+    "countryId": 300001,
+    "currentMorphology": "Timberline Form",
+    "visible": true
+   }
+  ]
+ }
+}

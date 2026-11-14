@@ -1,0 +1,396 @@
+{
+ "id": "10009014",
+ "previousId": "10008938",
+ "nextId": "10008933",
+ "previousAnchor": {
+  "entryId": "081",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "001",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 3574,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "082",
+  "sortOrder": 1012200,
+  "name": "Besauce",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10122.png",
+  "countryId": 300001,
+  "description": "Troubled by the beat of its own heart, Besauce constantly searches for rhythms to drown it out. It loves to groove to music and has a passion for avant-garde music.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "3",
+  "position": [
+   "position-energy"
+  ],
+  "attributes": [
+   "attributes-electric"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_34570",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_34571",
+      "formData": {
+       "name": "Besauce",
+       "sortOrder": 1,
+       "serialNumber": "082",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-electric"
+       ],
+       "position": [
+        "position-energy"
+       ],
+       "gender": [],
+       "desc": "Troubled by the beat of its own heart, Besauce constantly searches for rhythms to drown it out. It loves to groove to music and has a passion for avant-garde music.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10122.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10122.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10122.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1012200.mp4",
+       "backgroundImage": "",
+       "attributeValue": 538,
+       "hp": 88,
+       "magicAttack": 90,
+       "physicalAttack": 92,
+       "magicDefense": 75,
+       "haste": 118,
+       "physicalDefense": 75,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_34572",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_34573",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34574",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Besauce",
+         "label": "Besauce",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10122.png",
+         "stage": 3,
+         "stageStrength": 3,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": []
+        },
+        "id": "91630354_34575"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_34578",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_34579",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34580",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_34581",
+        "customKey": "home-1004",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_34582",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_34583",
+        "customKey": "home-1101",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_34588",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_34589",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34590",
+       "type": "circle",
+       "props": {
+        "id": "91630354_34591",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1012200_Feature_11272_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Power Surge",
+        "descContent": "When casting a skill with less than 20 EP, restores 4 EP.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_34592",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_34593",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_34594",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_34595",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34596",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1071300_Skill_10400490_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Disruptive Current",
+           "descContent": "Releases a current of electricity, damaging targets ahead.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "10",
+            "power": "34"
+           }
+          }
+         },
+         {
+          "id": "91630354_34597",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34598",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1012200_Skill_10400470_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Charged Geyser",
+           "descContent": "Restores 15 Energy and restores 0.8 Energy per second for 12s.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "0",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_34599",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34600",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1012200_Skill_10400070_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Beat of Passion",
+           "descContent": "Keeps playing, sending sound waves forward to damage targets.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "52"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_34601",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_34602",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34603",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1014300_Skill_14000000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of lightning to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         },
+         {
+          "id": "91630354_34604",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34605",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1012200_Skill_10400071_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Electric Dance Frenzy",
+           "descContent": "Creates an independent music space and deals damage to the targets within the space, lowering their Lightning resistance by 24% for 30s.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "91"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_34606",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_34607",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34608",
+       "type": "richText",
+       "props": {
+        "id": "91630354_34609",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10009014",
+   "entryId": "082",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  }
+ ]
+}

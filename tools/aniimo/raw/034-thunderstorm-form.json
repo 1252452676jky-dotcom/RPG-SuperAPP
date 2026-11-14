@@ -1,0 +1,475 @@
+{
+ "id": "10008965",
+ "previousId": "10008962",
+ "nextId": "10008958",
+ "previousAnchor": {
+  "entryId": "034",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "034",
+  "currentMorphology": "Prismana Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 3254,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "034",
+  "sortOrder": 1032301,
+  "name": "Thornblade",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1032301.png",
+  "countryId": 300001,
+  "description": "These cold-blooded assassins hone their skills on rainy nights, their eyes as sharp as lightning. Once they fix their gaze on their prey, there's no escape.",
+  "currentMorphology": "Thunderstorm Form",
+  "currentStage": "3",
+  "position": [
+   "position-dps"
+  ],
+  "attributes": [
+   "attributes-grass",
+   "attributes-electric"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_32211",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_32212",
+      "formData": {
+       "name": "Thornblade",
+       "sortOrder": 1,
+       "serialNumber": "034",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-grass",
+        "attributes-electric"
+       ],
+       "position": [
+        "position-dps"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "These cold-blooded assassins hone their skills on rainy nights, their eyes as sharp as lightning. Once they fix their gaze on their prey, there's no escape.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1032301.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1032301.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1032301.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1032301.mp4",
+       "backgroundImage": "",
+       "attributeValue": 509,
+       "hp": 96,
+       "magicAttack": 53,
+       "physicalAttack": 121,
+       "magicDefense": 73,
+       "haste": 92,
+       "physicalDefense": 74,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Thunderstorm Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_32217",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_32218",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_32219",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_32220",
+        "customKey": "",
+        "title": "Sea of Flowers",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_32221",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_32222",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_32223",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_32224",
+        "customKey": "home-1004",
+        "title": "2",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_32225",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_32226",
+        "customKey": "home-1001",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_32227",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_32228",
+        "customKey": "home-1101",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_32233",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_32234",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_32235",
+       "type": "circle",
+       "props": {
+        "id": "91630354_32236",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1032402_Feature_132402_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Sword Dance",
+        "descContent": "Each skill used grants 1 stack of [Sword Dance], up to 4 stacks, lasting 15s. Each basic attack costs 1 stack of [Sword Dance] to deal 180% extra damage.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_32237",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_32238",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_32239",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_32240",
+          "type": "circle",
+          "props": {
+           "id": "91630354_32241",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1032100_Skill_10600370_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Thorny Defense",
+           "descContent": "Enters a defensive stance, reducing damage taken by 20%. While in this state, it counters when attacked. If attacked just as the skill is used, its Crit Rate increases by 30% for 15s.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "75"
+           }
+          }
+         },
+         {
+          "id": "91630354_32242",
+          "type": "circle",
+          "props": {
+           "id": "91630354_32243",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1032300_Skill_10301030_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Aqua Defense",
+           "descContent": "Enters a defensive stance, reducing damage taken by 20%. If attacked during the stance, counterattacks the target. If attacked at the moment the skill is cast, applies [Lockdown] to the target for 12s.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "75"
+           }
+          }
+         },
+         {
+          "id": "91630354_32244",
+          "type": "circle",
+          "props": {
+           "id": "91630354_32245",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1020100_Skill_10600080_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Thorny Impact",
+           "descContent": "Thrusts toward the target. On hit, increases this Aniimo’s Crit Rate by 15% for 15s.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "57"
+           }
+          }
+         },
+         {
+          "id": "91630354_32246",
+          "type": "circle",
+          "props": {
+           "id": "91630354_32247",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1022200_Skill_10400190_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Lightning Impact",
+           "descContent": "Thrusts toward the target. On hit, increases this Aniimo’s Crit Rate by 15% for 15s.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "57"
+           }
+          }
+         },
+         {
+          "id": "91630354_32248",
+          "type": "circle",
+          "props": {
+           "id": "91630354_32249",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1032300_Skill_10600400_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Thorny Rain",
+           "descContent": "Rapidly attacks the target with its thorn blade. Can be used up to 3 times in a row.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "10",
+            "power": "30"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_32250",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_32251",
+          "type": "circle",
+          "props": {
+           "id": "91630354_32252",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1032300_Skill_10600410_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Elegant Waltz",
+           "descContent": "Repeatedly stabs a target with its thorn blade.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "172"
+           }
+          }
+         },
+         {
+          "id": "91630354_32253",
+          "type": "circle",
+          "props": {
+           "id": "91630354_32254",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1032400_Skill_14200000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of grass to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_32255",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_32256",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_32257",
+       "type": "richText",
+       "props": {
+        "id": "91630354_32258",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008962",
+   "entryId": "034",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008965",
+   "entryId": "034",
+   "countryId": 300001,
+   "currentMorphology": "Thunderstorm Form",
+   "visible": true
+  },
+  {
+   "id": "10008958",
+   "entryId": "034",
+   "countryId": 300001,
+   "currentMorphology": "Prismana Form",
+   "visible": true
+  },
+  {
+   "id": "10008960",
+   "entryId": "034",
+   "countryId": 300001,
+   "currentMorphology": "Towerwood Form",
+   "visible": true
+  }
+ ]
+}

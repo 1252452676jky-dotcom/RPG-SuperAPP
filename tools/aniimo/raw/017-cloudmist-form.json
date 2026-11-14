@@ -1,0 +1,515 @@
+{
+ "id": "10009019",
+ "previousId": "10008941",
+ "nextId": "10008937",
+ "previousAnchor": {
+  "entryId": "017",
+  "currentMorphology": "Rainfall Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "017",
+  "currentMorphology": "Plateau Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 1281,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "017",
+  "sortOrder": 1026102,
+  "name": "Nimbi",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1026102.png",
+  "countryId": 300001,
+  "description": "Appear to prefer the fragrance of Sunny Daisy over grass, which has given their wool a slight golden tinge that absorbs more heat than pure white wool.",
+  "currentMorphology": "Cloudmist Form",
+  "currentStage": "1",
+  "position": [
+   "position-sup"
+  ],
+  "attributes": [
+   "attributes-wind"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_34740",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_34741",
+      "formData": {
+       "name": "Nimbi",
+       "sortOrder": 1,
+       "serialNumber": "017",
+       "heightMin": 0,
+       "heightMax": 0,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-wind"
+       ],
+       "position": [
+        "position-sup"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "Appear to prefer the fragrance of Sunny Daisy over grass, which has given their wool a slight golden tinge that absorbs more heat than pure white wool.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1026102.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1026102.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1026102.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1026102.mp4",
+       "backgroundImage": "",
+       "attributeValue": 451,
+       "hp": 80,
+       "magicAttack": 43,
+       "physicalAttack": 84,
+       "magicDefense": 82,
+       "haste": 93,
+       "physicalDefense": 69,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Cloudmist Form",
+       "currentStage": 1,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_34742",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_34743",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34744",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Nimbi",
+         "label": "Nimbi",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1026102.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_34746",
+           "name": "Turbo",
+           "label": "Turbo",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1026202.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_34745"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_34747",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_34748",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34749",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_34750",
+        "customKey": "",
+        "title": "Nimbus Fields",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_34751",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_34752",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34753",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_34754",
+        "customKey": "home-1102",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_34755",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_34756",
+        "customKey": "home-1006",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_34757",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Pathfinding",
+      "type": "small",
+      "id": "91630354_34758",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34759",
+       "type": "circle",
+       "props": {
+        "id": "91630354_34760",
+        "customKey": "GLIDE",
+        "icon": "",
+        "iconStyle": "",
+        "iconTitle": "Fly Lv.1",
+        "descTitle": "",
+        "descContent": "",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        },
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_34761",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_34762",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34763",
+       "type": "circle",
+       "props": {
+        "id": "91630354_34764",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1026105_Skill_9400105_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Puff Up",
+        "descContent": "Puffs up, allowing it to jump higher and perform one dash while airborne.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_34765",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_34766",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34767",
+       "type": "circle",
+       "props": {
+        "id": "91630354_34768",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1026201_Feature_12603_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Shrouded in Mist",
+        "descContent": "Gains 1 stack after being off the field for 5s or casting a basic attack. At 4 stacks, enters [Shrouded in Mist] state. Casting a skill consumes this state to enhance the skill’s effects.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_34769",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_34770",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_34771",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_34772",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34773",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1026200_Skill_10900250_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Cloud Orb",
+           "descContent": "Throws a missile condensed from clouds at the target. If the user is [Shrouded in Mist], the missile creates a larger explosion on hit, dealing damage equal to 180% Might.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "10",
+            "power": "30"
+           }
+          }
+         },
+         {
+          "id": "91630354_34774",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34775",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1026200_Skill_10400290_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Thunder Bolt",
+           "descContent": "Tosses projectiles formed from thunderclouds to attack the targets. When in the [Shrouded in Mist] state, the projectiles will explode after hitting targets, dealing damage equal to 120% Might and inflicting [Paralysis] on the targets for 5s.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "10",
+            "power": "30"
+           }
+          }
+         },
+         {
+          "id": "91630354_34776",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34777",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1026200_Skill_10900160_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Cloud Shield",
+           "descContent": "Creates a cloud shield to protect itself, absorbing damage up to 15% max HP and reducing stamina consumption by 15% for 20s. While affected by [Shrouded in Mist], the shield absorbs damage up to 18% max HP instead, and stamina consumption is reduced by 18% for 30s.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "20",
+            "power": "0"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_34778",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_34779",
+          "type": "circle",
+          "props": {
+           "id": "91630354_34780",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1026200_Skill_14400000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of wind to attack targets from a distance.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_34781",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_34782",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_34783",
+       "type": "richText",
+       "props": {
+        "id": "91630354_34784",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10009034",
+   "entryId": "017",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008941",
+   "entryId": "017",
+   "countryId": 300001,
+   "currentMorphology": "Rainfall Form",
+   "visible": true
+  },
+  {
+   "id": "10009019",
+   "entryId": "017",
+   "countryId": 300001,
+   "currentMorphology": "Cloudmist Form",
+   "visible": true
+  },
+  {
+   "id": "10008937",
+   "entryId": "017",
+   "countryId": 300001,
+   "currentMorphology": "Plateau Form",
+   "visible": true
+  }
+ ]
+}

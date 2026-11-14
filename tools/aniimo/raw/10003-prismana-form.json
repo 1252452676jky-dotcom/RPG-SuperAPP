@@ -1,0 +1,482 @@
+{
+ "id": "10008837",
+ "previousId": "10008857",
+ "nextId": "10008891",
+ "previousAnchor": {
+  "entryId": "10003",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 1000
+ },
+ "nextAnchor": {
+  "entryId": "10004",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 1000
+ },
+ "viewCount": 5609,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "10003",
+  "sortOrder": 1003305,
+  "name": "Fulmintis",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1003305.png",
+  "countryId": 1000,
+  "description": "Prismana energy gives Fulmintis a fresh burst of power, turning it into a red blur on the battlefield. This time, it’s not looking back!",
+  "currentMorphology": "Prismana Form",
+  "currentStage": "3",
+  "position": [
+   "position-dps"
+  ],
+  "attributes": [
+   "attributes-holy",
+   "attributes-electric"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_26273",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_26274",
+      "formData": {
+       "name": "Fulmintis",
+       "sortOrder": 1,
+       "serialNumber": "10003",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-holy",
+        "attributes-electric"
+       ],
+       "position": [
+        "position-dps"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "Prismana energy gives Fulmintis a fresh burst of power, turning it into a red blur on the battlefield. This time, it’s not looking back!",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1003305.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1003305.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1003305.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1003305.mp4",
+       "backgroundImage": "",
+       "attributeValue": 520,
+       "hp": 99,
+       "magicAttack": 50,
+       "physicalAttack": 130,
+       "magicDefense": 70,
+       "haste": 105,
+       "physicalDefense": 66,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Prismana Form",
+       "currentStage": 3,
+       "countryId": 1000,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_26281",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_26282",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26283",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_26284",
+        "customKey": "home-1004",
+        "title": "4",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_26285",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_26286",
+        "customKey": "home-1008",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_26287",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_26288",
+        "customKey": "home-1101",
+        "title": "4",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_26289",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Pathfinding",
+      "type": "small",
+      "id": "91630354_26290",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26291",
+       "type": "circle",
+       "props": {
+        "id": "91630354_26292",
+        "customKey": "GLIDE",
+        "icon": "",
+        "iconStyle": "",
+        "iconTitle": "Fly Lv.3",
+        "descTitle": "",
+        "descContent": "",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        },
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26293",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_26294",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26295",
+       "type": "circle",
+       "props": {
+        "id": "91630354_26296",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1003200_Skill_9400062_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Cloak",
+        "descContent": "Enter Cloak state.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26297",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_26298",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26299",
+       "type": "circle",
+       "props": {
+        "id": "91630354_26300",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1003305_Feature_103302_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Electro Stash",
+        "descContent": "Restores 4 EP when a skill lands a critical hit.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_26301",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_26302",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_26303",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_26304",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26305",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1003300_Skill_10400330_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Lightning Blade Storm",
+           "descContent": "After dashing to close in on the target, it continuously consumes Energy to perform consecutive slashes. When Energy is depleted or clicked again, it unleashes a Spinning Slash that deals 26 Might damage. For every 3 consecutive slashes accumulated by this skill, the final Spinning Slash deals 100% increased damage.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "10",
+            "power": "35"
+           }
+          }
+         },
+         {
+          "id": "91630354_26306",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26307",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1003300_Skill_10400340_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Lightning Blade Impact",
+           "descContent": "Hold to enter Aim Mode and fire two Electric Blade Shock Waves. Critical hits inflict [Paralysis] on the target for 6s.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "45"
+           }
+          }
+         },
+         {
+          "id": "91630354_26308",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26309",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1003300_Skill_10400320_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Enhanced Lightning Blade",
+           "descContent": "Enhances the blade, increasing skill Crit Rate by 35% for 20s.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "0",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_26310",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26311",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1003300_Skill_11300170_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Enhanced Light Blade",
+           "descContent": "Grants the blade Light Elemental Boost, increasing skill Crit Rate by 35% for 20s.",
+           "source": {
+            "attributes": [
+             "13"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "0",
+            "power": "0"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_26312",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_26313",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26314",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1014300_Skill_14000000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "(BREAK) Wields the power of lightning to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         },
+         {
+          "id": "91630354_26315",
+          "type": "circle",
+          "props": {
+           "id": "91630354_26316",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1003300_Skill_10400440_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Thunder Lance",
+           "descContent": "Deals multiple hits to targets in a straight line. Targets hit will be [paralyzed] for 3s.",
+           "source": {
+            "attributes": [
+             "4"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "180"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_26317",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_26318",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_26319",
+       "type": "richText",
+       "props": {
+        "id": "91630354_26320",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008857",
+   "entryId": "10003",
+   "countryId": 1000,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008837",
+   "entryId": "10003",
+   "countryId": 1000,
+   "currentMorphology": "Prismana Form",
+   "visible": true
+  }
+ ]
+}

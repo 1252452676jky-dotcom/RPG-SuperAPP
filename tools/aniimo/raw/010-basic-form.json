@@ -1,0 +1,518 @@
+{
+ "id": "10008943",
+ "previousId": "10008993",
+ "nextId": "10008970",
+ "previousAnchor": {
+  "entryId": "009",
+  "currentMorphology": "Highland Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "010",
+  "currentMorphology": "Beach Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 2314,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "010",
+  "sortOrder": 1018700,
+  "name": "Tubster",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10187.png",
+  "countryId": 300001,
+  "description": "Creates deep, tuba-like sounds that match its steady, friendly character.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "3",
+  "position": [
+   "position-break"
+  ],
+  "attributes": [
+   "attributes-wind"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_31270",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_31271",
+      "formData": {
+       "name": "Tubster",
+       "sortOrder": 1,
+       "serialNumber": "010",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-wind"
+       ],
+       "position": [
+        "position-break"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "Creates deep, tuba-like sounds that match its steady, friendly character.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10187.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10187.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10187.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1018700.mp4",
+       "backgroundImage": "",
+       "attributeValue": 550,
+       "hp": 108,
+       "magicAttack": 107,
+       "physicalAttack": 80,
+       "magicDefense": 109,
+       "haste": 80,
+       "physicalDefense": 66,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_31272",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_31273",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31274",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Chirpi",
+         "label": "Chirpi",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10181.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_31276",
+           "name": "Tromber",
+           "label": "Tromber",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10184.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 0,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          },
+          {
+           "id": "91630354_31277",
+           "name": "Cornet",
+           "label": "Cornet",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10185.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          },
+          {
+           "id": "91630354_31278",
+           "name": "Tubster",
+           "label": "Tubster",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10187.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 2,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_31275"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_31279",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_31280",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31281",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_31282",
+        "customKey": "",
+        "title": "The Argent Strait",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_31283",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_31284",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31285",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_31286",
+        "customKey": "home-1006",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_31291",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_31292",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31293",
+       "type": "circle",
+       "props": {
+        "id": "91630354_31294",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018700_Feature_118701_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Victory Concerto",
+        "descContent": "While shielded, BREAK efficiency +40%.When triggering BREAK, plays [Concerto], reducing the whole team’s stamina cost by 30%.When you have 3 Movement-series buffs, increases all Movement effects by 30%.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_31295",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_31296",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_31297",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_31298",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31299",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018400_Skill_10600600_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Leaf Tornado",
+           "descContent": "Releases a leaf vortex at the target location, dealing damage and pulling enemies toward the center. Continuously absorbs puddles nearby, dealing 100% extra damage upon successful absorption.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "45"
+           }
+          }
+         },
+         {
+          "id": "91630354_31300",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31301",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018700_Skill_10900540_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Resting Whirlwind",
+           "descContent": "Flaps its wings to fire 2 arcing whirlwinds, pulling targets along their paths. When the whirlwinds meet, they explode and deal AoE damage.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "15",
+            "power": "48"
+           }
+          }
+         },
+         {
+          "id": "91630354_31302",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31303",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018400_Skill_10300220_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Water Tornado",
+           "descContent": "Releases a water vortex at the target location, dealing damage and pulling enemies toward the center. Each hit deducts 4 Energy from the target.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "45"
+           }
+          }
+         },
+         {
+          "id": "91630354_31304",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31305",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018400_Skill_10900041_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Tornado",
+           "descContent": "Releases an air vortex at the target location, dealing damage and pulling enemies toward the center.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "59"
+           }
+          }
+         },
+         {
+          "id": "91630354_31306",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31307",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018700_Skill_10900161_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Gale Guard",
+           "descContent": "Assumes a defensive stance and gains 20% Damage Reduction. When the defensive stance ends, gains a shield equal to 10% max HP for 20s. press the skill again to end it early. While in the defensive stance, each hit taken increases the shield gained by 10%, up to 100%.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "54"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_31308",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_31309",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31310",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1018400_Skill_10900290_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Truce",
+           "descContent": "Creates a field that continuously grants allies within range 35% damage reduction for 7s.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "0",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_31311",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31312",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1026200_Skill_14400000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "(BREAK) Wields the power of wind to attack targets from a distance.",
+           "source": {
+            "attributes": [
+             "9"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_31313",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_31314",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31315",
+       "type": "richText",
+       "props": {
+        "id": "91630354_31316",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008943",
+   "entryId": "010",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008970",
+   "entryId": "010",
+   "countryId": 300001,
+   "currentMorphology": "Beach Form",
+   "visible": true
+  },
+  {
+   "id": "10008986",
+   "entryId": "010",
+   "countryId": 300001,
+   "currentMorphology": "Highland Form",
+   "visible": true
+  }
+ ]
+}

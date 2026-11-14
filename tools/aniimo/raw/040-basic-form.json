@@ -1,0 +1,522 @@
+{
+ "id": "10008974",
+ "previousId": "10008987",
+ "nextId": "10008978",
+ "previousAnchor": {
+  "entryId": "039",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "040",
+  "currentMorphology": "Forest Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 2012,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "040",
+  "sortOrder": 1003100,
+  "name": "Wisptis",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10031.png",
+  "countryId": 300001,
+  "description": "If the only way to evolve is to defeat other Wisptises, then there is no other choice but to keep their claws sharp.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "1",
+  "position": [
+   "position-dps"
+  ],
+  "attributes": [
+   "attributes-dark"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_32638",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_32639",
+      "formData": {
+       "name": "Wisptis",
+       "sortOrder": 1,
+       "serialNumber": "040",
+       "heightMin": 0,
+       "heightMax": 0,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-dark"
+       ],
+       "position": [
+        "position-dps"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "If the only way to evolve is to defeat other Wisptises, then there is no other choice but to keep their claws sharp.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10031.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10031.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10031.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1003100.mp4",
+       "backgroundImage": "",
+       "attributeValue": 423,
+       "hp": 77,
+       "magicAttack": 43,
+       "physicalAttack": 112,
+       "magicDefense": 54,
+       "haste": 77,
+       "physicalDefense": 60,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 1,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_32640",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_32641",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_32642",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Wisptis",
+         "label": "Wisptis",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10031.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_32644",
+           "name": "Fulmintis",
+           "label": "Fulmintis",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10033.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 0,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          },
+          {
+           "id": "91630354_32645",
+           "name": "Ignitis",
+           "label": "Ignitis",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10032.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_32643"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_32646",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_32647",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_32648",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_32649",
+        "customKey": "",
+        "title": "Berylline Vale",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_32650",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_32651",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_32652",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_32653",
+        "customKey": "home-1101",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_32654",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_32655",
+        "customKey": "home-1007",
+        "title": "1",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_32656",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Pathfinding",
+      "type": "small",
+      "id": "91630354_32657",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_32658",
+       "type": "circle",
+       "props": {
+        "id": "91630354_32659",
+        "customKey": "GLIDE",
+        "icon": "",
+        "iconStyle": "",
+        "iconTitle": "Fly Lv.1",
+        "descTitle": "",
+        "descContent": "",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        },
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_32660",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_32661",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_32662",
+       "type": "circle",
+       "props": {
+        "id": "91630354_32663",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1003200_Skill_9400062_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Cloak",
+        "descContent": "Enter Cloak state.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_32664",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_32665",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_32666",
+       "type": "circle",
+       "props": {
+        "id": "91630354_32667",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1003200_Feature_10372_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Battle Fervor",
+        "descContent": "Defeating a target grants 1 stack of Battlelust, increasing damage by 25% for 20s. Stacks up to 2 times.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_32668",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_32669",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_32670",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_32671",
+          "type": "circle",
+          "props": {
+           "id": "91630354_32672",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1003200_Skill_11200030_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Scythe Dance",
+           "descContent": "Spins to slash, dealing Dark damage 4 times to all nearby targets. Each hit increases own damage by 4%, up to 32%, for 10s.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "60"
+           }
+          }
+         },
+         {
+          "id": "91630354_32673",
+          "type": "circle",
+          "props": {
+           "id": "91630354_32674",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1003200_Skill_10600513_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Forest Whirl",
+           "descContent": "Spins to slash, dealing Grass damage 4 times to all nearby targets. Each hit increases own damage by 4%, up to 32%, for 10s.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "60"
+           }
+          }
+         },
+         {
+          "id": "91630354_32675",
+          "type": "circle",
+          "props": {
+           "id": "91630354_32676",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1003200_Skill_11200021_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Dark Dash",
+           "descContent": "Tackles the target with the power of shadows, increasing basic attack damage by 40% for 10s after casting.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "10",
+            "power": "25"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_32677",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_32678",
+          "type": "circle",
+          "props": {
+           "id": "91630354_32679",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1003200_Skill_11200000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields dark power to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_32680",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_32681",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_32682",
+       "type": "richText",
+       "props": {
+        "id": "91630354_32683",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008974",
+   "entryId": "040",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008978",
+   "entryId": "040",
+   "countryId": 300001,
+   "currentMorphology": "Forest Form",
+   "visible": true
+  },
+  {
+   "id": "10008950",
+   "entryId": "040",
+   "countryId": 300001,
+   "currentMorphology": "Highland Form",
+   "visible": true
+  }
+ ]
+}

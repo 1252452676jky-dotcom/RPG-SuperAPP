@@ -1,0 +1,547 @@
+{
+ "id": "10008922",
+ "previousId": "10008870",
+ "nextId": "10008904",
+ "previousAnchor": {
+  "entryId": "043",
+  "currentMorphology": "Nighttime Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "044",
+  "currentMorphology": "Nighttime Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 3313,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "044",
+  "sortOrder": 1013300,
+  "name": "Glynsera",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10133.png",
+  "countryId": 300001,
+  "description": "Proud and confident warriors, they send shivers down their enemies’ spines with the chilling blades in their mouths.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "3",
+  "position": [
+   "position-dps"
+  ],
+  "attributes": [
+   "attributes-ice"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_30270",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_30271",
+      "formData": {
+       "name": "Glynsera",
+       "sortOrder": 1,
+       "serialNumber": "044",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-ice"
+       ],
+       "position": [
+        "position-dps"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "Proud and confident warriors, they send shivers down their enemies’ spines with the chilling blades in their mouths.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10133.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10133.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10133.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1013300.mp4",
+       "backgroundImage": "",
+       "attributeValue": 512,
+       "hp": 95,
+       "magicAttack": 53,
+       "physicalAttack": 118,
+       "magicDefense": 76,
+       "haste": 98,
+       "physicalDefense": 72,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_30272",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_30273",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30274",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Bonesky",
+         "label": "Bonesky",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10131.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_30276",
+           "name": "Fenrier",
+           "label": "Fenrier",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10132.png",
+           "stage": 2,
+           "stageStrength": 2,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": [
+            {
+             "id": "91630354_30277",
+             "name": "Glynsera",
+             "label": "Glynsera",
+             "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10133.png",
+             "stage": 3,
+             "stageStrength": 3,
+             "position": 2,
+             "condition": {
+              "isVariant": false,
+              "list": []
+             },
+             "children": []
+            }
+           ]
+          }
+         ]
+        },
+        "id": "91630354_30275"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_30278",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_30279",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30280",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_30281",
+        "customKey": "",
+        "title": "Beast Fang Ridge",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_30282",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_30283",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30284",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_30285",
+        "customKey": "home-1005",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_30286",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_30287",
+        "customKey": "home-1100",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_30290",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_30291",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30292",
+       "type": "circle",
+       "props": {
+        "id": "91630354_30293",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1036100_Skill_9400107_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Hustle",
+        "descContent": "Enters the Hustle state to move at high speed by continuously consuming stamina.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_30294",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_30295",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30296",
+       "type": "circle",
+       "props": {
+        "id": "91630354_30297",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1013102_Feature_11372_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Biting Wind",
+        "descContent": "When dealing damage to targets with more than 5 stacks of [Ice Debuff], increases Crit Rate of that damage by 15%.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_30298",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_30299",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_30300",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_30301",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30302",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1013300_Skill_10200100_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Frost Tail Strike",
+           "descContent": "Flips forward toward the target and slams the ground with a tail strike, dealing damage. Can consume 10 stacks of [Ice Debuff] to deal 85% extra damage.",
+           "source": {
+            "attributes": [
+             "2"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "15",
+            "power": "60"
+           }
+          }
+         },
+         {
+          "id": "91630354_30303",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30304",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1013100_Skill_10200061_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Boomerang Blade",
+           "descContent": "Throws an ice blade forward, dealing damage to targets in range and applying stacks of [Ice Debuff]. The ice blade continuously consumes energy while spinning, and pressing the Skill button again recalls it.",
+           "source": {
+            "attributes": [
+             "2"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "39"
+           }
+          }
+         },
+         {
+          "id": "91630354_30305",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30306",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1013300_Skill_11300100_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Prismana Slash",
+           "descContent": "Lunges forward and spins to create a magic field that fires 3 light blades for 3 hits, dealing damage.",
+           "source": {
+            "attributes": [
+             "13"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "55"
+           }
+          }
+         },
+         {
+          "id": "91630354_30307",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30308",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1013100_Skill_10200081_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Ice Strikes",
+           "descContent": "Lunges forward and spins to create a magic field that fires 3 ice blades for 3 hits, dealing damage and applying 5 stacks of [Ice Debuff].",
+           "source": {
+            "attributes": [
+             "2"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "55"
+           }
+          }
+         },
+         {
+          "id": "91630354_30309",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30310",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1013100_Skill_11200286_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Night Slash",
+           "descContent": "Steps forward and spins to release 3 shadow blades, dealing damage and [silencing] the target for 4s.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "55"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_30311",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_30312",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30313",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1013300_Skill_10200090_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Ice Tornado",
+           "descContent": "Turns into an icy tornado to continuously attack its targets.",
+           "source": {
+            "attributes": [
+             "2"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "155"
+           }
+          }
+         },
+         {
+          "id": "91630354_30314",
+          "type": "circle",
+          "props": {
+           "id": "91630354_30315",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1013100_Skill_10200000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of ice to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "2"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_30316",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_30317",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_30318",
+       "type": "richText",
+       "props": {
+        "id": "91630354_30319",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008922",
+   "entryId": "044",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008904",
+   "entryId": "044",
+   "countryId": 300001,
+   "currentMorphology": "Nighttime Form",
+   "visible": true
+  }
+ ]
+}

@@ -1,0 +1,505 @@
+{
+ "id": "10008911",
+ "previousId": "10008975",
+ "nextId": "10008913",
+ "previousAnchor": {
+  "entryId": "062",
+  "currentMorphology": "Snowfield Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "062",
+  "currentMorphology": "Prismana Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 1695,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "062",
+  "sortOrder": 1002602,
+  "name": "Pawney",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1002602.png",
+  "countryId": 300001,
+  "description": "Obsessed with challenging powerful foes, it lets every attack it endures polish its armor to a brighter shine, ultimately forging this magnificent golden battle armor.",
+  "currentMorphology": "Timberline Form",
+  "currentStage": "3",
+  "position": [
+   "position-dps"
+  ],
+  "attributes": [
+   "attributes-dark"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_29760",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_29761",
+      "formData": {
+       "name": "Pawney",
+       "sortOrder": 1,
+       "serialNumber": "062",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-dark"
+       ],
+       "position": [
+        "position-dps"
+       ],
+       "gender": [],
+       "desc": "Obsessed with challenging powerful foes, it lets every attack it endures polish its armor to a brighter shine, ultimately forging this magnificent golden battle armor.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1002602.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1002602.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1002602.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1002602.mp4",
+       "backgroundImage": "",
+       "attributeValue": 505,
+       "hp": 90,
+       "magicAttack": 55,
+       "physicalAttack": 125,
+       "magicDefense": 70,
+       "haste": 81,
+       "physicalDefense": 84,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Timberline Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_29762",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_29763",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29764",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Helmut",
+         "label": "Helmut",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1002102.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_29766",
+           "name": "Pawney",
+           "label": "Pawney",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1002602.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 0,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          },
+          {
+           "id": "91630354_29767",
+           "name": "Rookey",
+           "label": "Rookey",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1002702.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_29765"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_29770",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_29771",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29772",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_29773",
+        "customKey": "home-1100",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_29774",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_29775",
+        "customKey": "home-1007",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_29778",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_29779",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29780",
+       "type": "circle",
+       "props": {
+        "id": "91630354_29781",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1002602_Skill_9400041_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Hookshot",
+        "descContent": "Stretch your arm toward the center of view. Pull yourself to walls or enemies on hit. Hold skill button to aim.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_29782",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_29783",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29784",
+       "type": "circle",
+       "props": {
+        "id": "91630354_29785",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1002602_Feature_10232_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Pursuit",
+        "descContent": "When dealing damage to targets in Controlled or Break State, increases an additional 30% Damage Amp.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_29786",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_29787",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_29788",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_29789",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29790",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1059300_Skill_10301220_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Weakening Smash",
+           "descContent": "Jumps up and smashes down on the target to deal damage. Up to three consecutive smashes are allowed, and the third smash will stun the target for 1s.",
+           "source": {
+            "attributes": [
+             "2"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "15",
+            "power": "45"
+           }
+          }
+         },
+         {
+          "id": "91630354_29791",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29792",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1002600_Skill_11200150_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Elastic Sword",
+           "descContent": "Extends its arm and throws its sword at targets ahead. When the sword returns, it pulls common targets in front of itself.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "62"
+           }
+          }
+         },
+         {
+          "id": "91630354_29793",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29794",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1002600_Skill_11200140_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Shadow Cut",
+           "descContent": "Curls into a ball and spins with a blade sticking out, dealing damage.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "85"
+           }
+          }
+         },
+         {
+          "id": "91630354_29795",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29796",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1002100_Skill_11200260_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Weakening Slam",
+           "descContent": "Jumps up and smashes down on the target to deal damage. Up to three consecutive smashes are allowed, and the third smash will stun the target for 1s.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "15",
+            "power": "45"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_29797",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_29798",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29799",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1002600_Skill_11200160_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Ironclad Armament",
+           "descContent": "Lowers the mask and hardens the body, increasing EP recovery rate by 10% and dealing 30% extra damage to BREAK targets for 15s. During this effect, the Ultimate can be used again to unleash Dragon Slayer Strike, dealing heavy damage to targets ahead.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "220"
+           }
+          }
+         },
+         {
+          "id": "91630354_29800",
+          "type": "circle",
+          "props": {
+           "id": "91630354_29801",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1003200_Skill_11200000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields dark power to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_29802",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_29803",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_29804",
+       "type": "richText",
+       "props": {
+        "id": "91630354_29805",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10009004",
+   "entryId": "062",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008975",
+   "entryId": "062",
+   "countryId": 300001,
+   "currentMorphology": "Snowfield Form",
+   "visible": true
+  },
+  {
+   "id": "10008911",
+   "entryId": "062",
+   "countryId": 300001,
+   "currentMorphology": "Timberline Form",
+   "visible": true
+  },
+  {
+   "id": "10008913",
+   "entryId": "062",
+   "countryId": 300001,
+   "currentMorphology": "Prismana Form",
+   "visible": true
+  }
+ ]
+}

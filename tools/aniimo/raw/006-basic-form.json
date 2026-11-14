@@ -1,0 +1,542 @@
+{
+ "id": "10008819",
+ "previousId": "10008267",
+ "nextId": "10008820",
+ "previousAnchor": {
+  "entryId": "005",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "006",
+  "currentMorphology": "Rainfall Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 4644,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "006",
+  "sortOrder": 1001200,
+  "name": "Stellarys",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10012.png",
+  "countryId": 300001,
+  "description": "They prefer solitude and often move through the night. Their forms resemble mysterious mages draped in cloaks of stars, and they can teleport using psychic energy.",
+  "currentMorphology": "Basic Form",
+  "currentStage": "3",
+  "position": [
+   "position-dps"
+  ],
+  "attributes": [
+   "attributes-dark"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_25426",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_25427",
+      "formData": {
+       "name": "Stellarys",
+       "sortOrder": 1,
+       "serialNumber": "006",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-dark"
+       ],
+       "position": [
+        "position-dps"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "They prefer solitude and often move through the night. Their forms resemble mysterious mages draped in cloaks of stars, and they can teleport using psychic energy.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10012.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10012.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10012.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1001200.mp4",
+       "backgroundImage": "",
+       "attributeValue": 505,
+       "hp": 95,
+       "magicAttack": 54,
+       "physicalAttack": 125,
+       "magicDefense": 69,
+       "haste": 94,
+       "physicalDefense": 68,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Basic Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_25428",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_25429",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25430",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Celestis",
+         "label": "Celestis",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10011.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_25432",
+           "name": "Stellarys",
+           "label": "Stellarys",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_10012.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_25431"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_25433",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_25434",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25435",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_25436",
+        "customKey": "",
+        "title": "Forest of Falling Stars",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_25437",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_25438",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25439",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_25440",
+        "customKey": "home-1102",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_25441",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_25442",
+        "customKey": "home-1007",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_25443",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Pathfinding",
+      "type": "small",
+      "id": "91630354_25444",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25445",
+       "type": "circle",
+       "props": {
+        "id": "91630354_25446",
+        "customKey": "GLIDE",
+        "icon": "",
+        "iconStyle": "",
+        "iconTitle": "Fly Lv.1",
+        "descTitle": "",
+        "descContent": "",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        },
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_25449",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_25450",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25451",
+       "type": "circle",
+       "props": {
+        "id": "91630354_25452",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1001200_Feature_10175_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Grand Sorcerer",
+        "descContent": "For 5s after using a skill, basic attack hits deal additional damage equal to 6 Might.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_25453",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_25454",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_25455",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_25456",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25457",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1001200_Skill_11100040_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Shadow Magic",
+           "descContent": "Immediately breaks free of control effects and retreats from the target, leaving a clone behind for 20s. The clone cannot be attacked and mimics the user’s basic attacks and skills, dealing damage equal to 20% of the user’s damage. Use the skill again to swap places with the clone. The clone is destroyed if it moves more than 20m away from the user.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "0"
+            ],
+            "consume": "20",
+            "power": "0"
+           }
+          }
+         },
+         {
+          "id": "91630354_25458",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25459",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1001200_Skill_10200250_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Chill Glide",
+           "descContent": "Flies while dropping Ice element stars to attack the target for damage. Every 1 hits on a target applies 1 stack of Ice Debuff. After maintaining the skill state for 4s, can attack while moving for 15s.",
+           "source": {
+            "attributes": [
+             "2"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "74"
+           }
+          }
+         },
+         {
+          "id": "91630354_25460",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25461",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1001200_Skill_11100024_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Shooting Star Glide",
+           "descContent": "Flies while dropping stars to attack the target for damage. Hitting the same target 3 times increases the Aniimo’s Energy recovery speed by 10% for 10s. After maintaining the skill state for 4s, can attack while moving for 15s.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "74"
+           }
+          }
+         },
+         {
+          "id": "91630354_25462",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25463",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1001200_Skill_11100030_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Shooting Stars",
+           "descContent": "Fires 3 homing stars. Each time a star damages a target, the user gains a 1% Damage Boost, stacking up to 15 times.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "40"
+           }
+          }
+         },
+         {
+          "id": "91630354_25464",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25465",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1001200_Skill_10301020_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Aquatic Glide",
+           "descContent": "Flies while dropping Water element stars to attack the target for damage. Each hit reduces the target’s Energy by 3. After maintaining the skill state for 4s, can attack while moving for 15s.",
+           "source": {
+            "attributes": [
+             "3"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "74"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_25466",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_25467",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25468",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1001200_Skill_11100070_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Comet Aureus",
+           "descContent": "Summons a large number of comets from the sky to attack a target, dealing a huge amount of damage.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "166"
+           }
+          }
+         },
+         {
+          "id": "91630354_25469",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25470",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1003200_Skill_11200000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields dark power to attack targets from a distance.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_25471",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_25472",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25473",
+       "type": "richText",
+       "props": {
+        "id": "91630354_25474",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008819",
+   "entryId": "006",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008820",
+   "entryId": "006",
+   "countryId": 300001,
+   "currentMorphology": "Rainfall Form",
+   "visible": true
+  },
+  {
+   "id": "10008828",
+   "entryId": "006",
+   "countryId": 300001,
+   "currentMorphology": "Prismana Form",
+   "visible": true
+  }
+ ]
+}

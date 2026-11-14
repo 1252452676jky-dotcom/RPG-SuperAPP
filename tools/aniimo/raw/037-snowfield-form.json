@@ -1,0 +1,475 @@
+{
+ "id": "10008951",
+ "previousId": "10008954",
+ "nextId": "10008949",
+ "previousAnchor": {
+  "entryId": "037",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "037",
+  "currentMorphology": "Highland Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 1564,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "037",
+  "sortOrder": 1047501,
+  "name": "Pomawk",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1047501.png",
+  "countryId": 300001,
+  "description": "The freezing climate turns their manes into ice spikes, highlighting their rebellious streak. Their shed skin forms a tight-fitting suit, allowing them to maintain both style and warmth in the cold.",
+  "currentMorphology": "Snowfield Form",
+  "currentStage": "3",
+  "position": [
+   "position-break"
+  ],
+  "attributes": [
+   "attributes-grass",
+   "attributes-ice"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_31628",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_31629",
+      "formData": {
+       "name": "Pomawk",
+       "sortOrder": 1,
+       "serialNumber": "037",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-grass",
+        "attributes-ice"
+       ],
+       "position": [
+        "position-break"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "The freezing climate turns their manes into ice spikes, highlighting their rebellious streak. Their shed skin forms a tight-fitting suit, allowing them to maintain both style and warmth in the cold.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1047501.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1047501.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1047501.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1047501.mp4",
+       "backgroundImage": "",
+       "attributeValue": 540,
+       "hp": 87,
+       "magicAttack": 107,
+       "physicalAttack": 90,
+       "magicDefense": 76,
+       "haste": 100,
+       "physicalDefense": 80,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Snowfield Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_31630",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_31631",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31632",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Pomegg",
+         "label": "Pomegg",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1047101.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_31634",
+           "name": "Pomawk",
+           "label": "Pomawk",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1047501.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_31633"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_31637",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_31638",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31639",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_31640",
+        "customKey": "home-1005",
+        "title": "2",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_31641",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_31642",
+        "customKey": "home-1001",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_31643",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_31644",
+        "customKey": "home-1101",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_31649",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_31650",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31651",
+       "type": "circle",
+       "props": {
+        "id": "91630354_31652",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1047503_Feature_147102_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Tuning",
+        "descContent": "Each skill cast grants 1 stack of [Volume], up to 6 stacks. At 6 stacks of [Volume], increases Crit Rate by 20% for 15s.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_31653",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_31654",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_31655",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_31656",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31657",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1047500_Skill_10600620_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Wild Show",
+           "descContent": "Hold to charge the microphone, then release to unleash a massive sound wave, damaging targets in front. A well-timed release deals an additional 30% BREAK damage.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "70"
+           }
+          }
+         },
+         {
+          "id": "91630354_31658",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31659",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1047500_Skill_10200380_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Frost Strike",
+           "descContent": "Strikes targets around itself. Targets hit enter a Frozen state for 2.5s.",
+           "source": {
+            "attributes": [
+             "2"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "45"
+           }
+          }
+         },
+         {
+          "id": "91630354_31660",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31661",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1047500_Skill_10600550_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Jittering Beats",
+           "descContent": "Strikes targets around itself. Targets hit enter a [Silence] state for 4s.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "45"
+           }
+          }
+         },
+         {
+          "id": "91630354_31662",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31663",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1047500_Skill_10600540_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Rhythm Combo",
+           "descContent": "Performs a rhythmic combo on the target. Can be used up to 3 times in a row.Casting with the right timing adds 1 extra stack of [Volume].",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "10",
+            "power": "36"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_31664",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_31665",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31666",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1032400_Skill_14200000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "(BREAK) Wields the power of grass to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         },
+         {
+          "id": "91630354_31667",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31668",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1047500_Skill_10600610_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Sonic Boom",
+           "descContent": "Unleashes a sonic blast around itself and instantly fills [Volume].",
+           "source": {
+            "attributes": [
+             "6"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "176"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_31669",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_31670",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31671",
+       "type": "richText",
+       "props": {
+        "id": "91630354_31672",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008954",
+   "entryId": "037",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008951",
+   "entryId": "037",
+   "countryId": 300001,
+   "currentMorphology": "Snowfield Form",
+   "visible": true
+  },
+  {
+   "id": "10008949",
+   "entryId": "037",
+   "countryId": 300001,
+   "currentMorphology": "Highland Form",
+   "visible": true
+  },
+  {
+   "id": "10008945",
+   "entryId": "037",
+   "countryId": 300001,
+   "currentMorphology": "Flowerfield Form",
+   "visible": true
+  }
+ ]
+}

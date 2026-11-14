@@ -1,0 +1,473 @@
+{
+ "id": "10008812",
+ "previousId": "10008815",
+ "nextId": "10008864",
+ "previousAnchor": {
+  "entryId": "072",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "073",
+  "currentMorphology": "Basic Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 2072,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "072",
+  "sortOrder": 1028301,
+  "name": "Magmarex",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1028301.png",
+  "countryId": 300001,
+  "description": "The crystals on their back absorb prismana energy, erupting with magnificent energy jets and radiating terrifying heat.",
+  "currentMorphology": "Prismana Form",
+  "currentStage": "3",
+  "position": [
+   "position-break"
+  ],
+  "attributes": [
+   "attributes-fire",
+   "attributes-dark"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_25093",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_25094",
+      "formData": {
+       "name": "Magmarex",
+       "sortOrder": 1,
+       "serialNumber": "072",
+       "heightMin": 1,
+       "heightMax": 1,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-fire",
+        "attributes-dark"
+       ],
+       "position": [
+        "position-break"
+       ],
+       "gender": [
+        "male",
+        "female"
+       ],
+       "desc": "The crystals on their back absorb prismana energy, erupting with magnificent energy jets and radiating terrifying heat.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1028301.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1028301.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1028301.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1028301.mp4",
+       "backgroundImage": "",
+       "attributeValue": 539,
+       "hp": 110,
+       "magicAttack": 104,
+       "physicalAttack": 91,
+       "magicDefense": 89,
+       "haste": 75,
+       "physicalDefense": 70,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Prismana Form",
+       "currentStage": 3,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_25099",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_25100",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25101",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_25102",
+        "customKey": "",
+        "title": "Zephyrus Landbridge",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_25103",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_25104",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25105",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_25106",
+        "customKey": "home-1100",
+        "title": "4",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_25107",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_25108",
+        "customKey": "home-1000",
+        "title": "4",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_25109",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_25110",
+        "customKey": "home-1007",
+        "title": "3",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_25113",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Mobility",
+      "type": "small",
+      "id": "91630354_25114",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25115",
+       "type": "circle",
+       "props": {
+        "id": "91630354_25116",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1036100_Skill_9400107_Icon.png",
+        "iconStyle": "small",
+        "iconTitle": "",
+        "descTitle": "Fast and Furious",
+        "descContent": "Enters Fast and Furious state, increasing movement speed while allowing you to knock away certain obstacles, consuming stamina.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_25117",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_25118",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25119",
+       "type": "circle",
+       "props": {
+        "id": "91630354_25120",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1028301_Feature_128301_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Pyro Charge",
+        "descContent": "After spending a total of 50 EP, gains [Pyro Charge]. Every 2s, applies 1 stack of [Fire Debuff] to nearby targets for 10s.",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_25121",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_25122",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_25123",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_25124",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25125",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1028300_Skill_10500460_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Lava Punch",
+           "descContent": "Dashes forward with a punch, dealing damage and piercing through targets. Also removes all [Fire Debuff] stacks from the target. Each stack of [Fire Debuff] deals additional damage equal to 5% Might.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "64"
+           }
+          }
+         },
+         {
+          "id": "91630354_25126",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25127",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1028300_Skill_10500340_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Magma Surge",
+           "descContent": "Drives both claws into the ground, causing underground crystals to erupt with magma. A cone of molten spikes surges forward, damaging targets. If it hits a target with more than 5 stacks of [Fire Debuff], it [stuns] them for 3.5s.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "30"
+           }
+          }
+         },
+         {
+          "id": "91630354_25128",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25129",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1028300_Skill_11200470_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Dark Energy Surge",
+           "descContent": "Plunges both claws into the underground crystals, causing them to erupt and send a cone-shaped wave of Dark molten rock spikes surging forward. The spikes deal damage to targets and [stun] them for 2.5s.",
+           "source": {
+            "attributes": [
+             "12"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "20",
+            "power": "30"
+           }
+          }
+         },
+         {
+          "id": "91630354_25130",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25131",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1028300_Skill_10500440_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Lava Breath",
+           "descContent": "Sprays flames at the target in front, dealing damage over time and applying [Fire Debuff] to the target hit.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "35"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_25132",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_25133",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25134",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1028300_Skill_10500350_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Burning Sun",
+           "descContent": "The crystals on its elbows erupt with magma energy, hurling a massive molten boulder that explodes to deal wide-area damage. Damage increases by 2% for each stack of [Fire Debuff] on the target.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "140"
+           }
+          }
+         },
+         {
+          "id": "91630354_25135",
+          "type": "circle",
+          "props": {
+           "id": "91630354_25136",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1005300_Skill_10500000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "(BREAK) Wields the power of fire to attack targets at close range.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "1"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_25137",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_25138",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_25139",
+       "type": "richText",
+       "props": {
+        "id": "91630354_25140",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008815",
+   "entryId": "072",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008812",
+   "entryId": "072",
+   "countryId": 300001,
+   "currentMorphology": "Prismana Form",
+   "visible": true
+  }
+ ]
+}

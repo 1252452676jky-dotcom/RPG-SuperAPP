@@ -1,0 +1,430 @@
+{
+ "id": "10008940",
+ "previousId": "10008948",
+ "nextId": "10008942",
+ "previousAnchor": {
+  "entryId": "026",
+  "currentMorphology": "Highland Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "nextAnchor": {
+  "entryId": "026",
+  "currentMorphology": "Flowerfield Form",
+  "type": "ANIIMO",
+  "countryId": 300001
+ },
+ "viewCount": 1014,
+ "visible": true,
+ "searchKey": {
+  "type": "ANIIMO",
+  "entryId": "026",
+  "sortOrder": 1033102,
+  "name": "Sparki",
+  "imageUrl": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1033102.png",
+  "countryId": 300001,
+  "description": "Sparkis in a different color after absorbing fog as their fuel. Don’t follow them into the fog, or you’ll get lost.",
+  "currentMorphology": "Forest Form",
+  "currentStage": "1",
+  "position": [
+   "position-energy"
+  ],
+  "attributes": [
+   "attributes-fire"
+  ]
+ },
+ "directories": [
+  {
+   "id": 1,
+   "title": "Basic Info",
+   "components": [
+    {
+     "id": "91630354_31145",
+     "type": "aniimoInfo",
+     "props": {
+      "id": "91630354_31146",
+      "formData": {
+       "name": "Sparki",
+       "sortOrder": 1,
+       "serialNumber": "026",
+       "heightMin": 0,
+       "heightMax": 0,
+       "weightMin": 23.4,
+       "weightMax": 34.93,
+       "attributes": [
+        "attributes-fire"
+       ],
+       "position": [
+        "position-energy"
+       ],
+       "gender": [],
+       "desc": "Sparkis in a different color after absorbing fog as their fuel. Don’t follow them into the fog, or you’ll get lost.",
+       "maleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1033102.png",
+       "femaleImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1033102.png",
+       "noGenderImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1033102.png",
+       "illustrationImage": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/newVFX/1033102.mp4",
+       "backgroundImage": "",
+       "attributeValue": 435,
+       "hp": 69,
+       "magicAttack": 41,
+       "physicalAttack": 100,
+       "magicDefense": 67,
+       "haste": 98,
+       "physicalDefense": 60,
+       "displayNames": {
+        "maleImage": "Stellarys.png",
+        "femaleImage": "Scorchhowl.png",
+        "illustrationImage": "evolutionarySpirit.png",
+        "backgroundImage": "",
+        "noGenderImage": ""
+       },
+       "currentMorphology": "Forest Form",
+       "currentStage": 1,
+       "countryId": 300001,
+       "femaleIllustrationImage": "",
+       "maleIllustrationImage": ""
+      }
+     },
+     "children": null
+    },
+    {
+     "id": "91630354_31147",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Evolution",
+      "type": "big",
+      "id": "91630354_31148",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31149",
+       "type": "evolution",
+       "props": {
+        "data": {
+         "id": "root",
+         "name": "Sparki",
+         "label": "Sparki",
+         "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1033102.png",
+         "stage": 1,
+         "stageStrength": 1,
+         "position": 0,
+         "condition": {
+          "isVariant": false,
+          "list": []
+         },
+         "children": [
+          {
+           "id": "91630354_31151",
+           "name": "Flamerion",
+           "label": "Flamerion",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_PetHead_1033302.png",
+           "stage": 3,
+           "stageStrength": 3,
+           "position": 1,
+           "condition": {
+            "isVariant": false,
+            "list": []
+           },
+           "children": []
+          }
+         ]
+        },
+        "id": "91630354_31150"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_31152",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Habitats",
+      "type": "small",
+      "id": "91630354_31153",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31154",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_31155",
+        "customKey": "",
+        "title": "The Mistwoods",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_31156",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_31157",
+        "customKey": "",
+        "title": "Berylline Vale",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      },
+      {
+       "id": "91630354_31158",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_31159",
+        "customKey": "",
+        "title": "Driftwise Meadow",
+        "icon": "",
+        "bgColor": "#dee2ec",
+        "fontColor": "#60606e",
+        "type": "normal"
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_31160",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Home Abilities",
+      "type": "small",
+      "id": "91630354_31161",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31162",
+       "type": "capsule",
+       "props": {
+        "id": "91630354_31163",
+        "customKey": "home-1000",
+        "title": "2",
+        "icon": "",
+        "bgColor": "",
+        "fontColor": "",
+        "type": "spritePic"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Aniimo Ability",
+   "components": [
+    {
+     "id": "91630354_31168",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Aniimo Traits",
+      "type": "big",
+      "id": "91630354_31169",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31170",
+       "type": "circle",
+       "props": {
+        "id": "91630354_31171",
+        "customKey": "",
+        "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1033302_Feature_133303_Icon.png",
+        "iconStyle": "big",
+        "iconTitle": "",
+        "descTitle": "Blazing Flames",
+        "descContent": "Skills inflict [Fire Debuff] on the target. [Trick Fire Ring] applies 4 stacks, and [Fire Orb] applies 3 stacks. Also, permanently has 20 stacks of [Fire Debuff].",
+        "source": {
+         "attributes": [],
+         "type": [],
+         "consume": "",
+         "power": ""
+        }
+       },
+       "children": null
+      }
+     ]
+    },
+    {
+     "id": "91630354_31172",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Skill Details",
+      "type": "big",
+      "id": "91630354_31173",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": true,
+      "blackHeader": false,
+      "tabs": [
+       {
+        "id": "91630354_31174",
+        "title": "Combat Skills",
+        "children": [
+         {
+          "id": "91630354_31175",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31176",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1033300_Skill_10500360_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Trick Fire Ring",
+           "descContent": "Launches a fire ring that expands then contracts to attack the target. The farther the target is, the more damage it will take, up to 50% increased damage.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "42"
+           }
+          }
+         },
+         {
+          "id": "91630354_31177",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31178",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1033300_Skill_10500231_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "Fire Orb",
+           "descContent": "Throws an explosive fireball at the target. Press and hold to aim.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "20",
+            "power": "50"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "id": "91630354_31179",
+        "title": "Innate Skills",
+        "children": [
+         {
+          "id": "91630354_31180",
+          "type": "circle",
+          "props": {
+           "id": "91630354_31181",
+           "customKey": "",
+           "icon": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/1005300_Skill_10500000_Icon.png",
+           "iconStyle": "big",
+           "iconTitle": "",
+           "descTitle": "ATK",
+           "descContent": "Wields the power of fire to attack targets from a distance.",
+           "source": {
+            "attributes": [
+             "5"
+            ],
+            "type": [
+             "2"
+            ],
+            "consume": "0",
+            "power": "6"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "children": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Aniimo Training",
+   "components": [
+    {
+     "id": "91630354_31182",
+     "type": "crumbTitle",
+     "props": {
+      "title": "Resonance Training",
+      "type": "big",
+      "id": "91630354_31183",
+      "isUse": true,
+      "isEdit": true,
+      "useTabs": false,
+      "blackHeader": false
+     },
+     "children": [
+      {
+       "id": "91630354_31184",
+       "type": "richText",
+       "props": {
+        "id": "91630354_31185",
+        "isEdit": false,
+        "modelValue": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\"><colgroup><col style=\"width: 33.3325%;\"><col style=\"width: 33.3325%;\"><col style=\"width: 33.335%;\"></colgroup><tbody><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 6</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 60.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x1</span></td></tr><tr><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">LV 7</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\">Reach level 65.</td><td style=\"min-width: 80px; border: 1px solid rgb(218, 221, 227); padding: 12px;\"><img src=\"https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/0_Item_152100_Icon.png\" alt=\"\" width=\"30\" height=\"30\"><span>Phenomena Crystal x2</span></td></tr></tbody></table>"
+       },
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "morphologyList": [
+  {
+   "id": "10008944",
+   "entryId": "026",
+   "countryId": 300001,
+   "currentMorphology": "Basic Form",
+   "visible": true
+  },
+  {
+   "id": "10008948",
+   "entryId": "026",
+   "countryId": 300001,
+   "currentMorphology": "Highland Form",
+   "visible": true
+  },
+  {
+   "id": "10008940",
+   "entryId": "026",
+   "countryId": 300001,
+   "currentMorphology": "Forest Form",
+   "visible": true
+  },
+  {
+   "id": "10008942",
+   "entryId": "026",
+   "countryId": 300001,
+   "currentMorphology": "Flowerfield Form",
+   "visible": true
+  }
+ ]
+}
